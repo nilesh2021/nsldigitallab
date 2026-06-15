@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://NSLmedia.co.in/sitemap.xml
