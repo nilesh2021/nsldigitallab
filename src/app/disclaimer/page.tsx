@@ -27,7 +27,7 @@ export default function DisclaimerPage() {
 
           <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-8">
             Please read this Disclaimer carefully before using the
-            NSLMedia website and services.
+            nsldigitallab website and services.
           </p>
 
         </div>
@@ -45,7 +45,7 @@ export default function DisclaimerPage() {
             </h2>
 
             <p className="text-gray-300 leading-8 text-lg">
-              All information provided on the NSLMedia website is published
+              All information provided on the nsldigitallab website is published
               in good faith and for general informational and educational
               purposes only. We make every effort to ensure the accuracy of
               information, but we do not guarantee completeness, reliability,
@@ -62,7 +62,7 @@ export default function DisclaimerPage() {
             </h2>
 
             <p className="text-gray-300 leading-8 text-lg">
-              NSLMedia provides digital marketing, SEO, branding, web
+              nsldigitallab provides digital marketing, SEO, branding, web
               design, internship, and educational content. The information
               shared on this website should not be considered professional,
               financial, legal, or business advice. Users should independently
@@ -80,7 +80,7 @@ export default function DisclaimerPage() {
 
             <p className="text-gray-300 leading-8 text-lg">
               Our website may contain links to third-party websites or
-              services. NSLMedia does not guarantee the accuracy,
+              services. nsldigitallab does not guarantee the accuracy,
               relevance, or reliability of external websites and is not
               responsible for their content or privacy practices.
             </p>
@@ -96,7 +96,7 @@ export default function DisclaimerPage() {
 
             <p className="text-gray-300 leading-8 text-lg">
               Some pages or blog articles on this website may contain affiliate
-              links. This means NSLMedia may earn a commission if users
+              links. This means nsldigitallab may earn a commission if users
               purchase products or services through those links, at no
               additional cost to the user.
             </p>
@@ -126,7 +126,7 @@ export default function DisclaimerPage() {
             </h2>
 
             <p className="text-gray-300 leading-8 text-lg">
-              NSLMedia shall not be held liable for any losses, damages, or
+              nsldigitallab shall not be held liable for any losses, damages, or
               issues arising from the use of our website, content, digital
               services, or third-party resources.
             </p>
@@ -155,7 +155,7 @@ export default function DisclaimerPage() {
             </h2>
 
             <p className="text-gray-300 leading-8 text-lg">
-              NSLMedia reserves the right to update or modify this
+              nsldigitallab reserves the right to update or modify this
               Disclaimer at any time without prior notice. Any updates will be
               reflected on this page.
             </p>
@@ -181,7 +181,7 @@ export default function DisclaimerPage() {
               </p>
 
               <p>
-                Website: www.NSLmedia.co.in
+                Website: www.nsldigitallab.co.in
               </p>
 
             </div>

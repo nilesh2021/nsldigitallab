@@ -43,7 +43,7 @@ export default function FutureOfUiDesignPage() {
 
                 <link
                     rel="canonical"
-                    href="https://www.NSLmedia.co.in/blog/ui-ux/future-of-ui-design"
+                    href="https://www.nsldigitallab.co.in/blog/ui-ux/future-of-ui-design"
                 />
 
                 <meta
@@ -60,7 +60,7 @@ export default function FutureOfUiDesignPage() {
                 />
                 <meta
                     property="og:url"
-                    content="https://www.NSLmedia.co.in/blog/ui-ux/future-of-ui-design"
+                    content="https://www.nsldigitallab.co.in/blog/ui-ux/future-of-ui-design"
                 />
                 <meta property="og:type" content="article" />
                 <meta name="twitter:card" content="summary_large_image" />

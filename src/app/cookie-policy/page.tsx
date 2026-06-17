@@ -26,7 +26,7 @@ export default function CookiePolicyPage() {
           </h1>
 
           <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-8">
-            This Cookie Policy explains how NSLMedia uses cookies and
+            This Cookie Policy explains how nsldigitallab uses cookies and
             similar technologies to improve your browsing experience.
           </p>
 
@@ -45,7 +45,7 @@ export default function CookiePolicyPage() {
             </h2>
 
             <p className="text-gray-300 leading-8 text-lg">
-              NSLMedia uses cookies and similar tracking technologies to
+              nsldigitallab uses cookies and similar tracking technologies to
               enhance website functionality, analyze user interactions, and
               improve overall user experience. By using our website, you agree
               to the use of cookies as described in this policy.
@@ -148,7 +148,7 @@ export default function CookiePolicyPage() {
             <p className="text-gray-300 leading-8 text-lg">
               Some third-party services such as analytics providers,
               advertising networks, or embedded content may place cookies on
-              your device. NSLMedia does not directly control third-party
+              your device. nsldigitallab does not directly control third-party
               cookie policies.
             </p>
 
@@ -177,7 +177,7 @@ export default function CookiePolicyPage() {
             </h2>
 
             <p className="text-gray-300 leading-8 text-lg">
-              NSLMedia may update this Cookie Policy from time to time to
+              nsldigitallab may update this Cookie Policy from time to time to
               reflect changes in technology, regulations, or website
               functionality. Updates will be published on this page.
             </p>
@@ -203,7 +203,7 @@ export default function CookiePolicyPage() {
               </p>
 
               <p>
-                Website: www.NSLmedia.co.in
+                Website: www.nsldigitallab.co.in
               </p>
 
             </div>

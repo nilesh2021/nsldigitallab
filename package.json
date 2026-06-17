@@ -5,10 +5,9 @@
   "type": "module",
   "scripts": {
     
-    "dev": "vite",
-    
-    "build": "node src/scripts/generate-sitemap.cjs && vite build",
-    "generate-sitemap": "node src/scripts/generate-sitemap.cjs"
+   "dev": "vite",
+    "build": "vite build && node src/scripts/generate-sitemap.cjs && node src/scripts/generate-robots.cjs",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

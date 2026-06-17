@@ -82,7 +82,7 @@ export default function WhatIsDigitalMarketingPage() {
         <meta name="robots" content="index, follow" />
         <link
           rel="canonical"
-          href="https://www.NSLmedia.co.in/blog/digital-marketing/what-is-digital-marketing"
+          href="https://www.nsldigitallab.co.in/blog/digital-marketing/what-is-digital-marketing"
         />
         <meta
           property="og:title"
@@ -98,7 +98,7 @@ export default function WhatIsDigitalMarketingPage() {
         />
         <meta
           property="og:url"
-          content="https://www.NSLmedia.co.in/blog/digital-marketing/what-is-digital-marketing"
+          content="https://www.nsldigitallab.co.in/blog/digital-marketing/what-is-digital-marketing"
         />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary_large_image" />

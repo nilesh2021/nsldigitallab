@@ -22,7 +22,7 @@ export default function BestAiToolsForMarketers() {
             <Helmet>
 
                 <title>
-                    Best AI Tools for Marketers in 2026 | NSLMedia
+                    Best AI Tools for Marketers in 2026 | nsldigitallab
                 </title>
 
                 <meta
@@ -55,7 +55,7 @@ export default function BestAiToolsForMarketers() {
 
                 <link
                     rel="canonical"
-                    href="https://NSLmedia.co.in/best-ai-tools-for-marketers"
+                    href="https://nsldigitallab.co.in/best-ai-tools-for-marketers"
                 />
 
             </Helmet>

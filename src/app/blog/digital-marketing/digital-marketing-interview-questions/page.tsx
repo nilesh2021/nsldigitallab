@@ -123,7 +123,7 @@ export default function DigitalMarketingInterviewQuestionsPage() {
         <meta name="robots" content="index, follow" />
         <link
           rel="canonical"
-          href="https://www.NSLmedia.co.in/blog/digital-marketing/digital-marketing-interview-questions"
+          href="https://www.nsldigitallab.co.in/blog/digital-marketing/digital-marketing-interview-questions"
         />
         <meta
           property="og:title"
@@ -139,7 +139,7 @@ export default function DigitalMarketingInterviewQuestionsPage() {
         />
         <meta
           property="og:url"
-          content="https://www.NSLmedia.co.in/blog/digital-marketing/digital-marketing-interview-questions"
+          content="https://www.nsldigitallab.co.in/blog/digital-marketing/digital-marketing-interview-questions"
         />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary_large_image" />

@@ -64,7 +64,7 @@ export default function WhatIsSeoPage() {
         <meta name="robots" content="index, follow" />
         <link
           rel="canonical"
-          href="https://www.NSLmedia.co.in/blog/seo/what-is-seo"
+          href="https://www.nsldigitallab.co.in/blog/seo/what-is-seo"
         />
         <meta
           property="og:title"
@@ -80,7 +80,7 @@ export default function WhatIsSeoPage() {
         />
         <meta
           property="og:url"
-          content="https://www.NSLmedia.co.in/blog/seo/what-is-seo"
+          content="https://www.nsldigitallab.co.in/blog/seo/what-is-seo"
         />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary_large_image" />

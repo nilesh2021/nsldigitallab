@@ -73,7 +73,7 @@ export default function SeoForStartupsPage() {
 
         <link
           rel="canonical"
-          href="https://www.NSLmedia.co.in/blog/seo/seo-for-startups"
+          href="https://www.nsldigitallab.co.in/blog/seo/seo-for-startups"
         />
 
         {/* Open Graph */}
@@ -89,12 +89,12 @@ export default function SeoForStartupsPage() {
 
         <meta
           property="og:image"
-          content="https://www.NSLmedia.co.in/images/blog/startup-seo.jpg"
+          content="https://www.nsldigitallab.co.in/images/blog/startup-seo.jpg"
         />
 
         <meta
           property="og:url"
-          content="https://www.NSLmedia.co.in/blog/seo/seo-for-startups"
+          content="https://www.nsldigitallab.co.in/blog/seo/seo-for-startups"
         />
 
         <meta
@@ -120,7 +120,7 @@ export default function SeoForStartupsPage() {
 
         <meta
           name="twitter:image"
-          content="https://www.NSLmedia.co.in/images/blog/startup-seo.jpg"
+          content="https://www.nsldigitallab.co.in/images/blog/startup-seo.jpg"
         />
       </Helmet>
 

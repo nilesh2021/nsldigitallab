@@ -38,7 +38,7 @@ export default function ContactSection() {
         <div className="text-center mb-16">
 
           <span className="text-[#24c2f2] uppercase tracking-[3px] text-sm">
-            Join NSLMedia
+            Join nsldigitallab
           </span>
 
           <h2 className="text-3xl md:text-4xl font-semibold text-[#fff] mb-6 leading-tight">
@@ -48,7 +48,7 @@ export default function ContactSection() {
 
           <p className="text-gray-400 max-w-3xl mx-auto text-lg leading-8">
             Explore SEO internship opportunities, practical learning,
-            and career growth with NSLMedia.
+            and career growth with nsldigitallab.
           </p>
 
         </div>
@@ -133,7 +133,7 @@ export default function ContactSection() {
             </h3>
 
             <p className="text-gray-400 leading-8 mb-8">
-              Join NSLMedia to gain practical exposure,
+              Join nsldigitallab to gain practical exposure,
               learn modern SEO strategies, and explore
               internship opportunities designed for future
               digital marketers.

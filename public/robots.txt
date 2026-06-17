@@ -1,4 +1,18 @@
 User-agent: *
+
+# Allow all important pages
 Allow: /
 
-Sitemap: https://NSLmedia.co.in/sitemap.xml
+# Block internal/system folders
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /_next/
+Disallow: /tmp/
+Disallow: /node_modules/
+
+# Sitemap
+Sitemap: https://nsldigitallab.com/sitemap.xml
+
+# Host
+Host: https://nsldigitallab.com

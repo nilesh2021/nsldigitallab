@@ -107,7 +107,7 @@ export default function HowToEarnMoneyFromDigitalMarketingPage() {
         <meta name="robots" content="index, follow" />
         <link
           rel="canonical"
-          href="https://www.NSLmedia.co.in/blog/digital-marketing/how-to-earn-money-from-digital-marketing"
+          href="https://www.nsldigitallab.co.in/blog/digital-marketing/how-to-earn-money-from-digital-marketing"
         />
         <meta
           property="og:title"
@@ -123,7 +123,7 @@ export default function HowToEarnMoneyFromDigitalMarketingPage() {
         />
         <meta
           property="og:url"
-          content="https://www.NSLmedia.co.in/blog/digital-marketing/how-to-earn-money-from-digital-marketing"
+          content="https://www.nsldigitallab.co.in/blog/digital-marketing/how-to-earn-money-from-digital-marketing"
         />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary_large_image" />

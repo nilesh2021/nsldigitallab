@@ -23,7 +23,7 @@ export default function BestChatgptToolsForMarketers() {
       <Helmet>
 
         <title>
-          Best ChatGPT Tools for Marketers in 2026 | NSLMedia
+          Best ChatGPT Tools for Marketers in 2026 | nsldigitallab
         </title>
 
         <meta
@@ -55,7 +55,7 @@ export default function BestChatgptToolsForMarketers() {
 
         <link
           rel="canonical"
-          href="https://NSLmedia.co.in/best-chatgpt-tools-for-marketers"
+          href="https://nsldigitallab.co.in/best-chatgpt-tools-for-marketers"
         />
 
       </Helmet>

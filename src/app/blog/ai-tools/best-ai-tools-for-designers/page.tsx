@@ -125,7 +125,7 @@ export default function BestAiToolsForDesignersPage() {
         <meta name="robots" content="index, follow" />
         <link
           rel="canonical"
-          href="https://www.NSLmedia.co.in/blog/ai-tools/best-ai-tools-for-designers"
+          href="https://www.nsldigitallab.co.in/blog/ai-tools/best-ai-tools-for-designers"
         />
         <meta
           property="og:title"
@@ -141,7 +141,7 @@ export default function BestAiToolsForDesignersPage() {
         />
         <meta
           property="og:url"
-          content="https://www.NSLmedia.co.in/blog/ai-tools/best-ai-tools-for-designers"
+          content="https://www.nsldigitallab.co.in/blog/ai-tools/best-ai-tools-for-designers"
         />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary_large_image" />

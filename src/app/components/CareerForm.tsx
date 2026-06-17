@@ -26,13 +26,13 @@ export default function CareerForm() {
   <input
     type="hidden"
     name="_subject"
-    value="New Career Application - NSLMedia"
+    value="New Career Application - nsldigitallab"
   />
 
   <input
     type="hidden"
     name="_next"
-    value="https://NSLmedia.co.in/careers"
+    value="https://nsldigitallab.co.in/careers"
   />
 
   {/* Full Name */}
@@ -165,7 +165,7 @@ export default function CareerForm() {
   <div>
 
     <label className="block text-sm text-gray-300 mb-2">
-      Why do you want to join NSLMedia? (Optional)
+      Why do you want to join nsldigitallab? (Optional)
     </label>
 
     <textarea

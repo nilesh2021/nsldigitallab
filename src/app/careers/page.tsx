@@ -153,7 +153,7 @@ export default function CareersPage() {
         mb-8
       "
     >
-      ✧ Careers at NSLMedia
+      ✧ Careers at nsldigitallab
     </div>
 
     {/* Heading */}
@@ -397,7 +397,7 @@ export default function CareersPage() {
           mb-5
         "
       >
-        ✦ Why Join NSLMedia
+        ✦ Why Join nsldigitallab
       </div>
 
       <h2
@@ -976,7 +976,7 @@ export default function CareersPage() {
 
       <p className="text-gray-400 mt-5 max-w-2xl mx-auto text-lg leading-relaxed">
         Fill out the application form and take the first step toward
-        building your digital marketing career with NSLMedia.
+        building your digital marketing career with nsldigitallab.
       </p>
     </div>
 

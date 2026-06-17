@@ -121,7 +121,7 @@ export default function UiUxDesignProcessExplainedPage() {
 
         <link
           rel="canonical"
-          href="https://www.NSLmedia.co.in/blog/ui-ux/ui-ux-design-process-explained"
+          href="https://www.nsldigitallab.co.in/blog/ui-ux/ui-ux-design-process-explained"
         />
 
         <meta

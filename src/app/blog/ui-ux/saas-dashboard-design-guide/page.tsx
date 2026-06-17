@@ -23,7 +23,7 @@ export default function SaasDashboardDesignGuide() {
 
                 <link
                     rel="canonical"
-                    href="https://www.NSLmedia.co.in/blog/ui-ux/saas-dashboard-design-guide"
+                    href="https://www.nsldigitallab.co.in/blog/ui-ux/saas-dashboard-design-guide"
                 />
             </Helmet>
 

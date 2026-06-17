@@ -27,7 +27,7 @@ export default function AffiliateDisclosurePage() {
 
           <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-8">
             Transparency and trust are important to us. This page explains how
-            affiliate partnerships may be used on NSLMedia.
+            affiliate partnerships may be used on nsldigitallab.
           </p>
 
         </div>
@@ -45,7 +45,7 @@ export default function AffiliateDisclosurePage() {
             </h2>
 
             <p className="text-gray-300 leading-8 text-lg">
-              NSLMedia may participate in various affiliate marketing
+              nsldigitallab may participate in various affiliate marketing
               programs. This means some links on our website, blog articles,
               resources, or recommendations may be affiliate links.
             </p>
@@ -61,7 +61,7 @@ export default function AffiliateDisclosurePage() {
 
             <p className="text-gray-300 leading-8 text-lg">
               If you click on an affiliate link and make a purchase or sign up
-              for a service, NSLMedia may earn a small commission at no
+              for a service, nsldigitallab may earn a small commission at no
               additional cost to you. These commissions help support the
               maintenance, content creation, and growth of our platform.
             </p>
@@ -122,7 +122,7 @@ export default function AffiliateDisclosurePage() {
             </h2>
 
             <p className="text-gray-300 leading-8 text-lg">
-              NSLMedia is not responsible for third-party products,
+              nsldigitallab is not responsible for third-party products,
               services, policies, pricing, or website content associated with
               affiliate links. Users should review third-party terms and
               policies before engaging with those platforms.
@@ -153,7 +153,7 @@ export default function AffiliateDisclosurePage() {
             </h2>
 
             <p className="text-gray-300 leading-8 text-lg">
-              NSLMedia reserves the right to update or modify this Affiliate
+              nsldigitallab reserves the right to update or modify this Affiliate
               Disclosure at any time without prior notice. Any changes will be
               reflected on this page.
             </p>
@@ -179,7 +179,7 @@ export default function AffiliateDisclosurePage() {
               </p>
 
               <p>
-                Website: www.NSLmedia.co.in
+                Website: www.nsldigitallab.co.in
               </p>
 
             </div>

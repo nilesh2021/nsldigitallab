@@ -132,7 +132,7 @@ export default function BestAIToolsStudentsPage() {
         {/* CANONICAL */}
         <link
           rel="canonical"
-          href="https://www.NSLmedia.co.in/blog/ai-tools/best-ai-tools-for-college-students"
+          href="https://www.nsldigitallab.co.in/blog/ai-tools/best-ai-tools-for-college-students"
         />
 
         {/* OPEN GRAPH */}
@@ -148,12 +148,12 @@ export default function BestAIToolsStudentsPage() {
 
         <meta
           property="og:image"
-          content="https://www.NSLmedia.co.in/images/blog/ai-student.jpg"
+          content="https://www.nsldigitallab.co.in/images/blog/ai-student.jpg"
         />
 
         <meta
           property="og:url"
-          content="https://www.NSLmedia.co.in/blog/ai-tools/best-ai-tools-for-college-students"
+          content="https://www.nsldigitallab.co.in/blog/ai-tools/best-ai-tools-for-college-students"
         />
 
         <meta
@@ -179,7 +179,7 @@ export default function BestAIToolsStudentsPage() {
 
         <meta
           name="twitter:image"
-          content="https://www.NSLmedia.co.in/images/blog/ai-student.jpg"
+          content="https://www.nsldigitallab.co.in/images/blog/ai-student.jpg"
         />
       </Helmet>
 

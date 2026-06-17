@@ -84,7 +84,7 @@ export default function AffiliateMarketingForBeginnersPage() {
         <meta name="robots" content="index, follow" />
         <link
           rel="canonical"
-          href="https://www.NSLmedia.co.in/blog/affiliate-marketing/affiliate-marketing-for-beginners"
+          href="https://www.nsldigitallab.co.in/blog/affiliate-marketing/affiliate-marketing-for-beginners"
         />
         <meta
           property="og:title"
@@ -100,7 +100,7 @@ export default function AffiliateMarketingForBeginnersPage() {
         />
         <meta
           property="og:url"
-          content="https://www.NSLmedia.co.in/blog/affiliate-marketing/affiliate-marketing-for-beginners"
+          content="https://www.nsldigitallab.co.in/blog/affiliate-marketing/affiliate-marketing-for-beginners"
         />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary_large_image" />

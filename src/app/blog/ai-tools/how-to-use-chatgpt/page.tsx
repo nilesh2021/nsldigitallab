@@ -131,7 +131,7 @@ export default function HowToUseChatGPTPage() {
 
         <link
           rel="canonical"
-          href="https://www.NSLmedia.co.in/blog/ai/how-to-use-chatgpt"
+          href="https://www.nsldigitallab.co.in/blog/ai/how-to-use-chatgpt"
         />
 
         <meta

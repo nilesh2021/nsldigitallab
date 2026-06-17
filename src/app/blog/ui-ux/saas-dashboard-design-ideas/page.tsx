@@ -71,7 +71,7 @@ export default function SaasDashboardDesignIdeasPage() {
         <meta name="robots" content="index, follow" />
         <link
           rel="canonical"
-          href="https://www.NSLmedia.co.in/blog/ui-ux/saas-dashboard-design-ideas"
+          href="https://www.nsldigitallab.co.in/blog/ui-ux/saas-dashboard-design-ideas"
         />
         <meta
           property="og:title"
@@ -87,7 +87,7 @@ export default function SaasDashboardDesignIdeasPage() {
         />
         <meta
           property="og:url"
-          content="https://www.NSLmedia.co.in/blog/ui-ux/saas-dashboard-design-ideas"
+          content="https://www.nsldigitallab.co.in/blog/ui-ux/saas-dashboard-design-ideas"
         />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary_large_image" />

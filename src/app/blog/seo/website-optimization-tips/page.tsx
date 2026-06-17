@@ -60,7 +60,7 @@ export default function WebsiteOptimizationTipsPage() {
         <meta name="robots" content="index, follow" />
         <link
           rel="canonical"
-          href="https://www.NSLmedia.co.in/blog/seo/website-optimization-tips"
+          href="https://www.nsldigitallab.co.in/blog/seo/website-optimization-tips"
         />
         <meta property="og:title" content="Website Optimization Tips | Speed, SEO, and Better UX" />
         <meta

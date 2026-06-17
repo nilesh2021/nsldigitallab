@@ -80,7 +80,7 @@ export default function UiUxDesignerJob() {
 
   <meta
     property="og:url"
-    content="https://NSLmedia.co.in/careers/ui-ux-designer-job"
+    content="https://nsldigitallab.co.in/careers/ui-ux-designer-job"
   />
 
   <meta
@@ -90,7 +90,7 @@ export default function UiUxDesignerJob() {
 
   <link
     rel="canonical"
-    href="https://NSLmedia.co.in/careers/ui-ux-designer-job"
+    href="https://nsldigitallab.co.in/careers/ui-ux-designer-job"
   />
  
             <script type="application/ld+json">

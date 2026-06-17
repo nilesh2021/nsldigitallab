@@ -23,13 +23,13 @@ export default function RemoteSeoInternship() {
             <Helmet>
 
                 <title>
-                    Remote SEO Internship | Work From Home SEO Internship | NSLMedia
+                    Remote SEO Internship | Work From Home SEO Internship | nsldigitallab
                 </title>
 
                 <meta
                     name="description"
                     content="
-            Apply for Remote SEO Internship at NSLMedia.
+            Apply for Remote SEO Internship at nsldigitallab.
             Learn keyword research, on-page SEO, Google Analytics,
             Search Console, and digital marketing while working remotely.
           "
@@ -57,13 +57,13 @@ export default function RemoteSeoInternship() {
 
                 <meta
                     property="og:title"
-                    content="Remote SEO Internship | NSLMedia"
+                    content="Remote SEO Internship | nsldigitallab"
                 />
 
                 <meta
                     property="og:description"
                     content="
-            Join NSLMedia Remote SEO Internship Program and gain practical digital marketing experience from anywhere.
+            Join nsldigitallab Remote SEO Internship Program and gain practical digital marketing experience from anywhere.
           "
                 />
 
@@ -74,12 +74,12 @@ export default function RemoteSeoInternship() {
 
                 <meta
                     property="og:url"
-                    content="https://NSLmedia.co.in/remote-seo-internship"
+                    content="https://nsldigitallab.co.in/remote-seo-internship"
                 />
 
                 <link
                     rel="canonical"
-                    href="https://NSLmedia.co.in/remote-seo-internship"
+                    href="https://nsldigitallab.co.in/remote-seo-internship"
                 />
 
             </Helmet>

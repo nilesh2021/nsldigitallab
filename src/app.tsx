@@ -107,12 +107,12 @@ export default function App() {
 
         <meta
           property="og:url"
-          content="https://NSLmedia.co.in/"
+          content="https://nsldigitallab.co.in/"
         />
 
         <link
           rel="canonical"
-          href="https://NSLmedia.co.in/"
+          href="https://nsldigitallab.co.in/"
         />
 
       </Helmet>

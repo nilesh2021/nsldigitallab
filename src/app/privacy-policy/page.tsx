@@ -25,7 +25,7 @@ export default function PrivacyPolicyPage() {
           </h1>
 
           <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-8">
-            Your privacy matters to us. Learn how NSLMedia collects,
+            Your privacy matters to us. Learn how nsldigitallab collects,
             uses, and protects your information when you interact with our
             website and services.
           </p>
@@ -44,7 +44,7 @@ export default function PrivacyPolicyPage() {
             </h2>
 
             <p className="text-gray-300 leading-8 text-lg">
-              NSLMedia respects your privacy and is committed to protecting
+              nsldigitallab respects your privacy and is committed to protecting
               your personal information. This Privacy Policy explains how we
               collect, use, and safeguard your data when you visit our website,
               apply for internships or careers, submit forms, or interact with
@@ -105,7 +105,7 @@ export default function PrivacyPolicyPage() {
             </h2>
 
             <p className="text-gray-300 leading-8 text-lg">
-              NSLMedia may use cookies, analytics tools, and tracking
+              nsldigitallab may use cookies, analytics tools, and tracking
               technologies to improve website performance, analyze visitor
               interactions, and optimize marketing campaigns. These tools help
               us understand how users interact with our website and improve
@@ -181,7 +181,7 @@ export default function PrivacyPolicyPage() {
               </p>
 
               <p>
-                Website: www.NSLmedia.co.in
+                Website: www.nsldigitallab.co.in
               </p>
             </div>
 

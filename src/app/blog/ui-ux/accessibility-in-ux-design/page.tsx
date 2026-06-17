@@ -25,7 +25,7 @@ export default function AccessibilityInUxDesignPage() {
         <meta name="robots" content="index, follow" />
         <link
           rel="canonical"
-          href="https://www.NSLmedia.co.in/blog/ui-ux/accessibility-in-ux-design"
+          href="https://www.nsldigitallab.co.in/blog/ui-ux/accessibility-in-ux-design"
         />
         <meta property="og:title" content="Accessibility in UX Design | Inclusive UX Best Practices" />
         <meta

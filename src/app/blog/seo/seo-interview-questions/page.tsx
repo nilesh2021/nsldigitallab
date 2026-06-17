@@ -191,7 +191,7 @@ export default function SeoInterviewQuestionsPage() {
         <meta name="robots" content="index, follow" />
         <link
           rel="canonical"
-          href="https://www.NSLmedia.co.in/blog/seo/seo-interview-questions"
+          href="https://www.nsldigitallab.co.in/blog/seo/seo-interview-questions"
         />
         <meta
           property="og:title"
@@ -207,7 +207,7 @@ export default function SeoInterviewQuestionsPage() {
         />
         <meta
           property="og:url"
-          content="https://www.NSLmedia.co.in/blog/seo/seo-interview-questions"
+          content="https://www.nsldigitallab.co.in/blog/seo/seo-interview-questions"
         />
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary_large_image" />

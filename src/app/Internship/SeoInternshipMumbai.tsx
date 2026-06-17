@@ -22,12 +22,12 @@ export default function SeoInternshipMumbai() {
                 {/* Primary SEO */}
 
                 <title>
-                    SEO Internship in Mumbai | Digital Marketing Internship | NSLMedia
+                    SEO Internship in Mumbai | Digital Marketing Internship | nsldigitallab
                 </title>
 
                 <meta
                     name="description"
-                    content="Apply for SEO Internship in Mumbai at NSLMedia. Learn keyword research, on-page SEO, Google Analytics, Search Console, and digital marketing strategies with practical projects."
+                    content="Apply for SEO Internship in Mumbai at nsldigitallab. Learn keyword research, on-page SEO, Google Analytics, Search Console, and digital marketing strategies with practical projects."
                 />
 
                 <meta
@@ -53,12 +53,12 @@ export default function SeoInternshipMumbai() {
 
                 <meta
                     property="og:title"
-                    content="SEO Internship in Mumbai | NSLMedia"
+                    content="SEO Internship in Mumbai | nsldigitallab"
                 />
 
                 <meta
                     property="og:description"
-                    content="Join NSLMedia SEO Internship Program in Mumbai and gain practical digital marketing experience."
+                    content="Join nsldigitallab SEO Internship Program in Mumbai and gain practical digital marketing experience."
                 />
 
                 <meta
@@ -68,12 +68,12 @@ export default function SeoInternshipMumbai() {
 
                 <meta
                     property="og:url"
-                    content="https://NSLmedia.co.in/seo-internship-Mumbai"
+                    content="https://nsldigitallab.co.in/seo-internship-Mumbai"
                 />
 
                 <link
                     rel="canonical"
-                    href="https://NSLmedia.co.in/seo-internship-Mumbai"
+                    href="https://nsldigitallab.co.in/seo-internship-Mumbai"
                 />
 
                 {/* FAQ SCHEMA */}
@@ -96,7 +96,7 @@ export default function SeoInternshipMumbai() {
                                 "name": "Is this SEO internship remote?",
                                 "acceptedAnswer": {
                                     "@type": "Answer",
-                                    "text": "Yes, NSLMedia offers remote SEO internship opportunities for candidates across India."
+                                    "text": "Yes, nsldigitallab offers remote SEO internship opportunities for candidates across India."
                                 }
                             },
                             {
@@ -127,12 +127,12 @@ export default function SeoInternshipMumbai() {
                         "@type": "JobPosting",
                         "title": "SEO Internship in Mumbai",
                         "description":
-                            "Remote SEO Internship opportunity at NSLMedia for students and freshers interested in digital marketing and SEO.",
+                            "Remote SEO Internship opportunity at nsldigitallab for students and freshers interested in digital marketing and SEO.",
                         "employmentType": "INTERN",
                         "hiringOrganization": {
                             "@type": "Organization",
-                            "name": "NSLMedia",
-                            "sameAs": "https://NSLmedia.co.in",
+                            "name": "nsldigitallab",
+                            "sameAs": "https://nsldigitallab.co.in",
                         },
                         "jobLocationType": "TELECOMMUTE",
                         "applicantLocationRequirements": {
@@ -364,7 +364,7 @@ export default function SeoInternshipMumbai() {
                             </div>
 
                             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                                Why Join NSLMedia?
+                                Why Join nsldigitallab?
                             </h2>
 
                             <p className="max-w-2xl mx-auto text-gray-400 text-lg leading-relaxed">
@@ -585,7 +585,7 @@ export default function SeoInternshipMumbai() {
                                     question:
                                         'Will I receive an internship certificate?',
                                     answer:
-                                        'Yes, NSLMedia provides an internship completion certificate after successfully completing the SEO internship program.',
+                                        'Yes, nsldigitallab provides an internship completion certificate after successfully completing the SEO internship program.',
                                 },
 
                                 {

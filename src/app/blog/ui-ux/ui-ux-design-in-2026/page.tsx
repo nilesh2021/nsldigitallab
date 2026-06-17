@@ -51,7 +51,7 @@ export default function UiUxFuture2026Page() {
 
                 <link
                     rel="canonical"
-                    href="https://www.NSLmedia.co.in/blog/ui-ux/ui-ux-design-in-2026"
+                    href="https://www.nsldigitallab.co.in/blog/ui-ux/ui-ux-design-in-2026"
                 />
             </Helmet>
 

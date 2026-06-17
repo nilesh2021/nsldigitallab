@@ -120,7 +120,7 @@ export default function CreateAndSellDigitalProductsUsingChatGPTPage() {
         />
         <link
           rel="canonical"
-          href="https://www.NSLmedia.co.in/blog/ai-tools/create-and-sell-digital-products-using-chatgpt"
+          href="https://www.nsldigitallab.co.in/blog/ai-tools/create-and-sell-digital-products-using-chatgpt"
         />
         <link
           rel="preconnect"
