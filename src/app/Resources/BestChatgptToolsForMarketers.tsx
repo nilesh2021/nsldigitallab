@@ -55,7 +55,7 @@ export default function BestChatgptToolsForMarketers() {
 
         <link
           rel="canonical"
-          href="https://nsldigitallab.co.in/best-chatgpt-tools-for-marketers"
+          href="https://nsldigitallab.combest-chatgpt-tools-for-marketers"
         />
 
       </Helmet>

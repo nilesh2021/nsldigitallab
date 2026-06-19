@@ -67,12 +67,12 @@ export default function SeoInternshipPune() {
 
         <meta
           property="og:url"
-          content="https://nsldigitallab.co.in/seo-internship-pune"
+          content="https://nsldigitallab.comseo-internship-pune"
         />
 
         <link
           rel="canonical"
-          href="https://nsldigitallab.co.in/seo-internship-pune"
+          href="https://nsldigitallab.comseo-internship-pune"
         />
 
         {/* FAQ SCHEMA */}

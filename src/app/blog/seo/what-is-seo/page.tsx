@@ -6,13 +6,15 @@ import {
   TrendingUp,
   ShieldCheck,
 } from "lucide-react";
-import { Helmet } from "react-helmet-async";
+ import ArticleSchema from "../../../../seo/schemas/ArticleSchema";
 import Navigation from "../../../components/Navigation";
 import Footer from "../../../components/Footer";
 import ScrollToTop from "../../../components/ScrollToTop";
 import RelatedArticles from "../../../components/blog/RelatedArticles";
 import InlineArticleLink from "../../../components/blog/InlineArticleLink";
 import { getBlogLinks } from "../../../../data/blogInternalLinks";
+import SEO from "../../../../seo/SEO";
+import { PAGE_SEO } from "../../../../seo/pages";
 
 const pageLinks = getBlogLinks("what-is-seo");
 
@@ -51,49 +53,13 @@ const seoChecklist = [
 export default function WhatIsSeoPage() {
   return (
     <>
-      <Helmet>
-        <title>What is SEO? | Search Engine Optimization Basics | NSL Digital Lab</title>
-        <meta
-          name="description"
-          content="Learn what SEO is, how search engines work, and why SEO matters for modern businesses and websites."
-        />
-        <meta
-          name="keywords"
-          content="what is seo, seo basics, search engine optimization, seo guide, seo for beginners"
-        />
-        <meta name="robots" content="index, follow" />
-        <link
-          rel="canonical"
-          href="https://www.nsldigitallab.co.in/blog/seo/what-is-seo"
-        />
-        <meta
-          property="og:title"
-          content="What is SEO? | Search Engine Optimization Basics"
-        />
-        <meta
-          property="og:description"
-          content="Discover the fundamentals of SEO, how search engines rank pages, and why SEO is essential for long-term digital growth."
-        />
-        <meta
-          property="og:image"
-          content="https://images.unsplash.com/photo-1497493292307-31c376b6e479?q=80&w=1200&auto=format&fit=crop"
-        />
-        <meta
-          property="og:url"
-          content="https://www.nsldigitallab.co.in/blog/seo/what-is-seo"
-        />
-        <meta property="og:type" content="article" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="What is SEO? | Search Engine Optimization Basics" />
-        <meta
-          name="twitter:description"
-          content="Understand SEO fundamentals, how search engines find and rank pages, and how to start optimizing your website."
-        />
-        <meta
-          name="twitter:image"
-          content="https://images.unsplash.com/photo-1497493292307-31c376b6e479?q=80&w=1200&auto=format&fit=crop"
-        />
-      </Helmet>
+
+     <SEO {...PAGE_SEO.whatIsSeo} />
+       <ArticleSchema
+        headline="What is SEO? Beginner's Guide 2026"
+        description="Learn what SEO is, how search engines work, and how beginners can improve website rankings."
+        url="https://nsldigitallab.com/blog/seo/what-is-seo"
+      />
 
       <Navigation />
 

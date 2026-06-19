@@ -138,7 +138,7 @@ export default function SeoServicesPage() {
 
         <link
           rel="canonical"
-          href="https://nsldigitallab.co.in/services/seo-services"
+          href="https://nsldigitallab.comservices/seo-services"
         />
 
         {/* Open Graph */}
@@ -159,7 +159,7 @@ export default function SeoServicesPage() {
 
         <meta
           property="og:url"
-          content="https://nsldigitallab.co.in/services/seo-services"
+          content="https://nsldigitallab.comservices/seo-services"
         />
 
         {/* Twitter */}
@@ -185,7 +185,7 @@ export default function SeoServicesPage() {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
       "name": "NSL Digital Lab",
-      "url": "https://nsldigitallab.co.in/services/seo-services",
+      "url": "https://nsldigitallab.comservices/seo-services",
       "serviceType": "SEO Services",
       "description": "Professional SEO services including technical SEO, local SEO, keyword research, and content optimization.",
       "areaServed": "Worldwide",

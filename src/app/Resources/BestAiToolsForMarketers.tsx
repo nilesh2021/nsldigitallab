@@ -55,7 +55,7 @@ export default function BestAiToolsForMarketers() {
 
                 <link
                     rel="canonical"
-                    href="https://nsldigitallab.co.in/best-ai-tools-for-marketers"
+                    href="https://nsldigitallab.combest-ai-tools-for-marketers"
                 />
 
             </Helmet>

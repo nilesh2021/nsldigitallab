@@ -32,7 +32,7 @@ export default function CareerForm() {
   <input
     type="hidden"
     name="_next"
-    value="https://nsldigitallab.co.in/careers"
+    value="https://nsldigitallab.comcareers"
   />
 
   {/* Full Name */}

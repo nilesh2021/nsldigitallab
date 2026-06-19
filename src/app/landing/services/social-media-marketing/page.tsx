@@ -137,7 +137,7 @@ export default function SocialMediaMarketingPage() {
 
         <link
           rel="canonical"
-          href="https://nsldigitallab.co.in/services/social-media-marketing"
+          href="https://nsldigitallab.comservices/social-media-marketing"
         />
 
         {/* Open Graph */}
@@ -158,7 +158,7 @@ export default function SocialMediaMarketingPage() {
 
         <meta
           property="og:url"
-          content="https://nsldigitallab.co.in/services/social-media-marketing"
+          content="https://nsldigitallab.comservices/social-media-marketing"
         />
 
         {/* Schema */}
@@ -168,7 +168,7 @@ export default function SocialMediaMarketingPage() {
             "@context": "https://schema.org",
             "@type": "ProfessionalService",
             "name": "NSL Digital Lab",
-            "url": "https://nsldigitallab.co.in/services/social-media-marketing",
+            "url": "https://nsldigitallab.comservices/social-media-marketing",
             "serviceType": "Social Media Marketing Services",
             "description": "Professional social media marketing services including Instagram marketing, Facebook marketing, LinkedIn marketing, and content creation.",
             "areaServed": "Worldwide"

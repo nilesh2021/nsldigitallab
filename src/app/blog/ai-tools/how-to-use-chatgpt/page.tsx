@@ -12,7 +12,8 @@ import {
 import jsPDF from "jspdf";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-
+import SEO from "../../../../seo/SEO";
+import { PAGE_SEO } from "../../../../seo/pages";
 import Navigation from "../../../components/Navigation";
 import Footer from "../../../components/Footer";
 import ScrollToTop from "../../../components/ScrollToTop";

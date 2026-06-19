@@ -138,7 +138,7 @@ export default function UiUxDesignPage() {
 
         <link
           rel="canonical"
-          href="https://nsldigitallab.co.in/services/ui-ux-design"
+          href="https://nsldigitallab.comservices/ui-ux-design"
         />
 
         {/* Open Graph */}
@@ -159,7 +159,7 @@ export default function UiUxDesignPage() {
 
         <meta
           property="og:url"
-          content="https://nsldigitallab.co.in/services/ui-ux-design"
+          content="https://nsldigitallab.comservices/ui-ux-design"
         />
 
         {/* Schema */}
@@ -169,7 +169,7 @@ export default function UiUxDesignPage() {
             "@context": "https://schema.org",
             "@type": "ProfessionalService",
             "name": "NSL Digital Lab",
-            "url": "https://nsldigitallab.co.in/services/ui-ux-design",
+            "url": "https://nsldigitallab.comservices/ui-ux-design",
             "serviceType": "UI UX Design Services",
             "description": "Professional UI/UX design services including website UI design, dashboard design, wireframing, mobile app UI design, and user experience optimization.",
             "areaServed": "Worldwide"
