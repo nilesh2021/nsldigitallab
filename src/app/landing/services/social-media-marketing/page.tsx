@@ -181,18 +181,21 @@ export default function SocialMediaMarketingPage() {
 
       <main className="min-h-screen bg-white text-[#111827]">
         {/* HERO SECTION */}
-        <section className="relative overflow-hidden bg-[#edf3fb] pt-40 pb-28">
+      <section className="relative overflow-hidden bg-[#020817] pt-40 pb-28 text-white">
           {/* Background */}
-          <div className="absolute inset-0 opacity-70">
-            <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-cyan-300/20 rounded-full blur-3xl" />
+         <div className="absolute inset-0">
+            <div className="absolute left-[-180px] top-[-100px] h-[700px] w-[700px] rounded-full bg-cyan-500/20 blur-[140px]" />
 
-            <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-blue-300/20 rounded-full blur-3xl" />
+             <div className="absolute left-[120px] top-[120px] h-[420px] w-[420px] rounded-full bg-violet-600/20 blur-[120px]" />
 
-            <div className="absolute bottom-0 left-1/3 w-[400px] h-[400px] bg-indigo-200/20 rounded-full blur-3xl" />
+
+             <div className="absolute right-[-120px] top-[100px] h-[600px] w-[600px] rounded-full bg-sky-500/10 blur-[140px]" />
           </div>
 
           {/* Grid */}
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.5)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.5)_1px,transparent_1px)] bg-[size:60px_60px] opacity-40" />
+         <div className="absolute inset-0 opacity-[0.05]
+bg-[linear-gradient(rgba(255,255,255,.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.08)_1px,transparent_1px)]
+bg-[size:70px_70px]" />
 
           <div className="relative max-w-7xl mx-auto px-6 lg:px-10">
             <div className="max-w-3xl">
@@ -206,7 +209,7 @@ export default function SocialMediaMarketingPage() {
               </div>
 
               {/* Heading */}
-              <h1 className="mt-8 text-5xl md:text-7xl font-bold tracking-tight leading-[1.05] text-[#111827]">
+              <h1 className="mt-8 text-5xl md:text-7xl font-bold tracking-tight leading-[1.05] text-[#fff]">
                 Social Media Marketing That
                 <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
                   {" "}
@@ -215,7 +218,7 @@ export default function SocialMediaMarketingPage() {
               </h1>
 
               {/* Description */}
-              <p className="mt-8 text-xl text-gray-600 leading-9 max-w-2xl">
+              <p className="mt-8 text-xl  text-slate-400 leading-9 max-w-2xl">
                 NSL Digital Lab helps businesses grow online through strategic
                 social media marketing, audience engagement, content creation,
                 and performance-driven campaigns.
@@ -233,14 +236,38 @@ export default function SocialMediaMarketingPage() {
               <div className="mt-12 flex flex-wrap gap-5">
                 <a
                   href="#smm-services"
-                  className="inline-flex items-center justify-center rounded-2xl bg-[#111827] px-8 py-4 text-white font-semibold hover:scale-105 transition-all duration-300 shadow-2xl shadow-black/10"
+                  className="
+              px-8
+              py-4
+              rounded-xl
+              bg-gradient-to-r
+              from-violet-600
+              to-cyan-500
+              text-white
+              font-semibold
+              hover:scale-105
+              transition-all
+              duration-300
+            "
                 >
                   Explore SMM Services
                 </a>
 
                 <a
                   href="/#contact"
-                  className="inline-flex items-center justify-center rounded-2xl border border-white/70 bg-white/80 backdrop-blur-md px-8 py-4 text-[#111827] font-semibold hover:border-cyan-300 hover:text-cyan-600 transition-all duration-300 shadow-lg"
+                  className="
+              px-8
+              py-4
+              rounded-xl
+              border
+              border-white/10
+              bg-white/5
+              backdrop-blur-md
+              text-white
+              font-semibold
+              hover:bg-white/10
+              transition-all
+            "
                 >
                   Let’s Talk
                 </a>
@@ -256,7 +283,7 @@ export default function SocialMediaMarketingPage() {
         >
           <div className="max-w-7xl mx-auto px-6 lg:px-10">
             <div className="text-center max-w-3xl mx-auto">
-              <span className="text-cyan-600 font-medium">
+              <span className="inline-block px-4 py-2 rounded-full bg-[#202851]/10 text-[#202851] text-sm mb-5">
                 Social Media Services Included
               </span>
 
@@ -306,7 +333,7 @@ export default function SocialMediaMarketingPage() {
         <section className="py-24 border-t border-gray-100">
           <div className="max-w-7xl mx-auto px-6 lg:px-10">
             <div className="text-center max-w-3xl mx-auto">
-              <span className="text-cyan-600 font-medium">
+              <span className="inline-block px-4 py-2 rounded-full bg-[#202851]/10 text-[#202851] text-sm mb-5">
                 Our Marketing Process
               </span>
 
@@ -346,7 +373,7 @@ export default function SocialMediaMarketingPage() {
         <section className="py-24 border-t border-gray-100 bg-white">
           <div className="max-w-7xl mx-auto px-6 lg:px-10">
             <div className="text-center max-w-3xl mx-auto">
-              <span className="text-cyan-600 font-medium">
+              <span className="inline-block px-4 py-2 rounded-full bg-[#202851]/10 text-[#202851] text-sm mb-5">
                 Benefits of Social Media Marketing
               </span>
 
@@ -388,7 +415,7 @@ export default function SocialMediaMarketingPage() {
         <section className="py-24 border-t border-gray-100">
           <div className="max-w-4xl mx-auto px-6 lg:px-10">
             <div className="text-center">
-              <span className="text-cyan-600 font-medium">
+              <span className="inline-block px-4 py-2 rounded-full bg-[#202851]/10 text-[#202851] text-sm mb-5">
                 Frequently Asked Questions
               </span>
 

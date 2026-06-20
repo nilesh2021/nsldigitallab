@@ -295,10 +295,10 @@ export default function Footer() {
               <li>
 
                 <Link
-                  to="/services/social-Digital Lab-marketing"
+                  to="/services/social-media-marketing"
                   className="block hover:text-[#24c2f2] transition-all duration-300"
                 >
-                  Social Digital Lab Marketing
+                  Social Media Marketing
                 </Link>
 
               </li>

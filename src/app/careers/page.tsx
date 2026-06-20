@@ -61,7 +61,7 @@ export default function CareersPage() {
   return (
     <>
 
-    <SEO {...PAGE_SEO.careers} />
+      <SEO {...PAGE_SEO.careers} />
       <Navigation />
       <ScrollToTop />
       <main className="bg-[#0f172a] text-white min-h-screen overflow-hidden ">
