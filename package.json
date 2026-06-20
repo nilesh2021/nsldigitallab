@@ -7,7 +7,9 @@
     
    "dev": "vite",
     "build": "vite build && node src/scripts/generate-sitemap.cjs && node src/scripts/generate-robots.cjs",
-    "preview": "vite preview"
+    "preview": "vite preview",
+      "sitemap": "node src/scripts/generate-sitemap.cjs",
+    "robots": "node src/scripts/generate-robots.cjs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
