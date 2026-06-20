@@ -63,7 +63,7 @@ export default function RemoteSeoInternship() {
                 <meta
                     property="og:description"
                     content="
-            Join nsldigitallab Remote SEO Internship Program and gain practical digital marketing experience from anywhere.
+            Join  NslDigitlaLabRemote SEO Internship Program and gain practical digital marketing experience from anywhere.
           "
                 />
 

@@ -14,6 +14,8 @@ import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import ScrollToTop from '../components/ScrollToTop';
 import CareerForm from '../components/CareerForm';
+import { PAGE_SEO } from '../../seo/pages';
+import SEO from '../../seo/SEO';
 
 const jobs = [
   {
@@ -30,20 +32,20 @@ const jobs = [
     description:
       'Work on social media marketing, ad campaigns, content creation, and growth strategies.',
   },
-   {
+  {
     title: 'UI/UX Design Intern',
     type: 'Internship',
     location: 'Remote / Worldwide',
-     description:
+    description:
       'Design modern websites and mobile apps using Figma, wireframes, and user-centered design.',
   },
   {
     title: 'Content Writing Intern',
-   type: 'Internship',
-     location: 'Remote / Worldwide',
-     description:
-       'Create engaging content for websites, blogs, and social media platforms.',
-   },
+    type: 'Internship',
+    location: 'Remote / Worldwide',
+    description:
+      'Create engaging content for websites, blogs, and social media platforms.',
+  },
 ];
 
 const benefits = [
@@ -58,13 +60,15 @@ const benefits = [
 export default function CareersPage() {
   return (
     <>
+
+    <SEO {...PAGE_SEO.careers} />
       <Navigation />
       <ScrollToTop />
       <main className="bg-[#0f172a] text-white min-h-screen overflow-hidden ">
 
         {/* Hero Section */}
-       <section
-  className="
+        <section
+          className="
     relative
     min-h-screen
     flex
@@ -77,15 +81,15 @@ export default function CareersPage() {
     pt-32
     pb-24
   "
->
-  {/* Background Effects */}
+        >
+          {/* Background Effects */}
 
-  <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute inset-0 overflow-hidden">
 
-    {/* LEFT GLOW */}
+            {/* LEFT GLOW */}
 
-    <div
-      className="
+            <div
+              className="
         absolute
         -top-40
         -left-40
@@ -95,12 +99,12 @@ export default function CareersPage() {
         rounded-full
         blur-[150px]
       "
-    />
+            />
 
-    {/* CENTER PURPLE GLOW */}
+            {/* CENTER PURPLE GLOW */}
 
-    <div
-      className="
+            <div
+              className="
         absolute
         top-[30%]
         left-1/2
@@ -111,12 +115,12 @@ export default function CareersPage() {
         rounded-full
         blur-[130px]
       "
-    />
+            />
 
-    {/* RIGHT BLUE GLOW */}
+            {/* RIGHT BLUE GLOW */}
 
-    <div
-      className="
+            <div
+              className="
         absolute
         bottom-0
         right-[-120px]
@@ -126,18 +130,18 @@ export default function CareersPage() {
         rounded-full
         blur-[140px]
       "
-    />
+            />
 
-  </div>
+          </div>
 
-  {/* Content */}
+          {/* Content */}
 
-  <div className="relative z-10 max-w-6xl mx-auto text-center">
+          <div className="relative z-10 max-w-6xl mx-auto text-center">
 
-    {/* Badge */}
+            {/* Badge */}
 
-    <div
-      className="
+            <div
+              className="
         inline-flex
         items-center
         gap-2
@@ -152,14 +156,14 @@ export default function CareersPage() {
         text-sm
         mb-8
       "
-    >
-      ✧ Careers at nsldigitallab
-    </div>
+            >
+              ✧ Careers at nsldigitallab
+            </div>
 
-    {/* Heading */}
+            {/* Heading */}
 
-    <h1
-      className="
+            <h1
+              className="
         text-5xl
         sm:text-6xl
         lg:text-7xl
@@ -169,11 +173,11 @@ export default function CareersPage() {
         text-white
         mb-8
       "
-    >
-      Launch Your Career In
+            >
+              Launch Your Career In
 
-      <span
-        className="
+              <span
+                className="
           block
           mt-2
           bg-gradient-to-r
@@ -183,15 +187,15 @@ export default function CareersPage() {
           bg-clip-text
           text-transparent
         "
-      >
-        Digital Marketing
-      </span>
-    </h1>
+              >
+                Digital Marketing
+              </span>
+            </h1>
 
-    {/* Description */}
+            {/* Description */}
 
-    <p
-      className="
+            <p
+              className="
         max-w-4xl
         mx-auto
         text-lg
@@ -200,16 +204,16 @@ export default function CareersPage() {
         leading-relaxed
         mb-14
       "
-    >
-      Join our creative digital team and gain hands-on experience in SEO,
-      digital marketing, UI/UX design, and modern web development.
-      Learn practical skills while working on real-world projects.
-    </p>
+            >
+              Join our creative digital team and gain hands-on experience in SEO,
+              digital marketing, UI/UX design, and modern web development.
+              Learn practical skills while working on real-world projects.
+            </p>
 
-    {/* CTA Buttons */}
+            {/* CTA Buttons */}
 
-    <div
-      className="
+            <div
+              className="
         flex
         flex-col
         sm:flex-row
@@ -217,16 +221,16 @@ export default function CareersPage() {
         justify-center
         gap-5
       "
-    >
-      {/* Primary CTA */}
+            >
+              {/* Primary CTA */}
 
-      <button
-         onClick={() => {
-          document.getElementById("openings")?.scrollIntoView({
-            behavior: "smooth",
-          });
-        }}  
-        className="
+              <button
+                onClick={() => {
+                  document.getElementById("openings")?.scrollIntoView({
+                    behavior: "smooth",
+                  });
+                }}
+                className="
           group
           inline-flex
           items-center
@@ -247,23 +251,23 @@ export default function CareersPage() {
           transition-all
           duration-300
         "
-      >
-        View Open Roles
+              >
+                View Open Roles
 
-        <span className="group-hover:translate-x-1 transition-transform duration-300">
-          →
-        </span>
-      </button>
+                <span className="group-hover:translate-x-1 transition-transform duration-300">
+                  →
+                </span>
+              </button>
 
-      {/* Secondary CTA */}
+              {/* Secondary CTA */}
 
-      <button
-        onClick={() => {
-          document.getElementById("apply")?.scrollIntoView({
-            behavior: "smooth",
-          });
-        }}
-        className="
+              <button
+                onClick={() => {
+                  document.getElementById("apply")?.scrollIntoView({
+                    behavior: "smooth",
+                  });
+                }}
+                className="
           px-9
           py-4
           rounded-2xl
@@ -280,15 +284,15 @@ export default function CareersPage() {
           transition-all
           duration-300
         "
-      >
-        Apply Now
-      </button>
-    </div>
+              >
+                Apply Now
+              </button>
+            </div>
 
-    {/* Stats */}
+            {/* Stats */}
 
-    <div
-      className="
+            <div
+              className="
         mt-20
         grid
         grid-cols-2
@@ -297,28 +301,28 @@ export default function CareersPage() {
         max-w-5xl
         mx-auto
       "
-    >
-      {[
-        {
-          number: "10+",
-          label: "Business Clients",
-        },
-        {
-          number: "25+",
-          label: "Projects Delivered",
-        },
-        {
-          number: "100%",
-          label: "Remote Learning",
-        },
-        {
-          number: "1+",
-          label: "Years Experience",
-        },
-      ].map((item, index) => (
-        <div
-          key={index}
-          className="
+            >
+              {[
+                {
+                  number: "10+",
+                  label: "Business Clients",
+                },
+                {
+                  number: "25+",
+                  label: "Projects Delivered",
+                },
+                {
+                  number: "100%",
+                  label: "Remote Learning",
+                },
+                {
+                  number: "1+",
+                  label: "Years Experience",
+                },
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="
             bg-white/5
             backdrop-blur-md
             border
@@ -330,23 +334,23 @@ export default function CareersPage() {
             transition-all
             duration-300
           "
-        >
-          <div className="text-3xl font-bold text-[#24c2f2] mb-2">
-            {item.number}
-          </div>
+                >
+                  <div className="text-3xl font-bold text-[#24c2f2] mb-2">
+                    {item.number}
+                  </div>
 
-          <div className="text-gray-300 text-sm">
-            {item.label}
-          </div>
-        </div>
-      ))}
-    </div>
+                  <div className="text-gray-300 text-sm">
+                    {item.label}
+                  </div>
+                </div>
+              ))}
+            </div>
 
-    {/* Scroll Indicator */}
+            {/* Scroll Indicator */}
 
-    <div className="mt-24 flex justify-center">
-      <div
-        className="
+            <div className="mt-24 flex justify-center">
+              <div
+                className="
           w-8
           h-14
           rounded-full
@@ -356,32 +360,32 @@ export default function CareersPage() {
           justify-center
           p-2
         "
-      >
-        <div
-          className="
+              >
+                <div
+                  className="
             w-2
             h-3
             rounded-full
             bg-[#24c2f2]
             animate-bounce
           "
-        />
-      </div>
-    </div>
+                />
+              </div>
+            </div>
 
-  </div>
-</section>
+          </div>
+        </section>
 
-      {/* Why Join Us */}
+        {/* Why Join Us */}
 
-<section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6">
-  <div className="max-w-7xl mx-auto">
+        <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6">
+          <div className="max-w-7xl mx-auto">
 
-    {/* Section Heading */}
+            {/* Section Heading */}
 
-    <div className="text-center mb-16">
-      <div
-        className="
+            <div className="text-center mb-16">
+              <div
+                className="
           inline-flex
           items-center
           gap-2
@@ -396,36 +400,36 @@ export default function CareersPage() {
           text-sm
           mb-5
         "
-      >
-        ✦ Why Join nsldigitallab
-      </div>
+              >
+                ✦ Why Join nsldigitallab
+              </div>
 
-      <h2
-        className="
+              <h2
+                className="
           text-4xl
           sm:text-5xl
           font-bold
           text-white
           leading-tight
         "
-      >
-        Learn, Build & Grow With Us
-      </h2>
+              >
+                Learn, Build & Grow With Us
+              </h2>
 
-      <p className="text-gray-400 mt-5 max-w-2xl mx-auto text-lg leading-relaxed">
-        Gain real-world experience, improve your digital skills,
-        and work on impactful projects in a collaborative environment.
-      </p>
-    </div>
+              <p className="text-gray-400 mt-5 max-w-2xl mx-auto text-lg leading-relaxed">
+                Gain real-world experience, improve your digital skills,
+                and work on impactful projects in a collaborative environment.
+              </p>
+            </div>
 
-    {/* Cards */}
+            {/* Cards */}
 
-    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-      {/* Card 1 */}
+              {/* Card 1 */}
 
-      <div
-        className="
+              <div
+                className="
           group
           bg-white/5
           border
@@ -439,9 +443,9 @@ export default function CareersPage() {
           transition-all
           duration-300
         "
-      >
-        <div
-          className="
+              >
+                <div
+                  className="
             w-16
             h-16
             rounded-2xl
@@ -454,24 +458,24 @@ export default function CareersPage() {
             transition-all
             duration-300
           "
-        >
-          <Laptop className="w-8 h-8 text-[#24c2f2] group-hover:text-white transition-colors duration-300" />
-        </div>
+                >
+                  <Laptop className="w-8 h-8 text-[#24c2f2] group-hover:text-white transition-colors duration-300" />
+                </div>
 
-        <h3 className="text-2xl font-semibold text-white">
-          Real Projects
-        </h3>
+                <h3 className="text-2xl font-semibold text-white">
+                  Real Projects
+                </h3>
 
-        <p className="text-gray-400 mt-4 leading-relaxed">
-          Gain practical experience by working on real client projects
-          and industry-focused digital campaigns.
-        </p>
-      </div>
+                <p className="text-gray-400 mt-4 leading-relaxed">
+                  Gain practical experience by working on real client projects
+                  and industry-focused digital campaigns.
+                </p>
+              </div>
 
-      {/* Card 2 */}
+              {/* Card 2 */}
 
-      <div
-        className="
+              <div
+                className="
           group
           bg-white/5
           border
@@ -485,9 +489,9 @@ export default function CareersPage() {
           transition-all
           duration-300
         "
-      >
-        <div
-          className="
+              >
+                <div
+                  className="
             w-16
             h-16
             rounded-2xl
@@ -500,24 +504,24 @@ export default function CareersPage() {
             transition-all
             duration-300
           "
-        >
-          <GraduationCap className="w-8 h-8 text-[#24c2f2] group-hover:text-white transition-colors duration-300" />
-        </div>
+                >
+                  <GraduationCap className="w-8 h-8 text-[#24c2f2] group-hover:text-white transition-colors duration-300" />
+                </div>
 
-        <h3 className="text-2xl font-semibold text-white">
-          Learn & Grow
-        </h3>
+                <h3 className="text-2xl font-semibold text-white">
+                  Learn & Grow
+                </h3>
 
-        <p className="text-gray-400 mt-4 leading-relaxed">
-          Improve your SEO, UI/UX, and marketing skills with mentorship,
-          guidance, and practical learning.
-        </p>
-      </div>
+                <p className="text-gray-400 mt-4 leading-relaxed">
+                  Improve your SEO, UI/UX, and marketing skills with mentorship,
+                  guidance, and practical learning.
+                </p>
+              </div>
 
-      {/* Card 3 */}
+              {/* Card 3 */}
 
-      <div
-        className="
+              <div
+                className="
           group
           bg-white/5
           border
@@ -531,9 +535,9 @@ export default function CareersPage() {
           transition-all
           duration-300
         "
-      >
-        <div
-          className="
+              >
+                <div
+                  className="
             w-16
             h-16
             rounded-2xl
@@ -546,24 +550,24 @@ export default function CareersPage() {
             transition-all
             duration-300
           "
-        >
-          <Globe className="w-8 h-8 text-[#24c2f2] group-hover:text-white transition-colors duration-300" />
-        </div>
+                >
+                  <Globe className="w-8 h-8 text-[#24c2f2] group-hover:text-white transition-colors duration-300" />
+                </div>
 
-        <h3 className="text-2xl font-semibold text-white">
-          Flexible Work
-        </h3>
+                <h3 className="text-2xl font-semibold text-white">
+                  Flexible Work
+                </h3>
 
-        <p className="text-gray-400 mt-4 leading-relaxed">
-          Work remotely or in a hybrid setup with flexibility
-          designed for modern digital professionals.
-        </p>
-      </div>
+                <p className="text-gray-400 mt-4 leading-relaxed">
+                  Work remotely or in a hybrid setup with flexibility
+                  designed for modern digital professionals.
+                </p>
+              </div>
 
-      {/* Card 4 */}
+              {/* Card 4 */}
 
-      <div
-        className="
+              <div
+                className="
           group
           bg-white/5
           border
@@ -577,9 +581,9 @@ export default function CareersPage() {
           transition-all
           duration-300
         "
-      >
-        <div
-          className="
+              >
+                <div
+                  className="
             w-16
             h-16
             rounded-2xl
@@ -592,38 +596,38 @@ export default function CareersPage() {
             transition-all
             duration-300
           "
+                >
+                  <Briefcase className="w-8 h-8 text-[#24c2f2] group-hover:text-white transition-colors duration-300" />
+                </div>
+
+                <h3 className="text-2xl font-semibold text-white">
+                  Career Opportunities
+                </h3>
+
+                <p className="text-gray-400 mt-4 leading-relaxed">
+                  Build your portfolio, gain confidence, and unlock future
+                  career opportunities in digital marketing.
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        {/* Open Positions */}
+
+        <section
+          id="openings"
+          className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6"
         >
-          <Briefcase className="w-8 h-8 text-[#24c2f2] group-hover:text-white transition-colors duration-300" />
-        </div>
+          <div className="max-w-7xl mx-auto">
 
-        <h3 className="text-2xl font-semibold text-white">
-          Career Opportunities
-        </h3>
+            {/* Section Header */}
 
-        <p className="text-gray-400 mt-4 leading-relaxed">
-          Build your portfolio, gain confidence, and unlock future
-          career opportunities in digital marketing.
-        </p>
-      </div>
+            <div className="text-center mb-16">
 
-    </div>
-  </div>
-</section>
-
-     {/* Open Positions */}
-
-<section
-  id="openings"
-  className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6"
->
-  <div className="max-w-7xl mx-auto">
-
-    {/* Section Header */}
-
-    <div className="text-center mb-16">
-
-      <div
-        className="
+              <div
+                className="
           inline-flex
           items-center
           gap-2
@@ -638,40 +642,40 @@ export default function CareersPage() {
           text-sm
           mb-5
         "
-      >
-        ✦ Career Opportunities
-      </div>
+              >
+                ✦ Career Opportunities
+              </div>
 
-      <h2
-        className="
+              <h2
+                className="
           text-4xl
           sm:text-5xl
           font-bold
           text-white
           leading-tight
         "
-      >
-        Open Positions
-      </h2>
+              >
+                Open Positions
+              </h2>
 
-      <p className="text-gray-400 mt-5 max-w-2xl mx-auto text-lg leading-relaxed">
-        Explore exciting internship opportunities and kickstart your
-        digital career with real-world experience.
-      </p>
-    </div>
+              <p className="text-gray-400 mt-5 max-w-2xl mx-auto text-lg leading-relaxed">
+                Explore exciting internship opportunities and kickstart your
+                digital career with real-world experience.
+              </p>
+            </div>
 
-    {/* Cards */}
+            {/* Cards */}
 
-    <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-8">
 
-      {jobs.map((job, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="
+              {jobs.map((job, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  viewport={{ once: true }}
+                  className="
             group
             bg-white/5
             border
@@ -685,13 +689,13 @@ export default function CareersPage() {
             transition-all
             duration-300
           "
-        >
-          {/* Top */}
+                >
+                  {/* Top */}
 
-          <div className="flex items-center justify-between gap-4 flex-wrap">
+                  <div className="flex items-center justify-between gap-4 flex-wrap">
 
-            <span
-              className="
+                    <span
+                      className="
                 px-4
                 py-1.5
                 rounded-full
@@ -702,50 +706,50 @@ export default function CareersPage() {
                 text-sm
                 font-medium
               "
-            >
-              {job.type}
-            </span>
+                    >
+                      {job.type}
+                    </span>
 
-            <span className="text-sm text-gray-400">
-              {job.location}
-            </span>
-          </div>
+                    <span className="text-sm text-gray-400">
+                      {job.location}
+                    </span>
+                  </div>
 
-          {/* Title */}
+                  {/* Title */}
 
-          <h3 className="text-2xl font-semibold text-white mt-7">
-            {job.title}
-          </h3>
+                  <h3 className="text-2xl font-semibold text-white mt-7">
+                    {job.title}
+                  </h3>
 
-          {/* Description */}
+                  {/* Description */}
 
-          <p className="text-gray-400 mt-4 leading-relaxed text-base">
-            {job.description}
-          </p>
+                  <p className="text-gray-400 mt-4 leading-relaxed text-base">
+                    {job.description}
+                  </p>
 
-          {/* Button */}
+                  {/* Button */}
 
-          <button
-            onClick={() => {
-              const element = document.getElementById('apply');
+                  <button
+                    onClick={() => {
+                      const element = document.getElementById('apply');
 
-              if (element) {
-                const navbarOffset = 100;
+                      if (element) {
+                        const navbarOffset = 100;
 
-                const elementPosition =
-                  element.getBoundingClientRect().top +
-                  window.pageYOffset;
+                        const elementPosition =
+                          element.getBoundingClientRect().top +
+                          window.pageYOffset;
 
-                const offsetPosition =
-                  elementPosition - navbarOffset;
+                        const offsetPosition =
+                          elementPosition - navbarOffset;
 
-                window.scrollTo({
-                  top: offsetPosition,
-                  behavior: 'smooth',
-                });
-              }
-            }}
-            className="
+                        window.scrollTo({
+                          top: offsetPosition,
+                          behavior: 'smooth',
+                        });
+                      }
+                    }}
+                    className="
               group/btn
               mt-8
               inline-flex
@@ -757,33 +761,33 @@ export default function CareersPage() {
               transition-all
               duration-300
             "
-          >
-            Apply Now
+                  >
+                    Apply Now
 
-            <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
-          </button>
-        </motion.div>
-      ))}
+                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                  </button>
+                </motion.div>
+              ))}
 
-    </div>
-  </div>
-</section>
+            </div>
+          </div>
+        </section>
 
-{/* Benefits */}
+        {/* Benefits */}
 
-{/* Benefits */}
+        {/* Benefits */}
 
-{/* Benefits */}
+        {/* Benefits */}
 
-<section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6">
-  <div className="max-w-7xl mx-auto">
+        <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6">
+          <div className="max-w-7xl mx-auto">
 
-    {/* Section Header */}
+            {/* Section Header */}
 
-    <div className="text-center mb-14">
+            <div className="text-center mb-14">
 
-      <div
-        className="
+              <div
+                className="
           inline-flex
           items-center
           gap-2
@@ -798,42 +802,42 @@ export default function CareersPage() {
           text-sm
           mb-5
         "
-      >
-        ✦ Internship Benefits
-      </div>
+              >
+                ✦ Internship Benefits
+              </div>
 
-      <h2
-        className="
+              <h2
+                className="
           text-4xl
           sm:text-5xl
           font-bold
           text-white
           leading-tight
         "
-      >
-        What You Will Gain
-      </h2>
+              >
+                What You Will Gain
+              </h2>
 
-      <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-lg leading-relaxed">
-        Practical learning, mentorship, and real-world digital experience.
-      </p>
-    </div>
+              <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-lg leading-relaxed">
+                Practical learning, mentorship, and real-world digital experience.
+              </p>
+            </div>
 
-    {/* Compact Grid */}
+            {/* Compact Grid */}
 
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
 
-      {[
-        "Hands-on client projects",
-        "SEO & marketing skill growth",
-        "Portfolio building experience",
-        "Mentorship from professionals",
-        "Flexible remote environment",
-        "Career growth opportunities",
-      ].map((benefit, index) => (
-        <div
-          key={index}
-          className="
+              {[
+                "Hands-on client projects",
+                "SEO & marketing skill growth",
+                "Portfolio building experience",
+                "Mentorship from professionals",
+                "Flexible remote environment",
+                "Career growth opportunities",
+              ].map((benefit, index) => (
+                <div
+                  key={index}
+                  className="
             group
             flex
             items-center
@@ -851,11 +855,11 @@ export default function CareersPage() {
             transition-all
             duration-300
           "
-        >
-          {/* Icon */}
+                >
+                  {/* Icon */}
 
-          <div
-            className="
+                  <div
+                    className="
               w-11
               h-11
               rounded-xl
@@ -868,29 +872,29 @@ export default function CareersPage() {
               transition-all
               duration-300
             "
-          >
-            <CheckCircle2 className="text-[#24c2f2] group-hover:text-white w-5 h-5 transition-colors duration-300" />
+                  >
+                    <CheckCircle2 className="text-[#24c2f2] group-hover:text-white w-5 h-5 transition-colors duration-300" />
+                  </div>
+
+                  {/* Text */}
+
+                  <h3 className="text-white font-medium text-base leading-snug">
+                    {benefit}
+                  </h3>
+                </div>
+              ))}
+
+            </div>
           </div>
+        </section>
 
-          {/* Text */}
+        {/* Application Form */}
 
-          <h3 className="text-white font-medium text-base leading-snug">
-            {benefit}
-          </h3>
-        </div>
-      ))}
+        {/* Application Form */}
 
-    </div>
-  </div>
-</section>
-
-     {/* Application Form */}
-
-{/* Application Form */}
-
-<section
-  id="apply"
-  className="
+        <section
+          id="apply"
+          className="
     relative
     py-16
     sm:py-20
@@ -899,15 +903,15 @@ export default function CareersPage() {
     sm:px-6
     overflow-hidden
   "
->
-  {/* Background Glow */}
+        >
+          {/* Background Glow */}
 
-  <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute inset-0 overflow-hidden">
 
-    {/* Blue Glow */}
+            {/* Blue Glow */}
 
-    <div
-      className="
+            <div
+              className="
         absolute
         top-0
         left-1/2
@@ -918,12 +922,12 @@ export default function CareersPage() {
         rounded-full
         blur-[140px]
       "
-    />
+            />
 
-    {/* Purple Glow */}
+            {/* Purple Glow */}
 
-    <div
-      className="
+            <div
+              className="
         absolute
         bottom-[-120px]
         right-[-80px]
@@ -933,17 +937,17 @@ export default function CareersPage() {
         rounded-full
         blur-[140px]
       "
-    />
-  </div>
+            />
+          </div>
 
-  <div className="relative z-10 max-w-6xl mx-auto">
+          <div className="relative z-10 max-w-6xl mx-auto">
 
-    {/* Header */}
+            {/* Header */}
 
-    <div className="text-center mb-16">
+            <div className="text-center mb-16">
 
-      <div
-        className="
+              <div
+                className="
           inline-flex
           items-center
           gap-2
@@ -958,32 +962,32 @@ export default function CareersPage() {
           text-sm
           mb-5
         "
-      >
-        ✦ Apply for Internship
-      </div>
+              >
+                ✦ Apply for Internship
+              </div>
 
-      <h2
-        className="
+              <h2
+                className="
           text-4xl
           sm:text-5xl
           font-bold
           text-white
           leading-tight
         "
-      >
-        Start Your Career Journey
-      </h2>
+              >
+                Start Your Career Journey
+              </h2>
 
-      <p className="text-gray-400 mt-5 max-w-2xl mx-auto text-lg leading-relaxed">
-        Fill out the application form and take the first step toward
-        building your digital marketing career with nsldigitallab.
-      </p>
-    </div>
+              <p className="text-gray-400 mt-5 max-w-2xl mx-auto text-lg leading-relaxed">
+                Fill out the application form and take the first step toward
+                building your digital marketing career with nsldigitallab.
+              </p>
+            </div>
 
-    {/* Form Container */}
+            {/* Form Container */}
 
-    <div
-      className="
+            <div
+              className="
         relative
         max-w-4xl
         mx-auto
@@ -998,12 +1002,12 @@ export default function CareersPage() {
         shadow-[0_20px_80px_rgba(0,0,0,0.35)]
         overflow-hidden
       "
-    >
+            >
 
-      {/* Top Gradient Line */}
+              {/* Top Gradient Line */}
 
-      <div
-        className="
+              <div
+                className="
           h-1
           w-full
           bg-gradient-to-r
@@ -1011,18 +1015,18 @@ export default function CareersPage() {
           via-[#38bdf8]
           to-[#2563eb]
         "
-      />
+              />
 
-      {/* Form Content */}
+              {/* Form Content */}
 
-      <div className="p-6 sm:p-10 lg:p-12">
+              <div className="p-6 sm:p-10 lg:p-12">
 
-        <CareerForm />
+                <CareerForm />
 
-      </div>
-    </div>
-  </div>
-</section>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />

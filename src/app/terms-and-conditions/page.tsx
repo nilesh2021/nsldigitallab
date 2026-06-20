@@ -45,7 +45,7 @@ export default function TermsAndConditionsPage() {
             </h2>
 
             <p className="text-gray-300 leading-8 text-lg">
-              By accessing and using the nsldigitallab website, you agree to
+              By accessing and using the  NslDigitlaLabwebsite, you agree to
               comply with and be bound by these Terms & Conditions. If you do
               not agree with any part of these terms, please discontinue the
               use of our website and services.
@@ -87,8 +87,8 @@ export default function TermsAndConditionsPage() {
 
             <p className="text-gray-300 leading-8 text-lg">
               All content, branding, graphics, logos, text, and design elements
-              available on nsldigitallab are the intellectual property of
-              nsldigitallab unless otherwise stated. Unauthorized use or
+              available on  NslDigitlaLabare the intellectual property of
+               NslDigitlaLabunless otherwise stated. Unauthorized use or
               reproduction is strictly prohibited.
             </p>
 
@@ -102,7 +102,7 @@ export default function TermsAndConditionsPage() {
             </h2>
 
             <p className="text-gray-300 leading-8 text-lg">
-              nsldigitallab provides digital marketing, SEO, web design, content,
+               NslDigitlaLabprovides digital marketing, SEO, web design, content,
               branding, and related digital services. We reserve the right to
               modify, suspend, or discontinue any service without prior notice.
             </p>
@@ -118,7 +118,7 @@ export default function TermsAndConditionsPage() {
 
             <p className="text-gray-300 leading-8 text-lg">
               Our website may contain links to third-party websites or tools.
-              nsldigitallab is not responsible for the content, policies, or
+               NslDigitlaLabis not responsible for the content, policies, or
               practices of external websites.
             </p>
 
@@ -132,7 +132,7 @@ export default function TermsAndConditionsPage() {
             </h2>
 
             <p className="text-gray-300 leading-8 text-lg">
-              nsldigitallab shall not be held liable for any direct, indirect,
+               NslDigitlaLabshall not be held liable for any direct, indirect,
               incidental, or consequential damages resulting from the use of
               our website, services, or digital content.
             </p>

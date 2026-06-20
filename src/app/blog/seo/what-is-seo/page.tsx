@@ -6,7 +6,9 @@ import {
   TrendingUp,
   ShieldCheck,
 } from "lucide-react";
- import ArticleSchema from "../../../../seo/schemas/ArticleSchema";
+
+
+import ArticleSchema from "../../../../seo/schemas/ArticleSchema";
 import Navigation from "../../../components/Navigation";
 import Footer from "../../../components/Footer";
 import ScrollToTop from "../../../components/ScrollToTop";
@@ -55,6 +57,8 @@ export default function WhatIsSeoPage() {
     <>
 
      <SEO {...PAGE_SEO.whatIsSeo} />
+      
+      
        <ArticleSchema
         headline="What is SEO? Beginner's Guide 2026"
         description="Learn what SEO is, how search engines work, and how beginners can improve website rankings."

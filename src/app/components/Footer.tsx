@@ -67,7 +67,7 @@ export default function Footer() {
 
                   NSL
                   <span className="font-medium text-gray-300">
-                    &nbsp;Media
+                    &nbsp;Digital Lab
                   </span>
 
                 </span>
@@ -85,7 +85,7 @@ export default function Footer() {
             <p className="text-gray-400 mt-5 mb-5 leading-7 text-[15px]">
 
               Helping brands grow through SEO,
-              performance marketing, social media,
+              performance marketing, social Digital Lab,
               and modern digital experiences.
 
             </p>
@@ -295,10 +295,10 @@ export default function Footer() {
               <li>
 
                 <Link
-                  to="/services/social-media-marketing"
+                  to="/services/social-Digital Lab-marketing"
                   className="block hover:text-[#24c2f2] transition-all duration-300"
                 >
-                  Social Media Marketing
+                  Social Digital Lab Marketing
                 </Link>
 
               </li>

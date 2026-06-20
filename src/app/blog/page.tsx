@@ -9,6 +9,10 @@ import BlogCard from "../components/blog/BlogCard";
 import { blogs } from "../../data/blogs";
 import { motion, AnimatePresence } from "framer-motion";
 import Breadcrumbs from "../components/Breadcrumbs";
+import { PAGE_SEO } from "../../seo/pages";
+import SEO from "../../seo/SEO";
+import FAQSchema from "../../seo/schemas/FAQSchema";
+import CollectionPageSchema from "../../seo/schemas/CollectionPageSchema";
 const categories = [
   "All",
   "UI/UX",
@@ -51,17 +55,33 @@ export default function BlogPage() {
 
   return (
     <>
-      <Helmet>
-        <title>
-          Blog | UI/UX, SEO, AI Tools & Digital Marketing Articles
-        </title>
+<SEO {...PAGE_SEO.blog} />
 
-        <meta
-          name="description"
-          content="Explore the latest articles about UI/UX design, SEO, AI tools, affiliate marketing, startups, and digital marketing trends."
-        />
-      </Helmet>
+<CollectionPageSchema
+  name="NSL Digital Lab Blog"
+  description="Latest SEO, UI UX and AI articles."
+  url="https://nsldigitallab.com/blog"
+/>
 
+<FAQSchema
+  faqs={[
+    {
+      question: "What topics does NSL Digital Lab cover?",
+      answer:
+        "We publish articles on SEO, UI/UX Design, AI Tools, Digital Marketing, Affiliate Marketing and Web Development.",
+    },
+    {
+      question: "Who are these articles for?",
+      answer:
+        "Students, professionals, freelancers, startups and business owners who want to improve their digital skills.",
+    },
+    {
+      question: "Are these tutorials beginner friendly?",
+      answer:
+        "Yes. Most tutorials include step-by-step explanations suitable for beginners.",
+    },
+  ]}
+/>
       <Navigation />
 
       <main className="bg-[#f5f7fb] min-h-screen">
@@ -76,7 +96,7 @@ export default function BlogPage() {
             <div className="max-w-4xl">
  
               <span className="inline-flex items-center rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-300">
-                nsldigitallab Blog
+                 NslDigitlaLabBlog
               </span>
 
               <h1 className="mt-6 text-4xl md:text-5xl font-black leading-tight text-white">
@@ -97,6 +117,8 @@ export default function BlogPage() {
           </div>
 
         </section>
+
+        
 
         {/* TOOLBAR */}
         <section className="sticky top-[72px] z-30 border-b border-gray-200 bg-white/90 backdrop-blur-xl">
@@ -153,7 +175,34 @@ export default function BlogPage() {
           </div>
 
         </section>
+{/* BLOG INTRO */}
+<section className="bg-white border-b border-gray-100">
+  <div className="container mx-auto px-6 py-16">
 
+    <div className="max-w-5xl">
+
+      <h2 className="text-3xl font-bold text-gray-900">
+        Learn SEO, UI/UX Design, AI Tools & Digital Marketing
+      </h2>
+
+      <p className="mt-6 text-lg leading-8 text-gray-600">
+        Welcome to the NSL Digital Lab Blog. Here we publish practical,
+        beginner-friendly and advanced guides on Search Engine Optimization
+        (SEO), UI/UX Design, Artificial Intelligence, Digital Marketing,
+        Affiliate Marketing, React Development and business growth.
+      </p>
+
+      <p className="mt-6 text-lg leading-8 text-gray-600">
+        Whether you're a student, freelancer, startup founder or digital
+        marketer, you'll find tutorials, case studies, checklists and industry
+        insights that help you build better websites, improve Google rankings,
+        increase traffic and grow your online business.
+      </p>
+
+    </div>
+
+  </div>
+</section>
         {/* MAIN LAYOUT */}
         <section className="py-14">
 
@@ -306,11 +355,11 @@ export default function BlogPage() {
 
                 </div>
 
-                {/* POPULAR POSTS */}
+                {/*  Latest Articles */}
                 <div className="rounded-3xl border border-gray-100 bg-white p-7 shadow-sm">
 
                   <h3 className="text-2xl font-bold text-gray-900">
-                    Popular Posts
+                     Latest Articles
                   </h3>
 
                   <div className="mt-6 space-y-5">
@@ -431,7 +480,104 @@ export default function BlogPage() {
         </section>
 
       </main>
+<section className="py-20 bg-white">
+  <div className="container mx-auto px-6">
 
+    <h2 className="text-3xl font-bold">
+      Browse Articles by Category
+    </h2>
+
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+
+      <Link to="/blog/seo" className="rounded-xl border p-6 hover:border-cyan-500">
+        <h3 className="font-bold text-xl">SEO</h3>
+        <p className="mt-3 text-gray-600">
+          Learn search engine optimization, keyword research,
+          technical SEO and Google ranking strategies.
+        </p>
+      </Link>
+
+      <Link to="/blog/ui-ux" className="rounded-xl border p-6 hover:border-cyan-500">
+        <h3 className="font-bold text-xl">
+          UI/UX Design
+        </h3>
+
+        <p className="mt-3 text-gray-600">
+          Explore user experience, design systems,
+          Figma tutorials and interface design.
+        </p>
+
+      </Link>
+
+      <Link to="/blog/ai-tools" className="rounded-xl border p-6 hover:border-cyan-500">
+        <h3 className="font-bold text-xl">
+          AI Tools
+        </h3>
+
+        <p className="mt-3 text-gray-600">
+          Discover ChatGPT, Claude, Gemini,
+          Midjourney and productivity tools.
+        </p>
+
+      </Link>
+
+    </div>
+
+  </div>
+</section>
+
+<section className="py-20">
+<div className="container mx-auto px-6">
+
+<h2 className="text-3xl font-bold">
+Frequently Asked Questions
+</h2>
+
+<div className="mt-10 space-y-8">
+
+<div>
+<h3 className="font-semibold text-xl">
+What topics does NSL Digital Lab cover?
+</h3>
+
+<p className="mt-3 text-gray-600">
+We publish articles about SEO, UI/UX Design,
+Artificial Intelligence, Digital Marketing,
+Affiliate Marketing and modern web development.
+</p>
+
+</div>
+
+<div>
+<h3 className="font-semibold text-xl">
+Who are these articles for?
+</h3>
+
+<p className="mt-3 text-gray-600">
+Students, professionals, business owners,
+freelancers and anyone looking to improve
+their digital skills.
+</p>
+
+</div>
+
+<div>
+<h3 className="font-semibold text-xl">
+Are the guides beginner friendly?
+</h3>
+
+<p className="mt-3 text-gray-600">
+Yes. Most tutorials are written step-by-step
+for beginners while also including advanced
+strategies for professionals.
+</p>
+
+</div>
+
+</div>
+
+</div>
+</section>
       <Footer />
     </>
   );

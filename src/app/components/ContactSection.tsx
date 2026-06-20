@@ -133,7 +133,7 @@ export default function ContactSection() {
             </h3>
 
             <p className="text-gray-400 leading-8 mb-8">
-              Join nsldigitallab to gain practical exposure,
+              Join  NslDigitlaLabto gain practical exposure,
               learn modern SEO strategies, and explore
               internship opportunities designed for future
               digital marketers.

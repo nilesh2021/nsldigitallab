@@ -195,7 +195,7 @@ export default function Navigation({
                   `}
                   style={{ fontSize: '18px', fontWeight: 'lighter' }}
                 >
-                  &nbsp;Media
+                  &nbsp;Digital Lab
                 </span>
 
               </span>

@@ -57,7 +57,7 @@ export default function SeoInternshipPune() {
 
         <meta
           property="og:description"
-          content="Join nsldigitallab SEO Internship Program in Pune and gain practical digital marketing experience."
+          content="Join  NslDigitlaLabSEO Internship Program in Pune and gain practical digital marketing experience."
         />
 
         <meta
@@ -95,7 +95,7 @@ export default function SeoInternshipPune() {
                 "name": "Is this SEO internship remote?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Yes, nsldigitallab offers remote SEO internship opportunities for candidates across India."
+                  "text": "Yes,  NslDigitlaLaboffers remote SEO internship opportunities for candidates across India."
                 }
               },
               {
@@ -126,7 +126,7 @@ export default function SeoInternshipPune() {
             "@type": "JobPosting",
             "title": "SEO Internship in Pune",
             "description":
-              "Remote SEO Internship opportunity at nsldigitallab for students and freshers interested in digital marketing and SEO.",
+              "Remote SEO Internship opportunity at  NslDigitlaLabfor students and freshers interested in digital marketing and SEO.",
             "employmentType": "INTERN",
             "hiringOrganization": {
               "@type": "Organization",
@@ -584,7 +584,7 @@ export default function SeoInternshipPune() {
                   question:
                     'Will I receive an internship certificate?',
                   answer:
-                    'Yes, nsldigitallab provides an internship completion certificate after successfully completing the SEO internship program.',
+                    'Yes,  NslDigitlaLabprovides an internship completion certificate after successfully completing the SEO internship program.',
                 },
 
                 {

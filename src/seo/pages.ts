@@ -45,12 +45,20 @@ export const PAGE_SEO = {
   },
 
   careers: {
-    title: "Careers | NSL Digital Lab",
+   title:
+    "Careers at NSL Digital Lab | Digital Marketing, SEO & UI UX Internships",
 
-    description:
-      "Join NSL Digital Lab and build the future with us.",
+  description:
+    "Join NSL Digital Lab and kickstart your career in SEO, Digital Marketing, UI/UX Design, Content Writing and Web Development. Explore remote internships and career opportunities.",
 
-    canonical: "/careers",
+  keywords:
+    "careers, internships, seo internship, ui ux internship, digital marketing internship, content writer internship, remote internship india",
+
+  canonical: "/careers",
+
+  image: "/images/og/careers.jpg",
+
+  type: "website",
   },
 
   contact: {
@@ -78,7 +86,22 @@ dataEntryRemoteJob: {
 
     type: "article",
   },
+blog: {
+  title:
+    "Digital Marketing, SEO, UI/UX & AI Blog | NSL Digital Lab",
 
+  description:
+    "Read expert articles on SEO, UI/UX design, AI tools, digital marketing, affiliate marketing, React development and startup growth.",
+
+  keywords:
+    "seo blog, ui ux blog, ai tools blog, digital marketing articles, affiliate marketing, react tutorials",
+
+  canonical: "/blog",
+
+  image: "/images/og/blog.jpg",
+
+  type: "website",
+},
   whatIsSeo: {
   title: "What is SEO? Beginner's Guide 2026 | NSL Digital Lab",
 
