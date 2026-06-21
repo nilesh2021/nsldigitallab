@@ -364,7 +364,7 @@ export default function SeoInternshipMumbai() {
                             </div>
 
                             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                                Why Join nsldigitallab?
+                                Why Join NSL Digital Lab?
                             </h2>
 
                             <p className="max-w-2xl mx-auto text-gray-400 text-lg leading-relaxed">

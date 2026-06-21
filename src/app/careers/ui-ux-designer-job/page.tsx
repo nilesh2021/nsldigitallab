@@ -393,7 +393,7 @@ export default function UiUxDesignerJob() {
 
                             <div className="bg-white rounded-3xl p-8 shadow-sm sticky top-28">
                                 <h3 className="text-2xl font-bold mb-6">
-                                    Why Join NSL?
+                                    Why Join NSL Digital Lab?
                                 </h3>
 
                                 <ul className="space-y-4 text-slate-700">

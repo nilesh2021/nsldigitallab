@@ -1,18 +1,14 @@
 User-agent: *
 
-# Allow all important pages
+# Allow public content
 Allow: /
 
-# Block internal/system folders
+# Block internal folders
 Disallow: /api/
 Disallow: /admin/
 Disallow: /private/
-Disallow: /_next/
 Disallow: /tmp/
 Disallow: /node_modules/
 
 # Sitemap
 Sitemap: https://nsldigitallab.com/sitemap.xml
-
-# Host
-Host: https://nsldigitallab.com
