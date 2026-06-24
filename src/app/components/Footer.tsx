@@ -6,7 +6,7 @@ import {
 } from "lucide-react";
 
 import { Link } from "react-router-dom";
-import logo from  "../../assets/images/nexify_n_logo.png"
+import logo from "../../assets/images/nexify_n_logo.png"
 
 export default function Footer() {
 
@@ -40,8 +40,10 @@ export default function Footer() {
         {/* Top Line */}
         <div className="h-[1px] bg-gradient-to-r from-transparent via-[#24c2f2]/40 to-transparent mb-10" />
 
+        
+
         {/* GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 xl:gap-12 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 xl:gap-12 mb-10">
 
           {/* BRAND */}
           <div className="max-w-sm">
@@ -72,11 +74,11 @@ export default function Footer() {
 
                 </span>
 
-                  <span className="text-[10px] uppercase  text-[#24c2f2] mt-1">
+                <span className="text-[10px] uppercase  text-[#24c2f2] mt-1">
 
-               Design • Development • Growth
+                  Design • Development • Growth
 
-              </span>
+                </span>
 
               </div>
 
@@ -89,7 +91,6 @@ export default function Footer() {
               and modern digital experiences.
 
             </p>
-
             {/* SOCIAL */}
             <div className="flex gap-3">
 
@@ -170,7 +171,83 @@ export default function Footer() {
             </ul>
 
           </div>
+          {/*  Learning  */}
 
+          {/* LEARNING */}
+          <div>
+
+            <h3 className="text-lg font-semibold mb-4">
+              Free Courses
+            </h3>
+
+            <ul className="space-y-3 text-gray-400 text-[15px]">
+
+              <li>
+                <Link
+                  to="/learn/ui-ux-design"
+                  className="hover:text-[#24c2f2] transition-all duration-300"
+                >
+                  🎓 UI/UX Design Course
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  to="/learn/digital-marketing"
+                  className="hover:text-[#24c2f2] transition-all duration-300"
+                >
+                  🚀 Digital Marketing Course
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  to="/learn/seo"
+                  className="hover:text-[#24c2f2] transition-all duration-300"
+                >
+                  📈 Learn SEO
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  to="/resources/templates"
+                  className="hover:text-[#24c2f2] transition-all duration-300"
+                >
+                  🎁 Free Templates
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  to="/resources/checklists"
+                  className="hover:text-[#24c2f2] transition-all duration-300"
+                >
+                  ✅ SEO & UI Checklists
+                </Link>
+              </li>
+
+            </ul>
+
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          {/* RESOURCES */}
           {/* RESOURCES */}
           <div>
 
@@ -184,9 +261,9 @@ export default function Footer() {
 
                 <Link
                   to="/blog"
-                  className="block hover:text-[#24c2f2] transition-all duration-300"
+                  className="hover:text-[#24c2f2] transition-all duration-300"
                 >
-                  Blog
+                  Latest Blog
                 </Link>
 
               </li>
@@ -195,7 +272,7 @@ export default function Footer() {
 
                 <Link
                   to="/best-ai-tools-for-marketers"
-                  className="block hover:text-[#24c2f2] transition-all duration-300"
+                  className="hover:text-[#24c2f2] transition-all duration-300"
                 >
                   AI Tools
                 </Link>
@@ -205,10 +282,10 @@ export default function Footer() {
               <li>
 
                 <Link
-                  to="/best-chatgpt-tools-for-marketers"
-                  className="block hover:text-[#24c2f2] transition-all duration-300"
+                  to="/blog/seo/technical-seo-checklist"
+                  className="hover:text-[#24c2f2] transition-all duration-300"
                 >
-                  Marketing Tools
+                  SEO Checklist
                 </Link>
 
               </li>
@@ -216,10 +293,10 @@ export default function Footer() {
               <li>
 
                 <Link
-                  to="/blog/ui-ux/ui-ux-design-in-2026"
-                  className="block hover:text-[#24c2f2] transition-all duration-300"
+                  to="/blog/ui-ux/ui-ux-design-process-explained"
+                  className="hover:text-[#24c2f2] transition-all duration-300"
                 >
-                  UI/UX Trends
+                  UI/UX Guide
                 </Link>
 
               </li>
@@ -227,10 +304,10 @@ export default function Footer() {
               <li>
 
                 <Link
-                  to="/blog/seo/what-is-seo"
-                  className="block hover:text-[#24c2f2] transition-all duration-300"
+                  to="/blog/digital-marketing/what-is-digital-marketing"
+                  className="hover:text-[#24c2f2] transition-all duration-300"
                 >
-                  What is SEO?
+                  Digital Marketing Guide
                 </Link>
 
               </li>
@@ -238,10 +315,10 @@ export default function Footer() {
               <li>
 
                 <Link
-                  to="/blog/digital-marketing/how-to-earn-money-from-digital-marketing"
-                  className="block hover:text-[#24c2f2] transition-all duration-300"
+                  to="/blog/seo/seo-interview-questions"
+                  className="hover:text-[#24c2f2] transition-all duration-300"
                 >
-                  Earn with Digital Marketing
+                  Interview Questions
                 </Link>
 
               </li>
@@ -249,7 +326,6 @@ export default function Footer() {
             </ul>
 
           </div>
-
           {/* SERVICES */}
           <div>
 
@@ -298,7 +374,7 @@ export default function Footer() {
                   to="/services/social-media-marketing"
                   className="block hover:text-[#24c2f2] transition-all duration-300"
                 >
-                  Social Media Marketing
+                  Social Media
                 </Link>
 
               </li>
@@ -326,10 +402,24 @@ export default function Footer() {
             </Link>
 
             <Link
+              to="/cookie-policy"
+              className="hover:text-[#24c2f2] transition-all duration-300"
+            >
+              Cookie Policy
+            </Link>
+
+            <Link
               to="/terms-and-conditions"
               className="hover:text-[#24c2f2] transition-all duration-300"
             >
               Terms
+            </Link>
+
+            <Link
+              to="/affiliate-disclosure"
+              className="hover:text-[#24c2f2] transition-all duration-300"
+            >
+              Affiliate Disclosure
             </Link>
 
             <Link
@@ -338,7 +428,6 @@ export default function Footer() {
             >
               Disclaimer
             </Link>
-
           </div>
 
         </div>

@@ -5,115 +5,80 @@ export default function Hero() {
 
   const navigate = useNavigate();
 
-  const scrollToInternship = () => {
-
-    const element = document.getElementById('internship-program');
-
-    if (element) {
-
-      const navbarOffset = 100;
-
-      const elementPosition =
-        element.getBoundingClientRect().top + window.pageYOffset;
-
-      const offsetPosition = elementPosition - navbarOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      });
-    }
-  };
-
-  const scrollToServices = () => {
-
-    const element = document.getElementById('services');
-
-    if (element) {
-
-      const navbarOffset = 100;
-
-      const elementPosition =
-        element.getBoundingClientRect().top + window.pageYOffset;
-
-      const offsetPosition = elementPosition - navbarOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      });
-    }
-  };
+   
 
   return (
-<section
-  className="
-    relative
-    min-h-screen
-    overflow-hidden
-    bg-[#050816]
-    flex
-    items-center
-    pt-32
-    pb-20
-  "
->
-  {/* Background Grid */}
+    <section
+      className="
+  relative
+  overflow-hidden
+  bg-[#050816]
+  min-h-screen
+  flex
+  items-center
+  pt-36
+  pb-24
+"
+    >
+      {/* Background Grid */}
 
-  <div
-    className="
-      absolute
-      inset-0
-      bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),
       linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)]
-      bg-[size:60px_60px]
-    "
-  />
+      bg-[size:60px_60px]"
+      />
 
-  {/* Purple Glow */}
+      {/* Purple Glow */}
 
-  <div
+       <div
     className="
       absolute
-      top-[-200px]
-      left-[-150px]
-      w-[500px]
-      h-[500px]
-      bg-violet-600/20
+      -top-52
+      left-1/2
+      -translate-x-1/2
+      w-[900px]
+      h-[900px]
       rounded-full
-      blur-[140px]
+      bg-cyan-500/10
+      blur-[180px]
     "
   />
-
-  {/* Cyan Glow */}
 
   <div
-    className="
-      absolute
-      bottom-[-200px]
-      right-[-150px]
-      w-[500px]
-      h-[500px]
-      bg-cyan-500/20
-      rounded-full
-      blur-[140px]
-    "
-  />
+  className="
+    absolute
+    top-[20%]
+    right-[-180px]
+    w-[600px]
+    h-[600px]
+    rounded-full
+    bg-sky-500/10
+    blur-[180px]
+  "
+/><div
+  className="
+    absolute
+    inset-0
+    bg-gradient-to-b
+    from-black/20
+    via-transparent
+    to-[#050816]
+  "
+/>
 
-  {/* Content */}
+      {/* Content */}
 
-  <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-20 max-w-7xl mx-auto px-6">
 
-    <div className="grid lg:grid-cols-2 gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
 
-      {/* Left Content */}
+          {/* Left Content */}
 
-      <div>
+          <div>
 
-        {/* Badge */}
+            {/* Badge */}
 
-        <div
-          className="
+            <div
+              className="
             inline-flex
             items-center
             gap-2
@@ -128,65 +93,50 @@ export default function Hero() {
             font-medium
             mb-8
           "
-        >
-          ✦ NSL Digital Lab
-        </div>
+            >
+              ✦ NSL Digital Lab
+            </div>
 
-        {/* Heading */}
+            {/* Heading */}
 
-        <h1
-          className="
-            text-5xl
-            md:text-7xl
-            font-bold
-            leading-tight
-            tracking-tight
-            text-white
-          "
-        >
-          Design.
-          <br />
+            <h1 className="text-5xl md:text-7xl font-black leading-[1.05] tracking-tight text-white">
 
-          <span
-            className="
-              bg-gradient-to-r
-              from-violet-400
-              via-purple-400
-              to-cyan-400
-              bg-clip-text
-              text-transparent
-            "
-          >
-            Develop.
-          </span>
+  Designing
 
-          <br />
+  <br />
 
-          Scale.
-        </h1>
+  <span className="bg-gradient-to-r from-cyan-400 via-sky-300 to-violet-400 bg-clip-text text-transparent">
 
-        {/* Description */}
+    Digital Experiences
 
-        <p
-          className="
+  </span>
+
+  <br />
+
+  That Grow Businesses
+
+</h1>
+
+            {/* Description */}
+
+            <p
+              className="
             mt-8
             text-xl
             text-slate-400
             max-w-xl
             leading-relaxed
           "
-        >
-          We help startups and businesses create
-          modern websites, web applications,
-          and digital experiences that users love.
-        </p>
+            >
+              We design intuitive user experiences, build high-performance websites, and create scalable digital products that help businesses grow faster.
+            </p>
 
-        {/* Buttons */}
+            {/* Buttons */}
 
-        <div className="mt-10 flex flex-wrap gap-4">
+            <div className="mt-10 flex flex-wrap gap-4">
 
-          <button
-            className="
+              <button
+                className="
               px-8
               py-4
               rounded-xl
@@ -199,12 +149,12 @@ export default function Hero() {
               transition-all
               duration-300
             "
-          >
-            Start Project
-          </button>
+              >
+                Start Project
+              </button>
 
-          <button
-            className="
+              <button
+                className="
               px-8
               py-4
               rounded-xl
@@ -217,58 +167,58 @@ export default function Hero() {
               hover:bg-white/10
               transition-all
             "
-          >
-            View Portfolio
-          </button>
+              >
+                View Portfolio
+              </button>
 
-        </div>
+            </div>
 
-        {/* Stats */}
+            {/* Stats */}
 
-        <div className="mt-16 grid grid-cols-3 gap-8">
+            <div className="mt-16 grid grid-cols-3 gap-8">
 
-          <div>
-            <h3 className="text-3xl font-bold text-white">
-              25+
-            </h3>
+              <div>
+                <h3 className="text-3xl font-bold text-white">
+                  25+
+                </h3>
 
-            <p className="text-slate-500 mt-1">
-              Projects
-            </p>
+                <p className="text-slate-500 mt-1">
+                  Projects
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-3xl font-bold text-white">
+                  5+
+                </h3>
+
+                <p className="text-slate-500 mt-1">
+                  Years
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-3xl font-bold text-white">
+                  100%
+                </h3>
+
+                <p className="text-slate-500 mt-1">
+                  Responsive
+                </p>
+              </div>
+
+            </div>
+
           </div>
 
-          <div>
-            <h3 className="text-3xl font-bold text-white">
-              5+
-            </h3>
+          {/* Right Side */}
 
-            <p className="text-slate-500 mt-1">
-              Years
-            </p>
-          </div>
+          <div className="relative">
 
-          <div>
-            <h3 className="text-3xl font-bold text-white">
-              100%
-            </h3>
+            {/* Main Card */}
 
-            <p className="text-slate-500 mt-1">
-              Responsive
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-
-      {/* Right Side */}
-
-      <div className="relative">
-
-        {/* Main Card */}
-
-        <div
-          className="
+            <div
+              className="
             rounded-3xl
             border
             border-white/10
@@ -277,52 +227,52 @@ export default function Hero() {
             p-8
             shadow-2xl
           "
-        >
+            >
 
-          {/* Browser Top */}
+              {/* Browser Top */}
 
-          <div className="flex gap-2 mb-8">
+              <div className="flex gap-2 mb-8">
 
-            <div className="w-3 h-3 rounded-full bg-red-500" />
-            <div className="w-3 h-3 rounded-full bg-yellow-500" />
-            <div className="w-3 h-3 rounded-full bg-green-500" />
+                <div className="w-3 h-3 rounded-full bg-red-500" />
+                <div className="w-3 h-3 rounded-full bg-yellow-500" />
+                <div className="w-3 h-3 rounded-full bg-green-500" />
 
-          </div>
+              </div>
 
-          {/* Dashboard */}
+              {/* Dashboard */}
 
-          <div className="space-y-5">
+              <div className="space-y-5">
 
-            <div className="h-12 bg-white/10 rounded-xl" />
+                <div className="h-12 bg-white/10 rounded-xl" />
 
-            <div className="grid grid-cols-3 gap-4">
+                <div className="grid grid-cols-3 gap-4">
 
-              <div className="h-24 rounded-xl bg-violet-500/20 border border-violet-500/20" />
+                  <div className="h-24 rounded-xl bg-violet-500/20 border border-violet-500/20" />
 
-              <div className="h-24 rounded-xl bg-cyan-500/20 border border-cyan-500/20" />
+                  <div className="h-24 rounded-xl bg-cyan-500/20 border border-cyan-500/20" />
 
-              <div className="h-24 rounded-xl bg-purple-500/20 border border-purple-500/20" />
+                  <div className="h-24 rounded-xl bg-purple-500/20 border border-purple-500/20" />
+
+                </div>
+
+                <div className="h-40 rounded-xl bg-white/5 border border-white/10" />
+
+                <div className="grid grid-cols-2 gap-4">
+
+                  <div className="h-24 rounded-xl bg-white/5 border border-white/10" />
+
+                  <div className="h-24 rounded-xl bg-white/5 border border-white/10" />
+
+                </div>
+
+              </div>
 
             </div>
 
-            <div className="h-40 rounded-xl bg-white/5 border border-white/10" />
+            {/* Floating Card */}
 
-            <div className="grid grid-cols-2 gap-4">
-
-              <div className="h-24 rounded-xl bg-white/5 border border-white/10" />
-
-              <div className="h-24 rounded-xl bg-white/5 border border-white/10" />
-
-            </div>
-
-          </div>
-
-        </div>
-
-        {/* Floating Card */}
-
-        <div
-          className="
+            <div
+              className="
             absolute
             -top-6
             -right-6
@@ -334,13 +284,13 @@ export default function Hero() {
             py-4
             shadow-xl
           "
-        >
-          <div className="text-sm text-slate-400">
-            Project Success
-          </div>
+            >
+              <div className="text-sm text-slate-400">
+                Project Success
+              </div>
 
-          <div
-            className="
+              <div
+                className="
               text-3xl
               font-bold
               bg-gradient-to-r
@@ -349,16 +299,16 @@ export default function Hero() {
               bg-clip-text
               text-transparent
             "
-          >
-            +95%
+              >
+                +95%
+              </div>
+            </div>
+
           </div>
+
         </div>
 
       </div>
-
-    </div>
-
-  </div>
-</section>
+    </section>
   );
 }
