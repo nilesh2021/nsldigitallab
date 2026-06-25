@@ -129,6 +129,15 @@ export const blogInternalLinks: Record<string, BlogLinkSet> = {
     ],
     service: { href: "/services/ui-ux-design", label: "UI/UX design services" },
   },
+  "ui-ux-design-principles": {
+    related: [
+      { href: "/blog/ui-ux/ui-ux-design-process-explained", label: "UI/UX design process" },
+      { href: "/blog/ui-ux/accessibility-in-ux-design", label: "Accessibility in UX design" },
+      { href: "/blog/ui-ux/ui-ux-design-in-2026", label: "UI/UX design in 2026" },
+      { href: "/blog/ui-ux/future-of-ui-design", label: "Future of UI design" },
+    ],
+    service: { href: "/services/ui-ux-design", label: "UI/UX design services" },
+  },
   "saas-dashboard-design-ideas": {
     related: [
       { href: "/blog/ui-ux/ui-ux-design-process-explained", label: "UI/UX design process" },

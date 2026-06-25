@@ -20,81 +20,53 @@ export default function ResourceDetails() {
     <>
       <Navigation />
 
-      <main className="bg-slate-50 min-h-screen">
-
-        {/* Hero */}
-
+      <main className="min-h-screen bg-slate-50">
         <section className="py-20">
-
-          <div className="max-w-5xl mx-auto px-6">
-
-            <div className="rounded-3xl bg-white shadow-lg overflow-hidden">
-
+          <div className="mx-auto max-w-5xl px-6">
+            <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-sm">
               <img
                 src={resource.image}
                 alt={resource.title}
-                className="w-full h-[350px] object-cover"
+                className="h-[320px] w-full object-cover"
               />
 
-              <div className="p-10">
-
+              <div className="p-8 md:p-10">
                 <span className="inline-flex rounded-full bg-cyan-100 px-4 py-2 text-sm font-semibold text-cyan-700">
-
                   {resource.category}
-
                 </span>
 
-                <h1 className="mt-6 text-5xl font-bold">
-
+                <h1 className="mt-6 text-3xl font-bold text-slate-900 sm:text-4xl">
                   {resource.title}
-
                 </h1>
 
-                <p className="mt-6 text-lg text-slate-600 leading-8">
-
+                <p className="mt-5 text-lg leading-8 text-slate-600">
                   {resource.description}
-
                 </p>
 
-                <div className="mt-8 flex gap-8">
-
+                <div className="mt-8 flex flex-wrap gap-6 text-sm text-slate-600">
                   <div>
-
-                    <div className="text-sm text-slate-500">
-                      Type
-                    </div>
-
-                    <div className="font-semibold">
+                    <div className="text-slate-500">Type</div>
+                    <div className="mt-1 font-semibold text-slate-900">
                       {resource.type}
                     </div>
-
                   </div>
 
                   <div>
-
-                    <div className="text-sm text-slate-500">
-                      Downloads
-                    </div>
-
-                    <div className="font-semibold">
+                    <div className="text-slate-500">Downloads</div>
+                    <div className="mt-1 font-semibold text-slate-900">
                       {resource.downloads.toLocaleString()}
                     </div>
-
                   </div>
-
                 </div>
-
               </div>
-
             </div>
-<ResourceDownload
-  resourceTitle={resource.title}
-  downloadUrl={resource.downloadUrl}
-/>
+
+            <ResourceDownload
+              resourceTitle={resource.title}
+              downloadUrl={resource.downloadUrl}
+            />
           </div>
-
         </section>
-
       </main>
 
       <Footer />

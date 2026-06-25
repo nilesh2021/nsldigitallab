@@ -1021,7 +1021,7 @@ export default function CareersPage() {
 
               <div className="p-6 sm:p-10 lg:p-12">
 
-                <CareerForm />
+                <CareerForm jobTitle="General Career Application" />
 
               </div>
             </div>

@@ -1,19 +1,16 @@
 import {
-  Facebook,
-  Twitter,
-  Instagram,
   Linkedin,
+  Instagram,
+  Youtube,
+  Github,
 } from "lucide-react";
 
 import { Link } from "react-router-dom";
-import logo from "../../assets/images/nexify_n_logo.png"
+import logo from "../../assets/images/nexify_n_logo.png";
 
 export default function Footer() {
-
   const scrollToSection = (id: string) => {
-
     if (window.location.pathname === "/") {
-
       const element = document.getElementById(id);
 
       if (element) {
@@ -22,412 +19,484 @@ export default function Footer() {
           block: "start",
         });
       }
-
     } else {
-
       window.location.href = `/#${id}`;
-
     }
-
   };
 
   return (
+    <footer className="bg-[#07142B] text-white border-t border-white/10">
 
-    <footer className="bg-[#202851] text-white pt-16 pb-6 border-t border-white/10">
+      <div className="max-w-7xl mx-auto px-6">
 
-      <div className="w-full px-6 md:px-10 lg:px-16 xl:px-24">
+        {/* Top */}
 
-        {/* Top Line */}
-        <div className="h-[1px] bg-gradient-to-r from-transparent via-[#24c2f2]/40 to-transparent mb-10" />
+        <div className="py-20">
 
-        
+          <div className="grid gap-12 lg:grid-cols-6">
 
-        {/* GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 xl:gap-12 mb-10">
+            {/* ===================== */}
+            {/* Brand */}
+            {/* ===================== */}
 
-          {/* BRAND */}
-          <div className="max-w-sm">
+            <div className="lg:col-span-2">
 
-            <Link
-              to="/"
-              className="flex items-center gap-3 group"
-            >
-
-              <div className="w-11 h-11 flex items-center justify-center duration-300">
-
+              <Link
+                to="/"
+                className="flex items-center gap-3"
+              >
                 <img
                   src={logo}
-                  alt="NSL Digital Lab Logo"
-                  className="w-full h-full object-contain"
+                  alt="NSL Digital Lab"
+                  className="w-12 h-12 object-contain"
                 />
 
+                <div>
+
+                  <h2 className="text-xl font-bold">
+
+                    NSL Digital Lab
+
+                  </h2>
+
+                  <p className="text-xs uppercase tracking-widest text-cyan-400">
+
+                    Design • Development • Growth
+
+                  </p>
+
+                </div>
+
+              </Link>
+
+              <p className="mt-6 text-slate-400 leading-8">
+
+                Helping businesses build modern websites,
+                improve user experiences, increase search visibility,
+                and grow through UI/UX Design, SEO,
+                Web Development and Digital Marketing.
+
+              </p>
+
+              <div className="mt-8">
+
+                <p className="text-cyan-400 font-semibold">
+
+                  ⭐ Growing with startups & businesses
+
+                </p>
+
               </div>
 
-              <div className="flex flex-col leading-none">
+              {/* Social */}
 
-                <span className="text-lg font-bold text-white">
+              <div className="flex gap-4 mt-8">
 
-                  NSL
-                  <span className="font-medium text-gray-300">
-                    &nbsp;Digital Lab
-                  </span>
-
-                </span>
-
-                <span className="text-[10px] uppercase  text-[#24c2f2] mt-1">
-
-                  Design • Development • Growth
-
-                </span>
-
-              </div>
-
-            </Link>
-
-            <p className="text-gray-400 mt-5 mb-5 leading-7 text-[15px]">
-
-              Helping brands grow through SEO,
-              performance marketing, social Digital Lab,
-              and modern digital experiences.
-
-            </p>
-            {/* SOCIAL */}
-            <div className="flex gap-3">
-
-              {[Facebook, Twitter, Instagram, Linkedin].map(
-                (Icon, index) => (
+                {[
+                  Linkedin,
+                  Instagram,
+                  Youtube,
+                  Github,
+                ].map((Icon, index) => (
 
                   <a
                     key={index}
                     href="#"
-                    className="w-9 h-9 rounded-lg bg-white/10 backdrop-blur-xl border border-white/10 flex items-center justify-center hover:bg-[#24c2f2] hover:scale-110 transition-all duration-300"
+                    className="
+                      w-11
+                      h-11
+                      rounded-xl
+                      border
+                      border-white/10
+                      bg-white/5
+                      flex
+                      items-center
+                      justify-center
+                      hover:bg-cyan-500
+                      transition-all
+                      duration-300
+                    "
                   >
 
-                    <Icon className="w-4 h-4" />
+                    <Icon className="w-5 h-5" />
 
                   </a>
 
-                )
-              )}
+                ))}
+
+              </div>
+
+            </div>
+
+            {/* ===================== */}
+            {/* Services */}
+            {/* ===================== */}
+
+            <div>
+
+              <h3 className="text-lg font-semibold mb-6">
+
+                Services
+
+              </h3>
+
+              <ul className="space-y-4 text-slate-400">
+
+                <li>
+
+                  <Link
+                    to="/services/ui-ux-design"
+                    className="hover:text-cyan-400 transition"
+                  >
+                    UI/UX Design
+                  </Link>
+
+                </li>
+
+                <li>
+
+                  <Link
+                    to="/services/web-design"
+                    className="hover:text-cyan-400 transition"
+                  >
+                    Website Design
+                  </Link>
+
+                </li>
+
+                <li>
+
+                  <Link
+                    to="/services/seo-services"
+                    className="hover:text-cyan-400 transition"
+                  >
+                    SEO Services
+                  </Link>
+
+                </li>
+
+                <li>
+
+                  <Link
+                    to="/services/social-media-marketing"
+                    className="hover:text-cyan-400 transition"
+                  >
+                    Digital Marketing
+                  </Link>
+
+                </li>
+
+                <li>
+
+                  <Link
+                    to="/services"
+                    className="text-cyan-400 hover:underline"
+                  >
+                    View All Services →
+
+                  </Link>
+
+                </li>
+
+              </ul>
+
+            </div>
+
+            {/* ===================== */}
+            {/* Learn */}
+            {/* ===================== */}
+
+            <div>
+
+              <h3 className="text-lg font-semibold mb-6">
+
+                Learn
+
+              </h3>
+
+              <ul className="space-y-4 text-slate-400">
+
+                <li>
+
+                  <Link
+                    to="/learn"
+                    className="hover:text-cyan-400 transition"
+                  >
+                    Learning Hub
+                  </Link>
+
+                </li>
+
+                <li>
+
+                  <Link
+                    to="/learn/ui-ux-design"
+                    className="hover:text-cyan-400 transition"
+                  >
+                    UI/UX Design
+                  </Link>
+
+                </li>
+
+                <li>
+
+                  <Link
+                    to="/learn/seo"
+                    className="hover:text-cyan-400 transition"
+                  >
+                    Learn SEO
+                  </Link>
+
+                </li>
+
+                <li>
+
+                  <Link
+                    to="/learn/digital-marketing"
+                    className="hover:text-cyan-400 transition"
+                  >
+                    Digital Marketing
+                  </Link>
+
+                </li>
+
+                <li>
+
+                  <Link
+                    to="/resources"
+                    className="hover:text-cyan-400 transition"
+                  >
+                    Free Resources
+                  </Link>
+
+                </li>
+
+              </ul>
+
+            </div>
+
+            {/* ===================== */}
+            {/* Resources */}
+            {/* ===================== */}
+
+            <div>
+
+              <h3 className="text-lg font-semibold mb-6">
+
+                Resources
+
+              </h3>
+
+              <ul className="space-y-4 text-slate-400">
+
+                <li>
+
+                  <Link
+                    to="/resources"
+                    className="hover:text-cyan-400 transition"
+                  >
+                    All Resources
+                  </Link>
+
+                </li>
+
+                <li>
+
+                  <Link
+                    to="/resources/ui-ux-interview-questions"
+                    className="hover:text-cyan-400 transition"
+                  >
+                    UI/UX Interview Questions
+                  </Link>
+
+                </li>
+
+                <li>
+
+                  <Link
+                    to="/resources/seo-checklist"
+                    className="hover:text-cyan-400 transition"
+                  >
+                    SEO Checklist
+                  </Link>
+
+                </li>
+
+                <li>
+
+                  <Link
+                    to="/resources/digital-marketing-checklist"
+                    className="hover:text-cyan-400 transition"
+                  >
+                    Marketing Checklist
+                  </Link>
+
+                </li>
+
+                <li>
+
+                  <Link
+                    to="/blog"
+                    className="hover:text-cyan-400 transition"
+                  >
+                    Read Our Blog
+                  </Link>
+
+                </li>
+
+              </ul>
+
+            </div>
+
+                        {/* ===================== */}
+            {/* Company */}
+            {/* ===================== */}
+
+            <div>
+
+              <h3 className="text-lg font-semibold mb-6">
+
+                Company
+
+              </h3>
+
+              <ul className="space-y-4 text-slate-400">
+
+                <li>
+
+                  <button
+                    onClick={() => scrollToSection("about")}
+                    className="hover:text-cyan-400 transition"
+                  >
+                    About Us
+                  </button>
+
+                </li>
+
+                <li>
+
+                  <Link
+                    to="/blog"
+                    className="hover:text-cyan-400 transition"
+                  >
+                    Blog
+                  </Link>
+
+                </li>
+
+                <li>
+
+                  <Link
+                    to="/careers"
+                    className="hover:text-cyan-400 transition"
+                  >
+                    Careers
+                  </Link>
+
+                </li>
+
+                <li>
+
+                  <button
+                    onClick={() => scrollToSection("contact")}
+                    className="hover:text-cyan-400 transition"
+                  >
+                    Contact
+                  </button>
+
+                </li>
+
+                <li>
+
+                  <button
+                    onClick={() => scrollToSection("subscribe")}
+                    className="hover:text-cyan-400 transition"
+                  >
+                    Newsletter
+                  </button>
+
+                </li>
+
+              </ul>
 
             </div>
 
           </div>
 
-          {/* COMPANY */}
-          <div>
-
-            <h3 className="text-lg font-semibold mb-4">
-              Company
-            </h3>
-
-            <ul className="space-y-3 text-gray-400 text-[15px]">
-
-              <li>
-
-                <button
-                  onClick={() => scrollToSection("about")}
-                  className="hover:text-[#24c2f2] transition-all duration-300"
-                >
-                  About Us
-                </button>
-
-              </li>
-
-              <li>
-
-                <button
-                  onClick={() => scrollToSection("services")}
-                  className="hover:text-[#24c2f2] transition-all duration-300"
-                >
-                  Services
-                </button>
-
-              </li>
-
-              <li>
-
-                <Link
-                  to="/careers"
-                  onClick={() => window.scrollTo(0, 0)}
-                  className="block hover:text-[#24c2f2] transition-all duration-300"
-                >
-                  Careers
-                </Link>
-
-              </li>
-
-              <li>
-
-                <button
-                  onClick={() => scrollToSection("contact")}
-                  className="hover:text-[#24c2f2] transition-all duration-300"
-                >
-                  Contact
-                </button>
-
-              </li>
-
-            </ul>
-
-          </div>
-          {/*  Learning  */}
-
-          {/* LEARNING */}
-          <div>
-
-            <h3 className="text-lg font-semibold mb-4">
-              Free Courses
-            </h3>
-
-            <ul className="space-y-3 text-gray-400 text-[15px]">
-
-              <li>
-                <Link
-                  to="/learn/ui-ux-design"
-                  className="hover:text-[#24c2f2] transition-all duration-300"
-                >
-                  🎓 UI/UX Design Course
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  to="/learn/digital-marketing"
-                  className="hover:text-[#24c2f2] transition-all duration-300"
-                >
-                  🚀 Digital Marketing Course
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  to="/learn/seo"
-                  className="hover:text-[#24c2f2] transition-all duration-300"
-                >
-                  📈 Learn SEO
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  to="/resources/templates"
-                  className="hover:text-[#24c2f2] transition-all duration-300"
-                >
-                  🎁 Free Templates
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  to="/resources/checklists"
-                  className="hover:text-[#24c2f2] transition-all duration-300"
-                >
-                  ✅ SEO & UI Checklists
-                </Link>
-              </li>
-
-            </ul>
-
-          </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          {/* RESOURCES */}
-          {/* RESOURCES */}
-          <div>
-
-            <h3 className="text-lg font-semibold mb-4">
-              Resources
-            </h3>
-
-            <ul className="space-y-3 text-gray-400 text-[15px]">
-
-              <li>
-
-                <Link
-                  to="/blog"
-                  className="hover:text-[#24c2f2] transition-all duration-300"
-                >
-                  Latest Blog
-                </Link>
-
-              </li>
-
-              <li>
-
-                <Link
-                  to="/best-ai-tools-for-marketers"
-                  className="hover:text-[#24c2f2] transition-all duration-300"
-                >
-                  AI Tools
-                </Link>
-
-              </li>
-
-              <li>
-
-                <Link
-                  to="/blog/seo/technical-seo-checklist"
-                  className="hover:text-[#24c2f2] transition-all duration-300"
-                >
-                  SEO Checklist
-                </Link>
-
-              </li>
-
-              <li>
-
-                <Link
-                  to="/blog/ui-ux/ui-ux-design-process-explained"
-                  className="hover:text-[#24c2f2] transition-all duration-300"
-                >
-                  UI/UX Guide
-                </Link>
-
-              </li>
-
-              <li>
-
-                <Link
-                  to="/blog/digital-marketing/what-is-digital-marketing"
-                  className="hover:text-[#24c2f2] transition-all duration-300"
-                >
-                  Digital Marketing Guide
-                </Link>
-
-              </li>
-
-              <li>
-
-                <Link
-                  to="/blog/seo/seo-interview-questions"
-                  className="hover:text-[#24c2f2] transition-all duration-300"
-                >
-                  Interview Questions
-                </Link>
-
-              </li>
-
-            </ul>
-
-          </div>
-          {/* SERVICES */}
-          <div>
-
-            <h3 className="text-lg font-semibold mb-4">
-              Services
-            </h3>
-
-            <ul className="space-y-3 text-gray-400 text-[15px]">
-
-              <li>
-
-                <Link
-                  to="/services/seo-services"
-                  className="block hover:text-[#24c2f2] transition-all duration-300"
-                >
-                  SEO Services
-                </Link>
-
-              </li>
-
-              <li>
-
-                <Link
-                  to="/services/web-design"
-                  className="block hover:text-[#24c2f2] transition-all duration-300"
-                >
-                  Web Design
-                </Link>
-
-              </li>
-
-              <li>
-
-                <Link
-                  to="/services/ui-ux-design"
-                  className="block hover:text-[#24c2f2] transition-all duration-300"
-                >
-                  UI/UX Design
-                </Link>
-
-              </li>
-
-              <li>
-
-                <Link
-                  to="/services/social-media-marketing"
-                  className="block hover:text-[#24c2f2] transition-all duration-300"
-                >
-                  Social Media
-                </Link>
-
-              </li>
-
-            </ul>
-
-          </div>
-
         </div>
 
-        {/* BOTTOM */}
-        <div className="border-t border-white/10 pt-5 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-400 text-sm">
+        {/* Divider */}
 
-          <p>
-            © 2026 NSL Digital Lab. All rights reserved.
-          </p>
+        <div className="border-t border-white/10" />
 
-          <div className="flex gap-5 flex-wrap justify-center">
+        {/* Bottom */}
+
+        <div className="py-8 flex flex-col lg:flex-row justify-between items-center gap-8">
+
+          {/* Left */}
+
+          <div>
+
+            <p className="text-slate-400 text-sm text-center lg:text-left">
+
+              © {new Date().getFullYear()}{" "}
+              <span className="text-white font-semibold">
+
+                NSL Digital Lab
+
+              </span>
+
+              . All Rights Reserved.
+
+            </p>
+
+            <p className="text-slate-500 text-sm mt-2 text-center lg:text-left">
+
+              Designed & Developed with ❤️ in Pune, India.
+
+            </p>
+
+          </div>
+
+          {/* Policies */}
+
+          <div className="flex flex-wrap justify-center gap-6 text-sm">
 
             <Link
               to="/privacy-policy"
-              className="hover:text-[#24c2f2] transition-all duration-300"
+              className="text-slate-400 hover:text-cyan-400 transition"
             >
               Privacy Policy
             </Link>
 
             <Link
               to="/cookie-policy"
-              className="hover:text-[#24c2f2] transition-all duration-300"
+              className="text-slate-400 hover:text-cyan-400 transition"
             >
               Cookie Policy
             </Link>
 
             <Link
               to="/terms-and-conditions"
-              className="hover:text-[#24c2f2] transition-all duration-300"
+              className="text-slate-400 hover:text-cyan-400 transition"
             >
-              Terms
+              Terms & Conditions
             </Link>
 
             <Link
               to="/affiliate-disclosure"
-              className="hover:text-[#24c2f2] transition-all duration-300"
+              className="text-slate-400 hover:text-cyan-400 transition"
             >
               Affiliate Disclosure
             </Link>
 
             <Link
               to="/disclaimer"
-              className="hover:text-[#24c2f2] transition-all duration-300"
+              className="text-slate-400 hover:text-cyan-400 transition"
             >
               Disclaimer
             </Link>
+
           </div>
 
         </div>
@@ -435,7 +504,5 @@ export default function Footer() {
       </div>
 
     </footer>
-
   );
-
 }

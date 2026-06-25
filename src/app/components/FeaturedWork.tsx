@@ -1,119 +1,322 @@
 import { ArrowUpRight, Globe, Search, LayoutDashboard } from "lucide-react";
+import { Link } from "react-router-dom";
 
+import {
+  
+  MonitorSmartphone,
+  Palette,
+  ArrowRight,
+} from "lucide-react";
 export default function FeaturedWork() {
   return (
-    <section id="featured-work" className="py-24 sm:py-18 lg:py-24 px-4 sm:px-6 bg-[#f8fafc]">
-      <div className="container mx-auto px-6">
+  <section
+  id="featured-work"
+  className="py-24 bg-white"
+>
+  <div className="max-w-7xl mx-auto px-6">
 
-        {/* SECTION HEADER */}
+    {/* Heading */}
 
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block px-4 py-2 rounded-full bg-[#202851]/10 text-[#202851] text-sm mb-5">
-            Featured Work
-          </span>
+    <div className="text-center max-w-3xl mx-auto mb-16">
 
-          <h2 className="text-3xl md:text-4xl font-semibold text-[#202851] mb-6 leading-tight">
-            Digital Solutions Built For Modern Brands
-          </h2>
+      <span className="inline-flex rounded-full bg-cyan-100 px-4 py-2 text-sm font-semibold text-cyan-700">
 
-          <p className="text-lg text-gray-600 leading-relaxed">
-            A selection of digital experiences, website designs, and
-            growth-focused solutions crafted to help businesses strengthen
-            their online presence.
-          </p>
+        Featured Projects
+
+      </span>
+
+      <h2 className="mt-6 text-4xl md:text-5xl font-bold text-[#202851]">
+
+        Digital Solutions
+        <br />
+        Built For Modern Brands
+
+      </h2>
+
+      <p className="mt-6 text-lg leading-8 text-slate-600">
+
+        Explore some of the digital experiences, websites,
+        SEO strategies and UI/UX solutions we've designed
+        to help businesses grow online.
+
+      </p>
+
+    </div>
+
+    {/* Projects */}
+
+    <div className="grid lg:grid-cols-3 gap-8">
+
+      {/* CARD 1 */}
+
+      <div className="group rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+
+        <div className="relative h-56 bg-gradient-to-br from-[#202851] via-[#24356d] to-[#24c2f2] flex items-center justify-center">
+
+          <Globe className="w-16 h-16 text-white" />
+
         </div>
 
-        {/* WORK CARDS */}
+        <div className="p-8">
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <span className="text-cyan-600 font-semibold text-sm">
 
-          {/* CARD 1 */}
+            Website Design
 
-          <div className="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:-translate-y-2">
+          </span>
 
-            <div className="h-52 bg-gradient-to-br from-[#202851] to-[#2a3561] flex items-center justify-center">
-              <Globe className="w-16 h-16 text-[#24c2f2]" />
-            </div>
+          <h3 className="mt-3 text-2xl font-bold text-[#202851]">
 
-            <div className="p-8">
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-sm text-[#24c2f2] font-medium">
-                  Website Design
-                </span>
+            Agency Website
 
-                <ArrowUpRight className="w-5 h-5 text-gray-400 group-hover:text-[#202851] transition" />
-              </div>
+          </h3>
 
-              <h3 className="text-2xl font-semibold text-[#202851] mb-4">
-                Agency Website Experience
-              </h3>
+          <p className="mt-4 text-slate-600 leading-7">
 
-              <p className="text-gray-600 leading-relaxed">
-                Modern React-based business website focused on branding,
-                responsiveness, and conversion-focused user experience.
-              </p>
-            </div>
-          </div>
+            Modern responsive business website focused on
+            branding, SEO and lead generation.
 
-          {/* CARD 2 */}
+          </p>
 
-          <div className="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:-translate-y-2">
+          <div className="mt-6 flex flex-wrap gap-2">
 
-            <div className="h-52 bg-gradient-to-br from-[#202851] to-[#2a3561] flex items-center justify-center">
-              <Search className="w-16 h-16 text-[#24c2f2]" />
-            </div>
+            <span className="px-3 py-1 rounded-full bg-slate-100 text-sm">
 
-            <div className="p-8">
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-sm text-[#24c2f2] font-medium">
-                  SEO & Content
-                </span>
+              React
 
-                <ArrowUpRight className="w-5 h-5 text-gray-400 group-hover:text-[#202851] transition" />
-              </div>
+            </span>
 
-              <h3 className="text-2xl font-semibold text-[#202851] mb-4">
-                SEO Blog Architecture
-              </h3>
+            <span className="px-3 py-1 rounded-full bg-slate-100 text-sm">
 
-              <p className="text-gray-600 leading-relaxed">
-                Structured blog setup optimized for content marketing,
-                search visibility, and scalable organic growth.
-              </p>
-            </div>
-          </div>
+              Tailwind
 
-          {/* CARD 3 */}
+            </span>
 
-          <div className="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:-translate-y-2">
+            <span className="px-3 py-1 rounded-full bg-slate-100 text-sm">
 
-            <div className="h-52 bg-gradient-to-br from-[#202851] to-[#2a3561] flex items-center justify-center">
-              <LayoutDashboard className="w-16 h-16 text-[#24c2f2]" />
-            </div>
+              SEO
 
-            <div className="p-8">
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-sm text-[#24c2f2] font-medium">
-                  UI/UX Design
-                </span>
+            </span>
 
-                <ArrowUpRight className="w-5 h-5 text-gray-400 group-hover:text-[#202851] transition" />
-              </div>
-
-              <h3 className="text-2xl font-semibold text-[#202851] mb-4">
-                Landing Page Optimization
-              </h3>
-
-              <p className="text-gray-600 leading-relaxed">
-                Clean and engaging landing page layouts designed to improve
-                user engagement and campaign performance.
-              </p>
-            </div>
           </div>
 
         </div>
 
       </div>
-    </section>
+
+      {/* CARD 2 */}
+
+      <div className="group rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all">
+
+        <div className="h-56 bg-gradient-to-br from-[#202851] via-[#24356d] to-[#24c2f2] flex items-center justify-center">
+
+          <LayoutDashboard className="w-16 h-16 text-white" />
+
+        </div>
+
+        <div className="p-8">
+
+          <span className="text-cyan-600 font-semibold text-sm">
+
+            UI/UX Design
+
+          </span>
+
+          <h3 className="mt-3 text-2xl font-bold text-[#202851]">
+
+            Dashboard Experience
+
+          </h3>
+
+          <p className="mt-4 text-slate-600 leading-7">
+
+            Clean dashboard interface designed with
+            accessibility, usability and performance in mind.
+
+          </p>
+
+          <div className="mt-6 flex flex-wrap gap-2">
+
+            <span className="px-3 py-1 rounded-full bg-slate-100 text-sm">
+
+              Figma
+
+            </span>
+
+            <span className="px-3 py-1 rounded-full bg-slate-100 text-sm">
+
+              UX
+
+            </span>
+
+            <span className="px-3 py-1 rounded-full bg-slate-100 text-sm">
+
+              Prototype
+
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      {/* CARD 3 */}
+
+      <div className="group rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all">
+
+        <div className="h-56 bg-gradient-to-br from-[#202851] via-[#24356d] to-[#24c2f2] flex items-center justify-center">
+
+          <Search className="w-16 h-16 text-white" />
+
+        </div>
+
+        <div className="p-8">
+
+          <span className="text-cyan-600 font-semibold text-sm">
+
+            SEO Strategy
+
+          </span>
+
+          <h3 className="mt-3 text-2xl font-bold text-[#202851]">
+
+            SEO Blog Architecture
+
+          </h3>
+
+          <p className="mt-4 text-slate-600 leading-7">
+
+            Optimized content structure built for scalable
+            organic traffic and long-term growth.
+
+          </p>
+
+          <div className="mt-6 flex flex-wrap gap-2">
+
+            <span className="px-3 py-1 rounded-full bg-slate-100 text-sm">
+
+              SEO
+
+            </span>
+
+            <span className="px-3 py-1 rounded-full bg-slate-100 text-sm">
+
+              Content
+
+            </span>
+
+            <span className="px-3 py-1 rounded-full bg-slate-100 text-sm">
+
+              Analytics
+
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    {/* Second Row */}
+
+    <div className="grid lg:grid-cols-2 gap-8 mt-8">
+
+      {/* CARD 4 */}
+
+      <div className="group rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all">
+
+        <div className="h-56 bg-gradient-to-br from-[#202851] via-[#24356d] to-[#24c2f2] flex items-center justify-center">
+
+          <MonitorSmartphone className="w-16 h-16 text-white" />
+
+        </div>
+
+        <div className="p-8">
+
+          <span className="text-cyan-600 font-semibold text-sm">
+
+            Landing Pages
+
+          </span>
+
+          <h3 className="mt-3 text-2xl font-bold text-[#202851]">
+
+            High Converting Landing Pages
+
+          </h3>
+
+          <p className="mt-4 text-slate-600 leading-7">
+
+            Optimized landing pages designed to increase
+            conversions, engagement and campaign performance.
+
+          </p>
+
+        </div>
+
+      </div>
+
+      {/* CARD 5 */}
+
+      <div className="group rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all">
+
+        <div className="h-56 bg-gradient-to-br from-[#202851] via-[#24356d] to-[#24c2f2] flex items-center justify-center">
+
+          <Palette className="w-16 h-16 text-white" />
+
+        </div>
+
+        <div className="p-8">
+
+          <span className="text-cyan-600 font-semibold text-sm">
+
+            Branding
+
+          </span>
+
+          <h3 className="mt-3 text-2xl font-bold text-[#202851]">
+
+            Digital Brand Identity
+
+          </h3>
+
+          <p className="mt-4 text-slate-600 leading-7">
+
+            Creating consistent visual identity and engaging
+            digital experiences that strengthen your brand.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    {/* CTA */}
+
+    <div className="text-center mt-16">
+
+      <p className="text-slate-600 mb-6">
+
+        Interested in seeing more of our work?
+
+      </p>
+
+      <Link
+        to="/services"
+        className="inline-flex items-center gap-3 rounded-xl bg-gradient-to-r from-violet-600 to-cyan-500 px-8 py-4 font-semibold text-white hover:scale-105 transition-all"
+      >
+        Explore Our Services
+        <ArrowRight className="w-5 h-5" />
+      </Link>
+
+    </div>
+
+  </div>
+</section>
   );
 }

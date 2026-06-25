@@ -211,6 +211,90 @@ export const blogs = [
   {
     id: 6,
 
+    title: "UI/UX Design Principles",
+
+    slug: "ui-ux-design-principles",
+
+    category: "ui-ux",
+
+    categoryLabel: "UI/UX",
+
+    excerpt:
+      "Understand the essential UI/UX design principles that make interfaces clear, intuitive, accessible, and easy to use.",
+
+    image:
+      "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=1200&auto=format&fit=crop",
+
+    readTime: "7 min read",
+
+    date: "June 2026",
+
+    featured: false,
+
+    seoTitle:
+      "UI/UX Design Principles | Build Better Digital Experiences",
+
+    seoDescription:
+      "Learn the key UI/UX design principles including clarity, consistency, accessibility, hierarchy, and feedback to build better products.",
+
+    keywords: [
+      "UI UX principles",
+      "UX design principles",
+      "interface design",
+      "accessibility",
+      "product design",
+    ],
+
+    accent: "from-cyan-500 to-violet-600",
+
+    bgGlow: "bg-cyan-500/20",
+  },
+
+  {
+    id: 7,
+
+    title: "Earning Money with Affiliate Marketing",
+
+    slug: "earning-money-with-affiliate-marketing",
+
+    category: "affiliate-marketing",
+
+    categoryLabel: "Affiliate Marketing",
+
+    excerpt:
+      "Learn how to earn money with affiliate marketing by choosing a niche, creating helpful content, and building trust with your audience.",
+
+    image:
+      "https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200&auto=format&fit=crop",
+
+    readTime: "8 min read",
+
+    date: "June 2026",
+
+    featured: false,
+
+    seoTitle:
+      "Earning Money with Affiliate Marketing | Beginner Guide",
+
+    seoDescription:
+      "Discover a practical approach to earning money with affiliate marketing through niche selection, quality content, and strong audience trust.",
+
+    keywords: [
+      "affiliate marketing",
+      "earn money online",
+      "passive income",
+      "affiliate income",
+      "content marketing",
+    ],
+
+    accent: "from-pink-500 to-violet-600",
+
+    bgGlow: "bg-pink-500/20",
+  },
+
+  {
+    id: 8,
+
     title: "Best AI Tools for College Students in 2026",
 
     slug: "best-ai-tools-for-college-students",
@@ -253,6 +337,48 @@ export const blogs = [
 
   {
     id: 8,
+
+    title: "How to Use GitHub Copilot in VS Code",
+
+    slug: "how-to-use-github-copilot-in-vscode",
+
+    category: "ai-tools",
+
+    categoryLabel: "AI Tools",
+
+    excerpt:
+      "Learn how to use GitHub Copilot in VS Code to write code faster, reduce repetitive work, and improve your development workflow.",
+
+    image:
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
+
+    readTime: "9 min read",
+
+    date: "June 2026",
+
+    featured: false,
+
+    seoTitle:
+      "How to Use GitHub Copilot in VS Code | Beginner Guide",
+
+    seoDescription:
+      "Discover how GitHub Copilot works in VS Code, including setup, prompting tips, and practical ways to use it for coding and productivity.",
+
+    keywords: [
+      "GitHub Copilot",
+      "VS Code",
+      "AI coding",
+      "developer productivity",
+      "coding assistant",
+    ],
+
+    accent: "from-cyan-500 to-violet-600",
+
+    bgGlow: "bg-cyan-500/20",
+  },
+
+  {
+    id: 9,
 
     title: "SaaS Dashboard Design Ideas",
 
@@ -710,6 +836,47 @@ export const blogs = [
   {
     id: 18,
 
+    title: "How Paid Advertising Works",
+
+    slug: "how-paid-advertising-works",
+
+    category: "digital-marketing",
+
+    categoryLabel: "Digital Marketing",
+
+    excerpt:
+      "Understand how paid advertising works, from audience targeting and bidding to creative strategy and measuring campaign performance.",
+
+    image:
+      "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=1200&auto=format&fit=crop",
+
+    readTime: "8 min read",
+
+    date: "June 2026",
+
+    featured: false,
+
+    seoTitle:
+      "How Paid Advertising Works | PPC and Digital Ads Guide",
+
+    seoDescription:
+      "Learn how paid advertising works across Google Ads, Meta Ads, and other platforms with practical guidance on targeting, bidding, and optimization.",
+
+    keywords: [
+      "paid advertising",
+      "how paid ads work",
+      "PPC",
+      "Google Ads",
+      "Meta Ads",
+    ],
+
+    accent: "from-cyan-500 to-indigo-600",
+
+    bgGlow: "bg-cyan-500/20",
+  },
+  {
+    id: 19,
+
     title: "How to Use ChatGPT for Digital Marketing",
 
     slug: "how-to-use-chatgpt",
@@ -750,7 +917,7 @@ export const blogs = [
     bgGlow: "bg-cyan-500/20",
   },
   {
-  id: 19,
+  id: 20,
 
   title: "How to Create and Sell Digital Products Using ChatGPT in 2026",
 

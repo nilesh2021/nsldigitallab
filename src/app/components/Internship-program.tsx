@@ -183,7 +183,7 @@ export default function Career() {
           Apply for This Position
         </h3>
 
-        <CareerForm />
+       <CareerForm jobTitle="SEO Internship" />
 
       </div>
 

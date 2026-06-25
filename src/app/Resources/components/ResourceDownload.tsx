@@ -59,43 +59,37 @@ export default function ResourceDownload({
   }
 
   return (
-    <section className="mt-12 rounded-3xl border border-slate-200 bg-slate-50 p-8">
-
-      <h2 className="text-3xl font-bold">
+    <section className="mt-10 rounded-[28px] border border-slate-200 bg-white p-8 shadow-sm">
+      <h2 className="text-2xl font-bold text-slate-900">
         Download This Resource
       </h2>
 
-      <p className="mt-4 text-slate-600">
+      <p className="mt-3 text-slate-600">
         Enter your email to download this free resource and receive future
         UI/UX, SEO and Digital Marketing updates.
       </p>
 
-      <div className="mt-8 flex flex-col md:flex-row gap-4">
-
+      <div className="mt-6 flex flex-col gap-4 md:flex-row">
         <input
           type="email"
           autoComplete="email"
           placeholder="Enter your email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="flex-1 rounded-xl border border-slate-300 px-5 py-4 outline-none focus:border-cyan-500"
+          className="flex-1 rounded-2xl border border-slate-300 px-5 py-4 outline-none transition focus:border-cyan-500"
         />
 
         <button
           onClick={handleDownload}
           disabled={loading}
-          className={`rounded-xl px-8 py-4 font-semibold text-white transition ${loading
-              ? "bg-gray-400 cursor-not-allowed"
-              : "bg-cyan-500 hover:bg-cyan-600"
-            }`}
+          className={`rounded-2xl px-7 py-4 font-semibold text-white transition ${loading
+            ? "cursor-not-allowed bg-slate-400"
+            : "bg-cyan-600 hover:bg-cyan-700"
+          }`}
         >
           {loading ? "Downloading..." : "Download Free"}
         </button>
-
       </div>
-
-      
-
     </section>
   );
 }

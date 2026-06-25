@@ -1,5 +1,7 @@
 import { createRoot } from 'react-dom/client';
 import { HelmetProvider } from 'react-helmet-async';
+import CareerThankYouPage from "./app/careers/thank-you/page";
+import ThankYouPage from "./app/thank-you/page";
 import './styles/index.css';
 
 import {
@@ -25,6 +27,7 @@ import serviceRoutes from "./routes/serviceRoutes";
 import careerRoutes from "./routes/careerRoutes";
 import internshipRoutes from "./routes/internshipRoutes";
 import policyRoutes from "./routes/policyRoutes";
+import ContactThankYouPage from "./app/contact/thank-you/page";
 
 import blogRoutes from "./routes/blog";
 
@@ -48,13 +51,22 @@ createRoot(document.getElementById('root')!).render(
           path="/blog"
           element={<BlogPage />}
         />
-
+        <Route
+          path="/contact/thank-you"
+          element={<ContactThankYouPage />}
+        />
 
         <Route
           path="/claude-ai"
           element={<ClaudeLandingPage />}
         />
-
+<Route
+  path="/careers/thank-you"
+  element={<CareerThankYouPage />}
+/><Route
+  path="/thank-you"
+  element={<ThankYouPage />}
+/>
       </Routes>
     </BrowserRouter>
 

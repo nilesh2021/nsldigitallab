@@ -1,7 +1,68 @@
-import { CheckCircle2 } from "lucide-react";
 
-export default function CareerForm() {
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { submitCareerApplication } from "../../services/career";
+type Props = {
+  jobTitle: string;
+};
 
+export default function CareerForm({ jobTitle }: Props) {
+  const navigate = useNavigate();
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    resume: "",
+    message: "",
+  });
+  async function handleSubmit(
+    e: React.FormEvent
+  ) {
+
+    e.preventDefault();
+
+    if (
+      !form.name ||
+      !form.email ||
+      !form.phone
+    ) {
+      alert("Please fill all required fields.");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+
+      const result = await submitCareerApplication({
+        ...form,
+        jobTitle,
+      });
+
+      if (!result.success) {
+
+        alert("Something went wrong.");
+
+        return;
+
+      }
+      setForm({
+        name: "",
+        email: "",
+        phone: "",
+        resume: "",
+        message: "",
+      });
+   navigate("/thank-you?type=career");
+
+    } finally {
+
+      setLoading(false);
+
+    }
+
+  }
+  const [loading, setLoading] = useState(false);
   return (
 
     <div className="rounded-3xl bg-white/5 backdrop-blur-sm border border-white/10 p-6 sm:p-8 md:p-10">
@@ -10,44 +71,28 @@ export default function CareerForm() {
         Apply Now
       </h3>
 
-   <form
-  action="https://formsubmit.co/hello@nsldigitallab.com"
-  method="POST"
-  className="space-y-5"
->
+      <form onSubmit={handleSubmit} className="space-y-5">
 
-  {/* Hidden Fields */}
-  <input
-    type="hidden"
-    name="_captcha"
-    value="false"
-  />
 
-  <input
-    type="hidden"
-    name="_subject"
-    value="New Career Application - nsldigitallab"
-  />
+        {/* Full Name */}
+        <div>
 
-  <input
-    type="hidden"
-    name="_next"
-    value="https://nsldigitallab.comcareers"
-  />
+          <label className="block text-sm text-gray-300 mb-2">
+            Full Name
+          </label>
 
-  {/* Full Name */}
-  <div>
-
-    <label className="block text-sm text-gray-300 mb-2">
-      Full Name
-    </label>
-
-    <input
-      type="text"
-      name="name"
-      required
-      placeholder="Enter your full name"
-      className="
+          <input value={form.name}
+            onChange={(e) =>
+              setForm({
+                ...form,
+                name: e.target.value
+              })
+            }
+            type="text"
+            name="name"
+            required
+            placeholder="Enter your full name"
+            className="
         w-full
         px-5
         py-3.5
@@ -62,25 +107,31 @@ export default function CareerForm() {
         placeholder:text-gray-500
         transition-all
       "
-    />
+          />
 
-  </div>
+        </div>
 
-  {/* Email + Phone */}
-  <div className="grid md:grid-cols-2 gap-5">
+        {/* Email + Phone */}
+        <div className="grid md:grid-cols-2 gap-5">
 
-    <div>
+          <div>
 
-      <label className="block text-sm text-gray-300 mb-2">
-        Email Address
-      </label>
+            <label className="block text-sm text-gray-300 mb-2">
+              Email Address
+            </label>
 
-      <input
-        type="email"
-        name="email"
-        required
-        placeholder="Enter your email"
-        className="
+            <input value={form.email}
+              onChange={(e) =>
+                setForm({
+                  ...form,
+                  email: e.target.value
+                })
+              }
+              type="email"
+              name="email"
+              required
+              placeholder="Enter your email"
+              className="
           w-full
           px-5
           py-3.5
@@ -95,22 +146,28 @@ export default function CareerForm() {
           placeholder:text-gray-500
           transition-all
         "
-      />
+            />
 
-    </div>
+          </div>
 
-    <div>
+          <div>
 
-      <label className="block text-sm text-gray-300 mb-2">
-        Phone Number
-      </label>
+            <label className="block text-sm text-gray-300 mb-2">
+              Phone Number
+            </label>
 
-      <input
-        type="tel"
-        name="phone"
-        required
-        placeholder="Enter your phone number"
-        className="
+            <input value={form.phone}
+              onChange={(e) =>
+                setForm({
+                  ...form,
+                  phone: e.target.value
+                })
+              }
+              type="tel"
+              name="phone"
+              required
+              placeholder="Enter your phone number"
+              className="
           w-full
           px-5
           py-3.5
@@ -125,24 +182,30 @@ export default function CareerForm() {
           placeholder:text-gray-500
           transition-all
         "
-      />
+            />
 
-    </div>
+          </div>
 
-  </div>
+        </div>
 
-  {/* Resume Link */}
-  <div>
+        {/* Resume Link */}
+        <div>
 
-    <label className="block text-sm text-gray-300 mb-2">
-      Resume / Portfolio Link
-    </label>
+          <label className="block text-sm text-gray-300 mb-2">
+            Resume / Portfolio Link
+          </label>
 
-    <input
-      type="url"
-      name="resume"
-      placeholder="Google Drive, LinkedIn or Portfolio URL"
-      className="
+          <input value={form.resume}
+            onChange={(e) =>
+              setForm({
+                ...form,
+                resume: e.target.value
+              })
+            }
+            type="url"
+            name="resume"
+            placeholder="Google Drive, LinkedIn or Portfolio URL"
+            className="
         w-full
         px-5
         py-3.5
@@ -157,22 +220,28 @@ export default function CareerForm() {
         placeholder:text-gray-500
         transition-all
       "
-    />
+          />
 
-  </div>
+        </div>
 
-  {/* Message */}
-  <div>
+        {/* Message */}
+        <div>
 
-    <label className="block text-sm text-gray-300 mb-2">
-      Why do you want to join nsldigitallab? (Optional)
-    </label>
+          <label className="block text-sm text-gray-300 mb-2">
+            Why do you want to join nsldigitallab? (Optional)
+          </label>
 
-    <textarea
-      name="message"
-      rows={4}
-      placeholder="Write a short message..."
-      className="
+          <textarea value={form.message}
+            onChange={(e) =>
+              setForm({
+                ...form,
+                message: e.target.value
+              })
+            }
+            name="message"
+            rows={4}
+            placeholder="Write a short message..."
+            className="
         w-full
         px-5
         py-3.5
@@ -188,33 +257,34 @@ export default function CareerForm() {
         resize-none
         transition-all
       "
-    />
+          />
 
-  </div>
+        </div>
 
-  {/* Submit Button */}
-  <button
-    type="submit"
-    className="
-      w-full
-      py-3.5
-      rounded-full
-      bg-[#24c2f2]
-      text-white
-      font-medium
-      hover:bg-[#1da8d4]
-      hover:scale-[1.01]
-      transition-all
-      duration-300
-      shadow-xl
-    "
-  >
+        {/* Submit Button */}
+        <button
+          type="submit"
+          disabled={loading}
+          className="
+w-full
+py-3.5
+rounded-full
+bg-[#24c2f2]
+text-white
+font-medium
+hover:bg-[#1da8d4]
+hover:scale-[1.01]
+transition-all
+duration-300
+shadow-xl
+disabled:opacity-70
+disabled:cursor-not-allowed
+"
+        >
+          {loading ? "Submitting..." : "Submit Application"}
+        </button>
 
-    Submit Application
-
-  </button>
-
-</form>
+      </form>
 
     </div>
   );

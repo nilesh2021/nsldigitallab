@@ -1,4 +1,6 @@
+import { ArrowRight, BarChart3, MonitorSmartphone, Palette, Search, Sparkles, Zap } from "lucide-react";
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 
@@ -7,27 +9,38 @@ export default function ServicesPage() {
     {
       title: "SEO Services",
       description:
-        "Improve search visibility and organic traffic with modern SEO strategies.",
+        "Improve search visibility, attract qualified traffic, and turn rankings into real business growth.",
       link: "/services/seo-services",
+      icon: Search,
     },
     {
       title: "Web Design",
       description:
-        "Modern responsive websites designed for startups and businesses.",
+        "Launch polished, responsive websites that look premium and perform beautifully on every screen.",
       link: "/services/web-design",
+      icon: MonitorSmartphone,
     },
     {
       title: "UI/UX Design",
       description:
-        "User-focused interfaces crafted for better engagement and usability.",
+        "Craft intuitive interfaces and seamless journeys that keep users engaged and moving forward.",
       link: "/services/ui-ux-design",
+      icon: Palette,
     },
     {
       title: "Social Media Marketing",
       description:
-        "Strategic social media campaigns to grow your brand online.",
+        "Build a strong brand presence with campaigns designed to spark attention and drive engagement.",
       link: "/services/social-media-marketing",
+      icon: BarChart3,
     },
+  ];
+
+  const highlights = [
+    "Strategy-led execution",
+    "Conversion-first design",
+    "Data-informed optimization",
+    "Fast, reliable delivery",
   ];
 
   return (
@@ -38,179 +51,129 @@ export default function ServicesPage() {
 
       <Navigation />
 
-      <main className="min-h-screen bg-white text-[#0B1020]">
-     
-{/* Hero Section */}
-{/* Hero Section */}
-<section className="relative overflow-hidden bg-[#edf3fb] pt-40 pb-28">
-  {/* Mesh Background */}
-  <div className="absolute inset-0 opacity-70">
-    <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-cyan-300/20 rounded-full blur-3xl" />
+      <main className="min-h-screen bg-[#050816] text-slate-100">
+        <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,0.16),_transparent_35%),linear-gradient(135deg,_#050816_0%,_#0b1023_100%)] pt-36 pb-24 sm:pt-40 lg:pt-48">
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:60px_60px] opacity-40" />
+          <div className="absolute left-[-8rem] top-[-6rem] h-[420px] w-[420px] rounded-full bg-cyan-500/15 blur-[120px]" />
+          <div className="absolute bottom-[-6rem] right-[-4rem] h-[420px] w-[420px] rounded-full bg-violet-500/15 blur-[120px]" />
 
-    <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-blue-300/20 rounded-full blur-3xl" />
+          <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
+            <div className="max-w-3xl">
+              <div className="inline-flex items-center gap-2 rounded-full border border-violet-500/20 bg-violet-500/10 px-4 py-2 text-sm font-medium text-violet-300">
+                <Sparkles className="h-4 w-4" />
+                Digital growth solutions
+              </div>
 
-    <div className="absolute bottom-0 left-1/3 w-[400px] h-[400px] bg-indigo-200/20 rounded-full blur-3xl" />
-  </div>
+              <h1 className="mt-8 text-5xl font-black leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl">
+                Services that help brands
+                <span className="block bg-gradient-to-r from-cyan-400 via-sky-300 to-violet-400 bg-clip-text text-transparent">
+                  scale with confidence
+                </span>
+              </h1>
 
-  {/* Grid Pattern */}
-  <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.5)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.5)_1px,transparent_1px)] bg-[size:60px_60px] opacity-40" />
+              <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-400 sm:text-xl">
+                From search visibility to polished product experiences, we build digital solutions that are strategic, modern, and built to grow.
+              </p>
 
-  <div className="relative max-w-7xl mx-auto px-6 lg:px-10">
-    <div className="max-w-3xl">
-      {/* Badge */}
-      <div className="inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-white/80 backdrop-blur-md px-5 py-2 shadow-md">
-        <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
+              <div className="mt-10 flex flex-wrap gap-4">
+                <a
+                  href="#services-grid"
+                  className="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-violet-600 to-cyan-500 px-7 py-4 font-semibold text-white transition-all duration-300 hover:-translate-y-1"
+                >
+                  Explore services
+                  <ArrowRight className="h-4 w-4" />
+                </a>
 
-        <span className="text-sm font-medium text-cyan-700">
-          Digital Growth Solutions
-        </span>
-      </div>
+                <a
+                  href="/#contact"
+                  className="inline-flex items-center rounded-2xl border border-white/10 bg-white/5 px-7 py-4 font-semibold text-white backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:bg-white/10"
+                >
+                  Let's talk
+                </a>
+              </div>
 
-      {/* Heading */}
-      <h1 className="mt-8 text-5xl md:text-7xl font-bold tracking-tight leading-[1.05] text-[#111827]">
-        Helping Brands
-        <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
-          {" "}
-          Scale Faster
-        </span>
-        <br />
-        In The Digital World
-      </h1>
-
-      {/* Description */}
-      <p className="mt-8 text-xl text-gray-600 leading-9 max-w-2xl">
-        We combine SEO, modern web design, UI/UX strategy, and digital
-        marketing to help startups and businesses grow online.
-      </p>
-
-      {/* Buttons */}
-      <div className="mt-12 flex flex-wrap gap-5">
-        <a
-          href="#services-grid"
-          className="inline-flex items-center justify-center rounded-2xl bg-[#111827] px-8 py-4 text-white font-semibold hover:scale-105 transition-all duration-300 shadow-2xl shadow-black/10"
-        >
-          Explore Services
-        </a>
-
-        <a
-          href="/#contact"
-          className="inline-flex items-center justify-center rounded-2xl border border-white/70 bg-white/80 backdrop-blur-md px-8 py-4 text-[#111827] font-semibold hover:border-cyan-300 hover:text-cyan-600 transition-all duration-300 shadow-lg"
-        >
-          Let’s Talk
-        </a>
-      </div>
-
-      {/* Stats */}
-      <div className="mt-16 flex flex-wrap gap-10">
-        {[
-          ["SEO", "Growth-focused strategies"],
-          ["UI/UX", "Modern user experiences"],
-          ["Marketing", "Performance-driven campaigns"],
-        ].map(([title, desc], index) => (
-          <div key={index}>
-            <h3 className="text-lg font-bold text-[#111827]">
-              {title}
-            </h3>
-
-            <p className="mt-2 text-gray-600">
-              {desc}
-            </p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-</section>
-
-        {/* Services Grid */}
-        <section
-          id="services-grid"
-          className="max-w-7xl mx-auto px-6 lg:px-10 py-24"
-        >
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-cyan-600 font-medium">
-              What We Offer
-            </span>
-
-            <h2 className="text-4xl md:text-5xl font-bold mt-4 text-[#0B1020]">
-              Services That Drive Growth
-            </h2>
-
-            <p className="mt-6 text-lg text-gray-600 leading-relaxed">
-              We combine creativity, strategy, and technology to help brands
-              scale in the modern digital world.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {services.map((service, index) => (
-              <a
-                key={index}
-                href={service.link}
-                className="group rounded-3xl border border-gray-200 bg-white p-8 hover:border-cyan-300 hover:shadow-2xl hover:shadow-cyan-100 transition-all duration-300"
-              >
-                {/* Icon */}
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-100 to-blue-100 flex items-center justify-center mb-6">
-                  <div className="w-6 h-6 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600" />
-                </div>
-
-                <h2 className="text-2xl font-semibold text-[#0B1020] group-hover:text-cyan-600 transition-colors">
-                  {service.title}
-                </h2>
-
-                <p className="mt-4 text-gray-600 leading-relaxed">
-                  {service.description}
-                </p>
-
-                <div className="mt-8 inline-flex items-center text-cyan-600 font-semibold">
-                  Learn More
-                  <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">
-                    →
-                  </span>
-                </div>
-              </a>
-            ))}
+              <div className="mt-14 grid gap-4 sm:grid-cols-3">
+                {[
+                  ["SEO", "Search growth"],
+                  ["UX", "Better journeys"],
+                  ["Marketing", "Brand reach"],
+                ].map(([title, desc]) => (
+                  <div key={title} className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-md">
+                    <h3 className="text-lg font-semibold text-white">{title}</h3>
+                    <p className="mt-1 text-sm text-slate-400">{desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
-        {/* Why Choose Us */}
-        <section className="bg-gradient-to-b from-white to-cyan-50 border-t border-gray-200">
-          <div className="max-w-7xl mx-auto px-6 lg:px-10 py-24">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+        {/* Services Grid */}
+        <section id="services-grid" className="mx-auto max-w-7xl px-6 py-24 lg:px-10">
+          <div className="mx-auto mb-14 max-w-2xl text-center">
+            <span className="font-medium text-cyan-400">What we offer</span>
+            <h2 className="mt-4 text-4xl font-bold text-white md:text-5xl">
+              Services designed for modern growth
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-slate-400">
+              Every engagement is shaped around your goals, audience, and growth stage so the work feels practical and impactful.
+            </p>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-2">
+            {services.map((service, index) => {
+              const Icon = service.icon;
+
+              return (
+                <Link
+                  key={index}
+                  to={service.link}
+                  className="group rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/30 hover:bg-white/10"
+                >
+                  <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-500/20 to-violet-500/20 text-cyan-300">
+                    <Icon className="h-6 w-6" />
+                  </div>
+
+                  <h3 className="text-2xl font-semibold text-white transition-colors group-hover:text-cyan-300">
+                    {service.title}
+                  </h3>
+
+                  <p className="mt-4 text-base leading-7 text-slate-400">
+                    {service.description}
+                  </p>
+
+                  <div className="mt-8 inline-flex items-center font-semibold text-cyan-300">
+                    Learn more
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </section>
+
+        <section className="border-t border-white/10 bg-[linear-gradient(180deg,_rgba(255,255,255,0.03),_rgba(255,255,255,0.01))]">
+          <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10">
+            <div className="grid items-center gap-16 lg:grid-cols-[0.95fr_1.05fr]">
               <div>
-                <span className="text-cyan-600 font-medium">
-                  Why Choose NSL Digital Lab
-                </span>
-
-                <h2 className="text-4xl md:text-5xl font-bold mt-4 leading-tight text-[#0B1020]">
-                  Strategy + Design + Performance
+                <span className="font-medium text-cyan-400">Why choose us</span>
+                <h2 className="mt-4 text-4xl font-bold leading-tight text-white md:text-5xl">
+                  A thoughtful blend of strategy, design, and performance
                 </h2>
-
-                <p className="mt-6 text-lg text-gray-600 leading-relaxed">
-                  We create scalable digital experiences that not only look
-                  modern but also generate measurable business growth through
-                  SEO, branding, and conversion-focused design.
+                <p className="mt-6 text-lg leading-8 text-slate-400">
+                  We build digital experiences that feel polished and intentional while staying grounded in measurable growth.
                 </p>
               </div>
 
-              <div className="grid sm:grid-cols-2 gap-6">
-                {[
-                  "Modern UI/UX",
-                  "SEO-Driven Strategy",
-                  "Mobile-First Design",
-                  "Performance Marketing",
-                ].map((item, index) => (
-                  <div
-                    key={index}
-                    className="rounded-2xl border border-gray-200 bg-white p-6 hover:shadow-lg transition-all duration-300"
-                  >
-                    <h3 className="font-semibold text-lg text-[#0B1020]">
-                      {item}
-                    </h3>
-
-                    <p className="mt-3 text-gray-600 text-sm leading-relaxed">
-                      High-quality digital solutions tailored for modern brands
-                      and growing businesses.
+              <div className="grid gap-5 sm:grid-cols-2">
+                {highlights.map((item) => (
+                  <div key={item} className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-md">
+                    <div className="mb-3 inline-flex rounded-full border border-cyan-400/20 bg-cyan-500/10 p-2 text-cyan-300">
+                      <Zap className="h-4 w-4" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-white">{item}</h3>
+                    <p className="mt-2 text-sm leading-6 text-slate-400">
+                      Thoughtful execution that balances creativity, storytelling, and business impact.
                     </p>
                   </div>
                 ))}
@@ -219,25 +182,28 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="border-t border-gray-200 bg-white">
-          <div className="max-w-5xl mx-auto px-6 lg:px-10 py-24 text-center">
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight text-[#0B1020]">
-              Ready to Grow Your Brand Online?
+        <section className="border-t border-white/10 bg-[#050816]">
+          <div className="mx-auto max-w-5xl px-6 py-24 text-center lg:px-10">
+            <h2 className="text-4xl font-bold leading-tight text-white md:text-5xl">
+              Ready to build something remarkable?
             </h2>
-
-            <p className="mt-6 text-lg text-gray-600 leading-relaxed">
-              Let’s build powerful digital experiences that help your business
-              stand out and grow faster online.
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-400">
+              Let’s create a digital presence that feels premium, connects with your audience, and drives real momentum.
             </p>
 
-            <div className="mt-10">
+            <div className="mt-10 flex flex-wrap justify-center gap-4">
               <a
                 href="/#contact"
-                className="inline-flex items-center bg-gradient-to-r from-cyan-500 to-blue-600 hover:scale-105 transition-all duration-300 text-white font-semibold px-8 py-4 rounded-xl"
+                className="inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-cyan-500 to-violet-600 px-8 py-4 font-semibold text-white transition-all duration-300 hover:-translate-y-1"
               >
-                Start Your Project
+                Start your project
               </a>
+              <Link
+                to="/"
+                className="inline-flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-8 py-4 font-semibold text-white backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:bg-white/10"
+              >
+                Back to home
+              </Link>
             </div>
           </div>
         </section>
