@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Navigation from "../../components/Navigation";
 import Footer from "../../components/Footer";
+import JobPostingSchema from "../../../seo/schemas/JobPostingSchema";
+
+import { submitCareerApplication } from "../../../services/career";
 import { useState } from "react";
 
 export default function ContentWriterJob() {

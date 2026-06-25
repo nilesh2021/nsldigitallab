@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
- import SEO from "../../../seo/SEO";
+import SEO from "../../../seo/SEO";
 import { PAGE_SEO } from "../../../seo/pages";
 import Navigation from "../../components/Navigation";
 import Footer from "../../components/Footer";
 import { useState } from "react";
-import JobPostingSchema from  "../../../seo/schemas/JobPostingSchema";
+import JobPostingSchema from "../../../seo/schemas/JobPostingSchema";
+
+import { submitCareerApplication } from "../../../services/career";
 export default function DataEntryRemoteJob() {
   const [showModal, setShowModal] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -25,50 +27,55 @@ export default function DataEntryRemoteJob() {
 
     setIsSubmitting(true);
 
-    try {
-      await fetch(
-        "https://script.google.com/macros/s/AKfycbxRaUoQNewWCzj8MQHEUkQplWd8oAUBxrCfa-7Optv5jtcEO4U5N_zzPZncjx-LWYLB/exec",
-        {
-          method: "POST",
-          mode: "no-cors",
-          body: JSON.stringify({
-            name,
-            phone,
-            email,
-            resume,
-            jobTitle: "Data Entry Remote Job",
-          }),
-        }
-      );
+ try {
 
-      alert("Application Submitted Successfully!");
+  const result = await submitCareerApplication({
+    name,
+    email,
+    phone,
+    resume,
+    message: "",
+    jobTitle: "Data Entry Remote Job",
+  });
 
-      setName("");
-      setPhone("");
-      setEmail("");
-      setResume("");
-      setShowModal(false);
+  if (!result.success) {
+    alert("Something went wrong.");
+    return;
+  }
 
-    } catch (error) {
-      console.error(error);
-      alert("Something went wrong.");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  alert("Application Submitted Successfully!");
+
+  setName("");
+  setPhone("");
+  setEmail("");
+  setResume("");
+
+  setShowModal(false);
+
+} catch (error) {
+
+  console.error(error);
+  alert("Something went wrong.");
+
+} finally {
+
+  setIsSubmitting(false);
+
+}
+  }
   return (
 
     <>
       <SEO {...PAGE_SEO.dataEntryRemoteJob} />
-   
-   <JobPostingSchema
-    title="Remote Data Entry Executive"
-    description="Remote data entry job..."
-    datePosted="2026-06-17"
-    employmentType="PART_TIME"
-    location="Remote"
-    salary="5000-10000"
-  />
+
+      <JobPostingSchema
+        title="Remote Data Entry Executive"
+        description="Remote data entry job..."
+        datePosted="2026-06-17"
+        employmentType="PART_TIME"
+        location="Remote"
+        salary="5000-10000"
+      />
 
       <Navigation />
 
