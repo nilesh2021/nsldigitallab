@@ -87,35 +87,93 @@ export default function BlogPage() {
       <main className="bg-[#f5f7fb] min-h-screen">
 
         {/* HERO */}
-        <section className="relative overflow-hidden bg-[#071028] pt-24 pb-12">
+        <section className="relative overflow-hidden bg-[#071028] py-24 sm:py-28 lg:py-32">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(34,211,238,0.22),transparent_32%),radial-gradient(circle_at_bottom_left,rgba(59,130,246,0.18),transparent_30%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,0.05),transparent_35%,rgba(255,255,255,0.03))]" />
 
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.25),transparent_35%)]" />
+          <div className="container relative z-10 mx-auto px-6">
+            <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+              <div className="max-w-4xl">
+                <div className="inline-flex flex-wrap items-center gap-3 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-300 backdrop-blur-md">
+                  <span className="h-2.5 w-2.5 rounded-full bg-cyan-300" />
+                  NSL Digital Lab Blog
+                </div>
 
-          <div className="container mx-auto px-6 relative z-10">
+                <h1 className="mt-6 text-4xl font-black leading-tight text-white sm:text-5xl lg:text-6xl">
+                  Insights that help you
+                  <span className="mt-3 block bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 bg-clip-text text-transparent">
+                    grow smarter online
+                  </span>
+                </h1>
 
-            <div className="max-w-4xl">
- 
-              <span className="inline-flex items-center rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-300">
-                 NslDigitlaLabBlog
-              </span>
+                <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
+                  Explore practical guides on UI/UX, SEO, AI tools, affiliate
+                  marketing, SaaS growth, and digital strategy designed for
+                  founders, creators, and modern teams.
+                </p>
 
-              <h1 className="mt-6 text-4xl md:text-5xl font-black leading-tight text-white">
-                Digital Insights &
-                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                  {" "}
-                  Growth Strategies
-                </span>
-              </h1>
+                <div className="mt-8 flex flex-wrap gap-3">
+                  <a
+                    href="#blog-grid"
+                    className="rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-950/30 transition hover:-translate-y-1"
+                  >
+                    Explore Articles
+                  </a>
+                  <a
+                    href="#categories"
+                    className="rounded-full border border-white/15 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-md transition hover:bg-white/15"
+                  >
+                    Browse Topics
+                  </a>
+                </div>
+              </div>
 
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-                Explore UI/UX, SEO, AI tools, affiliate marketing, SaaS growth,
-                and digital marketing insights designed for startups and creators.
-              </p>
+              <div className="rounded-[2rem] border border-white/10 bg-white/10 p-5 shadow-2xl shadow-cyan-950/20 backdrop-blur-xl">
+                <div className="rounded-[1.5rem] border border-white/10 bg-[#09111f]/90 p-6">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-[11px] uppercase tracking-[0.25em] text-slate-400">
+                        Popular topics
+                      </p>
+                      <h2 className="mt-2 text-2xl font-semibold text-white">
+                        What readers love
+                      </h2>
+                    </div>
+                    <div className="rounded-2xl bg-cyan-500/10 p-3">
+                      <span className="text-lg font-bold text-cyan-300">↗</span>
+                    </div>
+                  </div>
 
+                  <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                    <div className="rounded-2xl border border-white/10 bg-[#10192d] p-4">
+                      <p className="text-sm font-semibold text-white">SEO Growth</p>
+                      <p className="mt-1 text-sm text-slate-400">
+                        Search strategies that scale visibility.
+                      </p>
+                    </div>
+                    <div className="rounded-2xl border border-white/10 bg-[#10192d] p-4">
+                      <p className="text-sm font-semibold text-white">UI/UX Design</p>
+                      <p className="mt-1 text-sm text-slate-400">
+                        Better interfaces, clearer journeys.
+                      </p>
+                    </div>
+                    <div className="rounded-2xl border border-white/10 bg-[#10192d] p-4">
+                      <p className="text-sm font-semibold text-white">AI Tools</p>
+                      <p className="mt-1 text-sm text-slate-400">
+                        Faster workflows with smarter automation.
+                      </p>
+                    </div>
+                    <div className="rounded-2xl border border-white/10 bg-[#10192d] p-4">
+                      <p className="text-sm font-semibold text-white">Digital Marketing</p>
+                      <p className="mt-1 text-sm text-slate-400">
+                        Campaigns built for measurable growth.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-
           </div>
-
         </section>
 
         
@@ -176,7 +234,7 @@ export default function BlogPage() {
 
         </section>
 {/* BLOG INTRO */}
-<section className="bg-white border-b border-gray-100">
+<section className="bg-white border-b border-gray-100 hidden">
   <div className="container mx-auto px-6 py-16">
 
     <div className="max-w-5xl">
@@ -204,11 +262,11 @@ export default function BlogPage() {
   </div>
 </section>
         {/* MAIN LAYOUT */}
-        <section className="py-14">
+        <section className="py-10 sm:py-12">
 
           <div className="container mx-auto px-6">
 
-            <div className="grid gap-10 lg:grid-cols-[1fr_320px]">
+            <div className="grid gap-8 lg:grid-cols-[1fr_300px]">
 
               {/* LEFT CONTENT */}
               <div>
@@ -241,7 +299,7 @@ export default function BlogPage() {
       duration: 0.45,
       ease: "easeInOut",
     }}
-    className="grid gap-8 md:grid-cols-2"
+    className="grid gap-5 md:grid-cols-2"
   >
 
                     {paginatedBlogs.map((blog) => (
@@ -270,7 +328,7 @@ export default function BlogPage() {
                 {/* PAGINATION */}
                 {totalPages > 1 && (
 
-                  <div className="mt-16 flex items-center justify-center gap-3">
+                  <div className="mt-10 flex items-center justify-center gap-3">
 
                     <button
                       disabled={currentPage === 1}
@@ -323,7 +381,7 @@ export default function BlogPage() {
               <aside className="space-y-8">
 
                 {/* NEWSLETTER */}
-                <div className="top-28 rounded-3xl border border-gray-100 bg-white p-7 shadow-sm">
+                <div className="top-28 rounded-3xl border border-gray-100 bg-white p-6 shadow-sm">
 
                   <h3 className="text-2xl font-bold text-gray-900">
                     Subscribe
@@ -399,8 +457,8 @@ export default function BlogPage() {
                 </div>
 
                 {/* TOPIC HUBS — pillar pages for internal linking */}
-                <div className="rounded-3xl border border-gray-100 bg-white p-7 shadow-sm">
-                  <h3 className="text-2xl font-bold text-gray-900">
+                <div className="rounded-3xl border border-gray-100 bg-white p-6 shadow-sm">
+                  <h3 className="text-xl font-bold text-gray-900">
                     Explore by topic
                   </h3>
                   <p className="mt-2 text-sm text-gray-500 leading-6">
@@ -451,7 +509,7 @@ export default function BlogPage() {
                 </div>
 
                 {/* CTA */}
-                <div className="rounded-3xl bg-gradient-to-br from-cyan-500 to-blue-600 p-7 text-white shadow-xl">
+                <div className="rounded-3xl bg-gradient-to-br from-cyan-500 to-blue-600 p-6 text-white shadow-xl">
 
                   <h3 className="text-2xl font-bold">
                     Need SEO for Your Startup?

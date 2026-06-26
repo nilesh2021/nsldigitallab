@@ -90,8 +90,7 @@ export default function ContactCTA() {
 
             <span className="inline-flex rounded-full border border-cyan-400/20 bg-cyan-500/10 px-4 py-2 text-sm font-semibold text-cyan-300">
 
-              FREE CONSULTATION
-
+              Free  Counsultation 
             </span>
 
             <h2 className="mt-8 text-5xl font-bold leading-tight text-white">
@@ -181,7 +180,9 @@ export default function ContactCTA() {
 
                   <p className="text-white">
 
-                    Pune, India
+             
+ Remote-First Agency
+Serving clients across India, USA, UK, Canada & Australia.
 
                   </p>
 
@@ -207,7 +208,7 @@ export default function ContactCTA() {
 
                   <p className="text-white">
 
-                    Mon - Sat • 10 AM - 7 PM
+                 Mon – Sat • 10:00 AM – 7:00 PM (IST)
 
                   </p>
 

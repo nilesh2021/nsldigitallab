@@ -19,27 +19,21 @@ export default function FeaturedWork() {
 
     <div className="text-center max-w-3xl mx-auto mb-16">
 
-      <span className="inline-flex rounded-full bg-cyan-100 px-4 py-2 text-sm font-semibold text-cyan-700">
+    <span className="inline-flex rounded-full bg-cyan-100 px-4 py-2 text-sm font-semibold text-cyan-700">
+  Featured Portfolio
+</span>
 
-        Featured Projects
+<h2 className="mt-6 text-4xl md:text-5xl font-bold text-[#202851]">
+  UI/UX Case Studies
+  <br />
+  That Solve Real Problems
+</h2>
 
-      </span>
-
-      <h2 className="mt-6 text-4xl md:text-5xl font-bold text-[#202851]">
-
-        Digital Solutions
-        <br />
-        Built For Modern Brands
-
-      </h2>
-
-      <p className="mt-6 text-lg leading-8 text-slate-600">
-
-        Explore some of the digital experiences, websites,
-        SEO strategies and UI/UX solutions we've designed
-        to help businesses grow online.
-
-      </p>
+<p className="mt-6 text-lg leading-8 text-slate-600 max-w-3xl mx-auto">
+  Explore selected web and mobile projects where user research, wireframing,
+  prototyping and modern interface design come together to create intuitive,
+  engaging and business-focused digital experiences.
+</p>
 
     </div>
 

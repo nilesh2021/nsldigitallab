@@ -251,6 +251,48 @@ export const blogs = [
   },
 
   {
+    id: 99,
+
+    title: "How to Create a Style Guide",
+
+    slug: "how-to-create-style-guide",
+
+    category: "ui-ux",
+
+    categoryLabel: "UI/UX",
+
+    excerpt:
+      "Learn how to create a practical style guide that keeps your brand, UI, and product experience consistent across every screen.",
+
+    image:
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
+
+    readTime: "6 min read",
+
+    date: "June 2026",
+
+    featured: false,
+
+    seoTitle:
+      "How to Create a Style Guide | UI/UX Design Guide",
+
+    seoDescription:
+      "Create a practical style guide for your brand or product with rules for color, typography, spacing, components, and usage guidance.",
+
+    keywords: [
+      "style guide",
+      "design system",
+      "UI style guide",
+      "brand consistency",
+      "design documentation",
+    ],
+
+    accent: "from-cyan-500 to-violet-600",
+
+    bgGlow: "bg-cyan-500/20",
+  },
+
+  {
     id: 7,
 
     title: "Earning Money with Affiliate Marketing",

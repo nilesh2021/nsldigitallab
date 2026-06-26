@@ -366,7 +366,7 @@ export default function Navigation({
         duration-300
       "
     >
-      Let's Talk →
+    Career
     </Link>
 
   </div>
@@ -521,6 +521,40 @@ export default function Navigation({
           </span>
         </Link>
 
+        <Link
+          to="/careers"
+          onClick={() => {
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
+            setIsMobileMenuOpen(false);
+          }}
+          className="
+            group
+            flex
+            items-center
+            justify-between
+            px-5
+            py-4
+            rounded-2xl
+            bg-gradient-to-r
+            from-[#24c2f2]
+            to-[#2563eb]
+            text-white
+            shadow-md
+            hover:shadow-lg
+            transition-all
+            duration-300
+          "
+        >
+          <span className="font-medium">💼 Career</span>
+
+          <span className="opacity-80 group-hover:opacity-100">
+            →
+          </span>
+        </Link>
+
       </div>
 
       {/* Divider */}
@@ -561,7 +595,7 @@ export default function Navigation({
           duration-300
         "
       >
-        🚀 Let's Talk
+      Career
       </Link>
 
       {/* Bottom */}
