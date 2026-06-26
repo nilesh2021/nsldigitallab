@@ -6,7 +6,7 @@ import {
 } from "lucide-react";
 
 import { Link } from "react-router-dom";
-import logo from "../../assets/images/nexify_n_logo.png";
+import logo from "../../assets/images/Nsl-digital-lab.png";
 
 export default function Footer() {
   const scrollToSection = (id: string) => {
@@ -46,22 +46,26 @@ export default function Footer() {
                 className="flex items-center gap-3"
               >
                 <img
-                  src={logo}
+                  src={logo} 
                   alt="NSL Digital Lab"
-                  className="w-12 h-12 object-contain"
+                  className=" object-contain w-9 h-9"
                 />
 
-                <div>
+                <div className="text-left ps-4 border-l border-[#666666] pl-4">
 
-                  <h2 className="text-xl font-bold">
+                  <h2 className="text-xl font-bold" style={{ fontSize: '24px' }}>
 
-                    NSL Digital Lab
+                    NSL   <span className="font-light ml-1 text-inherit">
+         DIGITAL LAB
+        </span>
 
                   </h2>
 
-                  <p className="text-xs uppercase tracking-widest text-cyan-400">
+                  <p className="text-xs uppercase tracking-widest text-cyan-400" style={{ fontSize: '9px', letterSpacing: '1px' }}>
 
-                    Design • Development • Growth
+                 <b className="bg-gradient-to-r from-[#24c2f2] via-[#2563eb] to-[#8b5cf6] bg-clip-text text-transparent">
+          Design • Development • Growth
+        </b>
 
                   </p>
 
@@ -450,11 +454,11 @@ export default function Footer() {
 
             </p>
 
-            <p className="text-slate-500 text-sm mt-2 text-center lg:text-left">
+            {/* <p className="text-slate-500 text-sm mt-2 text-center lg:text-left">
 
               Designed & Developed with ❤️ in Pune, India.
 
-            </p>
+            </p> */}
 
           </div>
 

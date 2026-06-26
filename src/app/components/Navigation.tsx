@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
-import logo from  "../../assets/images/nexify_n_logo.png"
+import logo from  "../../assets/images/Nsl-digital-lab.png"
 
 export default function Navigation({
   light = false,
@@ -154,17 +154,20 @@ export default function Navigation({
 
     <div
       className={`
-        w-14 h-14
-        rounded-2xl
         flex
+        h-9
+        w-9
         items-center
         justify-center
+        overflow-hidden
+         
+         
         transition-all
         duration-300
         ${
           isScrolled
-            ? "bg-white shadow-lg border border-slate-200"
-            : "bg-white/10 backdrop-blur-md border border-white/20"
+            ? "border-slate-200 bg-white shadow-lg"
+            : "border-white/20 bg-white/10 backdrop-blur-md"
         }
         group-hover:scale-105
       `}
@@ -172,36 +175,29 @@ export default function Navigation({
       <img
         src={logo}
         alt="NSL Digital Lab"
-        className="w-9 h-9 object-contain"
+         
       />
     </div>
 
     {/* Text */}
 
-    <div className="text-left">
+    <div className="text-left ps-4 border-l border-[#666666] pl-4">
 
-      <h2
-        className={`
-          text-lg
-          font-bold
-          leading-none
-          transition-colors
-          duration-300
-          ${
-            isScrolled
-              ? "text-[#202851]"
-              : "text-white"
-          }
-        `}
+      <h2 style={{ fontSize: '24px' }}
+        className={`text-lg font-bold leading-none transition-all duration-300 ${
+          isScrolled ? 'text-black' : 'text-white'
+        }`}
       >
         NSL
-        <span className="font-light ml-1">
-          Digital Lab
+        <span className="font-light ml-1 text-inherit">
+         DIGITAL LAB
         </span>
       </h2>
 
-      <p className="text-[11px] uppercase tracking-[3px] text-[#24c2f2] mt-1">
-        Design • Development • Growth
+      <p className="uppercase tracking-[3px] mt-1 text-[#24c2f2]" style={{ fontSize: '9px', letterSpacing: '1px' }}>
+        <b className="bg-gradient-to-r from-[#24c2f2] via-[#2563eb] to-[#8b5cf6] bg-clip-text text-transparent">
+          Design • Development • Growth
+        </b>
       </p>
 
     </div>
@@ -517,40 +513,6 @@ export default function Navigation({
           <span className="font-medium">📰 Blog</span>
 
           <span className="opacity-40 group-hover:opacity-100">
-            →
-          </span>
-        </Link>
-
-        <Link
-          to="/careers"
-          onClick={() => {
-            window.scrollTo({
-              top: 0,
-              behavior: "smooth",
-            });
-            setIsMobileMenuOpen(false);
-          }}
-          className="
-            group
-            flex
-            items-center
-            justify-between
-            px-5
-            py-4
-            rounded-2xl
-            bg-gradient-to-r
-            from-[#24c2f2]
-            to-[#2563eb]
-            text-white
-            shadow-md
-            hover:shadow-lg
-            transition-all
-            duration-300
-          "
-        >
-          <span className="font-medium">💼 Career</span>
-
-          <span className="opacity-80 group-hover:opacity-100">
             →
           </span>
         </Link>
