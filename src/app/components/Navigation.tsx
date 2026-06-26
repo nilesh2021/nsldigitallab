@@ -142,387 +142,437 @@ export default function Navigation({
     >
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+<div className="flex items-center justify-between">
 
-        <div className="flex items-center justify-between">
+  {/* ================= LOGO ================= */}
 
-          {/* LOGO */}
+  <button
+    onClick={scrollToTop}
+    className="group flex items-center gap-4"
+  >
+    {/* Logo */}
 
-          <button
-            onClick={scrollToTop}
-            className="flex items-center gap-3 group cursor-pointer"
-          >
+    <div
+      className={`
+        w-14 h-14
+        rounded-2xl
+        flex
+        items-center
+        justify-center
+        transition-all
+        duration-300
+        ${
+          isScrolled
+            ? "bg-white shadow-lg border border-slate-200"
+            : "bg-white/10 backdrop-blur-md border border-white/20"
+        }
+        group-hover:scale-105
+      `}
+    >
+      <img
+        src={logo}
+        alt="NSL Digital Lab"
+        className="w-9 h-9 object-contain"
+      />
+    </div>
 
-            <div className="w-14 h-14 flex items-center justify-center">
+    {/* Text */}
 
-              <img
-                src={logo}
-                alt="NSL Digital Lab Logo"
-                className="w-full h-full object-contain"
-              />
+    <div className="text-left">
 
-            </div>
+      <h2
+        className={`
+          text-lg
+          font-bold
+          leading-none
+          transition-colors
+          duration-300
+          ${
+            isScrolled
+              ? "text-[#202851]"
+              : "text-white"
+          }
+        `}
+      >
+        NSL
+        <span className="font-light ml-1">
+          Digital Lab
+        </span>
+      </h2>
 
-            <div className="flex flex-col leading-none text-left">
+      <p className="text-[11px] uppercase tracking-[3px] text-[#24c2f2] mt-1">
+        Design • Development • Growth
+      </p>
 
-              <span
-                className={`
-                  text-[18px]
-                  sm:text-[20px]
-                  font-bold
-                  transition-colors
-                  duration-300 
-                  ${
-                    isScrolled
-                      ? 'text-[#202851]'
-                      : 'text-white'
-                  }
-                `}
-              >
+    </div>
 
-                NSL
+  </button>
 
-                <span 
-                  className={`
-                    font-normal
-                    transition-colors
-                    duration-300
-                    f 
-                    ${
-                      isScrolled
-                        ? 'text-gray-500'
-                        : 'text-gray-300'
-                    }
-                  `}
-                  style={{ fontSize: '18px', fontWeight: 'lighter' }}
-                >
-                  &nbsp;Digital Lab
-                </span>
+  {/* ================= NAVIGATION ================= */}
+<button
+  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+  className={`
+    lg:hidden
+    flex
+    items-center
+    justify-center
+    w-12
+    h-12
+    rounded-2xl
+    transition-all
+    duration-300
+    ${
+      isScrolled
+        ? "bg-white shadow-lg border border-slate-200 text-[#202851]"
+        : "bg-white/10 backdrop-blur-xl border border-white/20 text-white"
+    }
+  `}
+>
+  {isMobileMenuOpen ? (
+    <X className="w-6 h-6" />
+  ) : (
+    <Menu className="w-6 h-6" />
+  )}
+</button>
+  <div className="hidden lg:flex items-center gap-5">
 
-              </span>
+    <div
+      className={`
+        flex
+        items-center
+        gap-2
+        rounded-full
+        px-3
+        py-2
+        transition-all
+        duration-500
+        ${
+          isScrolled
+            ? "bg-white shadow-xl border border-slate-200"
+            : "bg-white/10 backdrop-blur-xl border border-white/20"
+        }
+      `}
+    >
 
-              <span className="text-[10px] uppercase  text-[#24c2f2] mt-1">
+      <button
+        onClick={() => scrollToSection("services")}
+        className={`
+          px-5
+          py-2.5
+          rounded-full
+          text-sm
+          font-medium
+          transition-all
+          duration-300
+          hover:bg-[#24c2f2]
+          hover:text-white
+          ${
+            isScrolled
+              ? "text-[#202851]"
+              : "text-white"
+          }
+        `}
+      >
+        Services
+      </button>
 
-               Design • Development • Growth
+      <button
+        onClick={() => scrollToSection("about")}
+        className={`
+          px-5
+          py-2.5
+          rounded-full
+          text-sm
+          font-medium
+          transition-all
+          duration-300
+          hover:bg-[#24c2f2]
+          hover:text-white
+          ${
+            isScrolled
+              ? "text-[#202851]"
+              : "text-white"
+          }
+        `}
+      >
+        About
+      </button>
 
-              </span>
+      <button
+        onClick={() => scrollToSection("featured-work")}
+        className={`
+          px-5
+          py-2.5
+          rounded-full
+          text-sm
+          font-medium
+          transition-all
+          duration-300
+          hover:bg-[#24c2f2]
+          hover:text-white
+          ${
+            isScrolled
+              ? "text-[#202851]"
+              : "text-white"
+          }
+        `}
+      >
+        Portfolio
+      </button>
 
-            </div>
+      <Link
+        to="/blog"
+        className={`
+          px-5
+          py-2.5
+          rounded-full
+          text-sm
+          font-medium
+          transition-all
+          duration-300
+          hover:bg-[#24c2f2]
+          hover:text-white
+          ${
+            isScrolled
+              ? "text-[#202851]"
+              : "text-white"
+          }
+        `}
+      >
+        Blog
+      </Link>
 
-          </button>
+    </div>
 
-          {/* DESKTOP MENU */}
+    {/* CTA */}
 
-          <div className="hidden lg:flex items-center gap-10">
+    <Link
+      to="/careers"
+      className="
+        relative
+        overflow-hidden
+        rounded-full
+        px-8
+        py-3
+        bg-gradient-to-r
+        from-[#24c2f2]
+        to-[#2563eb]
+        text-white
+        font-semibold
+        shadow-lg
+        hover:-translate-y-1
+        hover:shadow-2xl
+        transition-all
+        duration-300
+      "
+    >
+      Let's Talk →
+    </Link>
 
-            {/* SERVICES */}
+  </div>
 
-            <button
-              onClick={() =>
-                scrollToSection('services')
-              }
-              className={`${navLinkClass} ${
-                isScrolled
-                  ? 'text-[#202851]'
-                  : 'text-white'
-              }`}
-            >
-              Services
-            </button>
-
-            {/* ABOUT */}
-
-            <button
-              onClick={() =>
-                scrollToSection('about')
-              }
-              className={`${navLinkClass} ${
-                isScrolled
-                  ? 'text-[#202851]'
-                  : 'text-white'
-              }`}
-            >
-              About
-            </button>
-
-            {/* FEATURED WORK */}
-
-            <button
-              onClick={() =>
-                scrollToSection('featured-work')
-              }
-              className={`${navLinkClass} ${
-                isScrolled
-                  ? 'text-[#202851]'
-                  : 'text-white'
-              }`}
-            >
-              Featured Work
-            </button>
-
-            {/* BLOG */}
-
-            <Link
-              to="/blog"
-              onClick={() => {
-
-                window.scrollTo({
-                  top: 0,
-                  behavior: 'smooth',
-                });
-
-                setIsMobileMenuOpen(false);
-
-              }}
-              className={`${navLinkClass} ${
-                isScrolled
-                  ? 'text-[#202851]'
-                  : 'text-white'
-              }`}
-            >
-              Blog
-            </Link>
-
-            {/* CAREERS */}
-
-            <Link
-              to="/careers"
-              onClick={() => {
-
-                window.scrollTo({
-                  top: 0,
-                  behavior: 'smooth',
-                });
-
-                setIsMobileMenuOpen(false);
-
-              }}
-              className="
-                group
-                relative
-                inline-flex
-                items-center
-                justify-center
-                px-7
-                py-3
-                rounded-2xl
-                bg-gradient-to-r
-                from-[#24c2f2]
-                via-[#1da1f2]
-                to-[#1d4ed8]
-                text-white
-                text-sm
-                font-semibold
-                shadow-[0_8px_30px_rgba(36,194,242,0.18)]
-                hover:shadow-[0_16px_50px_rgba(36,194,242,0.28)]
-                hover:-translate-y-[2px]
-                transition-all
-                duration-300
-                overflow-hidden
-              "
-            >
-              Careers
-            </Link>
-
-          </div>
-
-          {/* MOBILE BUTTON */}
-
-          <button
-            onClick={() =>
-              setIsMobileMenuOpen(
-                !isMobileMenuOpen
-              )
-            }
-            className={`
-              lg:hidden
-              p-2
-              rounded-xl
-              transition-all
-              duration-300
-              ${
-                isScrolled
-                  ? 'text-[#202851] hover:bg-[#202851]/5'
-                  : 'text-white hover:bg-white/10'
-              }
-            `}
-          >
-
-            {isMobileMenuOpen ? (
-              <X className="w-7 h-7" />
-            ) : (
-              <Menu className="w-7 h-7" />
-            )}
-
-          </button>
-
-        </div>
+</div>
 
       </div>
 
       {/* MOBILE MENU */}
 
-      <div
-        className={`
-          lg:hidden
-          overflow-hidden
-          transition-all
-          duration-500
-          ease-in-out
-          ${
-            isMobileMenuOpen
-              ? 'max-h-[600px] opacity-100'
-              : 'max-h-0 opacity-0'
-          }
-        `}
-      >
+      {/* =======================
+    PREMIUM MOBILE MENU
+======================= */}
 
-        <div className="bg-white/90 backdrop-blur-xl border-t border-[#202851]/10 shadow-2xl">
+<div
+  className={`
+    lg:hidden
+    overflow-hidden
+    transition-all
+    duration-500
+    ease-in-out
+    ${
+      isMobileMenuOpen
+        ? "max-h-[700px] opacity-100 mt-4"
+        : "max-h-0 opacity-0"
+    }
+  `}
+>
+  <div
+    className="
+      rounded-3xl
+      bg-white/90
+      backdrop-blur-2xl
+      border
+      border-slate-200
+      shadow-2xl
+      overflow-hidden
+    "
+  >
+    <div className="px-6 py-6">
 
-          <div className="container mx-auto px-6 py-5 space-y-3">
+      {/* Navigation */}
 
-            {/* SERVICES */}
+      <div className="space-y-2">
 
-            <button
-              onClick={() =>
-                scrollToSection('services')
-              }
-              className="
-                block
-                w-full
-                text-left
-                px-4
-                py-3
-                text-[#202851]
-                rounded-xl
-                hover:bg-[#f4f9ff]
-                hover:text-[#24c2f2]
-                transition-all
-                duration-300
-              "
-            >
-              Services
-            </button>
+        <button
+          onClick={() => scrollToSection("services")}
+          className="
+            group
+            flex
+            items-center
+            justify-between
+            w-full
+            px-5
+            py-4
+            rounded-2xl
+            text-[#202851]
+            hover:bg-[#24c2f2]
+            hover:text-white
+            transition-all
+            duration-300
+          "
+        >
+          <span className="font-medium">⚡ Services</span>
 
-            {/* ABOUT */}
+          <span className="opacity-40 group-hover:opacity-100">
+            →
+          </span>
+        </button>
 
-            <button
-              onClick={() =>
-                scrollToSection('about')
-              }
-              className="
-                block
-                w-full
-                text-left
-                px-4
-                py-3
-                text-[#202851]
-                rounded-xl
-                hover:bg-[#f4f9ff]
-                hover:text-[#24c2f2]
-                transition-all
-                duration-300
-              "
-            >
-              About
-            </button>
+        <button
+          onClick={() => scrollToSection("about")}
+          className="
+            group
+            flex
+            items-center
+            justify-between
+            w-full
+            px-5
+            py-4
+            rounded-2xl
+            text-[#202851]
+            hover:bg-[#24c2f2]
+            hover:text-white
+            transition-all
+            duration-300
+          "
+        >
+          <span className="font-medium">👋 About</span>
 
-            {/* FEATURED WORK */}
+          <span className="opacity-40 group-hover:opacity-100">
+            →
+          </span>
+        </button>
 
-            <button
-              onClick={() =>
-                scrollToSection('featured-work')
-              }
-              className="
-                block
-                w-full
-                text-left
-                px-4
-                py-3
-                text-[#202851]
-                rounded-xl
-                hover:bg-[#f4f9ff]
-                hover:text-[#24c2f2]
-                transition-all
-                duration-300
-              "
-            >
-              Featured Work
-            </button>
+        <button
+          onClick={() => scrollToSection("featured-work")}
+          className="
+            group
+            flex
+            items-center
+            justify-between
+            w-full
+            px-5
+            py-4
+            rounded-2xl
+            text-[#202851]
+            hover:bg-[#24c2f2]
+            hover:text-white
+            transition-all
+            duration-300
+          "
+        >
+          <span className="font-medium">🎨 Portfolio</span>
 
-            {/* BLOG */}
+          <span className="opacity-40 group-hover:opacity-100">
+            →
+          </span>
+        </button>
 
-            <Link
-              to="/blog"
-              onClick={() => {
+        <Link
+          to="/blog"
+          onClick={() => {
 
-                window.scrollTo({
-                  top: 0,
-                  behavior: 'smooth',
-                });
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
 
-                setIsMobileMenuOpen(false);
+            setIsMobileMenuOpen(false);
 
-              }}
-              className="
-                block
-                px-4
-                py-3
-                text-[#202851]
-                rounded-xl
-                hover:bg-[#f4f9ff]
-                hover:text-[#24c2f2]
-                transition-all
-                duration-300
-              "
-            >
-              Blog
-            </Link>
+          }}
+          className="
+            group
+            flex
+            items-center
+            justify-between
+            px-5
+            py-4
+            rounded-2xl
+            text-[#202851]
+            hover:bg-[#24c2f2]
+            hover:text-white
+            transition-all
+            duration-300
+          "
+        >
+          <span className="font-medium">📰 Blog</span>
 
-            {/* CAREERS */}
-
-            <div className="flex justify-center pt-4">
-
-              <Link
-                to="/careers"
-                onClick={() => {
-
-                  window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth',
-                  });
-
-                  setIsMobileMenuOpen(false);
-
-                }}
-                className="
-                  inline-flex
-                  items-center
-                  justify-center
-                  px-8
-                  py-3
-                  bg-gradient-to-r
-                  from-[#24c2f2]
-                  to-[#202851]
-                  text-white
-                  rounded-full
-                  shadow-lg
-                  hover:scale-105
-                  hover:shadow-2xl
-                  transition-all
-                  duration-300
-                "
-              >
-                Careers
-              </Link>
-
-            </div>
-
-          </div>
-
-        </div>
+          <span className="opacity-40 group-hover:opacity-100">
+            →
+          </span>
+        </Link>
 
       </div>
 
+      {/* Divider */}
+
+      <div className="my-6 border-t border-slate-200"></div>
+
+      {/* CTA */}
+
+      <Link
+        to="/careers"
+        onClick={() => {
+
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+
+          setIsMobileMenuOpen(false);
+
+        }}
+        className="
+          flex
+          items-center
+          justify-center
+          gap-2
+          w-full
+          py-4
+          rounded-2xl
+          bg-gradient-to-r
+          from-[#24c2f2]
+          to-[#2563eb]
+          text-white
+          font-semibold
+          shadow-lg
+          hover:shadow-2xl
+          hover:-translate-y-1
+          transition-all
+          duration-300
+        "
+      >
+        🚀 Let's Talk
+      </Link>
+
+      {/* Bottom */}
+
+      <p className="text-center text-xs text-slate-500 mt-5">
+        Design • Development • Growth
+      </p>
+
+    </div>
+  </div>
+</div>
     </nav>
 
   );
