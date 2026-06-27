@@ -108,7 +108,7 @@ export default function About() {
 
             {[
               {
-                number: "25+",
+                number: "12+",
                 label: "Projects Delivered",
                 icon: Rocket,
               },
@@ -118,7 +118,7 @@ export default function About() {
                 icon: Users,
               },
               {
-                number: "5+",
+                number: "1+",
                 label: "Years Experience",
                 icon: Award,
               },

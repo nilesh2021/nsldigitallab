@@ -96,7 +96,7 @@ export default function ContactCTA() {
             <h2 className="mt-8 text-5xl font-bold leading-tight text-white">
 
               Ready to Grow
-              <br />
+             
               Your Business?
 
             </h2>

@@ -39,7 +39,7 @@ export default function FeaturedWork() {
 
     {/* Projects */}
 
-    <div className="grid lg:grid-cols-3 gap-8">
+    <div className="grid lg:grid-cols-3 gap-4">
 
       {/* CARD 1 */}
 
@@ -154,71 +154,8 @@ export default function FeaturedWork() {
         </div>
 
       </div>
-
-      {/* CARD 3 */}
-
-      <div className="group rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all">
-
-        <div className="h-56 bg-gradient-to-br from-[#202851] via-[#24356d] to-[#24c2f2] flex items-center justify-center">
-
-          <Search className="w-16 h-16 text-white" />
-
-        </div>
-
-        <div className="p-8">
-
-          <span className="text-cyan-600 font-semibold text-sm">
-
-            SEO Strategy
-
-          </span>
-
-          <h3 className="mt-3 text-2xl font-bold text-[#202851]">
-
-            SEO Blog Architecture
-
-          </h3>
-
-          <p className="mt-4 text-slate-600 leading-7">
-
-            Optimized content structure built for scalable
-            organic traffic and long-term growth.
-
-          </p>
-
-          <div className="mt-6 flex flex-wrap gap-2">
-
-            <span className="px-3 py-1 rounded-full bg-slate-100 text-sm">
-
-              SEO
-
-            </span>
-
-            <span className="px-3 py-1 rounded-full bg-slate-100 text-sm">
-
-              Content
-
-            </span>
-
-            <span className="px-3 py-1 rounded-full bg-slate-100 text-sm">
-
-              Analytics
-
-            </span>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    {/* Second Row */}
-
-    <div className="grid lg:grid-cols-2 gap-8 mt-8">
-
-      {/* CARD 4 */}
+ 
+   {/* CARD 4 */}
 
       <div className="group rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all">
 
@@ -253,40 +190,16 @@ export default function FeaturedWork() {
 
       </div>
 
-      {/* CARD 5 */}
+       
 
-      <div className="group rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all">
+       
+    </div>
 
-        <div className="h-56 bg-gradient-to-br from-[#202851] via-[#24356d] to-[#24c2f2] flex items-center justify-center">
+    {/* Second Row */}
 
-          <Palette className="w-16 h-16 text-white" />
+    <div className="grid lg:grid-cols-2 gap-8 mt-8">
 
-        </div>
-
-        <div className="p-8">
-
-          <span className="text-cyan-600 font-semibold text-sm">
-
-            Branding
-
-          </span>
-
-          <h3 className="mt-3 text-2xl font-bold text-[#202851]">
-
-            Digital Brand Identity
-
-          </h3>
-
-          <p className="mt-4 text-slate-600 leading-7">
-
-            Creating consistent visual identity and engaging
-            digital experiences that strengthen your brand.
-
-          </p>
-
-        </div>
-
-      </div>
+   
 
     </div>
 

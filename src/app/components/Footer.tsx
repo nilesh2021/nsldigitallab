@@ -99,7 +99,7 @@ export default function Footer() {
                 {[
                   Linkedin,
                   Instagram,
-                  Youtube,
+                 
                   Github,
                 ].map((Icon, index) => (
 
@@ -487,12 +487,12 @@ export default function Footer() {
               Terms & Conditions
             </Link>
 
-            <Link
+            {/* <Link
               to="/affiliate-disclosure"
               className="text-slate-400 hover:text-cyan-400 transition"
             >
               Affiliate Disclosure
-            </Link>
+            </Link> */}
 
             <Link
               to="/disclaimer"

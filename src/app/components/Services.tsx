@@ -120,11 +120,11 @@ export default function Services() {
 
           {/* Title */}
 
-          <h3 className="text-lg font-bold text-[#202851]">
+          <h2 className="font-bold text-[#202851]">
 
             {service.title}
 
-          </h3>
+          </h2>
 
           {/* Description */}
 

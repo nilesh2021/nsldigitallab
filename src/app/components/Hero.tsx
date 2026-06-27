@@ -181,7 +181,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="relative mx-auto w-full max-w-2xl">
+          <div className="hidden lg:block relative mx-auto w-full max-w-2xl">
             <div className="absolute -inset-8 bg-cyan-500/10 blur-[120px]" />
 
             <div className="absolute -left-4 top-8 z-20">
@@ -219,31 +219,12 @@ export default function Hero() {
 
                 <div className="rounded-[1.5rem] border border-cyan-400/20 bg-[#0a1324]/90 p-4 sm:p-5">
                   <div className="grid gap-4 lg:grid-cols-[0.95fr_1.05fr]">
-                    <div className="rounded-[1.25rem] border border-white/10 bg-gradient-to-br from-cyan-500/20 via-slate-900 to-violet-600/20 p-5">
-                      <p className="text-[11px] uppercase tracking-[0.25em] text-slate-400">
-                        Featured Project
-                      </p>
-                      <h3 className="mt-3 text-2xl font-semibold text-white">
-                        Brand-led Growth
-                      </h3>
-                      <p className="mt-2 text-sm leading-6 text-slate-400">
-                        A conversion-first experience built to blend storytelling,
-                        SEO, and modern product design.
-                      </p>
-
-                      <div className="mt-6 flex items-center gap-3">
-                        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-400/15">
-                          <Rocket className="h-5 w-5 text-cyan-300" />
-                        </div>
-                        <div>
-                          <p className="text-sm font-semibold text-white">
-                            3-week launch sprint
-                          </p>
-                          <p className="text-sm text-slate-400">
-                            From strategy to rollout
-                          </p>
-                        </div>
-                      </div>
+                    <div className="rounded-[1.25rem] border border-white/10 overflow-hidden bg-[#0a1324]/90">
+                      <img
+                        src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80"
+                        alt="Person typing on a laptop"
+                        className="w-full h-64 object-cover"
+                      />
                     </div>
 
                     <div className="space-y-3">
