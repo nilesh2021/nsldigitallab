@@ -5,7 +5,7 @@ import CareersPage from "../app/careers/page";
 import DataEntryRemoteJob from "../app/careers/data-entry-remote-job/page";
 import ContentWriterJob from "../app/careers/content-writer-job/page";
 import SeoExecutiveJob from "../app/careers/seo-executive-job/page";
-import UiUxDesignerJob from "../app/careers/ui-ux-designer-job/page";
+import UiuxDesignerJob from "../app/careers/ui-ux-designer-remote-job/page"
 
 const careerRoutes = (
   <>
@@ -31,7 +31,7 @@ const careerRoutes = (
 
     <Route
       path="/careers/ui-ux-designer-job"
-      element={<UiUxDesignerJob />}
+      element={<UiuxDesignerJob />}
     />
   </>
 );

@@ -7,7 +7,7 @@ import { useState } from "react";
 import JobPostingSchema from "../../../seo/schemas/JobPostingSchema";
 
 import { submitCareerApplication } from "../../../services/career";
-export default function DataEntryRemoteJob() {
+export default function UiuxDesignerJob() {
   const [showModal, setShowModal] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [name, setName] = useState("");
@@ -37,7 +37,7 @@ export default function DataEntryRemoteJob() {
         phone,
         resume,
         message: "",
-        jobTitle: "Data Entry Remote Job",
+      jobTitle: "UI/UX Designer"
       });
 
       if (!result.success) {
@@ -66,16 +66,21 @@ export default function DataEntryRemoteJob() {
   return (
 
     <>
-      <SEO {...PAGE_SEO.dataEntryRemoteJob} />
+      <SEO {...PAGE_SEO.UiuxDesignerJob} />
 
       <JobPostingSchema
-        title="Remote Data Entry Executive"
-        description="Remote data entry job..."
-        datePosted="2026-06-17"
-        employmentType="PART_TIME"
-        location="Remote"
-        salary="5000-10000"
-      />
+    title="UI/UX Designer"
+
+    description="NSL Digital Lab is hiring a creative UI/UX Designer experienced in Figma, wireframing, prototyping, responsive web design, usability testing, and user-centered design."
+
+    datePosted="2026-06-27"
+
+    employmentType="PART/FULL_TIME"
+
+    location="Pune, India"
+
+    salary="500000-900000"
+/>
 
       <Navigation />
 
@@ -92,7 +97,7 @@ export default function DataEntryRemoteJob() {
               Careers
             </Link>
             <span className="mx-2">/</span>
-            <span>Data Entry Remote Job</span>
+            <span>Remote UI/UX Designer Jobs</span>
           </nav>
 
           <span className="inline-block px-4 py-2 rounded-full bg-green-500/20 text-green-300 text-sm font-medium mb-6">
@@ -100,15 +105,14 @@ export default function DataEntryRemoteJob() {
           </span>
 
           <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
-            Data Entry
+         UI/UX Designer  
             <span className="text-cyan-400">
               &nbsp;Remote Job
             </span>
           </h1>
 
           <p className="text-xl text-slate-300 max-w-3xl">
-            Join NSL Digital Lab as a Remote Data Entry Executive and work
-            from anywhere with flexible hours and career growth opportunities.
+            Join NSL Digital Lab as a UI/UX Designer. Design intuitive web and mobile experiences using Figma, user research, wireframing, prototyping, and responsive design principles. Work with developers to create modern, user-friendly digital products.
           </p>
 
         </div>
@@ -138,7 +142,7 @@ export default function DataEntryRemoteJob() {
 
               <div>
                 <p className="text-slate-500 text-sm">Salary</p>
-                <h3 className="font-bold text-xl">₹5K - ₹10K</h3>
+                <h3 className="font-bold text-xl">₹5K - ₹40K</h3>
               </div>
 
               <button
@@ -162,18 +166,27 @@ export default function DataEntryRemoteJob() {
 
             <div className="lg:col-span-2 space-y-8">
 
-              <div className="bg-white rounded-3xl p-8 shadow-sm">
-                <h2 className="text-3xl font-bold mb-4">
-                  Job Overview
-                </h2>
+             <div className="bg-white rounded-3xl p-8 shadow-sm">
+  <h2 className="text-3xl font-bold mb-4">
+    Job Overview
+  </h2>
 
-                <p className="text-slate-600 leading-8">
-                  NSL Digital Lab is looking for detail-oriented individuals
-                  for remote data entry positions. Candidates should possess
-                  basic computer knowledge, strong attention to detail,
-                  and the ability to manage data accurately.
-                </p>
-              </div>
+  <p className="text-slate-700 leading-8 mb-4">
+    NSL Digital Lab is looking for a passionate and creative <strong>UI/UX Designer</strong> to design intuitive, user-friendly, and visually engaging digital experiences for web and mobile applications. You will collaborate with developers, project managers, and stakeholders to transform business requirements into modern, responsive, and user-centered interfaces.
+  </p>
+
+  <p className="text-slate-700 leading-8 mb-4">
+    As a UI/UX Designer, you will work throughout the complete design process, including <strong>User Research</strong>, competitor analysis, information architecture, <strong>Wireframing</strong>, <strong>Prototyping</strong>, visual interface design, and <strong>Usability Testing</strong>. You will use <strong>Figma</strong> to create high-fidelity mockups, interactive prototypes, reusable <strong>Design Systems</strong>, and design components that ensure consistency across products.
+  </p>
+
+  <p className="text-slate-700 leading-8 mb-4">
+    You will contribute to designing responsive websites, enterprise web applications, dashboards, and <strong>Mobile App Design</strong> projects while following modern UI/UX best practices, accessibility standards, and responsive design principles. Knowledge of HTML, CSS, Bootstrap, and front-end development concepts will be an added advantage.
+  </p>
+
+  <p className="text-slate-700 leading-8">
+    This opportunity is ideal for designers who enjoy solving real user problems, creating exceptional digital experiences, and continuously improving their skills in user experience design, interface design, and product design.
+  </p>
+</div>
 
               <div className="bg-white rounded-3xl p-8 shadow-sm">
                 <h2 className="text-3xl font-bold mb-6">
@@ -181,11 +194,13 @@ export default function DataEntryRemoteJob() {
                 </h2>
 
                 <ul className="space-y-4 text-slate-700">
-                  <li>✓ Enter and update data accurately</li>
-                  <li>✓ Verify information and correct errors</li>
-                  <li>✓ Maintain company records</li>
-                  <li>✓ Generate reports when required</li>
-                  <li>✓ Ensure data confidentiality</li>
+                  <li>✓ Design user-friendly web and mobile interfaces</li>
+                  <li>✓ Create wireframes and interactive prototypes</li>
+                  <li>✓ Conduct user research and usability testing</li>
+                  <li>✓ Build reusable design systems</li>
+                  <li>✓ Collaborate with developers and stakeholders</li>
+                  <li>✓ Ensure accessibility and responsive design</li>
+                  <li>✓ Maintain UI consistency across products</li>
                 </ul>
               </div>
 
@@ -195,54 +210,31 @@ export default function DataEntryRemoteJob() {
                 </h2>
 
                 <ul className="space-y-4 text-slate-700">
-                  <li>✓ Basic computer skills</li>
-                  <li>✓ MS Excel & Google Sheets</li>
-                  <li>✓ Good typing speed</li>
-                  <li>✓ Attention to detail</li>
-                  <li>✓ Internet connection</li>
+                  <li>✓ 0-2 Years  of UI/UX experience</li>
+                  <li>✓ knowledge of Figma, </li>
+                  <li>✓ Ux research, Competitive analysis</li>
+                  <li>✓ Wireframing & Prototyping</li>
+                  <li>✓ User Research</li>
+                  <li>✓ Design Systems</li>
+                  <li>✓ HTML & CSS knowledge (good to have)</li>
+                  <li>✓ Responsive Design</li>
+                  <li>✓ Portfolio required</li>
                 </ul>
               </div>
-              {/* REMOTE DATA ENTRY CONTENT */}
-              <div className="bg-white rounded-3xl p-8 shadow-sm">
+            <div className="bg-white rounded-3xl p-8 shadow-sm">
                 <h2 className="text-3xl font-bold mb-6">
-                  Remote Data Entry Jobs – Work From Home Opportunity
+                Why Choose a Career in UI/UX Design?
                 </h2>
 
-                <p className="text-slate-700 leading-8 mb-4">
-                  Looking for remote data entry jobs? NSL Digital Lab offers work from home
-                  opportunities for candidates who want flexible online work. Whether you
-                  are a fresher, student, homemaker, or experienced professional, this
-                  position provides a great opportunity to earn income while working
-                  remotely.
-                </p>
+                <p>UI/UX Design is one of the fastest-growing fields in the digital industry.
 
-                <p className="text-slate-700 leading-8 mb-4">
-                  Data entry jobs involve entering, updating, and maintaining information
-                  in digital systems. Candidates should have basic computer knowledge,
-                  attention to detail, and the ability to work independently.
-                </p>
+Businesses increasingly rely on user-centered design to improve customer satisfaction, increase conversions, and create better digital products.
 
-                <p className="text-slate-700 leading-8">
-                  Our remote data entry executives work with spreadsheets, databases,
-                  reports, and business information. Training and guidance are provided
-                  to help new team members succeed.
-                </p>
+A career in UI/UX Design offers opportunities in product design, web design, mobile app design, user research, interaction design, and design systems.</p>
               </div>
 
               {/* WHO CAN APPLY */}
-              <div className="bg-white rounded-3xl p-8 shadow-sm">
-                <h2 className="text-3xl font-bold mb-6">
-                  Who Can Apply?
-                </h2>
-
-                <ul className="space-y-4 text-slate-700">
-                  <li>✓ Freshers looking for work from home jobs</li>
-                  <li>✓ Students seeking part-time online jobs</li>
-                  <li>✓ Housewives looking for flexible remote work</li>
-                  <li>✓ Professionals seeking additional income opportunities</li>
-                  <li>✓ Candidates with basic computer and typing skills</li>
-                </ul>
-              </div>
+             <section className="bg-white rounded-3xl shadow-sm p-8 mt-8"><h2 className="text-3xl font-bold mb-6">Remote UI UX Designer Jobs</h2><p className="text-slate-700 leading-8 mb-4">Looking for UI UX Designer Jobs? NSL Digital Lab offers remote opportunities for designers passionate about creating user-friendly digital experiences.</p><p className="text-slate-700 leading-8 mb-4">As a UI UX Designer, you will work on website design, mobile app interfaces, user research, wireframing, prototyping, and design systems.</p><p className="text-slate-700 leading-8 mb-4">This position is ideal for candidates who enjoy problem-solving, visual design, user-centered thinking, and creating products that improve customer experiences.</p><h3 className="text-2xl font-semibold mt-8 mb-4">Who Can Apply?</h3><ul className="list-disc pl-6 space-y-2 text-slate-700"><li>UI UX Design Freshers</li><li>Figma Designers</li><li>Web Designers transitioning to UI UX</li><li>Graphic Designers interested in Product Design</li><li>Design Students building their portfolio</li><li>Freelance UI UX Designers</li><li>Candidates passionate about user experience and interface design</li></ul></section>
 
               {/* FAQ */}
               <div className="bg-white rounded-3xl p-8 shadow-sm">
@@ -260,13 +252,13 @@ export default function DataEntryRemoteJob() {
                         setOpenFaq(openFaq === 1 ? null : 1)
                       }
                     >
-                      <span>Is this a work from home data entry job?</span>
+                      <span>Is this a work from home UI UX designer job?</span>
                       <span>{openFaq === 1 ? "−" : "+"}</span>
                     </button>
 
                     {openFaq === 1 && (
                       <div className="px-5 pb-5 text-slate-600">
-                        Yes, this is a fully remote data entry position that allows
+                        Yes, this is a fully remote UI UX designer position that allows
                         candidates to work from home.
                       </div>
                     )}
@@ -286,8 +278,7 @@ export default function DataEntryRemoteJob() {
 
                     {openFaq === 2 && (
                       <div className="px-5 pb-5 text-slate-600">
-                        Yes. Freshers with basic computer skills and attention to
-                        detail are encouraged to apply.
+                       Freshers with a strong portfolio and knowledge of Figma, wireframing, and UX principles are encouraged to apply.
                       </div>
                     )}
                   </div>
@@ -306,8 +297,7 @@ export default function DataEntryRemoteJob() {
 
                     {openFaq === 3 && (
                       <div className="px-5 pb-5 text-slate-600">
-                        Basic computer knowledge, typing skills, internet access,
-                        accuracy in data handling, and attention to detail.
+                        Figma is the primary design tool. Knowledge of Adobe XD, Photoshop, Illustrator, or other design tools is a plus.
                       </div>
                     )}
                   </div>
@@ -428,7 +418,7 @@ export default function DataEntryRemoteJob() {
                   id="apply-heading"
                   className="text-2xl font-semibold text-slate-900"
                 >
-                  Apply for Data Entry Job
+                  Apply for UI UX designer Job
                 </h2>
 
                   <p

@@ -16,6 +16,24 @@ export const PAGE_SEO = {
 
     type: "website",
   },
+  UiuxDesignerJob: {
+  title:
+    "UI/UX Designer Jobs in Pune | Remote UI UX Designer Job | NSL Digital Lab",
+
+  description:
+    "Apply for UI/UX Designer jobs at NSL Digital Lab. We are hiring creative UI/UX Designers with Figma, wireframing, prototyping, user research, and responsive web design skills.",
+
+  keywords:
+    "UI UX Designer jobs, UI Designer jobs, UX Designer jobs, Figma jobs, Remote UI UX jobs, UI UX Designer Pune, Product Designer, UX Research jobs",
+
+  canonical:
+    "https://www.nsldigitallab.com/careers/ui-ux-designer-remote-job",
+
+  robots: "index,follow",
+
+  ogImage:
+    "https://www.nsldigitallab.com/images/uiux-designer-job.jpg",
+},
 
   about: {
     title: "About Us | NSL Digital Lab",

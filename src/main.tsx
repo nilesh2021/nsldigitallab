@@ -3,6 +3,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import CareerThankYouPage from "./app/careers/thank-you/page";
 import ThankYouPage from "./app/thank-you/page";
 import './styles/index.css';
+import CareerCrudPage from "./app/career-crud/page"
 
 import {
   BrowserRouter,
@@ -67,6 +68,13 @@ createRoot(document.getElementById('root')!).render(
   path="/thank-you"
   element={<ThankYouPage />}
 />
+<Route
+  path="/career-crud"
+  element={<CareerCrudPage />}
+/>
+
+
+
       </Routes>
     </BrowserRouter>
 

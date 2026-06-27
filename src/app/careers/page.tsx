@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
   Briefcase,
@@ -58,6 +59,10 @@ const benefits = [
 ];
 
 export default function CareersPage() {
+  const [selectedJobTitle, setSelectedJobTitle] = useState(
+    'General Career Application'
+  );
+
   return (
     <>
 
@@ -731,6 +736,7 @@ export default function CareersPage() {
 
                   <button
                     onClick={() => {
+                      setSelectedJobTitle(job.title);
                       const element = document.getElementById('apply');
 
                       if (element) {
@@ -1021,7 +1027,7 @@ export default function CareersPage() {
 
               <div className="p-6 sm:p-10 lg:p-12">
 
-                <CareerForm jobTitle="General Career Application" />
+                <CareerForm jobTitle={selectedJobTitle} />
 
               </div>
             </div>

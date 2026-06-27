@@ -31,7 +31,7 @@ export default function Footer() {
 
         {/* Top */}
 
-        <div className="py-20">
+        <div className="py-10">
 
           <div className="grid gap-12 lg:grid-cols-6">
 
@@ -48,12 +48,12 @@ export default function Footer() {
                 <img
                   src={logo} 
                   alt="NSL Digital Lab"
-                  className=" object-contain w-9 h-9"
+                  className=" object-contain w-7 h-7"
                 />
 
                 <div className="text-left ps-4 border-l border-[#666666] pl-4">
 
-                  <h2 className="text-xl font-bold" style={{ fontSize: '24px' }}>
+                  <h2 className="text-xl font-bold" style={{ fontSize: '20px' }}>
 
                     NSL   <span className="font-light ml-1 text-inherit">
          DIGITAL LAB
@@ -61,7 +61,7 @@ export default function Footer() {
 
                   </h2>
 
-                  <p className="text-xs uppercase tracking-widest text-cyan-400" style={{ fontSize: '9px', letterSpacing: '1px' }}>
+                  <p className="text-xs uppercase tracking-widest text-cyan-400" style={{ fontSize: '8px', letterSpacing: '1px' }}>
 
                  <b className="bg-gradient-to-r from-[#24c2f2] via-[#2563eb] to-[#8b5cf6] bg-clip-text text-transparent">
           Design • Development • Growth

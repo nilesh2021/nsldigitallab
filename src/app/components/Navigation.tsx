@@ -148,15 +148,15 @@ export default function Navigation({
 
   <button
     onClick={scrollToTop}
-    className="group flex items-center gap-4"
+    className="group flex items-center gap-3   cursor-pointer"
   >
     {/* Logo */}
 
     <div
       className={`
         flex
-        h-9
-        w-9
+        h-8
+        w-8
         items-center
         justify-center
         overflow-hidden
@@ -183,7 +183,7 @@ export default function Navigation({
 
     <div className="text-left ps-4 border-l border-[#666666] pl-4">
 
-      <h2 style={{ fontSize: '24px' }}
+      <h2 style={{ fontSize: '20px' }}
         className={`text-lg font-bold leading-none transition-all duration-300 ${
           isScrolled ? 'text-black' : 'text-white'
         }`}
@@ -194,7 +194,7 @@ export default function Navigation({
         </span>
       </h2>
 
-      <p className="uppercase tracking-[3px] mt-1 text-[#24c2f2]" style={{ fontSize: '9px', letterSpacing: '1px' }}>
+      <p className="uppercase tracking-[3px] mt-1 text-[#24c2f2]" style={{ fontSize: '8px', letterSpacing: '1px' }}>
         <b className="bg-gradient-to-r from-[#24c2f2] via-[#2563eb] to-[#8b5cf6] bg-clip-text text-transparent">
           Design • Development • Growth
         </b>
