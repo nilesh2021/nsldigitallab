@@ -59,7 +59,7 @@ export default function Hero() {
       <div className="relative z-20 mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid items-center gap-16 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="max-w-2xl">
-            <div className="inline-flex flex-wrap items-center gap-3 rounded-full border border-violet-300/20 bg-white/[0.04] px-5 py-2.5 text-sm font-semibold text-violet-300 shadow-[0_0_40px_rgba(139,92,246,0.16)] backdrop-blur-xl">
+            <div className="inline-flex flex-wrap items-center gap-1 rounded-full border border-violet-300/20 bg-white/[0.04] px-3 py-2.5 text-sm font-semibold text-violet-300 shadow-[0_0_40px_rgba(139,92,246,0.16)] backdrop-blur-xl">
               <Sparkles className="h-4 w-4 text-fuchsia-300" />
               <span className="text-cyan-300">UI/UX</span>
               <span className="h-1 w-1 rounded-full bg-violet-300/70" />
