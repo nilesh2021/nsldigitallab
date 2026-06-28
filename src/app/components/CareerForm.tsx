@@ -163,7 +163,7 @@ export default function CareerForm({ jobTitle }: Props) {
                     resume: e.target.value,
                   })
                 }
-                type="url"
+                type="text"
                 name="resume"
                 placeholder="Google Drive, LinkedIn or Portfolio URL"
                 className="w-full rounded-[24px] border border-white/10 bg-slate-950/80 py-4 pl-14 pr-4 text-white outline-none transition focus:border-cyan-400/70 focus:ring-2 focus:ring-cyan-500/10"
