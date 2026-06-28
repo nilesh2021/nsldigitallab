@@ -73,7 +73,7 @@ export default function CareersPage() {
       <SEO {...PAGE_SEO.careers} />
       <Navigation />
       <ScrollToTop />
-      <main className="bg-[#0f172a] text-white min-h-screen overflow-hidden ">
+      <main className="bg-[#0f172a] text-white min-h-screen overflow-hidden">
 
         {/* Hero Section */}
         <section
@@ -84,7 +84,7 @@ export default function CareersPage() {
     items-center
     justify-center
     overflow-hidden
-    bg-[radial-gradient(circle_at_top_left,#143b63_0%,#111936_30%,#1a2150_60%,#091224_100%)]
+    bg-[radial-gradient(circle_at_top_left,#031b33_0%,#111936_30%,#1a2150_60%,#091224_100%)]
     px-4
     sm:px-6
     pt-32
@@ -166,7 +166,7 @@ export default function CareersPage() {
         mb-8
       "
             >
-              ✧ Careers at nsldigitallab
+            🚀 Careers at NSL Digital Lab
             </div>
 
             {/* Heading */}
@@ -174,7 +174,7 @@ export default function CareersPage() {
             <h1
               className="
         text-5xl
-        sm:text-6xl
+        sm:text-6xl 
         lg:text-7xl
         font-bold
         leading-[1.05]
@@ -183,7 +183,8 @@ export default function CareersPage() {
         mb-8
       "
             >
-              Launch Your Career In
+           Start Your Career with
+
 
               <span
                 className="
@@ -197,7 +198,7 @@ export default function CareersPage() {
           text-transparent
         "
               >
-                Digital Marketing
+              Real-World Projects
               </span>
             </h1>
 
@@ -214,9 +215,7 @@ export default function CareersPage() {
         mb-14
       "
             >
-              Join our creative digital team and gain hands-on experience in SEO,
-              digital marketing, UI/UX design, and modern web development.
-              Learn practical skills while working on real-world projects.
+             Join our growing startup and gain practical experience by working on real projects. Whether you're a fresher or an experienced professional, we're always looking for passionate people who love learning and building digital products.
             </p>
 
             {/* CTA Buttons */}
@@ -261,7 +260,7 @@ export default function CareersPage() {
           duration-300
         "
               >
-                View Open Roles
+             View Open Positions
 
                 <span className="group-hover:translate-x-1 transition-transform duration-300">
                   →
@@ -294,13 +293,13 @@ export default function CareersPage() {
           duration-300
         "
               >
-                Apply Now
+             Submit Resume
               </button>
             </div>
 
             {/* Stats */}
 
-            <div
+            {/* <div
               className="
         mt-20
         grid
@@ -353,7 +352,7 @@ export default function CareersPage() {
                   </div>
                 </div>
               ))}
-            </div>
+            </div> */}
 
             {/* Scroll Indicator */}
 
