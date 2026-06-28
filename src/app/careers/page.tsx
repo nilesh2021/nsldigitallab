@@ -20,42 +20,46 @@ import SEO from '../../seo/SEO';
 
 const jobs = [
   {
-    title: 'SEO Intern',
-    type: 'Internship',
-    location: 'Remote / Worldwide',
-    description:
-      'Learn on-page SEO, keyword research, blogging, and Google Search Console with live projects.',
-  },
-  {
-    title: 'Digital Marketing Intern',
-    type: 'Internship',
-    location: 'Remote / Worldwide',
-    description:
-      'Work on social media marketing, ad campaigns, content creation, and growth strategies.',
-  },
-  {
     title: 'UI/UX Design Intern',
     type: 'Internship',
     location: 'Remote / Worldwide',
     description:
-      'Design modern websites and mobile apps using Figma, wireframes, and user-centered design.',
+      'Design modern websites and mobile applications using Figma. Learn wireframing, prototyping, design systems, and user-centered design while working on real-world projects.',
   },
   {
-    title: 'Content Writing Intern',
-    type: 'Internship',
-    location: 'Remote / Worldwide',
+    title: 'Data Entry Operator',
+    type: 'Remote',
+   location: 'Remote / Worldwide',
     description:
-      'Create engaging content for websites, blogs, and social media platforms.',
+      'Looking for detail-oriented candidates to manage online data entry, spreadsheet updates, document organization, and basic administrative tasks. Freshers are welcome.',
   },
 ];
 
 const benefits = [
-  'Work on real client projects',
-  'Internship certificate',
-  'Letter of recommendation',
-  'Flexible work environment',
-  'Portfolio building experience',
-  'Mentorship from industry professionals',
+  {
+    title: 'Work on real client projects',
+    description: 'Deliver impact with meaningful assignments that strengthen your portfolio.',
+  },
+  {
+    title: 'Internship certificate',
+    description: 'Receive a professional certificate to showcase your experience.',
+  },
+  {
+    title: 'Letter of recommendation',
+    description: 'Get strong endorsement from our team for future opportunities.',
+  },
+  {
+    title: 'Flexible work environment',
+    description: 'Work remotely with flexible hours built for modern learners.',
+  },
+  {
+    title: 'Portfolio building experience',
+    description: 'Create case studies from real projects and demonstrate your skills.',
+  },
+  {
+    title: 'Mentorship from industry professionals',
+    description: 'Learn directly from experienced digital marketers and designers.',
+  },
 ];
 
 export default function CareersPage() {
@@ -100,7 +104,7 @@ export default function CareersPage() {
         -left-40
         w-[520px]
         h-[520px]
-        bg-[#24c2f2]/8
+        bg-cyan-500/8
         rounded-full
         blur-[150px]
       "
@@ -154,10 +158,10 @@ export default function CareersPage() {
         py-2
         rounded-full
         border
-        border-[#24c2f2]/30
-        bg-[#24c2f2]/10
+        border-cyan-500/30
+        bg-cyan-500/10
         backdrop-blur-md
-        text-[#24c2f2]
+        text-cyan-500
         text-sm
         mb-8
       "
@@ -186,8 +190,8 @@ export default function CareersPage() {
           block
           mt-2
           bg-gradient-to-r
-          from-[#24c2f2]
-          via-[#38bdf8]
+          from-cyan-500
+          via-blue-500
           to-[#60a5fa]
           bg-clip-text
           text-transparent
@@ -244,14 +248,14 @@ export default function CareersPage() {
           py-4
           rounded-2xl
           bg-gradient-to-r
-          from-[#24c2f2]
+          from-cyan-500
           via-[#1da1f2]
-          to-[#2563eb]
+          to-violet-600
           text-white
           font-semibold
           text-lg
-          shadow-[0_10px_40px_rgba(36,194,242,0.18)]
-          hover:shadow-[0_20px_60px_rgba(36,194,242,0.28)]
+          shadow-[0_10px_40px_rgba(56,189,248,0.18)]
+          hover:shadow-[0_20px_60px_rgba(56,189,248,0.28)]
           hover:-translate-y-1
           transition-all
           duration-300
@@ -284,7 +288,7 @@ export default function CareersPage() {
           font-semibold
           text-lg
           hover:bg-white/10
-          hover:border-[#24c2f2]/30
+          hover:border-cyan-500/30
           hover:-translate-y-1
           transition-all
           duration-300
@@ -340,7 +344,7 @@ export default function CareersPage() {
             duration-300
           "
                 >
-                  <div className="text-3xl font-bold text-[#24c2f2] mb-2">
+                  <div className="text-3xl font-bold text-cyan-500 mb-2">
                     {item.number}
                   </div>
 
@@ -371,7 +375,7 @@ export default function CareersPage() {
             w-2
             h-3
             rounded-full
-            bg-[#24c2f2]
+            bg-cyan-500
             animate-bounce
           "
                 />
@@ -398,10 +402,10 @@ export default function CareersPage() {
           py-2
           rounded-full
           border
-          border-[#24c2f2]/20
-          bg-[#24c2f2]/10
+          border-cyan-500/20
+          bg-cyan-500/10
           backdrop-blur-md
-          text-[#24c2f2]
+          text-cyan-500
           text-sm
           mb-5
         "
@@ -443,7 +447,7 @@ export default function CareersPage() {
           rounded-3xl
           p-8
           hover:-translate-y-2
-          hover:border-[#24c2f2]/40
+          hover:border-cyan-500/40
           hover:bg-white/[0.07]
           transition-all
           duration-300
@@ -454,17 +458,17 @@ export default function CareersPage() {
             w-16
             h-16
             rounded-2xl
-            bg-[#24c2f2]/10
+            bg-cyan-500/10
             flex
             items-center
             justify-center
             mb-6
-            group-hover:bg-[#24c2f2]
+            group-hover:bg-cyan-500
             transition-all
             duration-300
           "
                 >
-                  <Laptop className="w-8 h-8 text-[#24c2f2] group-hover:text-white transition-colors duration-300" />
+                  <Laptop className="w-8 h-8 text-cyan-500 group-hover:text-white transition-colors duration-300" />
                 </div>
 
                 <h3 className="text-2xl font-semibold text-white">
@@ -489,7 +493,7 @@ export default function CareersPage() {
           rounded-3xl
           p-8
           hover:-translate-y-2
-          hover:border-[#24c2f2]/40
+          hover:border-cyan-500/40
           hover:bg-white/[0.07]
           transition-all
           duration-300
@@ -500,17 +504,17 @@ export default function CareersPage() {
             w-16
             h-16
             rounded-2xl
-            bg-[#24c2f2]/10
+            bg-cyan-500/10
             flex
             items-center
             justify-center
             mb-6
-            group-hover:bg-[#24c2f2]
+            group-hover:bg-cyan-500
             transition-all
             duration-300
           "
                 >
-                  <GraduationCap className="w-8 h-8 text-[#24c2f2] group-hover:text-white transition-colors duration-300" />
+                  <GraduationCap className="w-8 h-8 text-cyan-500 group-hover:text-white transition-colors duration-300" />
                 </div>
 
                 <h3 className="text-2xl font-semibold text-white">
@@ -535,7 +539,7 @@ export default function CareersPage() {
           rounded-3xl
           p-8
           hover:-translate-y-2
-          hover:border-[#24c2f2]/40
+          hover:border-cyan-500/40
           hover:bg-white/[0.07]
           transition-all
           duration-300
@@ -546,17 +550,17 @@ export default function CareersPage() {
             w-16
             h-16
             rounded-2xl
-            bg-[#24c2f2]/10
+            bg-cyan-500/10
             flex
             items-center
             justify-center
             mb-6
-            group-hover:bg-[#24c2f2]
+            group-hover:bg-cyan-500
             transition-all
             duration-300
           "
                 >
-                  <Globe className="w-8 h-8 text-[#24c2f2] group-hover:text-white transition-colors duration-300" />
+                  <Globe className="w-8 h-8 text-cyan-500 group-hover:text-white transition-colors duration-300" />
                 </div>
 
                 <h3 className="text-2xl font-semibold text-white">
@@ -581,7 +585,7 @@ export default function CareersPage() {
           rounded-3xl
           p-8
           hover:-translate-y-2
-          hover:border-[#24c2f2]/40
+          hover:border-cyan-500/40
           hover:bg-white/[0.07]
           transition-all
           duration-300
@@ -592,17 +596,17 @@ export default function CareersPage() {
             w-16
             h-16
             rounded-2xl
-            bg-[#24c2f2]/10
+            bg-cyan-500/10
             flex
             items-center
             justify-center
             mb-6
-            group-hover:bg-[#24c2f2]
+            group-hover:bg-cyan-500
             transition-all
             duration-300
           "
                 >
-                  <Briefcase className="w-8 h-8 text-[#24c2f2] group-hover:text-white transition-colors duration-300" />
+                  <Briefcase className="w-8 h-8 text-cyan-500 group-hover:text-white transition-colors duration-300" />
                 </div>
 
                 <h3 className="text-2xl font-semibold text-white">
@@ -640,10 +644,10 @@ export default function CareersPage() {
           py-2
           rounded-full
           border
-          border-[#24c2f2]/20
-          bg-[#24c2f2]/10
+          border-cyan-500/20
+          bg-cyan-500/10
           backdrop-blur-md
-          text-[#24c2f2]
+          text-cyan-500
           text-sm
           mb-5
         "
@@ -663,9 +667,10 @@ export default function CareersPage() {
                 Open Positions
               </h2>
 
-              <p className="text-gray-400 mt-5 max-w-2xl mx-auto text-lg leading-relaxed">
-                Explore exciting internship opportunities and kickstart your
-                digital career with real-world experience.
+              <div className="mx-auto mt-6 h-1 w-32 rounded-full bg-gradient-to-r from-cyan-500 via-blue-500 to-violet-600" />
+
+              <p className="text-gray-400 mt-6 max-w-2xl mx-auto text-lg leading-relaxed">
+                Explore exciting internship roles designed for fast learners and digital creators.
               </p>
             </div>
 
@@ -675,103 +680,109 @@ export default function CareersPage() {
 
               {jobs.map((job, index) => (
                 <motion.div
-                  key={index}
+                  key={job.title}
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
+                  transition={{ duration: 0.55, delay: index * 0.08 }}
                   viewport={{ once: true }}
+                  whileHover={{ y: -8 }}
                   className="
             group
+            relative
+            overflow-hidden
             bg-white/5
             border
             border-white/10
             backdrop-blur-xl
-            rounded-3xl
+            rounded-[40px]
             p-8
-            hover:border-[#24c2f2]/40
-            hover:bg-white/[0.07]
-            hover:-translate-y-2
+            hover:border-cyan-500/40
+            hover:bg-white/[0.09]
             transition-all
             duration-300
           "
                 >
-                  {/* Top */}
+                  <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-cyan-500 via-blue-500 to-violet-600" />
 
-                  <div className="flex items-center justify-between gap-4 flex-wrap">
+                  <div className="relative">
+                    <div className="flex flex-wrap items-center justify-between gap-4">
+                      <span
+                        className="
+                  px-4
+                  py-1.5
+                  rounded-full
+                  bg-cyan-500/15
+                  border
+                  border-cyan-500/20
+                  text-cyan-500
+                  text-sm
+                  font-medium
+                "
+                      >
+                        {job.type}
+                      </span>
 
-                    <span
+                      <span className="text-sm text-gray-400">
+                        {job.location}
+                      </span>
+                    </div>
+
+                    <h3 className="text-3xl font-semibold text-white mt-8">
+                      {job.title}
+                    </h3>
+
+                    <p className="text-gray-400 mt-4 leading-relaxed text-base">
+                      {job.description}
+                    </p>
+
+                    <div className="mt-6 flex flex-col gap-3 text-sm text-gray-300">
+                      <div className="inline-flex items-center gap-2">
+                        <span className="inline-flex h-2.5 w-2.5 rounded-full bg-cyan-500" />
+                        Collaborative teamwork with senior mentors
+                      </div>
+                      <div className="inline-flex items-center gap-2">
+                        <span className="inline-flex h-2.5 w-2.5 rounded-full bg-cyan-500" />
+                        Direct exposure to agency-grade workflows
+                      </div>
+                    </div>
+
+                    <button
+                      onClick={() => {
+                        setSelectedJobTitle(job.title);
+                        const element = document.getElementById('apply');
+
+                        if (element) {
+                          const navbarOffset = 100;
+                          const elementPosition =
+                            element.getBoundingClientRect().top +
+                            window.pageYOffset;
+                          const offsetPosition =
+                            elementPosition - navbarOffset;
+
+                          window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth',
+                          });
+                        }
+                      }}
                       className="
-                px-4
-                py-1.5
-                rounded-full
-                bg-[#24c2f2]/15
-                border
-                border-[#24c2f2]/20
-                text-[#24c2f2]
-                text-sm
+                group/btn
+                mt-8
+                inline-flex
+                items-center
+                gap-3
+                text-cyan-500
                 font-medium
+                hover:gap-5
+                transition-all
+                duration-300
               "
                     >
-                      {job.type}
-                    </span>
+                      Apply Now
 
-                    <span className="text-sm text-gray-400">
-                      {job.location}
-                    </span>
+                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                    </button>
                   </div>
-
-                  {/* Title */}
-
-                  <h3 className="text-2xl font-semibold text-white mt-7">
-                    {job.title}
-                  </h3>
-
-                  {/* Description */}
-
-                  <p className="text-gray-400 mt-4 leading-relaxed text-base">
-                    {job.description}
-                  </p>
-
-                  {/* Button */}
-
-                  <button
-                    onClick={() => {
-                      setSelectedJobTitle(job.title);
-                      const element = document.getElementById('apply');
-
-                      if (element) {
-                        const navbarOffset = 100;
-
-                        const elementPosition =
-                          element.getBoundingClientRect().top +
-                          window.pageYOffset;
-
-                        const offsetPosition =
-                          elementPosition - navbarOffset;
-
-                        window.scrollTo({
-                          top: offsetPosition,
-                          behavior: 'smooth',
-                        });
-                      }
-                    }}
-                    className="
-              group/btn
-              mt-8
-              inline-flex
-              items-center
-              gap-3
-              text-[#24c2f2]
-              font-medium
-              hover:gap-5
-              transition-all
-              duration-300
-            "
-                  >
-                    Apply Now
-
-                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
-                  </button>
                 </motion.div>
               ))}
 
@@ -796,15 +807,16 @@ export default function CareersPage() {
                 className="
           inline-flex
           items-center
+          justify-center
           gap-2
           px-5
           py-2
           rounded-full
           border
-          border-[#24c2f2]/20
-          bg-[#24c2f2]/10
+          border-cyan-500/20
+          bg-cyan-500/10
           backdrop-blur-md
-          text-[#24c2f2]
+          text-cyan-500
           text-sm
           mb-5
         "
@@ -824,7 +836,9 @@ export default function CareersPage() {
                 What You Will Gain
               </h2>
 
-              <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-lg leading-relaxed">
+              <div className="mx-auto mt-6 h-1 w-28 rounded-full bg-gradient-to-r from-cyan-500 via-blue-500 to-violet-600" />
+
+              <p className="text-gray-400 mt-6 max-w-2xl mx-auto text-lg leading-relaxed">
                 Practical learning, mentorship, and real-world digital experience.
               </p>
             </div>
@@ -832,64 +846,59 @@ export default function CareersPage() {
             {/* Compact Grid */}
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-
-              {[
-                "Hands-on client projects",
-                "SEO & marketing skill growth",
-                "Portfolio building experience",
-                "Mentorship from professionals",
-                "Flexible remote environment",
-                "Career growth opportunities",
-              ].map((benefit, index) => (
-                <div
-                  key={index}
+              {benefits.map((benefit, index) => (
+                <motion.div
+                  key={benefit.title}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.45, delay: index * 0.05 }}
+                  whileHover={{ y: -6 }}
                   className="
             group
             flex
-            items-center
-            gap-4
+            flex-col
+            gap-5
             bg-white/5
             border
             border-white/10
             backdrop-blur-xl
-            rounded-2xl
-            px-5
-            py-5
-            hover:border-[#24c2f2]/30
-            hover:bg-white/[0.07]
-            hover:-translate-y-1
+            rounded-3xl
+            p-6
+            hover:border-cyan-500/30
+            hover:bg-white/[0.08]
             transition-all
             duration-300
           "
                 >
-                  {/* Icon */}
-
                   <div
                     className="
-              w-11
-              h-11
-              rounded-xl
-              bg-[#24c2f2]/10
+              w-12
+              h-12
+              rounded-3xl
+              bg-cyan-500/10
               flex
               items-center
               justify-center
               flex-shrink-0
-              group-hover:bg-[#24c2f2]
+              group-hover:bg-cyan-500
               transition-all
               duration-300
             "
                   >
-                    <CheckCircle2 className="text-[#24c2f2] group-hover:text-white w-5 h-5 transition-colors duration-300" />
+                    <CheckCircle2 className="text-cyan-500 group-hover:text-white w-6 h-6 transition-colors duration-300" />
                   </div>
 
-                  {/* Text */}
-
-                  <h3 className="text-white font-medium text-base leading-snug">
-                    {benefit}
-                  </h3>
-                </div>
+                  <div>
+                    <h3 className="text-white font-semibold text-lg leading-snug">
+                      {benefit.title}
+                    </h3>
+                    <p className="text-gray-400 mt-3 text-sm leading-relaxed">
+                      {benefit.description}
+                    </p>
+                  </div>
+                </motion.div>
               ))}
-
             </div>
           </div>
         </section>
@@ -924,7 +933,7 @@ export default function CareersPage() {
         -translate-x-1/2
         w-[500px]
         h-[500px]
-        bg-[#24c2f2]/10
+        bg-cyan-500/10
         rounded-full
         blur-[140px]
       "
@@ -961,10 +970,10 @@ export default function CareersPage() {
           py-2
           rounded-full
           border
-          border-[#24c2f2]/20
-          bg-[#24c2f2]/10
+          border-cyan-500/20
+          bg-cyan-500/10
           backdrop-blur-md
-          text-[#24c2f2]
+          text-cyan-500
           text-sm
           mb-5
         "
@@ -1017,9 +1026,9 @@ export default function CareersPage() {
           h-1
           w-full
           bg-gradient-to-r
-          from-[#24c2f2]
-          via-[#38bdf8]
-          to-[#2563eb]
+          from-cyan-500
+          via-blue-500
+          to-violet-600
         "
               />
 

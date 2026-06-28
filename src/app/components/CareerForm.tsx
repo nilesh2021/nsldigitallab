@@ -148,7 +148,7 @@ export default function CareerForm({ jobTitle }: Props) {
 
           <div className="space-y-3">
             <label htmlFor="resume" className="text-sm font-medium text-slate-200">
-              Resume / Portfolio Link
+              Resume / Portfolio Link (optional)
             </label>
             <div className="relative">
               <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4 text-slate-400">

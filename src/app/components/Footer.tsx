@@ -94,41 +94,34 @@ export default function Footer() {
 
               {/* Social */}
 
-              <div className="flex gap-4 mt-8">
+          <div className="flex gap-4 mt-8">
+  <a
+    href="https://www.linkedin.com/company/nsldigitallab/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-11 h-11 rounded-xl border border-white/10 bg-white/5 flex items-center justify-center hover:bg-cyan-500 transition-all duration-300"
+  >
+    <Linkedin className="w-5 h-5" />
+  </a>
 
-                {[
-                  Linkedin,
-                  Instagram,
-                 
-                  Github,
-                ].map((Icon, index) => (
+  <a
+    href="#"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-11 h-11 rounded-xl border border-white/10 bg-white/5 flex items-center justify-center hover:bg-cyan-500 transition-all duration-300"
+  >
+    <Instagram className="w-5 h-5" />
+  </a>
 
-                  <a
-                    key={index}
-                    href="#"
-                    className="
-                      w-11
-                      h-11
-                      rounded-xl
-                      border
-                      border-white/10
-                      bg-white/5
-                      flex
-                      items-center
-                      justify-center
-                      hover:bg-cyan-500
-                      transition-all
-                      duration-300
-                    "
-                  >
-
-                    <Icon className="w-5 h-5" />
-
-                  </a>
-
-                ))}
-
-              </div>
+  <a
+    href="#"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-11 h-11 rounded-xl border border-white/10 bg-white/5 flex items-center justify-center hover:bg-cyan-500 transition-all duration-300"
+  >
+    <Github className="w-5 h-5" />
+  </a>
+</div>
 
             </div>
 
