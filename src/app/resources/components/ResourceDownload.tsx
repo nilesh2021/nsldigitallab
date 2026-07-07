@@ -39,12 +39,11 @@ export default function ResourceDownload({
           "Content-Type": "text/plain;charset=utf-8",
         },
         body: JSON.stringify({
-          formType: "resource-download",
-          email: trimmedEmail,
-          resourceTitle,
-          pageUrl: window.location.href,
-          submittedAt: new Date().toISOString(),
-        }),
+  type: "resource_download",
+  email: trimmedEmail,
+  interest: resourceTitle,
+  source: window.location.href,
+}),
       });
 
       setIsUnlocked(true);
