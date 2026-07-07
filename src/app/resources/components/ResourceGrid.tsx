@@ -3,7 +3,7 @@ import ResourceCard from "./ResourceCard";
 
 export default function ResourceGrid() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white" id="resourcesGrid">
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
 

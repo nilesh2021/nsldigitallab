@@ -1,6 +1,40 @@
 export const resources = [
   {
-    id: 1,
+  id: 1,
+  slug: "1000-website-templates-mega-bundle",
+  title: "1000 Website Templates Mega Bundle",
+  category: "Website Templates",
+  categorySlug: "website-templates",
+  type: "ZIP Bundle",
+  icon: "🚀",
+  featured: true,
+  downloads: 0,
+
+  image:
+    "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=85",
+
+  description:
+    "Download 1,000 ready-to-use website templates, including 500 Bootstrap 5 HTML pages and 500 modern Tailwind CSS pages for business, portfolio, agency, SaaS, eCommerce and landing-page projects.",
+
+  buttonText: "Get Free Bundle",
+
+  downloadUrl: "/downloads/1000Deal.zip",
+
+  seoTitle: "1000 Free Website Templates Mega Bundle",
+
+  seoDescription:
+    "Download 500 Bootstrap 5 HTML templates and 500 Tailwind CSS website templates in one free bundle.",
+
+  tags: [
+    "Bootstrap 5",
+    "Tailwind CSS",
+    "HTML",
+    "Landing Pages",
+    "Website Templates",
+  ],
+}/*,
+  { 
+      id: 2,
     title: "UI/UX Interview Questions",
     slug: "ui-ux-interview-questions",
     category: "UI/UX",
@@ -29,7 +63,7 @@ export const resources = [
   },
 
   {
-    id: 2,
+    id: 3,
     title: "SEO Checklist",
     slug: "seo-checklist",
     category: "SEO",
@@ -37,7 +71,7 @@ export const resources = [
     icon: "📈",
     type: "Checklist",
     featured: true,
-    downloads: 970,
+    downloads: 0,
 
     image:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
@@ -55,9 +89,9 @@ export const resources = [
       "Free SEO Checklist PDF.",
 
     tags: ["SEO", "Checklist", "Google"],
-  },
+  } 
 
-  {
+   {
     id: 3,
     title: "Digital Marketing Checklist",
     slug: "digital-marketing-checklist",
@@ -85,5 +119,6 @@ export const resources = [
       "Free Digital Marketing Checklist PDF.",
 
     tags: ["Marketing", "SEO", "Checklist"],
-  },
+  }, */
+
 ];

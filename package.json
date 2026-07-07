@@ -4,11 +4,10 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    
-   "dev": "vite",
+    "dev": "vite",
     "build": "vite build && node src/scripts/generate-sitemap.cjs && node src/scripts/generate-robots.cjs",
     "preview": "vite preview",
-      "sitemap": "node src/scripts/generate-sitemap.cjs",
+    "sitemap": "node src/scripts/generate-sitemap.cjs",
     "robots": "node src/scripts/generate-robots.cjs"
   },
   "dependencies": {
@@ -77,10 +76,11 @@
   },
   "devDependencies": {
     "@tailwindcss/vite": "4.1.12",
-    "@types/react": "^19.2.15",
+    "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "4.7.0",
     "tailwindcss": "4.1.12",
+    "typescript": "^6.0.3",
     "vite": "^6.4.2"
   },
   "peerDependencies": {

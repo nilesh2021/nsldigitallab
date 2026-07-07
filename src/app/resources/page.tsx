@@ -14,7 +14,7 @@ import NewsletterSection from "../components/common/NewsletterSection";
 export default function ResourcesPage() {
   return (
     <>
-      <Helmet>
+      {  <Helmet>
         <title>
           Free Digital Marketing, SEO & UI/UX Resources | NSL Digital Lab
         </title>
@@ -33,7 +33,7 @@ export default function ResourcesPage() {
           rel="canonical"
           href="https://nsldigitallab.com/resources"
         />
-      </Helmet>
+      </Helmet> }
 
       <MainLayout>
 

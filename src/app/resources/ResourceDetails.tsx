@@ -8,9 +8,7 @@ import Footer from "../components/Footer";
 export default function ResourceDetails() {
   const { slug } = useParams();
 
-  const resource = resources.find(
-    (r) => r.slug === slug
-  );
+  const resource = resources.find((r) => r.slug === slug);
 
   if (!resource) {
     return <Navigate to="/resources" replace />;
@@ -20,54 +18,23 @@ export default function ResourceDetails() {
     <>
       <Navigation />
 
-      <main className="min-h-screen bg-slate-50">
-        <section className="py-20">
-          <div className="mx-auto max-w-5xl px-6">
-            <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-sm">
-              <img
-                src={resource.image}
-                alt={resource.title}
-                className="h-[320px] w-full object-cover"
-              />
+     <main className="relative min-h-screen overflow-hidden bg-[#07142B]">
+  {/* Dark background glow */}
+  <div className="absolute inset-x-0 top-0 h-[520px] bg-gradient-to-br from-[#07142B] via-[#172B63] to-[#2D4B96]" />
 
-              <div className="p-8 md:p-10">
-                <span className="inline-flex rounded-full bg-cyan-100 px-4 py-2 text-sm font-semibold text-cyan-700">
-                  {resource.category}
-                </span>
+  <div className="absolute -top-24 -left-20 h-80 w-80 rounded-full bg-cyan-400/15 blur-[140px]" />
+  <div className="absolute top-10 right-0 h-96 w-96 rounded-full bg-blue-500/20 blur-[150px]" />
+  <div className="absolute bottom-0 left-1/3 h-80 w-80 rounded-full bg-purple-500/10 blur-[140px]" />
 
-                <h1 className="mt-6 text-3xl font-bold text-slate-900 sm:text-4xl">
-                  {resource.title}
-                </h1>
-
-                <p className="mt-5 text-lg leading-8 text-slate-600">
-                  {resource.description}
-                </p>
-
-                <div className="mt-8 flex flex-wrap gap-6 text-sm text-slate-600">
-                  <div>
-                    <div className="text-slate-500">Type</div>
-                    <div className="mt-1 font-semibold text-slate-900">
-                      {resource.type}
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className="text-slate-500">Downloads</div>
-                    <div className="mt-1 font-semibold text-slate-900">
-                      {resource.downloads.toLocaleString()}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <ResourceDownload
-              resourceTitle={resource.title}
-              downloadUrl={resource.downloadUrl}
-            />
-          </div>
-        </section>
-      </main>
+  <section className="relative z-10 pb-20 pt-36 sm:pb-28 sm:pt-40">
+    <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+      <ResourceDownload
+        resourceTitle={resource.title}
+        downloadUrl={resource.downloadUrl}
+      />
+    </div>
+  </section>
+</main>
 
       <Footer />
     </>
