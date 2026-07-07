@@ -87,14 +87,15 @@ export default function ResourceDownload({
           Your download is ready.
         </p>
 
-        <a
-          href={downloadUrl}
-          download
-          className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 px-6 py-4 font-semibold text-white shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5 hover:from-cyan-600 hover:to-blue-700"
-        >
-          <Download className="h-5 w-5" />
-          Download Free Bundle
-        </a>
+       <a
+  href={downloadUrl}
+  target="_blank"
+  rel="noreferrer"
+  className="inline-flex items-center gap-2 rounded-xl bg-cyan-500 px-6 py-4 font-semibold text-slate-950 transition hover:bg-cyan-400"
+>
+  <Download className="h-5 w-5" />
+  Download Free Bundle
+</a>
       </div>
     )}
 

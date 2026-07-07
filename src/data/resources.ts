@@ -18,8 +18,9 @@ export const resources = [
 
   buttonText: "Get Free Bundle",
 
-  downloadUrl: "/downloads/1000Deal.zip",
-
+  downloadUrl: "https://drive.google.com/drive/folders/1tMsm7rE3F4RT2E3QW_LtUNxVwF-bN5-h?usp=drive_link",
+  
+///downloads/1000Deal.zip
   seoTitle: "1000 Free Website Templates Mega Bundle",
 
   seoDescription:
