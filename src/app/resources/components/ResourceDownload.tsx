@@ -16,6 +16,7 @@ export default function ResourceDownload({
   const [isUnlocked, setIsUnlocked] = useState(false);
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -39,11 +40,11 @@ export default function ResourceDownload({
           "Content-Type": "text/plain;charset=utf-8",
         },
         body: JSON.stringify({
-  type: "resource_download",
-  email: trimmedEmail,
-  interest: resourceTitle,
-  source: window.location.href,
-}),
+          type: "resource_download",
+          email: trimmedEmail,
+          interest: resourceTitle,
+          source: window.location.href,
+        }),
       });
 
       setIsUnlocked(true);
@@ -56,88 +57,108 @@ export default function ResourceDownload({
   }
 
   return (
-    <section className="mt-8 overflow-hidden rounded-[28px] border border-slate-200 bg-white p-8 shadow-xl shadow-[#07142B]/20 md:p-10">
-      <div className="max-w-2xl">
-        <span className="inline-flex rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-sm font-semibold text-cyan-700">
-          Free Resource
-        </span>
+    <section className="mt-8 overflow-hidden rounded-[28px] border border-slate-200 bg-white p-6 shadow-xl shadow-[#07142B]/20 md:p-8">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 lg:grid-cols-5 lg:items-center">
+  <div className="lg:col-span-2">
+          <div className="flex h-full flex-col justify-center gap-4">
+            <span className="inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-cyan-50 px-3 py-1 text-sm font-semibold text-cyan-700">
+              Free Resource
+            </span>
 
-        <h2 className="mt-5 text-2xl font-bold text-slate-900 sm:text-3xl">
-          Get the {resourceTitle}
-        </h2>
+            <h2 className="mt-1 text-2xl font-bold text-slate-900 sm:text-3xl">
+              Get the {resourceTitle}
+            </h2>
 
-        <p className="mt-4 leading-7 text-slate-600">
-          Enter your email to unlock this free resource. You will then be able
-          to download the complete bundle.
-        </p>
-
-        {!isUnlocked ? (
-          <form onSubmit={handleSubmit} className="mt-7">
-            <label
-              htmlFor="resource-email"
-              className="mb-2 block text-sm font-semibold text-slate-700"
-            >
-              Email address
-            </label>
-
-            <div className="flex flex-col gap-3 sm:flex-row">
-              <div className="relative flex-1">
-                <Mail className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-cyan-600" />
-
-                <input
-                  id="resource-email"
-                  type="email"
-                  value={email}
-                  onChange={(event) => setEmail(event.target.value)}
-                  placeholder="you@example.com"
-                  disabled={isSubmitting}
-                  className="w-full rounded-xl border border-slate-300 bg-slate-50 py-4 pl-12 pr-4 text-slate-900 outline-none placeholder:text-slate-400 transition focus:border-cyan-500 focus:bg-white focus:ring-4 focus:ring-cyan-100 disabled:cursor-not-allowed disabled:opacity-70"
-                />
-              </div>
-
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="inline-flex min-w-[190px] items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 px-6 py-4 font-semibold text-white shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5 hover:from-cyan-600 hover:to-blue-700 disabled:cursor-not-allowed disabled:opacity-70"
-              >
-                {isSubmitting ? (
-                  <>
-                    <LoaderCircle className="h-5 w-5 animate-spin" />
-                    Unlocking...
-                  </>
-                ) : (
-                  "Unlock Download"
-                )}
-              </button>
-            </div>
-
-            {error && (
-              <p className="mt-3 text-sm font-medium text-red-600">
-                {error}
-              </p>
-            )}
-          </form>
-        ) : (
-          <div className="mt-7">
-            <p className="mb-4 font-semibold text-emerald-600">
-              Your download is ready.
+            <p className="leading-7 text-slate-600">
+              Enter your email to unlock the bundle. We only use your email to
+              deliver this resource — no spam, ever.
             </p>
 
-            <a
-              href={downloadUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl bg-cyan-500 px-6 py-4 font-semibold text-slate-950 transition hover:bg-cyan-400"
-            >
-              <Download className="h-5 w-5" />
-              Download Free Bundle
-            </a>
+            <div className="mt-2 flex items-center gap-3 text-sm text-slate-500">
+              <ShieldCheck className="h-4 w-4 text-cyan-600" />
+              <span>Privacy protected • unsubscribe anytime</span>
+            </div>
           </div>
-        )}
+        </div>
 
-        <div className="mt-5 flex items-center gap-2 text-sm text-slate-500">
-          <ShieldCheck className="h-4 w-4 text-cyan-600" />
-          Your email is used only to unlock this resource.
+       <div className="lg:col-span-3">
+          <div className="rounded-2xl border border-slate-100 bg-slate-50 p-4 shadow-sm">
+            {!isUnlocked ? (
+              <form onSubmit={handleSubmit}>
+  <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+    <label htmlFor="resource-email" className="sr-only">
+      Email address
+    </label>
+
+    <div className="relative min-w-0 flex-1">
+      <Mail className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-cyan-600" />
+
+      <input
+        id="resource-email"
+        type="email"
+        value={email}
+        onChange={(event) => setEmail(event.target.value)}
+        placeholder="you@example.com"
+        disabled={isSubmitting}
+        required
+        className="w-full rounded-xl border border-slate-200 bg-white py-3.5 pl-12 pr-4 text-slate-900 outline-none placeholder:text-slate-400 transition focus:border-cyan-500 focus:ring-4 focus:ring-cyan-100 disabled:cursor-not-allowed disabled:opacity-70"
+      />
+    </div>
+
+    <button
+      type="submit"
+      disabled={isSubmitting || !isEmailValid}
+      className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 px-6 py-3.5 font-semibold text-white shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5 hover:from-cyan-600 hover:to-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
+    >
+      {isSubmitting ? (
+        <>
+          <LoaderCircle className="h-5 w-5 animate-spin" />
+          Unlocking...
+        </>
+      ) : (
+        "Unlock Download"
+      )}
+    </button>
+  </div>
+
+  {(error || (!isEmailValid && email.length > 0)) && (
+    <p className="mt-3 text-sm font-medium text-red-600" aria-live="polite">
+      {error || "Enter a valid email address."}
+    </p>
+  )}
+</form>
+            ) : (
+            <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+  <div className="min-w-0">
+    <div className="flex items-center gap-2">
+      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-100">
+        <ShieldCheck className="h-5 w-5 text-emerald-600" />
+      </div>
+
+      <div>
+        <p className="font-semibold text-emerald-600">
+          Your resource is unlocked
+        </p>
+
+        <p className="mt-1 text-sm leading-6 text-slate-600">
+          Open the template bundle in Google Drive and download the files you need.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <a
+    href={downloadUrl}
+    target="_blank"
+    rel="noreferrer"
+    className="inline-flex w-full shrink-0 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#16B9E8] to-[#2563EB] px-5 py-3 font-semibold text-white shadow-lg shadow-blue-500/20 transition duration-300 hover:-translate-y-0.5 hover:from-[#0EA5D5] hover:to-[#1D4ED8] hover:shadow-xl md:w-auto"
+  >
+    <Download className="h-5 w-5" />
+    Open Template Bundle
+  </a>
+</div>
+            )}
+          </div>
         </div>
       </div>
     </section>

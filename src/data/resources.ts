@@ -1,5 +1,5 @@
 export const resources = [
-  {
+ {
   id: 1,
   slug: "1000-website-templates-mega-bundle",
   title: "1000 Website Templates Mega Bundle",
@@ -7,33 +7,35 @@ export const resources = [
   categorySlug: "website-templates",
   type: "ZIP Bundle",
   icon: "🚀",
-  featured: true,
   downloads: 0,
 
   image:
-    "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=85",
+    "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=80",
 
   description:
-    "Download 1,000 ready-to-use website templates, including 500 Bootstrap 5 HTML pages and 500 modern Tailwind CSS pages for business, portfolio, agency, SaaS, eCommerce and landing-page projects.",
+    "Download 1,000 ready-to-use Bootstrap 5 and Tailwind CSS website templates for business, portfolio, agency, SaaS, eCommerce and landing pages.",
 
-  buttonText: "Get Free Bundle",
+  buttonText: "Download Free",
 
   downloadUrl: "https://drive.google.com/drive/folders/1tMsm7rE3F4RT2E3QW_LtUNxVwF-bN5-h?usp=drive_link",
-  
-///downloads/1000Deal.zip
-  seoTitle: "1000 Free Website Templates Mega Bundle",
+
+  seoTitle:
+    "1000 Free HTML Bootstrap & Tailwind CSS Website Templates Download",
 
   seoDescription:
-    "Download 500 Bootstrap 5 HTML templates and 500 Tailwind CSS website templates in one free bundle.",
+    "Download 1000 free website templates including Bootstrap 5 HTML and Tailwind CSS templates for business, portfolio, agency, SaaS, eCommerce and landing pages.",
 
   tags: [
-    "Bootstrap 5",
-    "Tailwind CSS",
-    "HTML",
-    "Landing Pages",
-    "Website Templates",
+    "HTML Templates Free Download",
+    "Bootstrap 5 Templates Free Download",
+    "Tailwind CSS Templates",
+    "Free Website Templates",
+    "Business Website Templates",
+    "Portfolio Templates",
+    "Landing Page Templates",
+    "SaaS Templates",
   ],
-}/*,
+},
   { 
       id: 2,
     title: "UI/UX Interview Questions",
@@ -61,7 +63,7 @@ export const resources = [
       "Download 100+ UI/UX Interview Questions PDF.",
 
     tags: ["UI UX", "Interview", "Design", "PDF"],
-  },
+  } /*,
 
   {
     id: 3,
