@@ -88,7 +88,23 @@ export default function ResourceDetails() {
         </section>
       </main>
 
-      <Footer />
+      <Footer /> <a
+  href="https://www.linkedin.com/company/nsldigitallab"
+  target="_blank"
+  rel="noreferrer"
+  aria-label="Follow NSL Digital Lab on LinkedIn"
+  className="fixed bottom-6 right-6 z-50 inline-flex items-center gap-3 rounded-full bg-[#0A66C2] px-5 py-3 font-semibold text-white shadow-xl shadow-[#0A66C2]/30 transition duration-300 hover:-translate-y-1 hover:bg-[#004182] hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-[#0A66C2]/30"
+>
+  <svg
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+    className="h-5 w-5 fill-current"
+  >
+    <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.94v5.67H9.33V8.99h3.42v1.57h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.27 2.38 4.27 5.47v6.27ZM5.31 7.43A2.07 2.07 0 1 1 5.3 3.3a2.07 2.07 0 0 1 .01 4.13Zm1.78 13.02H3.52V8.99h3.57v11.46ZM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0Z" />
+  </svg>
+
+  <span className="hidden sm:inline">Follow on LinkedIn</span>
+</a>
     </>
   );
 }

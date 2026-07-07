@@ -143,6 +143,9 @@ export default function ResourceDownload({
         <p className="mt-1 text-sm leading-6 text-slate-600">
           Open the template bundle in Google Drive and download the files you need.
         </p>
+
+
+     
       </div>
     </div>
   </div>
@@ -162,5 +165,6 @@ export default function ResourceDownload({
         </div>
       </div>
     </section>
+    
   );
 }

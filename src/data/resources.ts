@@ -7,7 +7,7 @@ export const resources = [
   categorySlug: "website-templates",
   type: "ZIP Bundle",
   icon: "🚀",
-  downloads: 0,
+  downloads:112,
 
   image:
     "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=80",
