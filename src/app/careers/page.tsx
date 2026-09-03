@@ -20,8 +20,8 @@ import SEO from '../../seo/SEO';
 
 const jobs = [
   {
-    title: 'UI/UX Design Intern',
-    type: 'Internship',
+    title: 'UI/UX Design',
+    type: 'Remote',
     location: 'Remote / Worldwide',
     description:
       'Design modern websites and mobile applications using Figma. Learn wireframing, prototyping, design systems, and user-centered design while working on real-world projects.',
@@ -1043,7 +1043,7 @@ export default function CareersPage() {
         </section>
       </main>
 <a
-  href="https://www.linkedin.com/company/nsldigitallab"
+  href="https://www.linkedin.com/company/nsldigitallab/"
   target="_blank"
   rel="noreferrer"
   aria-label="Follow NSL Digital Lab on LinkedIn for job updates"
