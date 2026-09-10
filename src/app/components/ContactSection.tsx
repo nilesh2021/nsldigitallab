@@ -10,6 +10,37 @@ import {
 import { useNavigate } from "react-router-dom";
 import { submitContact } from "../../services/contact";
 
+const benefits = [
+  "Free 30-minute consultation",
+  "Response within 24 hours",
+  "Transparent pricing",
+  "Custom business solutions",
+];
+
+const contactDetails = [
+  {
+    icon: Mail,
+    label: "Email",
+    value: "hello@nsldigitallab.com",
+  },
+  {
+    icon: MapPin,
+    label: "Location",
+    value: (
+      <>
+        Remote-First Agency
+        <br />
+        Serving clients across India, USA, UK, Canada & Australia.
+      </>
+    ),
+  },
+  {
+    icon: Clock,
+    label: "Availability",
+    value: "Mon – Sat • 10:00 AM – 7:00 PM (IST)",
+  },
+];
+
 export default function ContactCTA() {
   const navigate = useNavigate();
 
@@ -61,185 +92,86 @@ export default function ContactCTA() {
       });
 
       setTimeout(() => {
-       navigate("/thank-you?type=contact");
+        navigate("/thank-you?type=contact");
       }, 1200);
-
     } finally {
       setLoading(false);
     }
   }
 
+  const inputClassName =
+    "w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3.5 text-sm text-white placeholder:text-slate-500 outline-none transition-colors focus:border-cyan-400/60 focus:bg-white/[0.06] sm:px-5 sm:py-4 sm:text-base";
+
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-gradient-to-r from-[#07142B] via-[#202851] to-[#24356d] py-24"
+      className="scroll-mt-24 relative overflow-hidden bg-[#060b14] py-20 sm:py-24 lg:py-28"
     >
-      {/* Background Glow */}
+      <div className="pointer-events-none absolute left-0 top-0 h-80 w-80 rounded-full bg-cyan-500/[0.06] blur-[100px]" />
+      <div className="pointer-events-none absolute bottom-0 right-0 h-80 w-80 rounded-full bg-violet-600/[0.06] blur-[100px]" />
 
-      <div className="absolute -left-40 top-0 h-96 w-96 rounded-full bg-cyan-500/10 blur-[180px]" />
-
-      <div className="absolute right-0 bottom-0 h-96 w-96 rounded-full bg-violet-600/10 blur-[180px]" />
-
-      <div className="relative max-w-7xl mx-auto px-6">
-
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-
-          {/* LEFT */}
-
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-20">
           <div>
-
-            <span className="inline-flex rounded-full border border-cyan-400/20 bg-cyan-500/10 px-4 py-2 text-sm font-semibold text-cyan-300">
-
-              Free  Counsultation 
+            <span className="inline-flex items-center rounded-full border border-cyan-400/20 bg-cyan-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-cyan-300">
+              Free  Counsultation
             </span>
 
-            <h2 className="mt-8 text-5xl font-bold leading-tight text-white">
-
+            <h2 className="mt-5 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl lg:leading-tight">
               Ready to Grow
-             
+              <br />
               Your Business?
-
             </h2>
 
-            <p className="mt-8 text-lg leading-8 text-slate-400">
-
+            <p className="mt-5 text-base leading-7 text-slate-400 sm:text-lg sm:leading-8">
               Whether you need a modern website,
               UI/UX design, SEO optimization,
               or digital marketing, we're here to
               help your business grow online.
-
             </p>
 
-            <div className="mt-10 space-y-5">
-
-              {[
-                "Free 30-minute consultation",
-                "Response within 24 hours",
-                "Transparent pricing",
-                "Custom business solutions",
-              ].map((item) => (
-
-                <div
+            <ul className="mt-8 space-y-3">
+              {benefits.map((item) => (
+                <li
                   key={item}
-                  className="flex items-center gap-3 text-slate-200"
+                  className="flex items-center gap-3 text-sm text-slate-300 sm:text-base"
                 >
-
-                  <CheckCircle2 className="h-5 w-5 text-cyan-400" />
-
+                  <CheckCircle2 className="h-4 w-4 shrink-0 text-cyan-400 sm:h-5 sm:w-5" />
                   <span>{item}</span>
-
-                </div>
-
+                </li>
               ))}
+            </ul>
 
+            <div className="mt-10 space-y-5 border-t border-white/[0.06] pt-10">
+              {contactDetails.map((detail) => (
+                <div key={detail.label} className="flex items-start gap-4">
+                  <div className="rounded-xl border border-white/[0.06] bg-white/[0.04] p-2.5">
+                    <detail.icon className="h-4 w-4 text-cyan-400 sm:h-5 sm:w-5" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-medium uppercase tracking-wider text-slate-500">
+                      {detail.label}
+                    </p>
+                    <p className="mt-1 text-sm leading-relaxed text-white sm:text-base">
+                      {detail.value}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
-
-            <div className="mt-12 space-y-6">
-
-              <div className="flex items-center gap-4">
-
-                <div className="rounded-xl bg-cyan-500/10 p-3">
-
-                  <Mail className="text-cyan-400" />
-
-                </div>
-
-                <div>
-
-                  <p className="text-sm text-slate-500">
-
-                    Email
-
-                  </p>
-
-                  <p className="text-white">
-
-                    hello@nsldigitallab.com
-
-                  </p>
-
-                </div>
-
-              </div>
-
-              <div className="flex items-center gap-4">
-
-                <div className="rounded-xl bg-cyan-500/10 p-3">
-
-                  <MapPin className="text-cyan-400" />
-
-                </div>
-
-                <div>
-
-                  <p className="text-sm text-slate-500">
-
-                    Location
-
-                  </p>
-
-                  <p className="text-white">
-
-             
- Remote-First Agency
-Serving clients across India, USA, UK, Canada & Australia.
-
-                  </p>
-
-                </div>
-
-              </div>
-
-              <div className="flex items-center gap-4">
-
-                <div className="rounded-xl bg-cyan-500/10 p-3">
-
-                  <Clock className="text-cyan-400" />
-
-                </div>
-
-                <div>
-
-                  <p className="text-sm text-slate-500">
-
-                    Availability
-
-                  </p>
-
-                  <p className="text-white">
-
-                 Mon – Sat • 10:00 AM – 7:00 PM (IST)
-
-                  </p>
-
-                </div>
-
-              </div>
-
-            </div>
-
           </div>
 
-          {/* RIGHT */}
-
-          <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-10">
-
-            <h3 className="text-3xl font-bold text-white">
-
+          <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-6 backdrop-blur-sm sm:rounded-3xl sm:p-8 lg:p-10">
+            <h3 className="text-2xl font-bold text-white sm:text-3xl">
               Start Your Project
-
             </h3>
 
-            <p className="mt-3 text-slate-400">
-
+            <p className="mt-2 text-sm text-slate-400 sm:text-base">
               Tell us about your project and we'll get back to you within 24 hours.
-
             </p>
 
-            <form
-              onSubmit={handleSubmit}
-              className="mt-10 space-y-5"
-            >              <input
+            <form onSubmit={handleSubmit} className="mt-8 space-y-4 sm:mt-10 sm:space-y-5">
+              <input
                 required
                 type="text"
                 placeholder="Full Name"
@@ -250,7 +182,7 @@ Serving clients across India, USA, UK, Canada & Australia.
                     name: e.target.value,
                   })
                 }
-                className="w-full rounded-xl border border-white/10 bg-white/5 px-5 py-4 text-white placeholder:text-slate-500 outline-none focus:border-cyan-400"
+                className={inputClassName}
               />
 
               <input
@@ -264,7 +196,7 @@ Serving clients across India, USA, UK, Canada & Australia.
                     email: e.target.value,
                   })
                 }
-                className="w-full rounded-xl border border-white/10 bg-white/5 px-5 py-4 text-white placeholder:text-slate-500 outline-none focus:border-cyan-400"
+                className={inputClassName}
               />
 
               <input
@@ -277,7 +209,7 @@ Serving clients across India, USA, UK, Canada & Australia.
                     phone: e.target.value,
                   })
                 }
-                className="w-full rounded-xl border border-white/10 bg-white/5 px-5 py-4 text-white placeholder:text-slate-500 outline-none focus:border-cyan-400"
+                className={inputClassName}
               />
 
               <select
@@ -288,35 +220,23 @@ Serving clients across India, USA, UK, Canada & Australia.
                     service: e.target.value,
                   })
                 }
-                className="w-full rounded-xl border border-white/10 bg-white/5 px-5 py-4 text-white outline-none focus:border-cyan-400"
+                className={inputClassName}
               >
                 <option value="" className="text-black">
                   Select Service (Optional)
                 </option>
 
-                <option className="text-black">
-                  Website Design
-                </option>
+                <option className="text-black">Website Design</option>
 
-                <option className="text-black">
-                  UI/UX Design
-                </option>
+                <option className="text-black">UI/UX Design</option>
 
-                <option className="text-black">
-                  SEO Services
-                </option>
+                <option className="text-black">SEO Services</option>
 
-                <option className="text-black">
-                  Digital Marketing
-                </option>
+                <option className="text-black">Digital Marketing</option>
 
-                <option className="text-black">
-                  Landing Page Design
-                </option>
+                <option className="text-black">Landing Page Design</option>
 
-                <option className="text-black">
-                  Other
-                </option>
+                <option className="text-black">Other</option>
               </select>
 
               <textarea
@@ -329,32 +249,13 @@ Serving clients across India, USA, UK, Canada & Australia.
                     message: e.target.value,
                   })
                 }
-                className="w-full rounded-xl border border-white/10 bg-white/5 px-5 py-4 text-white placeholder:text-slate-500 outline-none focus:border-cyan-400"
+                className={inputClassName}
               />
 
               <button
                 type="submit"
                 disabled={loading}
-                className="
-                  flex
-                  w-full
-                  items-center
-                  justify-center
-                  gap-3
-                  rounded-xl
-                  bg-gradient-to-r
-                  from-violet-600
-                  to-cyan-500
-                  py-4
-                  font-semibold
-                  text-white
-                  transition-all
-                  duration-300
-                  hover:scale-[1.02]
-                  hover:shadow-xl
-                  disabled:cursor-not-allowed
-                  disabled:opacity-70
-                "
+                className="flex w-full items-center justify-center gap-2 rounded-xl bg-white py-3.5 text-sm font-semibold text-[#060b14] transition-all duration-200 hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-70 sm:py-4 sm:text-base"
               >
                 {loading ? (
                   <>
@@ -375,32 +276,22 @@ Serving clients across India, USA, UK, Canada & Australia.
 
               {success && (
                 <div className="rounded-xl border border-green-500/20 bg-green-500/10 p-4 text-center">
-
                   <div className="flex items-center justify-center gap-2 text-green-400">
-
                     <CheckCircle2 className="h-5 w-5" />
-
-                    <span className="font-medium">
+                    <span className="text-sm font-medium sm:text-base">
                       Thank you! Your request has been submitted successfully.
                     </span>
-
                   </div>
 
                   <p className="mt-2 text-sm text-green-300">
                     We'll review your project and get back to you within 24 hours.
                   </p>
-
                 </div>
               )}
-
             </form>
-
           </div>
-
         </div>
-
       </div>
-
     </section>
   );
 }

@@ -72,29 +72,23 @@ export default function App() {
 
  
 
-      <div className="min-h-screen">
+      <div className="min-h-screen bg-white antialiased">
 
         <Navigation />
 
-        <div id="home">
-          <Hero />
-        </div>
+        <main>
+          <div id="home" className="scroll-mt-24">
+            <Hero />
+          </div>
 
-        <div id="services">
           <Services />
-        </div>
 
-        <div id="about">
           <About />
-        </div>
 
-        <div id="featured-work">
           <FeaturedWork />
-        </div>
 
-        <div id="contact">
           <ContactSection />
-        </div>
+        </main>
 
         <ScrollToTop />
 

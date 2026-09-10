@@ -4,196 +4,117 @@ import {
   Rocket,
   CheckCircle,
   TrendingUp,
+  ArrowRight,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+
+const highlights = [
+  "User-focused UI/UX Design",
+  "SEO & Performance Optimization",
+  "Modern Responsive Websites",
+  "Transparent Communication",
+  "Growth-focused Digital Strategy",
+];
+
+const metrics = [
+  {
+    number: "12+",
+    label: "Projects Delivered",
+    icon: Rocket,
+  },
+  {
+    number: "10+",
+    label: "Happy Clients",
+    icon: Users,
+  },
+  {
+    number: "1+",
+    label: "Years Experience",
+    icon: Award,
+  },
+  {
+    number: "95%",
+    label: "Client Satisfaction",
+    icon: TrendingUp,
+  },
+];
+
 export default function About() {
   return (
     <section
       id="about"
-      className="py-24 bg-white relative overflow-hidden"
+      className="scroll-mt-24 bg-white py-20 sm:py-24 lg:py-28"
     >
-      <div className="max-w-7xl mx-auto px-6">
-
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-
-          {/* LEFT */}
-
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <div>
-
-            <span className="inline-flex rounded-full bg-cyan-100 px-4 py-2 text-sm font-semibold text-cyan-700">
-
+            <span className="inline-flex items-center rounded-full border border-cyan-200/80 bg-cyan-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-cyan-700">
               Why Choose NSL
-
             </span>
 
-            <h2 className="mt-6 text-5xl font-bold leading-tight text-[#202851]">
-
+            <h2 className="mt-5 text-3xl font-bold tracking-tight text-[#0f172a] sm:text-4xl lg:text-5xl lg:leading-tight">
               We Build Digital
+              <br />
               Experiences That
+              <br />
               Deliver Results.
-
             </h2>
 
-            <p className="mt-8 text-lg leading-8 text-slate-600">
-
+            <p className="mt-6 text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
               At NSL Digital Lab, we combine strategy, design,
               development and digital marketing to help
               businesses attract more customers, improve user
               experience and achieve sustainable online growth.
-
             </p>
 
-            <div className="mt-10 space-y-5">
-
-              {[
-                "User-focused UI/UX Design",
-                "SEO & Performance Optimization",
-                "Modern Responsive Websites",
-                "Transparent Communication",
-                "Growth-focused Digital Strategy",
-              ].map((item) => (
-
-                <div
-                  key={item}
-                  className="flex items-center gap-4"
-                >
-
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-cyan-100">
-
-                    <CheckCircle className="h-5 w-5 text-cyan-600" />
-
-                  </div>
-
-                  <span className="text-slate-700">
-
-                    {item}
-
+            <ul className="mt-8 space-y-3.5">
+              {highlights.map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-cyan-50">
+                    <CheckCircle className="h-4 w-4 text-cyan-600" />
                   </span>
-
-                </div>
-
+                  <span className="text-sm text-slate-700 sm:text-base">
+                    {item}
+                  </span>
+                </li>
               ))}
-
-            </div>
+            </ul>
 
             <Link
               to="/services"
-              className="
-            mt-10
-            inline-flex
-            items-center
-            gap-3
-            rounded-xl
-            bg-gradient-to-r
-            from-violet-600
-            to-cyan-500
-            px-8
-            py-4
-            font-semibold
-            text-white
-            transition
-            hover:scale-105
-          "
+              className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#0f172a] px-7 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#1e293b] hover:shadow-lg sm:mt-10 sm:px-8 sm:py-4 sm:text-base"
             >
-
-              View Our Services →
-
+              View Our Services
+              <ArrowRight className="h-4 w-4" />
             </Link>
-
           </div>
 
-          {/* RIGHT */}
-
-          <div className="grid grid-cols-2 gap-6">
-
-            {[
-              {
-                number: "12+",
-                label: "Projects Delivered",
-                icon: Rocket,
-              },
-              {
-                number: "10+",
-                label: "Happy Clients",
-                icon: Users,
-              },
-              {
-                number: "1+",
-                label: "Years Experience",
-                icon: Award,
-              },
-              {
-                number: "95%",
-                label: "Client Satisfaction",
-                icon: TrendingUp,
-              },
-            ].map((item) => {
-
+          <div className="grid grid-cols-2 gap-4 sm:gap-5">
+            {metrics.map((item) => {
               const Icon = item.icon;
 
               return (
-
                 <div
                   key={item.label}
-                  className="
-                group
-                rounded-3xl
-                border
-                border-slate-200
-                bg-white
-                p-8
-                text-center
-                shadow-lg
-                transition-all
-                duration-300
-                hover:-translate-y-2
-                hover:border-cyan-300
-                hover:shadow-2xl
-              "
+                  className="group rounded-2xl border border-slate-200/80 bg-slate-50/50 p-5 text-center transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:bg-white hover:shadow-lg hover:shadow-slate-200/50 sm:p-6 lg:p-8"
                 >
-
-                  <div className="
-                mx-auto
-                flex
-                h-16
-                w-16
-                items-center
-                justify-center
-                rounded-2xl
-                bg-cyan-50
-                group-hover:bg-gradient-to-r
-                group-hover:from-cyan-500
-                group-hover:to-sky-500
-              ">
-
-                    <Icon className="h-8 w-8 text-cyan-500 group-hover:text-white" />
-
+                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl border border-cyan-100 bg-white transition-colors group-hover:border-cyan-200 group-hover:bg-cyan-50 sm:h-14 sm:w-14">
+                    <Icon className="h-6 w-6 text-cyan-600 sm:h-7 sm:w-7" />
                   </div>
 
-                  <h3 className="mt-6 text-4xl font-bold text-[#202851]">
-
+                  <p className="mt-4 text-3xl font-bold tracking-tight text-[#0f172a] sm:text-4xl">
                     {item.number}
-
-                  </h3>
-
-                  <p className="mt-3 text-slate-600">
-
-                    {item.label}
-
                   </p>
 
+                  <p className="mt-1.5 text-xs text-slate-600 sm:text-sm">
+                    {item.label}
+                  </p>
                 </div>
-
               );
-
             })}
-
           </div>
-
         </div>
-
       </div>
-
     </section>
   );
 }

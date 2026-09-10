@@ -5,331 +5,478 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
     <loc>https://nsldigitallab.com/</loc>
-   <lastmod>2026-06-20T19:38:43.090Z</lastmod>
+   <lastmod>2026-09-10T17:33:11.584Z</lastmod>
     <changefreq>daily</changefreq>
    <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/affiliate-disclosure</loc>
-   <lastmod>2026-06-20T17:19:36.361Z</lastmod>
+   <lastmod>2026-09-10T17:06:19.859Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.3</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/best-ai-tools-for-marketers</loc>
-   <lastmod>2026-06-20T19:38:43.092Z</lastmod>
+   <lastmod>2026-09-10T17:33:11.585Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/best-chatgpt-tools-for-marketers</loc>
-   <lastmod>2026-06-20T19:38:43.092Z</lastmod>
+   <lastmod>2026-09-10T17:33:11.585Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/blog</loc>
-   <lastmod>2026-06-20T17:19:36.348Z</lastmod>
+   <lastmod>2026-09-10T17:06:19.867Z</lastmod>
     <changefreq>daily</changefreq>
    <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/blog/affiliate-marketing/affiliate-marketing-for-beginners</loc>
-   <lastmod>2026-06-19T17:48:44.299Z</lastmod>
+   <lastmod>2026-09-10T17:06:19.860Z</lastmod>
+    <changefreq>monthly</changefreq>
+   <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://nsldigitallab.com/blog/affiliate-marketing/earning-money-with-affiliate-marketing</loc>
+   <lastmod>2026-09-10T17:06:19.860Z</lastmod>
     <changefreq>monthly</changefreq>
    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/blog/ai-tools/best-ai-tools-for-college-students</loc>
-   <lastmod>2026-06-19T17:48:44.299Z</lastmod>
+   <lastmod>2026-09-10T17:06:19.861Z</lastmod>
     <changefreq>monthly</changefreq>
    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/blog/ai-tools/best-ai-tools-for-designers</loc>
-   <lastmod>2026-06-19T17:48:44.299Z</lastmod>
+   <lastmod>2026-09-10T17:06:19.863Z</lastmod>
     <changefreq>monthly</changefreq>
    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/blog/ai-tools/chatgpt-vs-gemini-vs-claude</loc>
-   <lastmod>2026-05-29T18:08:44.269Z</lastmod>
+   <lastmod>2026-09-10T17:06:19.863Z</lastmod>
     <changefreq>monthly</changefreq>
    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/blog/ai-tools/create-and-sell-digital-products-using-chatgpt</loc>
-   <lastmod>2026-06-19T17:48:44.299Z</lastmod>
+   <lastmod>2026-09-10T17:06:19.864Z</lastmod>
     <changefreq>monthly</changefreq>
    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/blog/ai-tools/how-to-use-chatgpt</loc>
-   <lastmod>2026-06-19T17:54:08.979Z</lastmod>
+   <lastmod>2026-09-10T17:06:19.864Z</lastmod>
+    <changefreq>monthly</changefreq>
+   <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://nsldigitallab.com/blog/ai-tools/how-to-use-github-copilot-in-vscode</loc>
+   <lastmod>2026-09-10T17:06:19.865Z</lastmod>
     <changefreq>monthly</changefreq>
    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/blog/digital-marketing/digital-marketing-interview-questions</loc>
-   <lastmod>2026-06-19T17:48:44.302Z</lastmod>
+   <lastmod>2026-09-10T17:06:19.865Z</lastmod>
+    <changefreq>monthly</changefreq>
+   <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://nsldigitallab.com/blog/digital-marketing/how-paid-advertising-works</loc>
+   <lastmod>2026-09-10T17:06:19.866Z</lastmod>
     <changefreq>monthly</changefreq>
    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/blog/digital-marketing/how-to-earn-money-from-digital-marketing</loc>
-   <lastmod>2026-06-19T17:48:44.304Z</lastmod>
+   <lastmod>2026-09-10T17:06:19.866Z</lastmod>
     <changefreq>monthly</changefreq>
    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/blog/digital-marketing/what-is-digital-marketing</loc>
-   <lastmod>2026-06-19T17:48:44.304Z</lastmod>
+   <lastmod>2026-09-10T17:06:19.867Z</lastmod>
     <changefreq>monthly</changefreq>
    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/blog/seo/local-seo-guide</loc>
-   <lastmod>2026-06-04T04:41:59.857Z</lastmod>
+   <lastmod>2026-09-10T17:06:19.867Z</lastmod>
     <changefreq>monthly</changefreq>
    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/blog/seo/seo-for-startups</loc>
-   <lastmod>2026-06-19T17:48:44.325Z</lastmod>
+   <lastmod>2026-09-10T17:06:19.868Z</lastmod>
     <changefreq>monthly</changefreq>
    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/blog/seo/seo-interview-questions</loc>
-   <lastmod>2026-06-19T17:48:44.299Z</lastmod>
+   <lastmod>2026-09-10T17:06:19.868Z</lastmod>
     <changefreq>monthly</changefreq>
    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/blog/seo/technical-seo-checklist</loc>
-   <lastmod>2026-06-19T17:48:44.301Z</lastmod>
+   <lastmod>2026-09-10T17:06:19.868Z</lastmod>
     <changefreq>monthly</changefreq>
    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/blog/seo/website-optimization-tips</loc>
-   <lastmod>2026-06-19T17:48:44.302Z</lastmod>
+   <lastmod>2026-09-10T17:06:19.869Z</lastmod>
     <changefreq>monthly</changefreq>
    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/blog/seo/what-is-seo</loc>
-   <lastmod>2026-06-20T05:52:13.049Z</lastmod>
+   <lastmod>2026-09-10T17:06:19.869Z</lastmod>
     <changefreq>monthly</changefreq>
    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/blog/ui-ux/accessibility-in-ux-design</loc>
-   <lastmod>2026-06-19T17:48:44.296Z</lastmod>
+   <lastmod>2026-09-10T17:06:19.869Z</lastmod>
     <changefreq>monthly</changefreq>
    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/blog/ui-ux/future-of-ui-design</loc>
-   <lastmod>2026-06-19T17:48:44.296Z</lastmod>
+   <lastmod>2026-09-10T17:06:19.870Z</lastmod>
+    <changefreq>monthly</changefreq>
+   <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://nsldigitallab.com/blog/ui-ux/how-to-create-style-guide</loc>
+   <lastmod>2026-09-10T17:06:19.870Z</lastmod>
     <changefreq>monthly</changefreq>
    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/blog/ui-ux/saas-dashboard-design-guide</loc>
-   <lastmod>2026-06-19T17:48:44.296Z</lastmod>
+   <lastmod>2026-09-10T17:06:19.870Z</lastmod>
     <changefreq>monthly</changefreq>
    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/blog/ui-ux/saas-dashboard-design-ideas</loc>
-   <lastmod>2026-06-19T17:48:44.325Z</lastmod>
+   <lastmod>2026-09-10T17:06:19.871Z</lastmod>
     <changefreq>monthly</changefreq>
    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/blog/ui-ux/ui-ux-design-in-2026</loc>
-   <lastmod>2026-06-19T17:48:44.299Z</lastmod>
+   <lastmod>2026-09-10T17:06:19.872Z</lastmod>
+    <changefreq>monthly</changefreq>
+   <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://nsldigitallab.com/blog/ui-ux/ui-ux-design-principles</loc>
+   <lastmod>2026-09-10T17:06:19.872Z</lastmod>
     <changefreq>monthly</changefreq>
    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/blog/ui-ux/ui-ux-design-process-explained</loc>
-   <lastmod>2026-06-19T17:48:44.295Z</lastmod>
+   <lastmod>2026-09-10T17:06:19.872Z</lastmod>
     <changefreq>monthly</changefreq>
    <priority>0.8</priority>
   </url>
 
   <url>
+    <loc>https://nsldigitallab.com/career-crud</loc>
+   <lastmod>2026-09-10T17:06:19.873Z</lastmod>
+    <changefreq>weekly</changefreq>
+   <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://nsldigitallab.com/careers</loc>
-   <lastmod>2026-06-20T17:58:32.888Z</lastmod>
+   <lastmod>2026-09-10T17:06:19.875Z</lastmod>
     <changefreq>daily</changefreq>
    <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/careers/content-writer-job</loc>
-   <lastmod>2026-06-19T17:48:44.292Z</lastmod>
+   <lastmod>2026-09-10T17:06:19.874Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/careers/data-entry-remote-job</loc>
-   <lastmod>2026-06-19T18:31:40.411Z</lastmod>
+   <lastmod>2026-09-10T17:06:19.875Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/careers/digital-marketing-internship</loc>
-   <lastmod>2026-06-02T08:25:49.580Z</lastmod>
+   <lastmod>2026-09-10T17:06:19.875Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/careers/seo-executive-job</loc>
-   <lastmod>2026-06-19T17:48:44.292Z</lastmod>
+   <lastmod>2026-09-10T17:06:19.876Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/careers/social-media-executive-job</loc>
-   <lastmod>2026-06-02T08:25:09.611Z</lastmod>
+   <lastmod>2026-09-10T17:06:19.876Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://nsldigitallab.com/careers/ui-ux-designer-job</loc>
-   <lastmod>2026-06-19T17:48:44.290Z</lastmod>
+    <loc>https://nsldigitallab.com/careers/thank-you</loc>
+   <lastmod>2026-09-10T17:06:19.876Z</lastmod>
+    <changefreq>weekly</changefreq>
+   <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://nsldigitallab.com/careers/ui-ux-designer-remote-job</loc>
+   <lastmod>2026-09-10T17:06:19.876Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/careers/wordpress-developer-job</loc>
-   <lastmod>2026-06-02T08:25:35.952Z</lastmod>
+   <lastmod>2026-09-10T17:06:19.877Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/claude-ai</loc>
-   <lastmod>2026-06-20T19:38:43.094Z</lastmod>
+   <lastmod>2026-09-10T17:33:11.587Z</lastmod>
+    <changefreq>weekly</changefreq>
+   <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://nsldigitallab.com/contact/thank-you</loc>
+   <lastmod>2026-09-10T17:06:19.891Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/cookie-policy</loc>
-   <lastmod>2026-06-20T17:19:36.358Z</lastmod>
+   <lastmod>2026-09-10T17:06:19.891Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.3</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/disclaimer</loc>
-   <lastmod>2026-06-20T17:19:36.363Z</lastmod>
+   <lastmod>2026-09-10T17:06:19.892Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.3</priority>
   </url>
 
   <url>
+    <loc>https://nsldigitallab.com/learn</loc>
+   <lastmod>2026-09-10T17:06:19.896Z</lastmod>
+    <changefreq>weekly</changefreq>
+   <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://nsldigitallab.com/learn/digital-marketing</loc>
+   <lastmod>2026-09-10T17:06:19.896Z</lastmod>
+    <changefreq>weekly</changefreq>
+   <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://nsldigitallab.com/learn/seo</loc>
+   <lastmod>2026-09-10T17:06:19.896Z</lastmod>
+    <changefreq>weekly</changefreq>
+   <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://nsldigitallab.com/learn/ui-ux-design</loc>
+   <lastmod>2026-09-10T17:06:19.896Z</lastmod>
+    <changefreq>weekly</changefreq>
+   <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://nsldigitallab.com/privacy-policy</loc>
-   <lastmod>2026-06-20T17:33:18.028Z</lastmod>
+   <lastmod>2026-09-10T17:06:19.896Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.3</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/remote-seo-internship</loc>
-   <lastmod>2026-06-20T19:38:43.094Z</lastmod>
+   <lastmod>2026-09-10T17:33:11.588Z</lastmod>
+    <changefreq>weekly</changefreq>
+   <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://nsldigitallab.com/resources</loc>
+   <lastmod>2026-09-10T17:06:19.902Z</lastmod>
+    <changefreq>weekly</changefreq>
+   <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://nsldigitallab.com/resources/digital-marketing-checklist</loc>
+   <lastmod>2026-09-10T17:06:19.902Z</lastmod>
+    <changefreq>weekly</changefreq>
+   <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://nsldigitallab.com/resources/figma-ui-kit</loc>
+   <lastmod>2026-09-10T17:06:19.902Z</lastmod>
+    <changefreq>weekly</changefreq>
+   <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://nsldigitallab.com/resources/resume-template</loc>
+   <lastmod>2026-09-10T17:06:19.902Z</lastmod>
+    <changefreq>weekly</changefreq>
+   <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://nsldigitallab.com/resources/seo-checklist</loc>
+   <lastmod>2026-09-10T17:06:19.902Z</lastmod>
+    <changefreq>weekly</changefreq>
+   <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://nsldigitallab.com/resources/thank-you</loc>
+   <lastmod>2026-09-10T17:06:19.902Z</lastmod>
+    <changefreq>weekly</changefreq>
+   <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://nsldigitallab.com/resources/ui-ux-interview-questions</loc>
+   <lastmod>2026-09-10T17:06:19.902Z</lastmod>
+    <changefreq>weekly</changefreq>
+   <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://nsldigitallab.com/resources/welcome</loc>
+   <lastmod>2026-09-10T17:06:19.902Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/seo-internship-mumbai</loc>
-   <lastmod>2026-06-20T19:38:43.094Z</lastmod>
+   <lastmod>2026-09-10T17:33:11.589Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/seo-internship-pune</loc>
-   <lastmod>2026-06-20T19:38:43.094Z</lastmod>
+   <lastmod>2026-09-10T17:33:11.589Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/services</loc>
-   <lastmod>2026-06-19T17:48:44.286Z</lastmod>
+   <lastmod>2026-09-10T17:06:19.902Z</lastmod>
     <changefreq>monthly</changefreq>
    <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/services/seo-services</loc>
-   <lastmod>2026-06-20T19:38:43.094Z</lastmod>
+   <lastmod>2026-09-10T17:33:11.589Z</lastmod>
     <changefreq>monthly</changefreq>
    <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/services/social-media-marketing</loc>
-   <lastmod>2026-06-20T19:38:43.094Z</lastmod>
+   <lastmod>2026-09-10T17:33:11.589Z</lastmod>
     <changefreq>monthly</changefreq>
    <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/services/ui-ux-design</loc>
-   <lastmod>2026-06-20T19:38:43.094Z</lastmod>
+   <lastmod>2026-09-10T17:33:11.589Z</lastmod>
     <changefreq>monthly</changefreq>
    <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/services/web-design</loc>
-   <lastmod>2026-06-20T19:38:43.094Z</lastmod>
+   <lastmod>2026-09-10T17:33:11.589Z</lastmod>
     <changefreq>monthly</changefreq>
    <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/terms-and-conditions</loc>
-   <lastmod>2026-06-20T17:19:36.358Z</lastmod>
+   <lastmod>2026-09-10T17:06:19.902Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://nsldigitallab.com/thank-you</loc>
+   <lastmod>2026-09-10T17:06:19.902Z</lastmod>
+    <changefreq>weekly</changefreq>
+   <priority>0.7</priority>
   </url>
 
 </urlset>

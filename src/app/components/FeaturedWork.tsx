@@ -1,229 +1,122 @@
-import { ArrowUpRight, Globe, Search, LayoutDashboard } from "lucide-react";
-import { Link } from "react-router-dom";
-
 import {
-  
+  Globe,
+  LayoutDashboard,
   MonitorSmartphone,
-  Palette,
   ArrowRight,
 } from "lucide-react";
+import { Link } from "react-router-dom";
+
+const projects = [
+  {
+    icon: Globe,
+    category: "Website Design",
+    title: "Agency Website",
+    description:
+      "Modern responsive business website focused on branding, SEO and lead generation.",
+    tags: ["React", "Tailwind", "SEO"],
+  },
+  {
+    icon: LayoutDashboard,
+    category: "UI/UX Design",
+    title: "Dashboard Experience",
+    description:
+      "Clean dashboard interface designed with accessibility, usability and performance in mind.",
+    tags: ["Figma", "UX", "Prototype"],
+  },
+  {
+    icon: MonitorSmartphone,
+    category: "Landing Pages",
+    title: "High Converting Landing Pages",
+    description:
+      "Optimized landing pages designed to increase conversions, engagement and campaign performance.",
+    tags: null,
+  },
+];
+
 export default function FeaturedWork() {
   return (
-  <section
-  id="featured-work"
-  className="py-24 bg-white"
->
-  <div className="max-w-7xl mx-auto px-6">
-
-    {/* Heading */}
-
-    <div className="text-center max-w-3xl mx-auto mb-16">
-
-    <span className="inline-flex rounded-full bg-cyan-100 px-4 py-2 text-sm font-semibold text-cyan-700">
-  Featured Portfolio
-</span>
-
-<h2 className="mt-6 text-4xl md:text-5xl font-bold text-[#202851]">
-  UI/UX Case Studies
-  <br />
-  That Solve Real Problems
-</h2>
-
-<p className="mt-6 text-lg leading-8 text-slate-600 max-w-3xl mx-auto">
-  Explore selected web and mobile projects where user research, wireframing,
-  prototyping and modern interface design come together to create intuitive,
-  engaging and business-focused digital experiences.
-</p>
-
-    </div>
-
-    {/* Projects */}
-
-    <div className="grid lg:grid-cols-3 gap-4">
-
-      {/* CARD 1 */}
-
-      <div className="group rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-
-        <div className="relative h-56 bg-gradient-to-br from-[#202851] via-[#24356d] to-[#24c2f2] flex items-center justify-center">
-
-          <Globe className="w-16 h-16 text-white" />
-
-        </div>
-
-        <div className="p-8">
-
-          <span className="text-cyan-600 font-semibold text-sm">
-
-            Website Design
-
+    <section
+      id="featured-work"
+      className="scroll-mt-24 border-t border-slate-100 bg-slate-50/60 py-20 sm:py-24 lg:py-28"
+    >
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl text-center">
+          <span className="inline-flex items-center rounded-full border border-cyan-200/80 bg-cyan-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-cyan-700">
+            Featured Portfolio
           </span>
 
-          <h3 className="mt-3 text-2xl font-bold text-[#202851]">
+          <h2 className="mt-5 text-3xl font-bold tracking-tight text-[#0f172a] sm:text-4xl lg:text-5xl lg:leading-tight">
+            UI/UX Case Studies
+            <br className="hidden sm:block" />
+            <span className="sm:ml-0"> That Solve Real Problems</span>
+          </h2>
 
-            Agency Website
+          <p className="mt-5 text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
+            Explore selected web and mobile projects where user research, wireframing,
+            prototyping and modern interface design come together to create intuitive,
+            engaging and business-focused digital experiences.
+          </p>
+        </div>
 
-          </h3>
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+          {projects.map((project) => {
+            const Icon = project.icon;
 
-          <p className="mt-4 text-slate-600 leading-7">
+            return (
+              <article
+                key={project.title}
+                className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-lg hover:shadow-slate-200/50"
+              >
+                <div className="relative flex h-48 items-center justify-center overflow-hidden bg-gradient-to-br from-[#0f172a] via-[#1e3a5f] to-cyan-600 sm:h-52">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(34,211,238,0.15),transparent_50%)]" />
+                  <Icon className="relative h-14 w-14 text-white/90 transition-transform duration-300 group-hover:scale-110 sm:h-16 sm:w-16" />
+                </div>
 
-            Modern responsive business website focused on
-            branding, SEO and lead generation.
+                <div className="flex flex-1 flex-col p-6 sm:p-7">
+                  <span className="text-xs font-semibold uppercase tracking-[0.12em] text-cyan-600">
+                    {project.category}
+                  </span>
 
+                  <h3 className="mt-2 text-xl font-semibold text-[#0f172a] sm:text-2xl">
+                    {project.title}
+                  </h3>
+
+                  <p className="mt-3 flex-1 text-sm leading-6 text-slate-600 sm:text-base sm:leading-7">
+                    {project.description}
+                  </p>
+
+                  {project.tags && (
+                    <div className="mt-5 flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-600"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </article>
+            );
+          })}
+        </div>
+
+        <div className="mt-14 text-center">
+          <p className="mb-5 text-slate-600">
+            Interested in seeing more of our work?
           </p>
 
-          <div className="mt-6 flex flex-wrap gap-2">
-
-            <span className="px-3 py-1 rounded-full bg-slate-100 text-sm">
-
-              React
-
-            </span>
-
-            <span className="px-3 py-1 rounded-full bg-slate-100 text-sm">
-
-              Tailwind
-
-            </span>
-
-            <span className="px-3 py-1 rounded-full bg-slate-100 text-sm">
-
-              SEO
-
-            </span>
-
-          </div>
-
+          <Link
+            to="/services"
+            className="inline-flex items-center gap-2 rounded-xl bg-[#0f172a] px-7 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#1e293b] hover:shadow-lg sm:px-8 sm:py-4 sm:text-base"
+          >
+            Explore Our Services
+            <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
-
       </div>
-
-      {/* CARD 2 */}
-
-      <div className="group rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all">
-
-        <div className="h-56 bg-gradient-to-br from-[#202851] via-[#24356d] to-[#24c2f2] flex items-center justify-center">
-
-          <LayoutDashboard className="w-16 h-16 text-white" />
-
-        </div>
-
-        <div className="p-8">
-
-          <span className="text-cyan-600 font-semibold text-sm">
-
-            UI/UX Design
-
-          </span>
-
-          <h3 className="mt-3 text-2xl font-bold text-[#202851]">
-
-            Dashboard Experience
-
-          </h3>
-
-          <p className="mt-4 text-slate-600 leading-7">
-
-            Clean dashboard interface designed with
-            accessibility, usability and performance in mind.
-
-          </p>
-
-          <div className="mt-6 flex flex-wrap gap-2">
-
-            <span className="px-3 py-1 rounded-full bg-slate-100 text-sm">
-
-              Figma
-
-            </span>
-
-            <span className="px-3 py-1 rounded-full bg-slate-100 text-sm">
-
-              UX
-
-            </span>
-
-            <span className="px-3 py-1 rounded-full bg-slate-100 text-sm">
-
-              Prototype
-
-            </span>
-
-          </div>
-
-        </div>
-
-      </div>
- 
-   {/* CARD 4 */}
-
-      <div className="group rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all">
-
-        <div className="h-56 bg-gradient-to-br from-[#202851] via-[#24356d] to-[#24c2f2] flex items-center justify-center">
-
-          <MonitorSmartphone className="w-16 h-16 text-white" />
-
-        </div>
-
-        <div className="p-8">
-
-          <span className="text-cyan-600 font-semibold text-sm">
-
-            Landing Pages
-
-          </span>
-
-          <h3 className="mt-3 text-2xl font-bold text-[#202851]">
-
-            High Converting Landing Pages
-
-          </h3>
-
-          <p className="mt-4 text-slate-600 leading-7">
-
-            Optimized landing pages designed to increase
-            conversions, engagement and campaign performance.
-
-          </p>
-
-        </div>
-
-      </div>
-
-       
-
-       
-    </div>
-
-    {/* Second Row */}
-
-    <div className="grid lg:grid-cols-2 gap-8 mt-8">
-
-   
-
-    </div>
-
-    {/* CTA */}
-
-    <div className="text-center mt-16">
-
-      <p className="text-slate-600 mb-6">
-
-        Interested in seeing more of our work?
-
-      </p>
-
-      <Link
-        to="/services"
-        className="inline-flex items-center gap-3 rounded-xl bg-gradient-to-r from-violet-600 to-cyan-500 px-8 py-4 font-semibold text-white hover:scale-105 transition-all"
-      >
-        Explore Our Services
-        <ArrowRight className="w-5 h-5" />
-      </Link>
-
-    </div>
-
-  </div>
-</section>
+    </section>
   );
 }
