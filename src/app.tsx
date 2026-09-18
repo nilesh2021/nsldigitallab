@@ -13,7 +13,6 @@ import About from "./app/components/About";
 import FeaturedWork from "./app/components/FeaturedWork";
 import ContactSection from "./app/components/ContactSection";
 import Footer from "./app/components/Footer";
-import ScrollToTop from "./app/components/ScrollToTop";
 import { PAGE_SEO } from "./seo/pages";
 
 export default function App() {
@@ -89,8 +88,6 @@ export default function App() {
 
           <ContactSection />
         </main>
-
-        <ScrollToTop />
 
         <Footer />
 

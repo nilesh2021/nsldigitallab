@@ -16,7 +16,6 @@ import { Link } from "react-router-dom";
 
 import Navigation from "../../../components/Navigation";
 import Footer from "../../../components/Footer";
-import ScrollToTop from "../../../components/ScrollToTop";
 import Breadcrumbs from "../../../components/Breadcrumbs";
 
 const principles = [
@@ -267,7 +266,6 @@ export default function UiUxDesignPrinciplesPage() {
       </main>
 
       <Footer />
-      <ScrollToTop />
     </>
   );
 }

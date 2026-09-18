@@ -1,7 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import Navigation from "../../../components/Navigation";
 import Footer from "../../../components/Footer";
-import ScrollToTop from "../../../components/ScrollToTop";
 
 export default function SaasDashboardDesignGuide() {
     return (
@@ -27,7 +26,6 @@ export default function SaasDashboardDesignGuide() {
                 />
             </Helmet>
 
-            <ScrollToTop />
             <Navigation />
 
             <main className="bg-slate-50 min-h-screen">

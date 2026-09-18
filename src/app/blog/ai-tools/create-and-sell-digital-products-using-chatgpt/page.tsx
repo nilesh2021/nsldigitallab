@@ -6,7 +6,6 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import Navigation from "../../../components/Navigation";
 import Footer from "../../../components/Footer";
-import ScrollToTop from "../../../components/ScrollToTop";
 
 const tools = [
   {
@@ -331,7 +330,6 @@ export default function CreateAndSellDigitalProductsUsingChatGPTPage() {
       </main>
 
       <Footer />
-      <ScrollToTop />
     </>
   );
 }

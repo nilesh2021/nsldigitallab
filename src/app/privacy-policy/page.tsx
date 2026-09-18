@@ -1,6 +1,5 @@
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import ScrollToTop from '../components/ScrollToTop';
 
 export default function PrivacyPolicyPage() {
   return (
@@ -191,7 +190,6 @@ export default function PrivacyPolicyPage() {
       </section>
 
       {/* Scroll To Top */}
-      <ScrollToTop />
 
       {/* Footer */}
       <Footer />

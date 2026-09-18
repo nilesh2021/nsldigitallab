@@ -1,7 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import Navigation from "../../../components/Navigation";
 import Footer from "../../../components/Footer";
-import ScrollToTop from "../../../components/ScrollToTop";
 import { Link } from "react-router-dom";
 
 import {
@@ -396,39 +395,40 @@ export default function SeoServicesPage() {
         </section>
 
         {/* PROBLEMS SECTION */}
-        <section className="py-24 border-t border-gray-100">
-          <div className="max-w-7xl mx-auto px-6 lg:px-10">
-            <div className="text-center max-w-3xl mx-auto">
-              <span className="text-cyan-600 font-medium">
-                Problems We Solve
-              </span>
-
-              <h2 className="mt-4 text-4xl md:text-5xl font-bold">
-                Struggling To Grow Organically?
-              </h2>
-
-              <p className="mt-6 text-lg text-gray-600">
-                We help businesses overcome SEO challenges and improve digital
-                visibility through performance-focused strategies.
+        <section className="border-t border-slate-100 bg-slate-50 py-20 sm:py-24">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
+              <div>
+                <span className="inline-flex items-center rounded-full border border-cyan-200/80 bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-cyan-700">
+                  Problems We Solve
+                </span>
+                <h2 className="mt-5 text-3xl font-bold tracking-tight text-[#0f172a] sm:text-4xl lg:text-[2.5rem] lg:leading-tight">
+                  Struggling to grow
+                  <span className="block text-slate-500">organically?</span>
+                </h2>
+              </div>
+              <p className="max-w-xl text-base leading-7 text-slate-600 sm:text-lg lg:justify-self-end">
+                We fix the search issues that keep good businesses invisible:
+                thin traffic, weak rankings, slow pages, and leads that never
+                show up.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
+            <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {[
-                "Low Website Traffic",
-                "Poor Google Rankings",
-                "Weak Lead Generation",
-                "Slow Website Performance",
+                "Low website traffic",
+                "Poor Google rankings",
+                "Weak lead generation",
+                "Slow site performance",
               ].map((item, index) => (
                 <div
-                  key={index}
-                  className="rounded-3xl border border-gray-200 bg-white p-8 hover:shadow-xl hover:border-cyan-200 transition-all duration-300"
+                  key={item}
+                  className="rounded-2xl border border-slate-200/80 bg-white p-6"
                 >
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center mb-6 shadow-lg shadow-cyan-200">
-                    <TrendingUp className="w-7 h-7 text-white" />
-                  </div>
-
-                  <h3 className="text-xl font-semibold text-[#111827]">
+                  <span className="text-xs font-medium tabular-nums text-cyan-600">
+                    0{index + 1}
+                  </span>
+                  <h3 className="mt-4 text-lg font-semibold text-[#0f172a]">
                     {item}
                   </h3>
                 </div>
@@ -440,55 +440,88 @@ export default function SeoServicesPage() {
         {/* SERVICES INCLUDED */}
         <section
           id="seo-services"
-          className="bg-[#f8fbff] py-24 border-t border-gray-100"
+          className="scroll-mt-24 border-t border-slate-100 bg-white py-20 sm:py-24 lg:py-28"
         >
-          <div className="max-w-7xl mx-auto px-6 lg:px-10">
-            <div className="text-center max-w-3xl mx-auto">
-              <span className="text-cyan-600 font-medium">
-                SEO Services Included
-              </span>
-
-              <h2 className="mt-4 text-4xl md:text-5xl font-bold">
-                Complete SEO Solutions
-              </h2>
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end lg:gap-16">
+              <div>
+                <span className="inline-flex items-center rounded-full border border-cyan-200/80 bg-cyan-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-cyan-700">
+                  SEO Services Included
+                </span>
+                <h2 className="mt-5 text-3xl font-bold tracking-tight text-[#0f172a] sm:text-4xl lg:text-[2.75rem] lg:leading-tight">
+                  Complete SEO solutions
+                  <span className="block text-slate-500">for traffic that converts</span>
+                </h2>
+              </div>
+              <p className="max-w-xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8 lg:justify-self-end">
+                Technical work, content, local presence, and reporting — packaged
+                so startups and growing businesses can rank with a clear plan.
+              </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+            <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
               {seoServices.map((service, index) => {
                 const Icon = service.icon;
+                const isLead = index < 2;
 
                 return (
-                  <div
-                    key={index}
-                    className="group relative overflow-hidden rounded-3xl border border-cyan-100 bg-white p-8 hover:border-cyan-300 hover:shadow-2xl hover:shadow-cyan-100/60 transition-all duration-500"
+                  <Link
+                    key={service.title}
+                    to={service.link}
+                    className={`group relative flex flex-col overflow-hidden rounded-[1.5rem] border p-6 transition-all duration-300 sm:p-7 ${
+                      isLead
+                        ? "border-white/10 bg-[#060b14] text-white lg:col-span-1"
+                        : "border-slate-200/80 bg-slate-50 hover:-translate-y-0.5 hover:border-cyan-200 hover:bg-white hover:shadow-lg hover:shadow-slate-200/60"
+                    }`}
                   >
-                    {/* Glow */}
-                    <div className="absolute top-0 right-0 w-40 h-40 bg-cyan-100/40 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-all duration-500" />
+                    {isLead && (
+                      <div className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-cyan-500/20 blur-3xl" />
+                    )}
 
-                    {/* Icon */}
-                    <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-200 mb-7">
-                      <Icon className="w-8 h-8 text-white" />
+                    <div className="relative flex items-start justify-between gap-3">
+                      <div
+                        className={`flex h-11 w-11 items-center justify-center rounded-xl ${
+                          isLead
+                            ? "border border-white/10 bg-white/5 text-cyan-300"
+                            : "bg-white text-cyan-600 shadow-sm ring-1 ring-slate-200"
+                        }`}
+                      >
+                        <Icon className="h-5 w-5" />
+                      </div>
+                      <span
+                        className={`text-xs font-medium tabular-nums ${
+                          isLead ? "text-slate-500" : "text-slate-300"
+                        }`}
+                      >
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
                     </div>
 
-                    {/* Content */}
-                    <h3 className="text-2xl font-bold text-[#111827] group-hover:text-cyan-600 transition-colors">
+                    <h3
+                      className={`relative mt-6 text-xl font-semibold tracking-tight ${
+                        isLead ? "text-white" : "text-[#0f172a]"
+                      }`}
+                    >
                       {service.title}
                     </h3>
 
-                    <p className="mt-4 text-gray-600 leading-8">
+                    <p
+                      className={`relative mt-2 flex-1 text-sm leading-6 ${
+                        isLead ? "text-slate-400" : "text-slate-600"
+                      }`}
+                    >
                       {service.description}
                     </p>
 
-                    {/* Learn More */}
-                    <Link
-                      to={service.link}
-                      className="mt-8 inline-flex items-center text-cyan-600 font-semibold hover:text-blue-700"
+                    <span
+                      className={`relative mt-6 inline-flex items-center gap-1.5 text-sm font-semibold ${
+                        isLead ? "text-cyan-300" : "text-cyan-700"
+                      }`}
                     >
-                      Learn More
-
-                      <ArrowRight className="ml-2 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-                    </Link>
-                  </div>
+                      Learn more
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                    </span>
+                  </Link>
                 );
               })}
             </div>
@@ -680,7 +713,6 @@ export default function SeoServicesPage() {
           </div>
         </section>
       </main>
-      <ScrollToTop />
       <Footer />
     </>
   );

@@ -15,7 +15,6 @@ import { Link } from "react-router-dom";
 
 import Navigation from "../../../components/Navigation";
 import Footer from "../../../components/Footer";
-import ScrollToTop from "../../../components/ScrollToTop";
 import Breadcrumbs from "../../../components/Breadcrumbs";
 
 const steps = [
@@ -291,7 +290,6 @@ export default function EarningMoneyWithAffiliateMarketingPage() {
       </main>
 
       <Footer />
-      <ScrollToTop />
     </>
   );
 }

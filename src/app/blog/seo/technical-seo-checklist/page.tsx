@@ -11,7 +11,6 @@ import {
 import { Helmet } from "react-helmet-async";
 import Navigation from "../../../components/Navigation";
 import Footer from "../../../components/Footer";
-import ScrollToTop from "../../../components/ScrollToTop";
 import RelatedArticles from "../../../components/blog/RelatedArticles";
 import InlineArticleLink from "../../../components/blog/InlineArticleLink";
 import { getBlogLinks } from "../../../../data/blogInternalLinks";
@@ -309,7 +308,6 @@ export default function TechnicalSeoChecklistPage() {
       </main>
 
       <Footer />
-      <ScrollToTop />
     </>
   );
 }

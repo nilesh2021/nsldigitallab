@@ -7,6 +7,7 @@ import "./styles/index.css";
 
 import App from "./app";
 import RouteScrollToTop from "./app/components/RouteScrollToTop";
+import ScrollToTop from "./app/components/ScrollToTop";
 
 import BlogPage from "./app/blog/page";
 import ClaudeLandingPage from "./app/landing/ai-tools/claudeLandingpage/page";
@@ -28,6 +29,7 @@ createRoot(document.getElementById("root")!).render(
     <HelmetProvider>
       <BrowserRouter>
         <RouteScrollToTop />
+        <ScrollToTop />
 
         <Routes>
           {resourceRoutes}

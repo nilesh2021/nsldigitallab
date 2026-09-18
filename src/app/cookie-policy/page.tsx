@@ -1,6 +1,5 @@
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import ScrollToTop from '../components/ScrollToTop';
 
 export default function CookiePolicyPage() {
   return (
@@ -214,7 +213,6 @@ export default function CookiePolicyPage() {
       </section>
 
       {/* Scroll To Top */}
-      <ScrollToTop />
 
       {/* Footer */}
       <Footer />

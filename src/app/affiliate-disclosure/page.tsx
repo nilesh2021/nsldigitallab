@@ -1,6 +1,5 @@
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import ScrollToTop from '../components/ScrollToTop';
 
 export default function AffiliateDisclosurePage() {
   return (
@@ -190,7 +189,6 @@ export default function AffiliateDisclosurePage() {
       </section>
 
       {/* Scroll To Top */}
-      <ScrollToTop />
 
       {/* Footer */}
       <Footer />

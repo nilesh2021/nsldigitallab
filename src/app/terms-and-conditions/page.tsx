@@ -1,6 +1,5 @@
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import ScrollToTop from '../components/ScrollToTop';
 
 export default function TermsAndConditionsPage() {
   return (
@@ -184,7 +183,6 @@ export default function TermsAndConditionsPage() {
       </section>
 
       {/* Scroll To Top */}
-      <ScrollToTop />
 
       {/* Footer */}
       <Footer />

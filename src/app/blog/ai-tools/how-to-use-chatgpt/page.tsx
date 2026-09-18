@@ -16,7 +16,6 @@ import SEO from "../../../../seo/SEO";
 import { PAGE_SEO } from "../../../../seo/pages";
 import Navigation from "../../../components/Navigation";
 import Footer from "../../../components/Footer";
-import ScrollToTop from "../../../components/ScrollToTop";
 import RelatedArticles from "../../../components/blog/RelatedArticles";
 
 import { getBlogLinks } from "../../../../data/blogInternalLinks";
@@ -577,7 +576,6 @@ export default function HowToUseChatGPTPage() {
       </main>
 
       <Footer />
-      <ScrollToTop />
     </>
   );
 }

@@ -11,7 +11,6 @@ import {
 import ArticleSchema from "../../../../seo/schemas/ArticleSchema";
 import Navigation from "../../../components/Navigation";
 import Footer from "../../../components/Footer";
-import ScrollToTop from "../../../components/ScrollToTop";
 import RelatedArticles from "../../../components/blog/RelatedArticles";
 import InlineArticleLink from "../../../components/blog/InlineArticleLink";
 import { getBlogLinks } from "../../../../data/blogInternalLinks";
@@ -311,7 +310,6 @@ export default function WhatIsSeoPage() {
           </div>
         </section>
       </main>
-  <ScrollToTop />
       <Footer />
     </>
   );

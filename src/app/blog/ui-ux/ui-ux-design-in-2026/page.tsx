@@ -13,7 +13,6 @@ import {
     Layers3,
     CheckCircle2,
 } from "lucide-react";
-import ScrollToTop from "../../../components/ScrollToTop";
 import RelatedArticles from "../../../components/blog/RelatedArticles";
 import InlineArticleLink from "../../../components/blog/InlineArticleLink";
 import { getBlogLinks } from "../../../../data/blogInternalLinks";
@@ -422,7 +421,6 @@ export default function UiUxFuture2026Page() {
                 </div>
 
             </main>
-  <ScrollToTop />
             <Footer />
         </>
     );

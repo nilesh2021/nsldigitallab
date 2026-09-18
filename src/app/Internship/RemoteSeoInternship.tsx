@@ -1,7 +1,6 @@
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { Helmet } from 'react-helmet-async';
-import ScrollToTop from '../components/ScrollToTop';
 import {
     ArrowRight,
     CheckCircle2,
@@ -799,7 +798,6 @@ export default function RemoteSeoInternship() {
 
                 </section>
                 <Footer />
-                <ScrollToTop />
             </main>
 
         </>

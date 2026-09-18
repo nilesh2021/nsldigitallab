@@ -15,7 +15,6 @@ import {
 
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
-import ScrollToTop from "../components/ScrollToTop";
 import CareerForm from "../components/CareerForm";
 import { PAGE_SEO } from "../../seo/pages";
 import SEO from "../../seo/SEO";
@@ -133,7 +132,6 @@ export default function CareersPage() {
     <>
       <SEO {...PAGE_SEO.careers} />
       <Navigation />
-      <ScrollToTop />
 
       <main className="min-h-screen bg-white text-[#0f172a]">
         <section className="relative overflow-hidden bg-[#060b14] pb-16 pt-28 sm:pb-20 sm:pt-32 lg:pt-36">
