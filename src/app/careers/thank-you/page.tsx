@@ -1,41 +1,51 @@
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Linkedin, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
+
+const LINKEDIN_URL = "https://www.linkedin.com/company/nsldigitallab/";
+const INSTAGRAM_URL = "https://www.instagram.com/nsldigitallab";
 
 export default function CareerThankYouPage() {
   return (
-    <main className="min-h-screen bg-[#050816] flex items-center justify-center px-6">
-      <div className="max-w-xl w-full rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-12 text-center">
+    <main className="flex min-h-screen items-center justify-center bg-[#050816] px-6 py-16">
+      <div className="w-full max-w-md rounded-3xl border border-white/10 bg-white/5 p-8 text-center backdrop-blur-xl">
+        <CheckCircle2 className="mx-auto h-14 w-14 text-green-400" />
 
-        <CheckCircle2 className="w-20 h-20 text-green-400 mx-auto" />
-
-        <h1 className="mt-8 text-4xl font-bold text-white">
-          Application Submitted!
+        <h1 className="mt-6 text-3xl font-bold text-white">
+          Application submitted
         </h1>
 
-        <p className="mt-6 text-lg text-slate-300 leading-8">
-          Thank you for applying to NSL Digital Lab.
-          <br />
-          We've received your application and will review it shortly.
+        <p className="mt-3 text-base text-slate-300">
+          We&apos;ll review it and get back to you if there&apos;s a match.
         </p>
 
-        <div className="mt-10 flex justify-center gap-4">
-
-          <Link
-            to="/careers"
-            className="px-8 py-4 rounded-xl bg-cyan-500 text-white font-semibold hover:bg-cyan-600 transition"
+        <p className="mt-8 text-sm text-slate-400">Follow us</p>
+        <div className="mt-3 flex justify-center gap-3">
+          <a
+            href={LINKEDIN_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0A66C2] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#0c75dc]"
           >
-            Back to Careers
-          </Link>
-
-          <Link
-            to="/"
-            className="px-8 py-4 rounded-xl border border-white/10 text-white hover:bg-white/10 transition"
+            <Linkedin className="h-4 w-4" />
+            LinkedIn
+          </a>
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#f58529] via-[#dd2a7b] to-[#8134af] px-5 py-3 text-sm font-semibold text-white transition hover:opacity-90"
           >
-            Go Home
-          </Link>
-
+            <Instagram className="h-4 w-4" />
+            Instagram
+          </a>
         </div>
 
+        <Link
+          to="/resources"
+          className="mt-8 inline-block text-sm font-semibold text-slate-400 transition hover:text-white"
+        >
+          Check out our free resources
+        </Link>
       </div>
     </main>
   );

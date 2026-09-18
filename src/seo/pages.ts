@@ -45,7 +45,7 @@ export const PAGE_SEO = {
   },
 
   services: {
-    title: "Servicess | NSL Digital Lab",
+    title: "Services | NSL Digital Lab",
 
     description:
       "Explore web development, UI/UX design, SEO, branding and digital marketing services offered by NSL Digital Lab.",

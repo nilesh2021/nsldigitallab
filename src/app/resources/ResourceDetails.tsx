@@ -1,22 +1,22 @@
-import { useParams, Navigate } from "react-router-dom";
+import { Link, Navigate, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
 
 import { resources } from "../../data/resources";
 import ResourceDownload from "./components/ResourceDownload";
-import Navigation from "../components/Navigation";
-import Footer from "../components/Footer";
+import MainLayout from "../layouts/MainLayout";
 
 export default function ResourceDetails() {
   const { slug } = useParams();
-
-  const resource = resources.find((r) => r.slug === slug);
+  const resource = resources.find((item) => item.slug === slug);
 
   if (!resource) {
     return <Navigate to="/resources" replace />;
   }
 
-  const siteUrl = "https://your-domain.com"; // Replace after deployment
+  const siteUrl = "https://nsldigitallab.com";
   const pageUrl = `${siteUrl}/resources/${resource.slug}`;
+  const related = resources.filter((item) => item.slug !== resource.slug).slice(0, 2);
 
   const seoTitle =
     resource.seoTitle ||
@@ -24,18 +24,13 @@ export default function ResourceDetails() {
 
   const seoDescription =
     resource.seoDescription ||
-    `Download ${resource.title} for free. Explore ready-to-use HTML, Bootstrap, Tailwind CSS, UI/UX, SEO and digital marketing resources from NSL Digital Lab.`;
+    `Download ${resource.title} for free from NSL Digital Lab.`;
 
   const seoKeywords = [
     resource.title,
     resource.category,
     ...(resource.tags || []),
     "free download",
-    "free resources",
-    "HTML templates free download",
-    "Bootstrap 5 templates free download",
-    "Tailwind CSS templates free download",
-    "website templates",
     "NSL Digital Lab",
   ].join(", ");
 
@@ -43,68 +38,126 @@ export default function ResourceDetails() {
     <>
       <Helmet>
         <title>{seoTitle}</title>
-
         <meta name="description" content={seoDescription} />
         <meta name="keywords" content={seoKeywords} />
         <meta name="robots" content="index, follow" />
-
         <link rel="canonical" href={pageUrl} />
-
         <meta property="og:type" content="website" />
         <meta property="og:title" content={seoTitle} />
         <meta property="og:description" content={seoDescription} />
         <meta property="og:url" content={pageUrl} />
         <meta property="og:site_name" content="NSL Digital Lab" />
-
-        {resource.image && (
-          <meta property="og:image" content={resource.image} />
-        )}
-
+        {resource.image && <meta property="og:image" content={resource.image} />}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={seoTitle} />
         <meta name="twitter:description" content={seoDescription} />
-
-        {resource.image && (
-          <meta name="twitter:image" content={resource.image} />
-        )}
+        {resource.image && <meta name="twitter:image" content={resource.image} />}
       </Helmet>
 
-      <Navigation />
+      <MainLayout>
+        <section className="relative overflow-hidden bg-[#060b14] pt-28 pb-10 sm:pt-32 sm:pb-12">
+          <div
+            className="pointer-events-none absolute inset-0 opacity-[0.35]"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle at 1px 1px, rgba(148,163,184,0.12) 1px, transparent 0)",
+              backgroundSize: "32px 32px",
+            }}
+          />
+          <div className="pointer-events-none absolute left-1/2 top-0 h-[320px] w-[min(100%,560px)] -translate-x-1/2 rounded-full bg-cyan-500/[0.08] blur-[110px]" />
 
-      <main className="relative overflow-hidden bg-[#07142B] pb-10">
-        {/* Decorative background */}
-        <div className="absolute inset-x-0 top-0 h-[520px] bg-gradient-to-br from-[#07142B] via-[#172B63] to-[#2D4B96]" />
+          <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
+            <Link
+              to="/resources"
+              className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-400 transition hover:text-white"
+            >
+              <ArrowLeft className="h-3.5 w-3.5" />
+              All resources
+            </Link>
 
-        <div className="absolute -left-20 -top-24 h-80 w-80 rounded-full bg-cyan-400/15 blur-[140px]" />
-        <div className="absolute right-0 top-10 h-96 w-96 rounded-full bg-blue-500/20 blur-[150px]" />
+            <div className="mt-6 grid items-start gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12">
+              <div>
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-cyan-300">
+                    {resource.category}
+                  </span>
+                  <span className="text-[11px] font-medium text-slate-400">
+                    {resource.type}
+                  </span>
+                  <span className="text-[11px] text-slate-500">
+                    {resource.downloads.toLocaleString()} downloads
+                  </span>
+                </div>
 
-        <section className="relative z-10 bg-gradient-to-br from-[#0b2a4a] via-[#182f72] to-[#3156b2] pb-8 pt-28 sm:pb-10 sm:pt-32">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                <h1 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                  {resource.title}
+                </h1>
+                <p className="mt-3 max-w-xl text-sm leading-6 text-slate-400 sm:text-base sm:leading-7">
+                  {resource.description}
+                </p>
+
+                {resource.tags?.length ? (
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {resource.tags.slice(0, 6).map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-[11px] text-slate-300"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                ) : null}
+              </div>
+
+              <div className="overflow-hidden rounded-2xl border border-white/10">
+                <img
+                  src={resource.image}
+                  alt={resource.title}
+                  className="h-52 w-full object-cover sm:h-64"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-white py-8 sm:py-10">
+          <div className="mx-auto grid max-w-7xl gap-8 px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
             <ResourceDownload
               resourceTitle={resource.title}
               downloadUrl={resource.downloadUrl}
+              type={resource.type}
             />
+
+            {related.length > 0 ? (
+              <div>
+                <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-500">
+                  More resources
+                </h2>
+                <div className="mt-3 space-y-2">
+                  {related.map((item) => (
+                    <Link
+                      key={item.id}
+                      to={`/resources/${item.slug}`}
+                      className="group flex items-center justify-between gap-3 rounded-xl border border-slate-200 px-4 py-3 transition hover:border-cyan-200 hover:bg-slate-50"
+                    >
+                      <div>
+                        <p className="text-sm font-semibold text-[#0f172a]">
+                          {item.title}
+                        </p>
+                        <p className="mt-0.5 text-xs text-slate-500">
+                          {item.category} · {item.type}
+                        </p>
+                      </div>
+                      <ArrowUpRight className="h-4 w-4 shrink-0 text-slate-400 transition group-hover:text-cyan-700" />
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ) : null}
           </div>
         </section>
-      </main>
-
-      <Footer /> <a
-  href="https://www.linkedin.com/company/nsldigitallab"
-  target="_blank"
-  rel="noreferrer"
-  aria-label="Follow NSL Digital Lab on LinkedIn"
-  className="fixed bottom-6 right-6 z-50 inline-flex items-center gap-3 rounded-full bg-[#0A66C2] px-5 py-3 font-semibold text-white shadow-xl shadow-[#0A66C2]/30 transition duration-300 hover:-translate-y-1 hover:bg-[#004182] hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-[#0A66C2]/30"
->
-  <svg
-    viewBox="0 0 24 24"
-    aria-hidden="true"
-    className="h-5 w-5 fill-current"
-  >
-    <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.94v5.67H9.33V8.99h3.42v1.57h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.27 2.38 4.27 5.47v6.27ZM5.31 7.43A2.07 2.07 0 1 1 5.3 3.3a2.07 2.07 0 0 1 .01 4.13Zm1.78 13.02H3.52V8.99h3.57v11.46ZM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0Z" />
-  </svg>
-
-  <span className="hidden sm:inline">Follow on LinkedIn</span>
-</a>
+      </MainLayout>
     </>
   );
 }

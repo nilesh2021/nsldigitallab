@@ -1,23 +1,19 @@
 import SEO from "../../seo/SEO";
-import { PAGE_SEO } from "../../seo/pages";
+import FAQSchema from "../../seo/schemas/FAQSchema";
 import MainLayout from "../layouts/MainLayout";
-import { Link } from "react-router-dom";
-
 
 import Hero from "./components/Hero";
 import Courses from "./components/Courses";
 import Benefits from "./components/Benefits";
 import Skills from "./components/Skills";
-import Roadmap from "./components/Roadmap"
+import Roadmap from "./components/Roadmap";
 import Community from "./components/Community";
-import FAQ from "./components/FAQ";
+import FAQ, { learnFaqs } from "./components/FAQ";
 import FinalCTA from "./components/FinalCTA";
 
 import NewsletterSection from "../components/common/NewsletterSection";
 
-
 export default function LearnPage() {
-
   return (
     <>
       <SEO
@@ -25,7 +21,12 @@ export default function LearnPage() {
         description="Learn UI/UX Design, SEO and Digital Marketing through free tutorials, projects, interview questions and real-world case studies."
         keywords="UI UX course, SEO course, Digital Marketing course, Learn SEO, Learn UI UX, Free digital marketing course"
       />
-
+      <FAQSchema
+        faqs={learnFaqs.map((faq) => ({
+          question: faq.q,
+          answer: faq.a,
+        }))}
+      />
 
       <MainLayout>
         <Hero />
@@ -44,14 +45,7 @@ export default function LearnPage() {
 
         <FAQ />
         <FinalCTA />
-
-
       </MainLayout>
-
-
     </>
   );
-
-
-
 }

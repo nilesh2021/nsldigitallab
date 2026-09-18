@@ -1,125 +1,69 @@
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { courses } from "../data/courses";
 
-import {
-  Palette,
-  TrendingUp,
-  Search,
-  ArrowRight
-} from "lucide-react";
-
 export default function Courses() {
-
-
-
-
   return (
-
-
-    <>
-     
-
-      <section className="py-24">
-
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-
-          <div className="text-center mb-16">
-
-            <span className="text-cyan-500 font-semibold uppercase tracking-widest">
-
-              Courses
-
+    <section
+      id="courses"
+      className="scroll-mt-24 border-t border-slate-100 bg-white py-16 sm:py-20 lg:py-24"
+    >
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-2xl">
+            <span className="inline-flex items-center rounded-full border border-cyan-200/80 bg-cyan-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-cyan-700">
+              Learning paths
             </span>
-
-            <h2 className="text-4xl font-bold text-slate-900 mt-4">
-
-              Start Your Learning Journey
-
+            <h2 className="mt-5 text-3xl font-bold tracking-tight text-[#0f172a] sm:text-4xl">
+              Pick a track.
+              <span className="block text-slate-500">Learn by doing.</span>
             </h2>
-
-            <p className="text-slate-600 mt-6 max-w-3xl mx-auto">
-
-              Whether you're beginning your career or upgrading your
-              skills, our free learning tracks are designed to help you
-              succeed.
-
-            </p>
-
           </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-            {courses.map((course) => {
-
-              const Icon = course.icon;
-
-              return (
-
-                <div
-                  key={course.title}
-                  className="rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl transition p-8"
-                >
-
-                  <div
-                    className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${course.color} flex items-center justify-center`}
-                  >
-
-                    <Icon className="text-white w-8 h-8" />
-
-                  </div>
-
-                  <h3 className="text-2xl font-bold mt-8">
-
-                    {course.title}
-
-                  </h3>
-
-                  <p className="text-slate-600 leading-7 mt-5">
-
-                    {course.description}
-
-                  </p>
-
-                  <div className="mt-8 space-y-2 text-sm">
-
-                    <p className="text-cyan-600 font-semibold">
-
-                      {course.lessons}
-
-                    </p>
-
-                    <p className="text-slate-500">
-
-                      {course.level}
-
-                    </p>
-
-                  </div>
-
-                  <Link
-                    to={course.link}
-                    className="inline-flex items-center gap-2 mt-8 text-cyan-600 font-semibold hover:gap-3 transition-all"
-                  >
-
-                    Start Learning
-
-                    <ArrowRight className="w-5 h-5" />
-
-                  </Link>
-
-                </div>
-
-              );
-
-            })}
-
-          </div>
-
+          <p className="max-w-xl text-base leading-7 text-slate-600 sm:text-lg">
+            Three focused paths. Start as a beginner and move toward portfolio
+            work, interviews, and freelance-ready skills.
+          </p>
         </div>
 
-      </section>
-    </>
+        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {courses.map((course) => {
+            const Icon = course.icon;
 
+            return (
+              <Link
+                key={course.title}
+                to={course.link}
+                className="group flex flex-col rounded-3xl border border-slate-200 bg-[#f8fafc] p-7 transition hover:-translate-y-1 hover:border-cyan-200 hover:bg-white hover:shadow-lg hover:shadow-slate-200/70"
+              >
+                <div
+                  className={`flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${course.color} text-white shadow-lg`}
+                >
+                  <Icon className="h-7 w-7" />
+                </div>
+
+                <h3 className="mt-6 text-xl font-bold text-[#0f172a]">
+                  {course.title}
+                </h3>
+                <p className="mt-3 flex-1 text-sm leading-7 text-slate-600">
+                  {course.description}
+                </p>
+
+                <div className="mt-6 flex items-center justify-between text-sm">
+                  <span className="font-semibold text-cyan-700">
+                    {course.lessons}
+                  </span>
+                  <span className="text-slate-500">{course.level}</span>
+                </div>
+
+                <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#0f172a]">
+                  Start learning
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </span>
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+    </section>
   );
-
 }

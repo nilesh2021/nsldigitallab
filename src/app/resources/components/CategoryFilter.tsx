@@ -1,29 +1,35 @@
-import { resources } from "../../../data/resources";
+type Props = {
+  categories: string[];
+  active: string;
+  onChange: (category: string) => void;
+};
 
-export default function CategoryFilter() {
-  const categories = [
-    "All",
-    ...new Set(resources.map((resource) => resource.category)),
-  ];
-
+export default function CategoryFilter({
+  categories,
+  active,
+  onChange,
+}: Props) {
   return (
-    <section className="bg-white py-10 border-b border-slate-100">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <div className="flex flex-wrap gap-2">
+      {categories.map((category) => {
+        const isActive = category === active;
 
-        <div className="flex flex-wrap justify-center gap-4">
-
-          {categories.map((category) => (
-            <button
-              key={category}
-              className="rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-cyan-500 hover:text-cyan-600 hover:shadow-md"
-            >
-              {category}
-            </button>
-          ))}
-
-        </div>
-
-      </div>
-    </section>
+        return (
+          <button
+            key={category}
+            type="button"
+            onClick={() => onChange(category)}
+            aria-pressed={isActive}
+            className={`rounded-full border px-3.5 py-1.5 text-xs font-semibold transition ${
+              isActive
+                ? "border-cyan-400 bg-cyan-400 text-[#0f172a]"
+                : "border-slate-200 bg-white text-slate-600 hover:border-cyan-400 hover:text-cyan-700"
+            }`}
+          >
+            {category}
+          </button>
+        );
+      })}
+    </div>
   );
 }

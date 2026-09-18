@@ -4,12 +4,12 @@ const faqs = [
   {
     question: "Are all resources free?",
     answer:
-      "Yes. Most resources are completely free to download after providing your email address.",
+      "Yes. Most resources are free to download after providing your email address.",
   },
   {
     question: "Who are these resources for?",
     answer:
-      "Students, job seekers, designers, marketers, business owners and anyone interested in learning digital skills.",
+      "Students, job seekers, designers, marketers, business owners and anyone building digital skills.",
   },
   {
     question: "How often do you add new resources?",
@@ -19,63 +19,42 @@ const faqs = [
   {
     question: "Can I use these resources professionally?",
     answer:
-      "Yes. Most resources are intended for personal learning and professional development. Any specific usage restrictions will be mentioned on the individual resource page.",
+      "Yes. Most are for personal learning and professional use. Any restrictions are listed on the resource page.",
   },
 ];
 
 export default function FAQ() {
   return (
-    <section className="py-24 bg-white">
+    <section className="bg-white py-10 sm:py-12">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-start">
+          <div>
+            <h2 className="text-2xl font-bold tracking-tight text-[#0f172a] sm:text-3xl">
+              Questions
+            </h2>
+            <p className="mt-2 text-sm leading-6 text-slate-600">
+              Quick answers about downloads, access and usage.
+            </p>
+          </div>
 
-      <div className="max-w-4xl mx-auto px-6">
-
-        <div className="text-center">
-
-          <span className="inline-flex rounded-full bg-cyan-100 px-4 py-2 text-sm font-semibold text-cyan-700">
-            Frequently Asked Questions
-          </span>
-
-          <h2 className="mt-6 text-4xl font-bold">
-            Have Questions?
-          </h2>
-
-          <p className="mt-5 text-slate-600">
-            Here are some of the most common questions about our free learning resources.
-          </p>
-
+          <div className="space-y-2">
+            {faqs.map((faq) => (
+              <details
+                key={faq.question}
+                className="group rounded-xl border border-slate-200 bg-white px-4 py-3"
+              >
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-semibold text-[#0f172a]">
+                  {faq.question}
+                  <ChevronDown className="h-4 w-4 shrink-0 text-slate-400 transition group-open:rotate-180" />
+                </summary>
+                <p className="mt-2 pr-8 text-sm leading-6 text-slate-600">
+                  {faq.answer}
+                </p>
+              </details>
+            ))}
+          </div>
         </div>
-
-        <div className="mt-14 space-y-5">
-
-          {faqs.map((faq) => (
-
-            <details
-              key={faq.question}
-              className="group rounded-2xl border border-slate-200 bg-white p-6"
-            >
-
-              <summary className="flex cursor-pointer list-none items-center justify-between font-semibold">
-
-                {faq.question}
-
-                <ChevronDown className="transition group-open:rotate-180" />
-
-              </summary>
-
-              <p className="mt-5 text-slate-600 leading-7">
-
-                {faq.answer}
-
-              </p>
-
-            </details>
-
-          ))}
-
-        </div>
-
       </div>
-
     </section>
   );
 }

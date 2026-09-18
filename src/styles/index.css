@@ -13,8 +13,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: "Google Sans", sans-serif;
-   /* font-family: "Sora", sans-serif; */
+  font-family: "Sora", sans-serif;
   background: #ffffff;
   color: #111827;
 }
@@ -24,15 +23,13 @@ h2,
 h3,
 h4,
 h5,
-h6 {
-  font-family: "Sora", sans-serif;  font-family: "Google Sans", sans-serif;
-}
-
+h6,
 p,
 span,
 a,
-li {
-  font-family: "Figtree", sans-serif;
+li,
+button {
+  font-family: "Sora", sans-serif;
 }
 
 * {

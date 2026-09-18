@@ -8,93 +8,64 @@ import {
 const features = [
   {
     icon: BookOpen,
-    title: "Practical Learning",
-    description:
-      "Learn with real-world templates, guides and step-by-step resources created for students and professionals.",
+    title: "Practical learning",
+    description: "Templates and guides built for real projects.",
   },
   {
     icon: Download,
-    title: "Free Downloads",
-    description:
-      "Access checklists, interview questions, templates and digital resources without any cost.",
+    title: "Free downloads",
+    description: "Checklists, interviews and files at no cost.",
   },
   {
     icon: RefreshCw,
-    title: "Regular Updates",
-    description:
-      "Our resources are updated regularly to keep up with the latest SEO, UI/UX and Digital Marketing trends.",
+    title: "Regular updates",
+    description: "New SEO, UI/UX and marketing material weekly.",
   },
   {
     icon: BadgeCheck,
-    title: "Trusted Quality",
-    description:
-      "Every resource is carefully curated to help you learn faster and apply practical skills confidently.",
+    title: "Curated quality",
+    description: "Only resources you can apply immediately.",
   },
 ];
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-24 bg-slate-50">
-
-      <div className="max-w-7xl mx-auto px-6">
-
-        <div className="text-center max-w-3xl mx-auto">
-
-          <span className="inline-flex rounded-full bg-cyan-100 px-4 py-2 text-sm font-semibold text-cyan-700">
-            Why Choose NSL Digital Lab
-          </span>
-
-          <h2 className="mt-6 text-4xl font-bold text-slate-900">
-            Learn Practical Skills With High-Quality Resources
+    <section className="border-y border-slate-100 bg-slate-50 py-10 sm:py-12">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+          <h2 className="text-2xl font-bold tracking-tight text-[#0f172a] sm:text-3xl">
+            Why these resources
           </h2>
-
-          <p className="mt-6 text-lg text-slate-600 leading-8">
-            Our goal is to help students, job seekers and professionals
-            learn in-demand digital skills using practical resources,
-            downloadable templates and real-world guides.
+          <p className="max-w-md text-sm leading-6 text-slate-600">
+            Practical files for students, job seekers and working professionals.
           </p>
-
         </div>
 
-        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-
+        <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {features.map((item) => {
-
             const Icon = item.icon;
 
             return (
               <div
                 key={item.title}
-                className="rounded-2xl bg-white p-8 shadow-sm border border-slate-200 hover:shadow-xl transition"
+                className="flex gap-3 rounded-2xl border border-slate-200 bg-white p-4"
               >
-
-                <div className="w-14 h-14 rounded-xl bg-cyan-100 flex items-center justify-center">
-
-                  <Icon className="w-7 h-7 text-cyan-600" />
-
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-cyan-50">
+                  <Icon className="h-4 w-4 text-cyan-700" />
                 </div>
-
-                <h3 className="mt-6 text-xl font-semibold">
-
-                  {item.title}
-
-                </h3>
-
-                <p className="mt-4 text-slate-600 leading-7">
-
-                  {item.description}
-
-                </p>
-
+                <div>
+                  <h3 className="text-sm font-semibold text-[#0f172a]">
+                    {item.title}
+                  </h3>
+                  <p className="mt-1 text-xs leading-5 text-slate-500">
+                    {item.description}
+                  </p>
+                </div>
               </div>
             );
-
           })}
-
         </div>
-
       </div>
-
     </section>
   );
 }

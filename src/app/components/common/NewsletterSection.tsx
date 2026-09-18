@@ -8,6 +8,7 @@ type Props = {
     subtitle: string;
     interest: string;
     source: string;
+    compact?: boolean;
 };
 
 export default function NewsletterSection({
@@ -15,6 +16,7 @@ export default function NewsletterSection({
     subtitle,
     interest,
     source,
+    compact = false,
 }: Props) {
     const [email, setEmail] = useState("");
     const [loading, setLoading] = useState(false);
@@ -52,37 +54,37 @@ if (!emailRegex.test(email)) {
     return (
         <section
             id="subscribe"
-            className="py-24 bg-gradient-to-br from-[#202851] via-[#24356d] to-[#1f5ba8]"
+            className={`${compact ? "py-10 sm:py-12" : "py-24"} bg-[#060b14]`}
         >
-            <div className="max-w-6xl mx-auto px-6">
+            <div className={`${compact ? "max-w-7xl" : "max-w-6xl"} mx-auto px-6 lg:px-8`}>
 
-                <div className="rounded-3xl bg-white/10 backdrop-blur-lg border border-white/10 p-10 lg:p-16">
+                <div className={`rounded-3xl bg-white/10 backdrop-blur-lg border border-white/10 ${compact ? "p-6 lg:p-8" : "p-10 lg:p-16"}`}>
 
-                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                    <div className={`grid lg:grid-cols-2 items-center ${compact ? "gap-8" : "gap-12"}`}>
 
                         {/* Left */}
 
                         <div>
 
-                            <span className="inline-flex rounded-full bg-cyan-400/20 px-4 py-2 text-cyan-300 text-sm font-semibold">
+                            <span className="inline-flex rounded-full bg-cyan-400/20 px-3 py-1 text-cyan-300 text-xs font-semibold">
 
-                                🚀 Free Learning Community
+                                Free Learning Community
 
                             </span>
 
-                            <h2 className="mt-6 text-4xl font-bold text-white leading-tight">
+                            <h2 className={`${compact ? "mt-3 text-2xl sm:text-3xl" : "mt-6 text-4xl"} font-bold text-white leading-tight`}>
 
                                 {title}
 
                             </h2>
 
-                            <p className="mt-6 text-lg text-slate-300 leading-8">
+                            <p className={`${compact ? "mt-3 text-sm leading-6" : "mt-6 text-lg leading-8"} text-slate-300`}>
 
                                 {subtitle}
 
                             </p>
 
-                            <div className="mt-8 space-y-4">
+                            <div className={`${compact ? "mt-5 space-y-2" : "mt-8 space-y-4"}`}>
 
                                 {[
                                     "UI/UX Templates",
@@ -106,13 +108,13 @@ if (!emailRegex.test(email)) {
 
                         {/* Right */}
 
-                        <div className="rounded-2xl bg-white p-8 shadow-2xl">
+                        <div className={`rounded-2xl bg-white shadow-2xl ${compact ? "p-5" : "p-8"}`}>
 
-                            <div className="flex items-center gap-3 mb-6">
+                            <div className={`flex items-center gap-3 ${compact ? "mb-3" : "mb-6"}`}>
 
                                 <Mail className="text-cyan-600" />
 
-                                <h3 className="text-2xl font-bold text-slate-900">
+                                <h3 className={`${compact ? "text-lg" : "text-2xl"} font-bold text-slate-900`}>
 
                                     Get Instant Access
 
@@ -120,7 +122,7 @@ if (!emailRegex.test(email)) {
 
                             </div>
 
-                            <p className="text-slate-600 mb-8">
+                            <p className={`text-slate-600 ${compact ? "mb-4 text-sm" : "mb-8"}`}>
 
                                 Enter your email to receive free resources,
                                 templates and future updates.
