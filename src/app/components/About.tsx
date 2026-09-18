@@ -82,7 +82,7 @@ export default function About() {
 
             <Link
               to="/services"
-              className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#0f172a] px-7 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#1e293b] hover:shadow-lg sm:mt-10 sm:px-8 sm:py-4 sm:text-base"
+              className="mt-8 inline-flex cursor-pointer items-center gap-2 rounded-xl bg-[#0f172a] px-7 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#1e293b] hover:shadow-lg sm:mt-10 sm:px-8 sm:py-4 sm:text-base"
             >
               View Our Services
               <ArrowRight className="h-4 w-4" />

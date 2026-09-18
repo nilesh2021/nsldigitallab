@@ -21,7 +21,14 @@ const contactDetails = [
   {
     icon: Mail,
     label: "Email",
-    value: "hello@nsldigitallab.com",
+    value: (
+      <a
+        href="mailto:hello@nsldigitallab.com"
+        className="cursor-pointer text-white hover:text-cyan-300"
+      >
+        hello@nsldigitallab.com
+      </a>
+    ),
   },
   {
     icon: MapPin,
@@ -255,7 +262,7 @@ export default function ContactCTA() {
               <button
                 type="submit"
                 disabled={loading}
-                className="flex w-full items-center justify-center gap-2 rounded-xl bg-white py-3.5 text-sm font-semibold text-[#060b14] transition-all duration-200 hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-70 sm:py-4 sm:text-base"
+                className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-white py-3.5 text-sm font-semibold text-[#060b14] transition-all duration-200 hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-70 sm:py-4 sm:text-base"
               >
                 {loading ? (
                   <>

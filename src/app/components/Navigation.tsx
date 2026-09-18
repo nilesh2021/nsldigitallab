@@ -180,7 +180,7 @@ export default function Navigation({
   return (
     <header className="fixed inset-x-0 top-0 z-50">
       <div
-        className={`pointer-events-none absolute inset-x-0 top-0 h-24 transition-opacity duration-500 ${
+        className={`pointer-events-none absolute inset-x-0 top-0 h-16 sm:h-24 transition-opacity duration-500 ${
           isSolid ? 'opacity-100' : 'opacity-0'
         }`}
         style={{
@@ -189,11 +189,11 @@ export default function Navigation({
         }}
       />
 
-      <nav className="relative mx-auto max-w-7xl px-4 pt-3 sm:px-6 lg:px-8">
+      <nav className="relative z-[60] mx-auto max-w-7xl px-3 pt-2 sm:px-6 sm:pt-3 lg:px-8">
         <div
           className={`
-            flex items-center justify-between gap-3 rounded-2xl border px-3 py-2
-            transition-all duration-500 sm:px-3.5
+            flex items-center justify-between gap-2 rounded-xl border px-2 py-1
+            transition-all duration-500 sm:gap-3 sm:rounded-2xl sm:px-3.5 sm:py-2
             ${
               isSolid
                 ? 'border-white/[0.08] bg-[#0a101c]/80 shadow-[0_18px_50px_-24px_rgba(0,0,0,0.85)] backdrop-blur-xl'
@@ -204,18 +204,18 @@ export default function Navigation({
           <button
             type="button"
             onClick={scrollToTop}
-            className="group flex min-w-0 items-center gap-3 rounded-xl px-1 py-0.5 text-left"
+            className="group flex min-w-0 cursor-pointer items-center gap-2 rounded-lg px-0.5 py-0 text-left sm:gap-3 sm:rounded-xl sm:px-1 sm:py-0.5"
             aria-label="NSL Digital Lab home"
           >
-            <div className="relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-white/10 bg-white/[0.04]">
+            <div className="relative flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-white/10 bg-white/[0.04] sm:h-10 sm:w-10 sm:rounded-xl">
               <span className="absolute inset-0 bg-gradient-to-br from-cyan-400/15 to-violet-500/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-              <img src={logo} alt="" className="h-7 w-7 object-contain" />
+              <img src={logo} alt="" className="h-5 w-5 object-contain sm:h-7 sm:w-7" />
             </div>
 
             <div className="min-w-0">
-              <p className="truncate text-[15px] font-semibold leading-none tracking-tight text-white sm:text-base">
+              <p className="truncate text-[13px] font-semibold leading-none tracking-tight text-white sm:text-base">
                 NSL
-                <span className="ml-1.5 font-light text-slate-300">Digital Lab</span>
+                <span className="ml-1 font-light text-slate-300 sm:ml-1.5">Digital Lab</span>
               </p>
               <p className="mt-1 hidden text-[10px] font-medium uppercase tracking-[0.18em] text-slate-500 sm:block">
                 Design · Development · Growth
@@ -233,7 +233,7 @@ export default function Navigation({
                   type="button"
                   onClick={() => handleNavItem(item)}
                   aria-current={active ? 'page' : undefined}
-                  className={`relative rounded-full px-2.5 py-1.5 text-[12px] font-medium transition-colors duration-200 lg:px-3.5 lg:text-[13px] ${
+                  className={`relative cursor-pointer rounded-full px-2.5 py-1.5 text-[12px] font-medium transition-colors duration-200 lg:px-3.5 lg:text-[13px] ${
                     active
                       ? 'bg-white/[0.08] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]'
                       : 'text-slate-300 hover:text-white'
@@ -253,7 +253,7 @@ export default function Navigation({
               type="button"
               onClick={() => goToPage('/careers')}
               aria-current={isCareersActive ? 'page' : undefined}
-              className={`hidden items-center rounded-full px-3 py-2 text-[13px] font-medium transition-colors duration-200 lg:inline-flex ${
+              className={`hidden cursor-pointer items-center rounded-full px-3 py-2 text-[13px] font-medium transition-colors duration-200 lg:inline-flex ${
                 isCareersActive ? 'text-white' : 'text-slate-400 hover:text-white'
               }`}
             >
@@ -263,7 +263,7 @@ export default function Navigation({
             <button
               type="button"
               onClick={() => scrollToSection('contact')}
-              className="hidden items-center gap-1.5 rounded-full bg-white px-4 py-2 text-[13px] font-semibold text-[#060b14] shadow-[0_0_0_1px_rgba(255,255,255,0.08)] transition-all duration-200 hover:-translate-y-px hover:bg-slate-100 sm:inline-flex"
+              className="hidden cursor-pointer items-center gap-1.5 rounded-full bg-white px-4 py-2 text-[13px] font-semibold text-[#060b14] shadow-[0_0_0_1px_rgba(255,255,255,0.08)] transition-all duration-200 hover:-translate-y-px hover:bg-slate-100 md:inline-flex"
             >
               Let&apos;s talk
               <ArrowUpRight className="h-3.5 w-3.5" />
@@ -272,15 +272,15 @@ export default function Navigation({
             <button
               type="button"
               onClick={() => setIsMobileMenuOpen((open) => !open)}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-white transition-colors duration-200 hover:bg-white/[0.08] md:hidden"
+              className="inline-flex h-8 w-8 cursor-pointer items-center justify-center rounded-lg border border-white/10 bg-white/[0.04] text-white transition-colors duration-200 hover:bg-white/[0.08] md:hidden"
               aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={isMobileMenuOpen}
               aria-controls="mobile-nav"
             >
               {isMobileMenuOpen ? (
-                <X className="h-5 w-5" strokeWidth={1.75} />
+                <X className="h-4 w-4" strokeWidth={1.75} />
               ) : (
-                <Menu className="h-5 w-5" strokeWidth={1.75} />
+                <Menu className="h-4 w-4" strokeWidth={1.75} />
               )}
             </button>
           </div>
@@ -291,7 +291,7 @@ export default function Navigation({
         id="mobile-nav"
         aria-hidden={!isMobileMenuOpen}
         inert={!isMobileMenuOpen}
-        className={`md:hidden ${isMobileMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}
+        className={`relative z-[55] md:hidden ${isMobileMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}
       >
         <button
           type="button"
@@ -304,19 +304,13 @@ export default function Navigation({
 
         <div
           className={`
-            relative z-50 mx-4 mt-2 overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0c1424]/95 shadow-2xl backdrop-blur-xl
+            relative z-50 mx-3 mt-1.5 overflow-hidden rounded-xl border border-white/[0.08] bg-[#0c1424]/95 shadow-2xl backdrop-blur-xl
             transition-all duration-300
             ${isMobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-2 opacity-0'}
           `}
         >
-          <div className="border-b border-white/[0.06] px-4 py-3">
-            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-slate-500">
-              Menu
-            </p>
-          </div>
-
-          <div className="flex flex-col p-2">
-            {navItems.map((item, index) => {
+          <div className="flex flex-col p-1.5">
+            {navItems.map((item) => {
               const active = isItemActive(item);
 
               return (
@@ -325,39 +319,34 @@ export default function Navigation({
                   type="button"
                   onClick={() => handleNavItem(item)}
                   aria-current={active ? 'page' : undefined}
-                  className={`flex items-center justify-between rounded-xl px-3 py-3 text-left transition-colors duration-200 ${
+                  className={`flex cursor-pointer items-center justify-between rounded-lg px-2.5 py-2 text-left transition-colors duration-200 ${
                     active ? 'bg-white/[0.06]' : 'hover:bg-white/[0.04]'
                   }`}
                 >
-                  <span>
-                    <span className={`block text-[15px] font-medium ${active ? 'text-white' : 'text-slate-200'}`}>
-                      {item.label}
-                    </span>
-                    <span className="mt-0.5 block text-[12px] text-slate-500">{item.hint}</span>
+                  <span className={`text-[14px] font-medium ${active ? 'text-white' : 'text-slate-200'}`}>
+                    {item.label}
                   </span>
-                  <span className="text-[11px] tabular-nums text-slate-600">
-                    0{index + 1}
-                  </span>
+                  <span className="text-[11px] text-slate-500">{item.hint}</span>
                 </button>
               );
             })}
           </div>
 
-          <div className="grid grid-cols-2 gap-2 border-t border-white/[0.06] p-3">
+          <div className="grid grid-cols-2 gap-1.5 border-t border-white/[0.06] p-2">
             <button
               type="button"
               onClick={() => goToPage('/careers')}
-              className="rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-[13px] font-medium text-slate-200"
+              className="cursor-pointer rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2 text-[12px] font-medium text-slate-200"
             >
               Careers
             </button>
             <button
               type="button"
               onClick={() => scrollToSection('contact')}
-              className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-white px-4 py-3 text-[13px] font-semibold text-[#060b14]"
+              className="inline-flex cursor-pointer items-center justify-center gap-1 rounded-lg bg-white px-3 py-2 text-[12px] font-semibold text-[#060b14]"
             >
               Let&apos;s talk
-              <ArrowUpRight className="h-4 w-4" />
+              <ArrowUpRight className="h-3.5 w-3.5" />
             </button>
           </div>
         </div>

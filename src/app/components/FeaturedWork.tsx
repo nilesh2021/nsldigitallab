@@ -146,7 +146,7 @@ export default function FeaturedWork() {
           <p className="text-slate-600">Interested in seeing more of our work?</p>
           <Link
             to="/services"
-            className="inline-flex items-center gap-2 rounded-xl bg-[#0f172a] px-7 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#1e293b] hover:shadow-lg sm:px-8 sm:text-base"
+            className="inline-flex cursor-pointer items-center gap-2 rounded-xl bg-[#0f172a] px-7 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#1e293b] hover:shadow-lg sm:px-8 sm:text-base"
           >
             Explore Our Services
             <ArrowRight className="h-4 w-4" />

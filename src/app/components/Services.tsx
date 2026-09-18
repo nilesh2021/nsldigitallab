@@ -91,7 +91,7 @@ export default function Services() {
             <Link
               key={service.title}
               to={service.href}
-              className="group relative overflow-hidden rounded-[1.75rem] border border-slate-200/80 bg-[#060b14] p-7 text-white sm:p-8 lg:col-span-6"
+              className="group relative cursor-pointer overflow-hidden rounded-[1.75rem] border border-slate-200/80 bg-[#060b14] p-7 text-white sm:p-8 lg:col-span-6"
             >
               <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-cyan-500/15 blur-3xl transition-opacity group-hover:opacity-100" />
               <div className="relative flex h-full flex-col">
@@ -117,7 +117,7 @@ export default function Services() {
             <Link
               key={service.title}
               to={service.href}
-              className="group flex flex-col rounded-[1.5rem] border border-slate-200/80 bg-slate-50 p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-200 hover:bg-white hover:shadow-lg hover:shadow-slate-200/60 lg:col-span-3"
+              className="group flex cursor-pointer flex-col rounded-[1.5rem] border border-slate-200/80 bg-slate-50 p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-200 hover:bg-white hover:shadow-lg hover:shadow-slate-200/60 lg:col-span-3"
             >
               <div className="flex items-center justify-between">
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-cyan-600 shadow-sm ring-1 ring-slate-200">
@@ -147,7 +147,7 @@ export default function Services() {
           </p>
           <Link
             to="/services"
-            className="inline-flex items-center gap-2 rounded-xl bg-[#0f172a] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#1e293b]"
+            className="inline-flex cursor-pointer items-center gap-2 rounded-xl bg-[#0f172a] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#1e293b]"
           >
             View all services
             <ArrowUpRight className="h-4 w-4" />

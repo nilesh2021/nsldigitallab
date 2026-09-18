@@ -80,7 +80,7 @@ export default function Hero() {
               <button
                 type="button"
                 onClick={handleContactClick}
-                className="inline-flex items-center justify-center gap-2.5 rounded-xl bg-white px-7 py-3.5 text-sm font-semibold text-[#060b14] shadow-lg shadow-black/20 transition-all duration-200 hover:-translate-y-0.5 hover:bg-slate-100 sm:px-8 sm:py-4 sm:text-base"
+                className="inline-flex cursor-pointer items-center justify-center gap-2.5 rounded-xl bg-white px-7 py-3.5 text-sm font-semibold text-[#060b14] shadow-lg shadow-black/20 transition-all duration-200 hover:-translate-y-0.5 hover:bg-slate-100 sm:px-8 sm:py-4 sm:text-base"
               >
                 <Rocket className="h-4 w-4 sm:h-5 sm:w-5" />
                 Get Free Consultation
@@ -88,7 +88,7 @@ export default function Hero() {
 
               <Link
                 to="/services"
-                className="inline-flex items-center justify-center gap-2.5 rounded-xl border border-white/10 bg-white/[0.04] px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.08] sm:px-8 sm:py-4 sm:text-base"
+                className="inline-flex cursor-pointer items-center justify-center gap-2.5 rounded-xl border border-white/10 bg-white/[0.04] px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.08] sm:px-8 sm:py-4 sm:text-base"
               >
                 <Play className="h-4 w-4 sm:h-5 sm:w-5" />
                 View Services

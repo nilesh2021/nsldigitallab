@@ -64,7 +64,7 @@ function FooterNavLink({
   onSectionClick: (id: string, path: string) => void;
 }) {
   const className =
-    "text-sm text-slate-400 transition-colors duration-200 hover:text-white";
+    "cursor-pointer text-[13px] leading-5 text-slate-400 transition-colors duration-200 hover:text-white";
 
   if (link.hash) {
     return (
@@ -130,54 +130,54 @@ export default function Footer() {
       <div className="pointer-events-none absolute -left-24 top-0 h-72 w-72 rounded-full bg-cyan-500/[0.06] blur-[100px]" />
       <div className="pointer-events-none absolute -right-16 bottom-0 h-64 w-64 rounded-full bg-violet-600/[0.06] blur-[90px]" />
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="flex flex-col gap-6 border-b border-white/[0.08] py-10 lg:flex-row lg:items-center lg:justify-between">
+      <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
+        <div className="flex flex-col gap-4 border-b border-white/[0.08] py-6 lg:flex-row lg:items-center lg:justify-between">
           <div>
-            <p className="text-lg font-semibold tracking-tight text-white sm:text-xl">
+            <p className="text-base font-semibold tracking-tight text-white sm:text-lg">
               Ready to grow your digital presence?
             </p>
-            <p className="mt-1 text-sm text-slate-400">
+            <p className="mt-0.5 text-[13px] text-slate-400">
               Tell us about your project — we usually reply within 24 hours.
             </p>
           </div>
 
-          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <div className="flex flex-row flex-wrap gap-2">
             <button
               type="button"
               onClick={() => scrollToSection("contact", "/")}
-              className="inline-flex shrink-0 items-center justify-center gap-1.5 whitespace-nowrap rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-[#060b14] transition-all duration-200 hover:-translate-y-px hover:bg-slate-100"
+              className="inline-flex shrink-0 cursor-pointer items-center justify-center gap-1.5 whitespace-nowrap rounded-full bg-white px-4 py-2 text-[13px] font-semibold text-[#060b14] transition-all duration-200 hover:-translate-y-px hover:bg-slate-100"
             >
               Let&apos;s talk
               <ArrowUpRight className="h-3.5 w-3.5" />
             </button>
             <a
               href="mailto:hello@nsldigitallab.com"
-              className="inline-flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full border border-white/10 bg-white/[0.04] px-5 py-2.5 text-sm font-medium text-slate-200 transition-colors hover:bg-white/[0.08] hover:text-white"
+              className="inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-[13px] font-medium text-slate-200 transition-colors hover:bg-white/[0.08] hover:text-white"
             >
-              <Mail className="h-4 w-4 text-cyan-400" />
+              <Mail className="h-3.5 w-3.5 text-cyan-400" />
               hello@nsldigitallab.com
             </a>
           </div>
         </div>
 
-        <div className="grid gap-10 py-12 lg:grid-cols-6 lg:gap-12">
-          <div className="lg:col-span-2">
-            <Link to="/" className="group inline-flex items-center gap-3">
-              <div className="relative flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-white/10 bg-white/[0.04]">
-                <img src={logo} alt="" className="h-7 w-7 object-contain" />
+        <div className="grid grid-cols-2 gap-x-4 gap-y-6 py-8 sm:grid-cols-4 lg:grid-cols-6 lg:gap-8">
+          <div className="col-span-2 sm:col-span-4 lg:col-span-2">
+            <Link to="/" className="group inline-flex cursor-pointer items-center gap-2.5">
+              <div className="relative flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-white/10 bg-white/[0.04]">
+                <img src={logo} alt="" className="h-6 w-6 object-contain" />
               </div>
               <div>
-                <p className="text-[15px] font-semibold leading-none tracking-tight text-white sm:text-base">
+                <p className="text-sm font-semibold leading-none tracking-tight text-white">
                   NSL
                   <span className="ml-1.5 font-light text-slate-300">Digital Lab</span>
                 </p>
-                <p className="mt-1.5 text-[10px] font-medium uppercase tracking-[0.18em] text-slate-500">
+                <p className="mt-1 text-[10px] font-medium uppercase tracking-[0.16em] text-slate-500">
                   Design · Development · Growth
                 </p>
               </div>
             </Link>
 
-            <p className="mt-6 max-w-sm text-sm leading-7 text-slate-400">
+            <p className="mt-4 max-w-sm text-[13px] leading-6 text-slate-400">
               We help businesses build modern websites, improve user experience,
               rank better in search, and grow through design, development, SEO,
               and digital marketing.
@@ -188,18 +188,18 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="NSL Digital Lab on LinkedIn"
-              className="mt-7 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-slate-300 transition-all duration-200 hover:border-cyan-400/30 hover:bg-cyan-500/15 hover:text-white"
+              className="mt-4 inline-flex h-8 w-8 cursor-pointer items-center justify-center rounded-lg border border-white/10 bg-white/[0.04] text-slate-300 transition-all duration-200 hover:border-cyan-400/30 hover:bg-cyan-500/15 hover:text-white"
             >
-              <Linkedin className="h-4 w-4" />
+              <Linkedin className="h-3.5 w-3.5" />
             </a>
           </div>
 
           {columns.map((column) => (
             <nav key={column.title} aria-label={column.title}>
-              <h2 className="mb-5 text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
+              <h2 className="mb-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500">
                 {column.title}
               </h2>
-              <ul className="space-y-3">
+              <ul className="space-y-1.5">
                 {column.links.map((link) => (
                   <li key={`${column.title}-${link.label}`}>
                     <FooterNavLink link={link} onSectionClick={scrollToSection} />
@@ -210,8 +210,8 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="flex flex-col items-center justify-between gap-5 border-t border-white/[0.08] py-6 lg:flex-row">
-          <p className="text-center text-sm text-slate-500 lg:text-left">
+        <div className="flex flex-col items-center justify-between gap-3 border-t border-white/[0.08] py-4 lg:flex-row">
+          <p className="text-center text-[13px] text-slate-500 lg:text-left">
             © {new Date().getFullYear()}{" "}
             <span className="font-medium text-slate-300">NSL Digital Lab</span>
             . All rights reserved.
@@ -219,13 +219,13 @@ export default function Footer() {
 
           <nav
             aria-label="Legal"
-            className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm"
+            className="flex flex-wrap justify-center gap-x-4 gap-y-1 text-[13px]"
           >
             {policyLinks.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
-                className="text-slate-500 transition-colors duration-200 hover:text-white"
+                className="cursor-pointer text-slate-500 transition-colors duration-200 hover:text-white"
               >
                 {link.label}
               </Link>
