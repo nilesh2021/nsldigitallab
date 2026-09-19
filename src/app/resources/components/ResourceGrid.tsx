@@ -17,14 +17,17 @@ export default function ResourceGrid() {
       : resources.filter((resource) => resource.category === activeCategory);
 
   return (
-    <section className="scroll-mt-24 bg-white py-10 sm:py-12" id="resourcesGrid">
+    <section
+      className="scroll-mt-24 border-t border-slate-100 bg-slate-50 py-16 sm:py-20 lg:py-24"
+      id="resourcesGrid"
+    >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+        <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <h2 className="text-2xl font-bold tracking-tight text-[#0f172a] sm:text-3xl">
               Browse the library
             </h2>
-            <p className="mt-1.5 max-w-xl text-sm leading-6 text-slate-600">
+            <p className="mt-2 max-w-xl text-sm leading-6 text-slate-600 sm:text-base">
               Templates, checklists, interview questions and practical tools.
             </p>
           </div>
@@ -36,13 +39,7 @@ export default function ResourceGrid() {
           />
         </div>
 
-        <div
-          className={`mt-7 grid gap-4 ${
-            filteredResources.length === 1
-              ? "max-w-xl"
-              : "sm:grid-cols-2 xl:grid-cols-3"
-          }`}
-        >
+        <div className="mt-10 divide-y divide-slate-200 overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white">
           {filteredResources.map((resource) => (
             <ResourceCard key={resource.id} resource={resource} />
           ))}

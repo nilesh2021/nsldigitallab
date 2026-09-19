@@ -31,6 +31,9 @@ const resourceLinks: FooterLink[] = [
   { label: "UI/UX Interview Questions", to: "/resources/ui-ux-interview-questions" },
   { label: "SEO Checklist", to: "/resources/seo-checklist" },
   { label: "Marketing Checklist", to: "/resources/digital-marketing-checklist" },
+  { label: "Website Launch Checklist", to: "/resources/website-launch-checklist" },
+  { label: "Figma UI Kit", to: "/resources/figma-ui-kit" },
+  { label: "ChatGPT Prompt Pack", to: "/resources/chatgpt-prompt-pack" },
   { label: "Blog", to: "/blog" },
 ];
 

@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
+  ArrowUpRight,
   BookOpen,
   CheckCircle2,
   GraduationCap,
+  Inbox,
   Instagram,
   Linkedin,
-  Mail,
-  Newspaper,
   Sparkles,
 } from "lucide-react";
 
@@ -21,16 +21,21 @@ const INSTAGRAM_URL = "https://www.instagram.com/nsldigitallab";
 
 const nextSteps = [
   {
-    title: "Grab a starter resource",
-    description: "Download a template or interview pack and start using it this week.",
+    n: "01",
+    title: "Check your inbox",
+    description: "Look for NSL Digital Lab. If it is not there, check spam and promotions.",
   },
   {
+    n: "02",
+    title: "Download one resource",
+    description: "Start with a checklist or interview pack you can use this week.",
+    href: "#start-here",
+  },
+  {
+    n: "03",
     title: "Follow a learning path",
-    description: "Pick UI/UX, SEO, or digital marketing and build skills in a clear order.",
-  },
-  {
-    title: "Stay in the loop",
-    description: "New checklists, templates, and guides go out to this list first.",
+    description: "UI/UX, SEO, or digital marketing — pick one and keep going.",
+    href: "#paths",
   },
 ];
 
@@ -38,114 +43,158 @@ const learningPaths = [
   {
     to: "/learn/ui-ux-design",
     title: "UI/UX Design",
-    description: "Design thinking, Figma, wireframes, prototypes, and portfolio work.",
+    description: "Figma, wireframes, and portfolio-ready process.",
     icon: Sparkles,
   },
   {
     to: "/learn/seo",
     title: "SEO",
-    description: "Technical SEO, on-page work, keyword research, and Search Console.",
+    description: "Technical SEO, keywords, and Search Console.",
     icon: BookOpen,
   },
   {
     to: "/learn/digital-marketing",
     title: "Digital Marketing",
-    description: "Social, content, paid ads, and email campaigns that actually convert.",
+    description: "Content, social, ads, and conversion tracking.",
     icon: GraduationCap,
   },
 ];
 
 export default function ResourcesWelcomePage() {
-  const featuredResources = resources.slice(0, 4);
+  const featuredResources = [
+    ...resources.filter((resource) => resource.featured),
+    ...resources.filter((resource) => !resource.featured),
+  ].slice(0, 3);
 
   return (
     <>
       <SEO
-        title="Welcome | NSL Digital Lab"
-        description="You're in. Explore free UI/UX, SEO, and digital marketing resources from NSL Digital Lab."
+        title="You're in | NSL Digital Lab"
+        description="You're on the list. Download a free resource and start with UI/UX, SEO, or digital marketing."
         canonical="/resources/welcome"
         robots="noindex, follow"
       />
 
       <MainLayout>
-        <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,0.2),_transparent_35%),linear-gradient(135deg,_#07111f_0%,_#0f1f3d_45%,_#172b51_100%)] px-6 py-20 md:py-28">
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:56px_56px]" />
+        <section className="relative overflow-hidden bg-[#060b14] pt-28 pb-14 sm:pt-32 sm:pb-16">
+          <div
+            className="pointer-events-none absolute inset-0 opacity-[0.35]"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle at 1px 1px, rgba(148,163,184,0.12) 1px, transparent 0)",
+              backgroundSize: "32px 32px",
+            }}
+          />
+          <div className="pointer-events-none absolute left-1/2 top-0 h-[360px] w-[min(100%,640px)] -translate-x-1/2 rounded-full bg-emerald-400/[0.08] blur-[110px]" />
 
-          <div className="relative mx-auto max-w-6xl">
-            <div className="rounded-[32px] border border-white/10 bg-slate-950/70 p-8 shadow-2xl shadow-cyan-950/40 backdrop-blur-xl md:p-10 lg:p-12">
-              <div className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-4 py-2 text-sm font-medium text-emerald-300">
-                <Mail className="h-4 w-4" />
-                You&apos;re on the list
-              </div>
+          <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
+            <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1.5 text-xs font-medium text-emerald-300">
+              <CheckCircle2 className="h-3.5 w-3.5" />
+              You&apos;re on the list
+            </span>
 
-              <div className="mt-8 grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
-                <div>
-                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-emerald-500/15 text-emerald-300">
-                    <CheckCircle2 className="h-9 w-9" />
-                  </div>
+            <div className="mt-6 grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
+              <div className="max-w-2xl">
+                <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl lg:leading-tight">
+                  Welcome in.
+                  <span className="mt-1 block text-slate-400">
+                    Grab a file, then keep learning.
+                  </span>
+                </h1>
+                <p className="mt-4 max-w-xl text-sm leading-6 text-slate-400 sm:text-base sm:leading-7">
+                  Thanks for joining. Your next step is simple: download one
+                  resource you will actually use this week.
+                </p>
 
-                  <h1 className="mt-8 text-4xl font-bold tracking-tight text-white sm:text-5xl">
-                    Welcome to NSL Digital Lab
-                  </h1>
-
-                  <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-300">
-                    Thanks for joining. You now have access to free templates, interview
-                    packs, and learning paths for students, designers, and marketers.
-                  </p>
-
-                  <div className="mt-8 flex flex-wrap gap-4">
-                    <Link
-                      to="/resources"
-                      className="inline-flex items-center gap-2 rounded-xl bg-cyan-500 px-6 py-3.5 font-semibold text-white transition hover:bg-cyan-400"
-                    >
-                      Browse resources
-                      <ArrowRight className="h-5 w-5" />
-                    </Link>
-                    <Link
-                      to="/learn"
-                      className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-6 py-3.5 font-semibold text-white transition hover:bg-white/10"
-                    >
-                      Start learning
-                    </Link>
-                  </div>
+                <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+                  <a
+                    href="#start-here"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-400 px-5 py-2.5 text-sm font-semibold text-[#0f172a] transition hover:bg-cyan-300"
+                  >
+                    Choose a download
+                    <ArrowRight className="h-4 w-4" />
+                  </a>
+                  <Link
+                    to="/resources"
+                    className="inline-flex items-center justify-center gap-1.5 text-sm font-medium text-slate-300 transition hover:text-white"
+                  >
+                    Browse the full library
+                    <ArrowUpRight className="h-3.5 w-3.5" />
+                  </Link>
                 </div>
 
-                <div className="rounded-3xl border border-white/10 bg-white/5 p-6 md:p-7">
-                  <h2 className="text-xl font-semibold text-white">What to do next</h2>
-                  <ul className="mt-6 space-y-5">
-                    {nextSteps.map((step, index) => (
-                      <li key={step.title} className="flex gap-3 text-sm text-slate-300">
-                        <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-cyan-500/15 text-xs font-semibold text-cyan-300">
-                          {index + 1}
-                        </span>
-                        <span>
-                          <span className="block font-semibold text-white">{step.title}</span>
-                          <span className="mt-1 block leading-6">{step.description}</span>
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <p className="mt-5 inline-flex items-start gap-2 text-xs leading-5 text-slate-500">
+                  <Inbox className="mt-0.5 h-3.5 w-3.5 shrink-0 text-cyan-400" />
+                  We sent a confirmation to your inbox. Check spam if you do not
+                  see it in a few minutes.
+                </p>
               </div>
+
+              <ol className="space-y-3">
+                {nextSteps.map((step) => {
+                  const content = (
+                    <>
+                      <span className="font-mono text-xs font-semibold text-cyan-300">
+                        {step.n}
+                      </span>
+                      <span>
+                        <span className="block text-sm font-semibold text-white">
+                          {step.title}
+                        </span>
+                        <span className="mt-0.5 block text-xs leading-5 text-slate-400">
+                          {step.description}
+                        </span>
+                      </span>
+                    </>
+                  );
+
+                  return (
+                    <li key={step.n}>
+                      {step.href ? (
+                        <a
+                          href={step.href}
+                          className="flex gap-3 rounded-2xl border border-white/[0.08] bg-white/[0.04] px-4 py-3.5 transition hover:border-cyan-400/30 hover:bg-white/[0.06]"
+                        >
+                          {content}
+                        </a>
+                      ) : (
+                        <div className="flex gap-3 rounded-2xl border border-white/[0.08] bg-white/[0.04] px-4 py-3.5">
+                          {content}
+                        </div>
+                      )}
+                    </li>
+                  );
+                })}
+              </ol>
             </div>
           </div>
         </section>
 
-        <section className="bg-slate-50 py-20">
-          <div className="mx-auto max-w-6xl px-6">
-            <div className="max-w-2xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-600">
-                Start here
-              </p>
-              <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">
-                Free resources to download today
-              </h2>
-              <p className="mt-4 text-lg text-slate-600">
-                Practical files you can use immediately — not another inbox of fluff.
-              </p>
+        <section
+          id="start-here"
+          className="scroll-mt-24 border-t border-slate-100 bg-slate-50 py-14 sm:py-16"
+        >
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <h2 className="text-2xl font-bold tracking-tight text-[#0f172a] sm:text-3xl">
+                  Start with one of these
+                </h2>
+                <p className="mt-2 max-w-xl text-sm leading-6 text-slate-600">
+                  Three practical downloads. Pick the one closest to what you are
+                  working on.
+                </p>
+              </div>
+              <Link
+                to="/resources"
+                className="inline-flex items-center gap-1 text-sm font-semibold text-cyan-700"
+              >
+                See all resources
+                <ArrowRight className="h-4 w-4" />
+              </Link>
             </div>
 
-            <div className="mt-10 grid gap-5 md:grid-cols-2">
+            <div className="mt-8 divide-y divide-slate-200 overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white">
               {featuredResources.map((resource) => (
                 <ResourceCard key={resource.id} resource={resource} />
               ))}
@@ -153,34 +202,39 @@ export default function ResourcesWelcomePage() {
           </div>
         </section>
 
-        <section className="bg-white py-20">
-          <div className="mx-auto max-w-6xl px-6">
-            <div className="text-center">
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-600">
-                Continue learning
-              </p>
-              <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">
-                Pick a path and keep going
+        <section id="paths" className="scroll-mt-24 bg-white py-14 sm:py-16">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div>
+              <h2 className="text-2xl font-bold tracking-tight text-[#0f172a] sm:text-3xl">
+                Or follow a learning path
               </h2>
+              <p className="mt-2 max-w-xl text-sm leading-6 text-slate-600">
+                Optional. Use this if you want a sequence instead of a single file.
+              </p>
             </div>
 
-            <div className="mt-12 grid gap-6 md:grid-cols-3">
+            <div className="mt-8 grid gap-4 sm:grid-cols-3">
               {learningPaths.map((path) => {
                 const Icon = path.icon;
+
                 return (
                   <Link
                     key={path.to}
                     to={path.to}
-                    className="rounded-3xl border border-slate-200 bg-slate-50 p-8 transition hover:-translate-y-1 hover:border-cyan-200 hover:shadow-lg"
+                    className="group rounded-[1.25rem] border border-slate-200 bg-slate-50 p-5 transition hover:border-cyan-200 hover:bg-white hover:shadow-md hover:shadow-slate-200/60"
                   >
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-50 text-cyan-600">
-                      <Icon className="h-6 w-6" />
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-cyan-600 ring-1 ring-slate-200">
+                      <Icon className="h-4 w-4" />
                     </div>
-                    <h3 className="mt-5 text-2xl font-semibold text-slate-900">{path.title}</h3>
-                    <p className="mt-3 text-slate-600">{path.description}</p>
-                    <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-cyan-700">
+                    <h3 className="mt-4 text-base font-semibold text-[#0f172a]">
+                      {path.title}
+                    </h3>
+                    <p className="mt-1.5 text-sm leading-6 text-slate-600">
+                      {path.description}
+                    </p>
+                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-cyan-700">
                       Open path
-                      <ArrowRight className="h-4 w-4" />
+                      <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
                     </span>
                   </Link>
                 );
@@ -189,50 +243,42 @@ export default function ResourcesWelcomePage() {
           </div>
         </section>
 
-        <section className="bg-slate-50 pb-24 pt-4">
-          <div className="mx-auto max-w-6xl px-6">
-            <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-              <div className="rounded-3xl border border-slate-200 bg-white p-8 md:p-10">
-                <Newspaper className="h-8 w-8 text-cyan-600" />
-                <h2 className="mt-5 text-3xl font-bold text-slate-900">Read the latest guides</h2>
-                <p className="mt-3 text-lg text-slate-600">
-                  Tutorials and career notes from the same team behind these resources.
-                </p>
-                <Link
-                  to="/blog"
-                  className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#0f1f3d] px-6 py-3.5 font-semibold text-white transition hover:bg-[#172b51]"
-                >
-                  Visit the blog
-                  <ArrowRight className="h-5 w-5" />
-                </Link>
-              </div>
-
-              <div className="rounded-3xl bg-[#07111f] p-8 text-white md:p-10">
-                <h2 className="text-3xl font-bold">Follow along</h2>
-                <p className="mt-3 text-slate-300">
-                  Short updates, new drops, and behind-the-scenes work from the lab.
-                </p>
-                <div className="mt-8 flex flex-wrap gap-3">
-                  <a
-                    href={LINKEDIN_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-xl bg-[#0A66C2] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#0c75dc]"
-                  >
-                    <Linkedin className="h-4 w-4" />
-                    LinkedIn
-                  </a>
-                  <a
-                    href={INSTAGRAM_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#f58529] via-[#dd2a7b] to-[#8134af] px-5 py-3 text-sm font-semibold text-white transition hover:opacity-90"
-                  >
-                    <Instagram className="h-4 w-4" />
-                    Instagram
-                  </a>
-                </div>
-              </div>
+        <section className="border-t border-slate-100 bg-slate-50 py-10 sm:py-12">
+          <div className="mx-auto flex max-w-7xl flex-col gap-5 px-6 sm:flex-row sm:items-center sm:justify-between lg:px-8">
+            <div>
+              <p className="text-sm font-semibold text-[#0f172a]">
+                Stay in the loop
+              </p>
+              <p className="mt-1 text-sm text-slate-600">
+                Guides on the blog, short updates on LinkedIn and Instagram.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <Link
+                to="/blog"
+                className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-[#0f172a] transition hover:border-cyan-200"
+              >
+                Blog
+                <ArrowUpRight className="h-3.5 w-3.5" />
+              </Link>
+              <a
+                href={LINKEDIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-[#0f172a] transition hover:border-cyan-200"
+              >
+                <Linkedin className="h-4 w-4 text-[#0A66C2]" />
+                LinkedIn
+              </a>
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-semibold text-[#0f172a] transition hover:border-cyan-200"
+              >
+                <Instagram className="h-4 w-4 text-[#dd2a7b]" />
+                Instagram
+              </a>
             </div>
           </div>
         </section>

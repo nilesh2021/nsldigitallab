@@ -27,17 +27,13 @@ export default function FeaturedResources() {
 
         </div>
 
-        {/* Cards */}
-
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-
+        <div className="divide-y divide-slate-200 overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white">
           {featuredResources.map((resource) => (
             <ResourceCard
               key={resource.id}
               resource={resource}
             />
           ))}
-
         </div>
 
       </div>

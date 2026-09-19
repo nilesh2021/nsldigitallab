@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Website Launch Checklist | NSL Digital Lab</title>
+    <link rel="stylesheet" href="./checklist.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header>
+        <div class="brand">NSL Digital Lab</div>
+        <h1>Website Launch Checklist</h1>
+        <p class="lede">
+          Run this on staging, then again on production. Do not announce the site
+          until the critical items are ticked.
+        </p>
+        <div class="actions">
+          <button type="button" onclick="window.print()">Print or save as PDF</button>
+        </div>
+      </header>
+
+      <section class="section">
+        <h2>Functionality</h2>
+        <ul>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Every form submits and notifies you</strong>
+              <span>Contact, newsletter, and download forms. Test with a real email.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Links and CTAs work</strong>
+              <span>Nav, footer, buttons, and phone/email links. No leftover localhost URLs.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>404 and 500 pages exist</strong>
+              <span>Custom 404 with a path back to home or contact.</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>SEO, analytics &amp; legal</h2>
+        <ul>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Titles, descriptions, and favicon</strong>
+              <span>Unique titles on key pages. Correct canonical and sitemap.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Analytics and Search Console</strong>
+              <span>GA4 (or equivalent) live. Property verified. Conversion events tested.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Privacy, cookies, and terms</strong>
+              <span>Linked in the footer. Cookie notice matches what you actually load.</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Quality &amp; security</h2>
+        <ul>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>SSL and domain redirects</strong>
+              <span>www/non-www and HTTP/HTTPS resolve to one URL.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Mobile, speed, and images</strong>
+              <span>Compressed images, alt text, and a passable PageSpeed score on the homepage.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Backups and CMS access</strong>
+              <span>Hosting backup on, admin 2FA on, and unused plugins/themes removed.</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <footer>
+        Free resource from NSL Digital Lab · nsldigitallab.com/resources/website-launch-checklist
+      </footer>
+    </main>
+  </body>
+</html>

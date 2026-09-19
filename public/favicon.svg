@@ -1,21 +1,40 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="NSL Digital Lab">
   <defs>
-    <linearGradient id="bar-left" x1="14.5" y1="12" x2="14.5" y2="36" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#22D3EE"/>
-      <stop offset="1" stop-color="#3B82F6"/>
+    <radialGradient id="bg" cx="28" cy="22" r="42" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#143056"/>
+      <stop offset="0.55" stop-color="#0A162C"/>
+      <stop offset="1" stop-color="#05080F"/>
+    </radialGradient>
+    <linearGradient id="halo" x1="8" y1="4" x2="56" y2="60" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#67E8F9"/>
+      <stop offset="0.4" stop-color="#60A5FA"/>
+      <stop offset="1" stop-color="#A78BFA"/>
     </linearGradient>
-    <linearGradient id="bar-diagonal" x1="18" y1="48" x2="44" y2="14" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#A855F7"/>
+    <linearGradient id="left" x1="17" y1="12" x2="17" y2="36" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#60A5FA"/>
+      <stop offset="1" stop-color="#2563EB"/>
+    </linearGradient>
+    <linearGradient id="diag" x1="16" y1="10" x2="50" y2="52" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3B82F6"/>
+      <stop offset="0.42" stop-color="#6366F1"/>
       <stop offset="1" stop-color="#22D3EE"/>
     </linearGradient>
-    <linearGradient id="bar-right" x1="46.5" y1="12" x2="46.5" y2="52" gradientUnits="userSpaceOnUse">
+    <linearGradient id="right" x1="47" y1="12" x2="47" y2="52" gradientUnits="userSpaceOnUse">
       <stop stop-color="#22D3EE"/>
-      <stop offset="1" stop-color="#7C3AED"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
     </linearGradient>
+    <radialGradient id="dot" cx="17" cy="47.5" r="6" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A5F3FC"/>
+      <stop offset="1" stop-color="#06B6D4"/>
+    </radialGradient>
   </defs>
-  <rect width="64" height="64" rx="14" fill="#070C15"/>
-  <circle cx="15" cy="50" r="3.5" fill="#22D3EE"/>
-  <rect x="11" y="12" width="7.5" height="24" rx="3.75" fill="url(#bar-left)"/>
-  <rect x="19.5" y="11" width="8" height="42" rx="4" fill="url(#bar-diagonal)" transform="rotate(-32 23.5 32)"/>
-  <rect x="42.5" y="12" width="7.5" height="40" rx="3.75" fill="url(#bar-right)"/>
+
+  <circle cx="32" cy="32" r="32" fill="url(#bg)"/>
+  <circle cx="32" cy="32" r="30.25" stroke="url(#halo)" stroke-width="1.6" opacity="0.75"/>
+  <circle cx="22" cy="18" r="16" fill="#22D3EE" opacity="0.08"/>
+
+  <rect x="13" y="11.5" width="8.2" height="23.5" rx="4.1" fill="url(#left)"/>
+  <circle cx="17.1" cy="47.4" r="5.15" fill="url(#dot)"/>
+  <rect x="21.2" y="12" width="8.6" height="42.5" rx="4.3" fill="url(#diag)" transform="rotate(-32.5 25.5 33.25)"/>
+  <rect x="42.8" y="11.5" width="8.2" height="41.5" rx="4.1" fill="url(#right)"/>
 </svg>

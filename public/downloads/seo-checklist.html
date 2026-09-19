@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Technical SEO Checklist | NSL Digital Lab</title>
+    <link rel="stylesheet" href="./checklist.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header>
+        <div class="brand">NSL Digital Lab</div>
+        <h1>Technical SEO Checklist</h1>
+        <p class="lede">
+          Use this before an SEO campaign or site launch. Tick items as you verify
+          them in Search Console, PageSpeed Insights, and your CMS.
+        </p>
+        <div class="actions">
+          <button type="button" onclick="window.print()">Print or save as PDF</button>
+        </div>
+      </header>
+
+      <section class="section">
+        <h2>Crawlability &amp; indexation</h2>
+        <ul>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>robots.txt allows important pages</strong>
+              <span>Block only admin, search, and duplicate parameter URLs.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>XML sitemap is submitted</strong>
+              <span>Includes canonical URLs only. No 404s, redirects, or noindex pages.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Canonical tags are correct</strong>
+              <span>One preferred URL per page. HTTPS, trailing-slash, and www rules are consistent.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>No accidental noindex</strong>
+              <span>Check meta robots and HTTP headers on live pages.</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Speed, mobile &amp; security</h2>
+        <ul>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>HTTPS everywhere</strong>
+              <span>HTTP redirects to HTTPS. Mixed-content warnings are gone.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Core Web Vitals are acceptable</strong>
+              <span>Compress images, lazy-load below-the-fold media, and reduce unused JS.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Mobile-first layout works</strong>
+              <span>Tap targets, readable type, and no horizontal scroll on a 375px screen.</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>On-page &amp; structured data</h2>
+        <ul>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Unique title and meta description</strong>
+              <span>Match search intent. Keep titles under ~60 characters.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>One H1, logical heading order</strong>
+              <span>Headings describe the page, not just design labels.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Internal links to key pages</strong>
+              <span>No orphan pages. Descriptive anchors, not “click here”.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Schema where it helps</strong>
+              <span>Organization, Article, FAQ, Breadcrumb, or Service as relevant. Validate in Rich Results Test.</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Monitoring</h2>
+        <ul>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Search Console coverage is clean</strong>
+              <span>Fix 4xx/5xx, redirect chains, and excluded pages you expected to index.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Analytics is firing</strong>
+              <span>GA4 (or equivalent) records page views and key conversions.</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <footer>
+        Free resource from NSL Digital Lab · nsldigitallab.com/resources/seo-checklist
+      </footer>
+    </main>
+  </body>
+</html>

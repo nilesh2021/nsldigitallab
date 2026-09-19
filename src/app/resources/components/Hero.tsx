@@ -10,7 +10,7 @@ const stats = [
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#060b14] pt-28 pb-10 sm:pt-32 sm:pb-12">
+    <section className="relative overflow-hidden bg-[#060b14] pt-28 pb-16 sm:pt-32 sm:pb-20">
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.35]"
         style={{
