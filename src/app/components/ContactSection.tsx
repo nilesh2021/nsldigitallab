@@ -4,49 +4,25 @@ import {
   MapPin,
   Clock,
   ArrowRight,
-  CheckCircle2,
   Loader2,
+  ChevronDown,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { submitContact } from "../../services/contact";
 
 const benefits = [
-  "Free 30-minute consultation",
-  "Response within 24 hours",
-  "Transparent pricing",
-  "Custom business solutions",
+  "30-minute consult",
+  "Reply in 24 hours",
+  "Clear pricing",
 ];
 
-const contactDetails = [
-  {
-    icon: Mail,
-    label: "Email",
-    value: (
-      <a
-        href="mailto:hello@nsldigitallab.com"
-        className="cursor-pointer text-white hover:text-cyan-300"
-      >
-        hello@nsldigitallab.com
-      </a>
-    ),
-  },
-  {
-    icon: MapPin,
-    label: "Location",
-    value: (
-      <>
-        Remote-First Agency
-        <br />
-        Serving clients across India, USA, UK, Canada & Australia.
-      </>
-    ),
-  },
-  {
-    icon: Clock,
-    label: "Availability",
-    value: "Mon – Sat • 10:00 AM – 7:00 PM (IST)",
-  },
-];
+type FormErrors = {
+  name?: string;
+  email?: string;
+  form?: string;
+};
+
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export default function ContactCTA() {
   const navigate = useNavigate();
@@ -59,55 +35,71 @@ export default function ContactCTA() {
     message: "",
   });
 
+  const [showOptional, setShowOptional] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
+  const [errors, setErrors] = useState<FormErrors>({});
+
+  function updateField(field: keyof typeof form, value: string) {
+    setForm((prev) => ({ ...prev, [field]: value }));
+    if (field === "name" || field === "email") {
+      setErrors((prev) => ({ ...prev, [field]: undefined, form: undefined }));
+    } else {
+      setErrors((prev) => ({ ...prev, form: undefined }));
+    }
+  }
+
+  function validate(): FormErrors {
+    const next: FormErrors = {};
+
+    if (!form.name.trim()) {
+      next.name = "Please enter your name.";
+    }
+
+    if (!form.email.trim()) {
+      next.email = "Please enter your email.";
+    } else if (!emailRegex.test(form.email)) {
+      next.email = "Please enter a valid email address.";
+    }
+
+    return next;
+  }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
 
-    if (!form.name.trim() || !form.email.trim()) {
-      alert("Please fill all required fields.");
-      return;
-    }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!emailRegex.test(form.email)) {
-      alert("Please enter a valid email address.");
+    const nextErrors = validate();
+    if (nextErrors.name || nextErrors.email) {
+      setErrors(nextErrors);
       return;
     }
 
     setLoading(true);
-    setSuccess(false);
+    setErrors({});
 
     try {
       const result = await submitContact(form);
 
       if (!result.success) {
-        alert("Something went wrong. Please try again.");
+        setErrors({ form: "Something went wrong. Please try again." });
+        setLoading(false);
         return;
       }
 
-      setSuccess(true);
-
-      setForm({
-        name: "",
-        email: "",
-        phone: "",
-        service: "",
-        message: "",
-      });
-
-      setTimeout(() => {
-        navigate("/thank-you?type=contact");
-      }, 1200);
-    } finally {
+      navigate("/thank-you?type=contact");
+    } catch {
+      setErrors({ form: "Something went wrong. Please try again." });
       setLoading(false);
     }
   }
 
   const inputClassName =
     "w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3.5 text-sm text-white placeholder:text-slate-500 outline-none transition-colors focus:border-cyan-400/60 focus:bg-white/[0.06] sm:px-5 sm:py-4 sm:text-base";
+
+  const errorInputClassName =
+    "border-red-400/50 focus:border-red-400/70";
+
+  const labelClassName =
+    "mb-1.5 block text-sm font-medium text-slate-300";
 
   return (
     <section
@@ -118,146 +110,218 @@ export default function ContactCTA() {
       <div className="pointer-events-none absolute bottom-0 right-0 h-80 w-80 rounded-full bg-violet-600/[0.06] blur-[100px]" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-20">
-          <div>
+        <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-16 xl:gap-20">
+          <div className="order-2 lg:order-1">
             <span className="inline-flex items-center rounded-full border border-cyan-400/20 bg-cyan-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-cyan-300">
-              Free  Counsultation
+              Free consultation
             </span>
 
             <h2 className="mt-5 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl lg:leading-tight">
-              Ready to Grow
+              Ready to grow
               <br />
-              Your Business?
+              your business?
             </h2>
 
             <p className="mt-5 text-base leading-7 text-slate-400 sm:text-lg sm:leading-8">
-              Whether you need a modern website,
-              UI/UX design, SEO optimization,
-              or digital marketing, we're here to
-              help your business grow online.
+              Free 30-minute consult · reply within 24 hours. Tell us what you
+              need — website, UI/UX, SEO, or marketing — and we’ll follow up.
             </p>
 
-            <ul className="mt-8 space-y-3">
+            <div className="mt-6 flex flex-wrap gap-2">
               {benefits.map((item) => (
-                <li
+                <span
                   key={item}
-                  className="flex items-center gap-3 text-sm text-slate-300 sm:text-base"
+                  className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-sm text-slate-300"
                 >
-                  <CheckCircle2 className="h-4 w-4 shrink-0 text-cyan-400 sm:h-5 sm:w-5" />
-                  <span>{item}</span>
-                </li>
+                  {item}
+                </span>
               ))}
-            </ul>
+            </div>
 
-            <div className="mt-10 space-y-5 border-t border-white/[0.06] pt-10">
-              {contactDetails.map((detail) => (
-                <div key={detail.label} className="flex items-start gap-4">
-                  <div className="rounded-xl border border-white/[0.06] bg-white/[0.04] p-2.5">
-                    <detail.icon className="h-4 w-4 text-cyan-400 sm:h-5 sm:w-5" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-medium uppercase tracking-wider text-slate-500">
-                      {detail.label}
-                    </p>
-                    <p className="mt-1 text-sm leading-relaxed text-white sm:text-base">
-                      {detail.value}
-                    </p>
-                  </div>
+            <div className="mt-8 space-y-4 border-t border-white/[0.06] pt-8 lg:mt-10 lg:pt-10">
+              <p className="text-xs font-medium uppercase tracking-wider text-slate-500">
+                Other ways to reach us
+              </p>
+
+              <a
+                href="mailto:hello@nsldigitallab.com"
+                className="flex items-start gap-4 rounded-xl p-1 -m-1 hover:bg-white/[0.03]"
+              >
+                <div className="rounded-xl border border-white/[0.06] bg-white/[0.04] p-2.5">
+                  <Mail className="h-4 w-4 text-cyan-400 sm:h-5 sm:w-5" />
                 </div>
-              ))}
+                <div>
+                  <p className="text-xs font-medium uppercase tracking-wider text-slate-500">
+                    Email
+                  </p>
+                  <p className="mt-1 text-sm leading-relaxed text-white sm:text-base">
+                    hello@nsldigitallab.com
+                  </p>
+                </div>
+              </a>
+
+              <div className="flex items-start gap-4">
+                <div className="rounded-xl border border-white/[0.06] bg-white/[0.04] p-2.5">
+                  <Clock className="h-4 w-4 text-cyan-400 sm:h-5 sm:w-5" />
+                </div>
+                <div>
+                  <p className="text-xs font-medium uppercase tracking-wider text-slate-500">
+                    Hours
+                  </p>
+                  <p className="mt-1 text-sm leading-relaxed text-white sm:text-base">
+                    Mon – Sat · 10:00 AM – 7:00 PM (IST)
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="rounded-xl border border-white/[0.06] bg-white/[0.04] p-2.5">
+                  <MapPin className="h-4 w-4 text-cyan-400 sm:h-5 sm:w-5" />
+                </div>
+                <div>
+                  <p className="text-xs font-medium uppercase tracking-wider text-slate-500">
+                    Location
+                  </p>
+                  <p className="mt-1 text-sm leading-relaxed text-white sm:text-base">
+                    Remote-first, All Over world.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-6 backdrop-blur-sm sm:rounded-3xl sm:p-8 lg:p-10">
+          <div className="order-1 lg:order-2 rounded-2xl border border-white/[0.08] bg-white/[0.03] p-6 backdrop-blur-sm sm:rounded-3xl sm:p-8 lg:p-10">
             <h3 className="text-2xl font-bold text-white sm:text-3xl">
-              Start Your Project
+              Get a free consultation
             </h3>
 
             <p className="mt-2 text-sm text-slate-400 sm:text-base">
-              Tell us about your project and we'll get back to you within 24 hours.
+              Three fields. We’ll reply within 24 hours.
             </p>
 
-            <form onSubmit={handleSubmit} className="mt-8 space-y-4 sm:mt-10 sm:space-y-5">
-              <input
-                required
-                type="text"
-                placeholder="Full Name"
-                value={form.name}
-                onChange={(e) =>
-                  setForm({
-                    ...form,
-                    name: e.target.value,
-                  })
-                }
-                className={inputClassName}
-              />
+            <form
+              onSubmit={handleSubmit}
+              noValidate
+              className="mt-8 space-y-4 sm:mt-8 sm:space-y-5"
+            >
+              <div>
+                <label htmlFor="contact-name" className={labelClassName}>
+                  Name <span className="text-cyan-300">*</span>
+                </label>
+                <input
+                  id="contact-name"
+                  required
+                  type="text"
+                  autoComplete="name"
+                  placeholder="Your name"
+                  value={form.name}
+                  onChange={(e) => updateField("name", e.target.value)}
+                  aria-invalid={Boolean(errors.name)}
+                  aria-describedby={errors.name ? "contact-name-error" : undefined}
+                  className={`${inputClassName} ${errors.name ? errorInputClassName : ""}`}
+                />
+                {errors.name && (
+                  <p id="contact-name-error" className="mt-1.5 text-sm text-red-400">
+                    {errors.name}
+                  </p>
+                )}
+              </div>
 
-              <input
-                required
-                type="email"
-                placeholder="Email Address"
-                value={form.email}
-                onChange={(e) =>
-                  setForm({
-                    ...form,
-                    email: e.target.value,
-                  })
-                }
-                className={inputClassName}
-              />
+              <div>
+                <label htmlFor="contact-email" className={labelClassName}>
+                  Email <span className="text-cyan-300">*</span>
+                </label>
+                <input
+                  id="contact-email"
+                  required
+                  type="email"
+                  autoComplete="email"
+                  placeholder="you@company.com"
+                  value={form.email}
+                  onChange={(e) => updateField("email", e.target.value)}
+                  aria-invalid={Boolean(errors.email)}
+                  aria-describedby={errors.email ? "contact-email-error" : undefined}
+                  className={`${inputClassName} ${errors.email ? errorInputClassName : ""}`}
+                />
+                {errors.email && (
+                  <p id="contact-email-error" className="mt-1.5 text-sm text-red-400">
+                    {errors.email}
+                  </p>
+                )}
+              </div>
 
-              <input
-                type="tel"
-                placeholder="Phone Number (Optional)"
-                value={form.phone}
-                onChange={(e) =>
-                  setForm({
-                    ...form,
-                    phone: e.target.value,
-                  })
-                }
-                className={inputClassName}
-              />
+              <div>
+                <label htmlFor="contact-message" className={labelClassName}>
+                  Message
+                </label>
+                <textarea
+                  id="contact-message"
+                  rows={3}
+                  placeholder="What do you need help with?"
+                  value={form.message}
+                  onChange={(e) => updateField("message", e.target.value)}
+                  className={inputClassName}
+                />
+              </div>
 
-              <select
-                value={form.service}
-                onChange={(e) =>
-                  setForm({
-                    ...form,
-                    service: e.target.value,
-                  })
-                }
-                className={inputClassName}
+              <button
+                type="button"
+                onClick={() => setShowOptional((open) => !open)}
+                className="flex items-center gap-1.5 text-sm font-medium text-cyan-300 hover:text-cyan-200"
+                aria-expanded={showOptional}
               >
-                <option value="" className="text-black">
-                  Select Service (Optional)
-                </option>
+                Add phone or service
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform ${showOptional ? "rotate-180" : ""}`}
+                />
+              </button>
 
-                <option className="text-black">Website Design</option>
+              {showOptional && (
+                <div className="space-y-4 sm:space-y-5">
+                  <div>
+                    <label htmlFor="contact-phone" className={labelClassName}>
+                      Phone <span className="font-normal text-slate-500">(optional)</span>
+                    </label>
+                    <input
+                      id="contact-phone"
+                      type="tel"
+                      autoComplete="tel"
+                      placeholder="Phone number"
+                      value={form.phone}
+                      onChange={(e) => updateField("phone", e.target.value)}
+                      className={inputClassName}
+                    />
+                  </div>
 
-                <option className="text-black">UI/UX Design</option>
+                  <div>
+                    <label htmlFor="contact-service" className={labelClassName}>
+                      Service <span className="font-normal text-slate-500">(optional)</span>
+                    </label>
+                    <select
+                      id="contact-service"
+                      value={form.service}
+                      onChange={(e) => updateField("service", e.target.value)}
+                      className={inputClassName}
+                    >
+                      <option value="" className="text-black">
+                        Select a service
+                      </option>
+                      <option className="text-black">Website Design</option>
+                      <option className="text-black">UI/UX Design</option>
+                      <option className="text-black">SEO Services</option>
+                      <option className="text-black">Digital Marketing</option>
+                      <option className="text-black">Landing Page Design</option>
+                      <option className="text-black">Other</option>
+                    </select>
+                  </div>
+                </div>
+              )}
 
-                <option className="text-black">SEO Services</option>
-
-                <option className="text-black">Digital Marketing</option>
-
-                <option className="text-black">Landing Page Design</option>
-
-                <option className="text-black">Other</option>
-              </select>
-
-              <textarea
-                rows={5}
-                placeholder="Tell us about your project..."
-                value={form.message}
-                onChange={(e) =>
-                  setForm({
-                    ...form,
-                    message: e.target.value,
-                  })
-                }
-                className={inputClassName}
-              />
+              {errors.form && (
+                <p className="text-sm text-red-400" role="alert">
+                  {errors.form}
+                </p>
+              )}
 
               <button
                 type="submit"
@@ -271,30 +335,15 @@ export default function ContactCTA() {
                   </>
                 ) : (
                   <>
-                    Get Free Consultation
+                    Get a free consultation
                     <ArrowRight className="h-5 w-5" />
                   </>
                 )}
               </button>
 
               <p className="text-center text-xs text-slate-500">
-                🔒 Your information is secure. We never share your data.
+                Your information is secure. We never share your data.
               </p>
-
-              {success && (
-                <div className="rounded-xl border border-green-500/20 bg-green-500/10 p-4 text-center">
-                  <div className="flex items-center justify-center gap-2 text-green-400">
-                    <CheckCircle2 className="h-5 w-5" />
-                    <span className="text-sm font-medium sm:text-base">
-                      Thank you! Your request has been submitted successfully.
-                    </span>
-                  </div>
-
-                  <p className="mt-2 text-sm text-green-300">
-                    We'll review your project and get back to you within 24 hours.
-                  </p>
-                </div>
-              )}
             </form>
           </div>
         </div>
