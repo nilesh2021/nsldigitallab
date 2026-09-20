@@ -24,10 +24,12 @@ export default function LinkedInFollowCta() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Follow NSL Digital Lab on LinkedIn"
-      className="fixed right-4 bottom-[4.75rem] z-[9998] inline-flex h-10 w-10 items-center justify-center gap-2 rounded-full bg-[#0A66C2] text-sm font-semibold text-white shadow-[0_12px_40px_rgba(10,102,194,0.35)] transition hover:bg-[#0c75dc] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A66C2]/70 focus-visible:ring-offset-2 md:right-7 md:bottom-[5.75rem] md:h-12 md:w-auto md:px-4"
+      className="fixed right-0 top-1/2 z-[9998] inline-flex -translate-y-1/2 flex-col items-center justify-center gap-2 rounded-l-xl bg-[#0A66C2] px-2 py-3 text-sm font-semibold text-white shadow-[0_12px_40px_rgba(10,102,194,0.35)] transition hover:bg-[#0c75dc] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A66C2]/70 focus-visible:ring-offset-2"
     >
-      <Linkedin className="h-4 w-4 md:h-[18px] md:w-[18px]" />
-      <span className="hidden md:inline">Follow us</span>
+      <Linkedin className="h-[18px] w-[18px] shrink-0" />
+      <span className="tracking-wide" style={{ writingMode: "vertical-rl" }}>
+        Follow us
+      </span>
     </a>
   );
 }
