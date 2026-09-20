@@ -53,6 +53,18 @@ export const PAGE_SEO = {
     canonical: "/services",
   },
 
+  uiUxDesign: {
+    title: "UI/UX Design Services | NSL Digital Lab",
+
+    description:
+      "Research-led UI/UX for websites, mobile apps, and SaaS dashboards—wireframes, interfaces, prototypes, and design systems.",
+
+    keywords:
+      "UI UX design services, website UI design, mobile app UI, SaaS dashboard design, wireframing, design systems, UX audit",
+
+    canonical: "/services/ui-ux-design",
+  },
+
   portfolio: {
     title: "Portfolio | NSL Digital Lab",
 

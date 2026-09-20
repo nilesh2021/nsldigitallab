@@ -1,445 +1,377 @@
-import { Helmet } from "react-helmet-async";
-import Navigation from "../../../components/Navigation"
-import Footer from "../../../components/Footer";
- 
-
 import {
-  Monitor,
-  Smartphone,
-  LayoutDashboard,
-  PencilRuler,
-  Sparkles,
-  Layers3,
   ArrowRight,
+  ArrowUpRight,
   CheckCircle2,
-  Palette,
   Figma,
+  Layers3,
+  LayoutDashboard,
+  Monitor,
+  MousePointerClick,
+  Palette,
+  PencilRuler,
+  Smartphone,
+  Sparkles,
   Users,
-  TrendingUp,
 } from "lucide-react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import Navigation from "../../../components/Navigation";
+import Footer from "../../../components/Footer";
+import SEO from "../../../../seo/SEO";
+import { PAGE_SEO } from "../../../../seo/pages";
+
+const offerings = [
+  {
+    title: "Website UI",
+    description: "Responsive marketing and product sites with a clear hierarchy, refined type, and layouts built to convert.",
+    icon: Monitor,
+    image:
+      "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=1400&q=80",
+    featured: true,
+  },
+  {
+    title: "Mobile app UI",
+    description: "Native-feeling flows for iOS and Android—thumb-friendly, fast to scan, and consistent across screens.",
+    icon: Smartphone,
+  },
+  {
+    title: "SaaS dashboards",
+    description: "Dense data made readable: information architecture, tables, filters, and empty states that stay calm.",
+    icon: LayoutDashboard,
+  },
+  {
+    title: "Wireframes & flows",
+    description: "Structure before polish. We map journeys so development never starts from a guess.",
+    icon: PencilRuler,
+  },
+  {
+    title: "UX audits",
+    description: "Find drop-off, friction, and accessibility gaps on live products—then ship a prioritized fix list.",
+    icon: MousePointerClick,
+  },
+  {
+    title: "Design systems",
+    description: "Tokens, components, and rules so your product stays consistent as the team and surface area grow.",
+    icon: Layers3,
+  },
+];
+
+const process = [
+  {
+    step: "01",
+    title: "Research",
+    body: "Goals, users, competitors, and constraints. We write a short brief before a single frame is drawn.",
+    icon: Users,
+  },
+  {
+    step: "02",
+    title: "Structure",
+    body: "Sitemaps, user flows, and wireframes that lock navigation and content order.",
+    icon: PencilRuler,
+  },
+  {
+    step: "03",
+    title: "Interface",
+    body: "Visual system, components, and high-fidelity screens in Figma—ready for review.",
+    icon: Palette,
+  },
+  {
+    step: "04",
+    title: "Prototype",
+    body: "Clickable prototypes for stakeholder walkthroughs and early usability checks.",
+    icon: Figma,
+  },
+];
+
+const deliverables = [
+  "Figma files with organized pages",
+  "User flows and annotated wireframes",
+  "Responsive web and mobile screens",
+  "Component library / starter system",
+  "Prototype for stakeholder review",
+  "Handoff notes for engineering",
+];
+
+const faqs = [
+  {
+    q: "What do you typically design?",
+    a: "Marketing websites, SaaS dashboards, mobile app interfaces, landing pages, and design systems. Most work starts from a product or conversion goal—not a moodboard.",
+  },
+  {
+    q: "Do you include research and wireframes?",
+    a: "Yes. Discovery, flows, and wireframes come before visual design so we are not decorating the wrong structure.",
+  },
+  {
+    q: "Can you redesign an existing product?",
+    a: "Yes. We audit the current experience, keep what works, and redesign the screens and journeys that cause drop-off.",
+  },
+  {
+    q: "How long does a UI/UX project take?",
+    a: "Focused landing pages can ship in 1–2 weeks. Full product or website UI typically takes 3–8 weeks depending on scope and review cycles.",
+  },
+];
 
 export default function UiUxDesignPage() {
-  const uiuxServices = [
-    {
-      title: "Website UI Design",
-      description:
-        "Modern responsive website interfaces designed for better engagement and conversions.",
-      icon: Monitor,
-    },
-    {
-      title: "Mobile App Design",
-      description:
-        "User-friendly mobile app interfaces focused on usability and seamless experiences.",
-      icon: Smartphone,
-    },
-    {
-      title: "Dashboard Design",
-      description:
-        "Clean and scalable SaaS dashboard interfaces with better information hierarchy.",
-      icon: LayoutDashboard,
-    },
-    {
-      title: "Wireframing",
-      description:
-        "Strategic wireframes and user flows to improve structure and usability.",
-      icon: PencilRuler,
-    },
-    {
-      title: "UX Optimization",
-      description:
-        "Improve user journeys, accessibility, and interaction experiences.",
-      icon: Sparkles,
-    },
-    {
-      title: "Design Systems",
-      description:
-        "Consistent UI systems and reusable components for scalable products.",
-      icon: Layers3,
-    },
-  ];
-
-  const process = [
-    {
-      step: "Research",
-      icon: Users,
-    },
-    {
-      step: "Wireframing",
-      icon: PencilRuler,
-    },
-    {
-      step: "UI Design",
-      icon: Palette,
-    },
-    {
-      step: "Prototype",
-      icon: Figma,
-    },
-    {
-      step: "Optimization",
-      icon: TrendingUp,
-    },
-  ];
-
-  const faqs = [
-    {
-      question: "Why is UI/UX design important?",
-      answer:
-        "UI/UX design improves usability, engagement, user satisfaction, and conversion rates for websites and digital products.",
-    },
-    {
-      question: "Do you design mobile apps?",
-      answer:
-        "Yes. We design user-friendly mobile app interfaces for startups, SaaS platforms, and businesses.",
-    },
-    {
-      question: "Do you provide wireframes and prototypes?",
-      answer:
-        "Yes. We create wireframes, user flows, and interactive prototypes before final UI design.",
-    },
-    {
-      question: "Can you redesign existing websites?",
-      answer:
-        "Absolutely. We help businesses modernize outdated interfaces and improve user experience.",
-    },
-  ];
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const featured = offerings.find((item) => item.featured) ?? offerings[0];
+  const rest = offerings.filter((item) => !item.featured);
 
   return (
     <>
-      <Helmet>
-        <title>
-          UI/UX Design Services for Modern Businesses | NSL Digital Lab
-        </title>
-
-        <meta
-          name="description"
-          content="NSL Digital Lab provides professional UI/UX design services including web design, mobile app UI design, wireframing, dashboard design, UX optimization, and modern interface solutions for startups and businesses worldwide."
-        />
-
-        <meta
-          name="keywords"
-          content="
-          UI UX design services,
-          UI UX designer,
-          web UI design,
-          mobile app UI design,
-          UX design services,
-          dashboard UI design,
-          SaaS UI design,
-          wireframing services,
-          user experience design,
-          interface design,
-          UI UX company,
-          UI UX agency,
-          modern web design,
-          startup UI UX design
-        "
-        />
-
-        <link
-          rel="canonical"
-          href="https://nsldigitallab.comservices/ui-ux-design"
-        />
-
-        {/* Open Graph */}
-        <meta
-          property="og:title"
-          content="UI/UX Design Services | NSL Digital Lab"
-        />
-
-        <meta
-          property="og:description"
-          content="Professional UI/UX design services focused on modern interfaces, usability, and conversion-focused digital experiences."
-        />
-
-        <meta
-          property="og:type"
-          content="website"
-        />
-
-        <meta
-          property="og:url"
-          content="https://nsldigitallab.comservices/ui-ux-design"
-        />
-
-        {/* Schema */}
-        <script type="application/ld+json">
-          {`
-          {
-            "@context": "https://schema.org",
-            "@type": "ProfessionalService",
-            "name": "NSL Digital Lab",
-            "url": "https://nsldigitallab.comservices/ui-ux-design",
-            "serviceType": "UI UX Design Services",
-            "description": "Professional UI/UX design services including website UI design, dashboard design, wireframing, mobile app UI design, and user experience optimization.",
-            "areaServed": "Worldwide"
-          }
-          `}
-        </script>
-      </Helmet>
-
+      <SEO {...PAGE_SEO.uiUxDesign} />
       <Navigation />
 
-      <main className="min-h-screen bg-white text-[#111827]">
-        {/* HERO SECTION */}
-        <section className="relative overflow-hidden bg-[#edf3fb] pt-40 pb-28">
-          {/* Background */}
-          <div className="absolute inset-0 opacity-70">
-            <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-cyan-300/20 rounded-full blur-3xl" />
+      <main className="min-h-screen bg-white text-slate-900">
+        <section className="relative overflow-hidden bg-[#060b14] pb-20 pt-28 sm:pb-24 sm:pt-32 lg:pt-36">
+          <div
+            className="pointer-events-none absolute inset-0 opacity-[0.35]"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle at 1px 1px, rgba(148,163,184,0.12) 1px, transparent 0)",
+              backgroundSize: "32px 32px",
+            }}
+          />
+          <div className="pointer-events-none absolute left-1/2 top-0 h-[520px] w-[min(100%,720px)] -translate-x-1/2 rounded-full bg-cyan-500/[0.07] blur-[120px]" />
+          <div className="pointer-events-none absolute bottom-0 right-0 h-[400px] w-[400px] rounded-full bg-violet-600/[0.06] blur-[100px]" />
 
-            <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-blue-300/20 rounded-full blur-3xl" />
+          <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="grid items-end gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
+              <div className="max-w-2xl">
+                <div className="inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.03] px-4 py-2 text-sm font-medium text-slate-300 backdrop-blur-sm">
+                  <Sparkles className="h-3.5 w-3.5 text-cyan-400" />
+                  UI / UX design
+                </div>
 
-            <div className="absolute bottom-0 left-1/3 w-[400px] h-[400px] bg-indigo-200/20 rounded-full blur-3xl" />
-          </div>
+                <h1 className="mt-8 text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl">
+                  <span className="block">Interfaces people</span>
+                  <span className="mt-2 block bg-gradient-to-r from-cyan-300 via-sky-400 to-violet-400 bg-clip-text text-transparent">
+                    actually finish using
+                  </span>
+                </h1>
 
-          {/* Grid */}
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.5)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.5)_1px,transparent_1px)] bg-[size:60px_60px] opacity-40" />
+                <p className="mt-6 max-w-xl text-base leading-7 text-slate-400 sm:text-lg sm:leading-8">
+                  Research, flows, UI, and systems for websites, apps, and SaaS—so the product looks considered and the next action is obvious.
+                </p>
 
-          <div className="relative max-w-7xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl">
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-white/80 backdrop-blur-md px-5 py-2 shadow-md">
-                <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
-
-                <span className="text-sm font-medium text-cyan-700">
-                  UI/UX Design Solutions
-                </span>
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                  <a
+                    href="#offerings"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-400 px-7 py-3.5 text-sm font-semibold text-[#061018] transition hover:-translate-y-0.5 hover:bg-cyan-300"
+                  >
+                    See what we design
+                    <ArrowRight className="h-4 w-4" />
+                  </a>
+                  <a
+                    href="/#contact"
+                    className="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/10"
+                  >
+                    Book a design consult
+                  </a>
+                </div>
               </div>
 
-              {/* Heading */}
-              <h1 className="mt-8 text-5xl md:text-7xl font-bold tracking-tight leading-[1.05] text-[#111827]">
-                UI/UX Design That
-                <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
-                  {" "}
-                  Enhances User Experience
-                </span>
-              </h1>
-
-              {/* Description */}
-              <p className="mt-8 text-xl text-gray-600 leading-9 max-w-2xl">
-                NSL Digital Lab creates modern UI/UX designs focused on usability,
-                engagement, and conversion-driven digital experiences for
-                startups, SaaS platforms, and modern businesses.
-              </p>
-
-              {/* Supporting SEO Text */}
-              <p className="mt-6 text-gray-600 leading-8 max-w-2xl">
-                Our UI/UX design services include website design, mobile app UI,
-                dashboard interfaces, wireframing, user experience optimization,
-                and scalable design systems for digital products worldwide.
-              </p>
-
-              {/* Buttons */}
-              <div className="mt-12 flex flex-wrap gap-5">
-                <a
-                  href="#uiux-services"
-                  className="inline-flex items-center justify-center rounded-2xl bg-[#111827] px-8 py-4 text-white font-semibold hover:scale-105 transition-all duration-300 shadow-2xl shadow-black/10"
-                >
-                  Explore UI/UX Services
-                </a>
-
-                <a
-                  href="/#contact"
-                  className="inline-flex items-center justify-center rounded-2xl border border-white/70 bg-white/80 backdrop-blur-md px-8 py-4 text-[#111827] font-semibold hover:border-cyan-300 hover:text-cyan-600 transition-all duration-300 shadow-lg"
-                >
-                  Let’s Talk
-                </a>
+              <div className="grid gap-4 sm:grid-cols-2">
+                {[
+                  { label: "Typical kickoff", value: "5–7 days" },
+                  { label: "Core stack", value: "Figma" },
+                  { label: "Handoff", value: "Dev-ready" },
+                  { label: "Response", value: "24 hrs" },
+                ].map((stat) => (
+                  <div
+                    key={stat.label}
+                    className="rounded-2xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur-sm"
+                  >
+                    <p className="text-2xl font-semibold tracking-tight text-white">{stat.value}</p>
+                    <p className="mt-1 text-sm text-slate-400">{stat.label}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </section>
 
-        {/* SERVICES INCLUDED */}
         <section
-          id="uiux-services"
-          className="bg-[#f8fbff] py-24 border-t border-gray-100"
+          id="offerings"
+          className="scroll-mt-24 border-t border-slate-100 bg-white py-20 sm:py-24 lg:py-28"
         >
-          <div className="max-w-7xl mx-auto px-6 lg:px-10">
-            <div className="text-center max-w-3xl mx-auto">
-              <span className="text-cyan-600 font-medium">
-                UI/UX Services Included
-              </span>
-
-              <h2 className="mt-4 text-4xl md:text-5xl font-bold">
-                Complete UI/UX Design Solutions
-              </h2>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
-              {uiuxServices.map((service, index) => {
-                const Icon = service.icon;
-
-                return (
-                  <div
-                    key={index}
-                    className="group relative overflow-hidden rounded-3xl border border-cyan-100 bg-white p-8 hover:border-cyan-300 hover:shadow-2xl hover:shadow-cyan-100/60 transition-all duration-500"
-                  >
-                    {/* Glow */}
-                    <div className="absolute top-0 right-0 w-40 h-40 bg-cyan-100/40 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-all duration-500" />
-
-                    {/* Icon */}
-                    <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-200 mb-7">
-                      <Icon className="w-8 h-8 text-white" />
-                    </div>
-
-                    <h3 className="text-2xl font-bold text-[#111827] group-hover:text-cyan-600 transition-colors">
-                      {service.title}
-                    </h3>
-
-                    <p className="mt-4 text-gray-600 leading-8">
-                      {service.description}
-                    </p>
-
-                    <div className="mt-8 inline-flex items-center text-cyan-600 font-semibold">
-                      Learn More
-
-                      <ArrowRight className="ml-2 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* PROCESS SECTION */}
-        <section className="py-24 border-t border-gray-100">
-          <div className="max-w-7xl mx-auto px-6 lg:px-10">
-            <div className="text-center max-w-3xl mx-auto">
-              <span className="text-cyan-600 font-medium">
-                Our Design Process
-              </span>
-
-              <h2 className="mt-4 text-4xl md:text-5xl font-bold">
-                How We Approach UI/UX Design
-              </h2>
-            </div>
-
-            <div className="grid md:grid-cols-5 gap-6 mt-16">
-              {process.map((item, index) => {
-                const Icon = item.icon;
-
-                return (
-                  <div
-                    key={index}
-                    className="group rounded-3xl border border-gray-200 bg-white p-8 text-center hover:shadow-2xl hover:border-cyan-200 transition-all duration-300"
-                  >
-                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center mx-auto shadow-lg shadow-cyan-200">
-                      <Icon className="w-8 h-8 text-white" />
-                    </div>
-
-                    <h3 className="mt-6 text-lg font-bold text-[#111827]">
-                      {item.step}
-                    </h3>
-
-                    <div className="mt-4 flex justify-center">
-                      <CheckCircle2 className="w-5 h-5 text-cyan-500" />
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* BENEFITS SECTION */}
-        <section className="py-24 border-t border-gray-100 bg-white">
-          <div className="max-w-7xl mx-auto px-6 lg:px-10">
-            <div className="text-center max-w-3xl mx-auto">
-              <span className="text-cyan-600 font-medium">
-                Benefits of UI/UX Design
-              </span>
-
-              <h2 className="mt-4 text-4xl md:text-5xl font-bold">
-                Why UI/UX Matters for Digital Products
-              </h2>
-
-              <p className="mt-6 text-lg text-gray-600">
-                Great UI/UX design improves usability, increases engagement,
-                and creates better customer experiences across digital
-                platforms.
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+              <div className="max-w-2xl">
+                <span className="inline-flex items-center rounded-full border border-cyan-200/80 bg-cyan-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-cyan-700">
+                  Offerings
+                </span>
+                <h2 className="mt-5 text-3xl font-bold tracking-tight text-[#0f172a] sm:text-4xl lg:text-5xl">
+                  Product surfaces,
+                  <span className="block text-slate-500">not just pretty screens</span>
+                </h2>
+              </div>
+              <p className="max-w-xl text-base leading-7 text-slate-600 sm:text-lg">
+                Pick a focused sprint or a full product UI. Every engagement includes structure first, then visual design.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
-              {[
-                "Improve User Experience",
-                "Increase Engagement",
-                "Boost Conversion Rates",
-                "Build Brand Trust",
-              ].map((item, index) => (
-                <div
-                  key={index}
-                  className="rounded-3xl border border-gray-200 bg-white p-8 hover:shadow-xl transition-all duration-300"
-                >
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center mb-6 shadow-lg shadow-cyan-200">
-                    <CheckCircle2 className="w-7 h-7 text-white" />
-                  </div>
-
-                  <h3 className="text-xl font-semibold text-[#111827]">
-                    {item}
-                  </h3>
+            <div className="mt-14 grid gap-6 lg:grid-cols-12 lg:gap-7">
+              <article className="group relative overflow-hidden rounded-[1.75rem] bg-[#0f172a] lg:col-span-7 lg:min-h-[480px]">
+                <img
+                  src={featured.image}
+                  alt="Designer reviewing a website interface on a laptop"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#060b14] via-[#060b14]/55 to-transparent" />
+                <div className="relative flex min-h-[380px] flex-col justify-end p-6 sm:min-h-[440px] sm:p-8 lg:min-h-[480px] lg:p-10">
+                  <span className="inline-flex w-fit rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-cyan-200 backdrop-blur-sm">
+                    Featured
+                  </span>
+                  <h3 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">{featured.title}</h3>
+                  <p className="mt-3 max-w-lg text-sm leading-6 text-slate-300 sm:text-base">{featured.description}</p>
                 </div>
-              ))}
+              </article>
+
+              <div className="grid gap-4 lg:col-span-5">
+                {rest.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <div
+                      key={item.title}
+                      className="flex gap-4 rounded-[1.35rem] border border-slate-200/80 bg-slate-50 p-4 sm:p-5"
+                    >
+                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white text-cyan-600 shadow-sm">
+                        <Icon className="h-5 w-5" />
+                      </div>
+                      <div>
+                        <h3 className="text-base font-semibold text-[#0f172a]">{item.title}</h3>
+                        <p className="mt-1 text-sm leading-6 text-slate-600">{item.description}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </section>
 
-        {/* FAQ SECTION */}
-        <section className="py-24 border-t border-gray-100">
-          <div className="max-w-4xl mx-auto px-6 lg:px-10">
-            <div className="text-center">
-              <span className="text-cyan-600 font-medium">
-                Frequently Asked Questions
+        <section className="border-t border-slate-100 bg-[#f5f7fb] py-20 sm:py-24">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="max-w-2xl">
+              <span className="inline-flex items-center rounded-full border border-cyan-200/80 bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-cyan-700">
+                Process
               </span>
-
-              <h2 className="mt-4 text-4xl md:text-5xl font-bold">
-                UI/UX Design FAQs
+              <h2 className="mt-5 text-3xl font-bold tracking-tight text-[#0f172a] sm:text-4xl">
+                From brief to handoff
               </h2>
+              <p className="mt-4 text-base leading-7 text-slate-600 sm:text-lg">
+                You always know the stage, the artifact, and what we need from you to keep moving.
+              </p>
             </div>
 
-            <div className="mt-16 space-y-6">
-              {faqs.map((faq, index) => (
-                <div
-                  key={index}
-                  className="rounded-3xl border border-gray-200 bg-white p-8 hover:shadow-lg transition-all duration-300"
-                >
-                  <h3 className="text-xl font-semibold text-[#111827]">
-                    {faq.question}
-                  </h3>
-
-                  <p className="mt-4 text-gray-600 leading-8">
-                    {faq.answer}
-                  </p>
-                </div>
-              ))}
+            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {process.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <article key={item.step} className="rounded-2xl border border-slate-200/80 bg-white p-6">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-semibold tabular-nums text-slate-400">{item.step}</span>
+                      <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-cyan-50 text-cyan-700">
+                        <Icon className="h-4 w-4" />
+                      </div>
+                    </div>
+                    <h3 className="mt-6 text-lg font-semibold text-[#0f172a]">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-slate-600">{item.body}</p>
+                  </article>
+                );
+              })}
             </div>
           </div>
         </section>
 
-        {/* CTA SECTION */}
-        <section className="relative overflow-hidden bg-[#111827] py-24 text-white">
-          <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-cyan-500/20 rounded-full blur-3xl" />
+        <section className="border-t border-slate-100 bg-white py-20 sm:py-24">
+          <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-2 lg:items-start lg:gap-16 lg:px-8">
+            <div>
+              <h2 className="text-3xl font-bold tracking-tight text-[#0f172a] sm:text-4xl">
+                What you walk away with
+              </h2>
+              <p className="mt-4 text-base leading-7 text-slate-600">
+                Files engineers can build from—not a folder of disconnected mockups.
+              </p>
+            </div>
+            <ul className="grid gap-3 sm:grid-cols-2">
+              {deliverables.map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm leading-6 text-slate-700"
+                >
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-cyan-500" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
 
-          <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-blue-500/20 rounded-full blur-3xl" />
+        <section className="border-t border-slate-100 bg-white py-20 sm:py-24">
+          <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16 lg:px-8">
+            <div>
+              <h2 className="text-3xl font-bold tracking-tight text-[#0f172a] sm:text-4xl">
+                Common questions
+              </h2>
+              <p className="mt-4 text-base leading-7 text-slate-600">
+                If you already have Figma files or a live product, we can start from there.
+              </p>
+              <Link
+                to="/services"
+                className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-700"
+              >
+                All services
+                <ArrowUpRight className="h-4 w-4" />
+              </Link>
+            </div>
+            <div className="divide-y divide-slate-200 border-y border-slate-200">
+              {faqs.map((faq, index) => {
+                const isOpen = openFaq === index;
+                return (
+                  <div key={faq.q} className="py-5">
+                    <button
+                      type="button"
+                      aria-expanded={isOpen}
+                      onClick={() => setOpenFaq(isOpen ? null : index)}
+                      className="flex w-full items-center justify-between gap-4 text-left text-base font-semibold text-[#0f172a]"
+                    >
+                      {faq.q}
+                      <span className={`text-lg font-normal text-slate-400 transition ${isOpen ? "rotate-45" : ""}`}>
+                        +
+                      </span>
+                    </button>
+                    {isOpen ? (
+                      <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-600">{faq.a}</p>
+                    ) : null}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
 
-          <div className="relative max-w-5xl mx-auto px-6 lg:px-10 text-center">
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-              Ready To Create Better User Experiences?
+        <section className="border-t border-slate-100 bg-[#060b14] py-20 sm:py-24">
+          <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
+            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+              Ready to make the product easier to use?
             </h2>
-
-            <p className="mt-6 text-lg text-gray-300 leading-relaxed">
-              Let’s design modern digital experiences that improve usability,
-              increase engagement, and help your business grow online.
+            <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-400 sm:text-lg">
+              Send the current site, app, or brief. We will reply with a scoped starting point—not a bloated proposal.
             </p>
-
-            <div className="mt-10">
+            <div className="mt-9 flex flex-wrap justify-center gap-3">
               <a
                 href="/#contact"
-                className="inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 px-8 py-4 font-semibold hover:scale-105 transition-all duration-300 shadow-2xl shadow-cyan-500/20"
+                className="inline-flex items-center justify-center rounded-xl bg-cyan-400 px-7 py-3.5 text-sm font-semibold text-[#061018] transition hover:-translate-y-0.5 hover:bg-cyan-300"
               >
-                Start Your UI/UX Project
+                Start a UI/UX project
               </a>
+              <Link
+                to="/services"
+                className="inline-flex items-center justify-center rounded-xl border border-white/15 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-white/5"
+              >
+                View all services
+              </Link>
             </div>
           </div>
         </section>
