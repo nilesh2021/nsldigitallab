@@ -23,7 +23,7 @@ const jobs = [
   {
     title: "UI/UX Designer",
     type: "Full Time",
-    location: "Remote / Pune",
+    location: "Remote",
     experience: "1–3 years",
     category: "Design",
     href: "/careers/ui-ux-designer-job",
@@ -42,7 +42,7 @@ const jobs = [
   },
 ];
 
-const filters = ["All", "Full Time", "Remote"] as const;
+const filters = ["All"] as const;
 
 const reasons = [
   {
