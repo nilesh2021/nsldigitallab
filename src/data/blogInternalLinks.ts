@@ -11,6 +11,7 @@ export type RelatedLink = {
 export type BlogLinkSet = {
   related: RelatedLink[];
   service?: RelatedLink;
+  learn?: RelatedLink;
 };
 
 export const blogInternalLinks: Record<string, BlogLinkSet> = {
@@ -110,6 +111,7 @@ export const blogInternalLinks: Record<string, BlogLinkSet> = {
       { href: "/blog/ui-ux/saas-dashboard-design-ideas", label: "SaaS dashboard design ideas" },
     ],
     service: { href: "/services/ui-ux-design", label: "UI/UX design services" },
+    learn: { href: "/learn/ui-ux-design", label: "Free UI/UX Design Foundations path" },
   },
   "future-of-ui-design": {
     related: [
@@ -119,6 +121,7 @@ export const blogInternalLinks: Record<string, BlogLinkSet> = {
       { href: "/blog/ai-tools/best-ai-tools-for-designers", label: "AI tools for designers" },
     ],
     service: { href: "/services/ui-ux-design", label: "UI/UX design services" },
+    learn: { href: "/learn/ui-ux-design", label: "Free UI/UX Design Foundations path" },
   },
   "ui-ux-design-process-explained": {
     related: [
@@ -128,6 +131,7 @@ export const blogInternalLinks: Record<string, BlogLinkSet> = {
       { href: "/blog/ui-ux/future-of-ui-design", label: "Future of UI design" },
     ],
     service: { href: "/services/ui-ux-design", label: "UI/UX design services" },
+    learn: { href: "/learn/ui-ux-design", label: "Free UI/UX Design Foundations path" },
   },
   "ui-ux-design-principles": {
     related: [
@@ -137,6 +141,7 @@ export const blogInternalLinks: Record<string, BlogLinkSet> = {
       { href: "/blog/ui-ux/future-of-ui-design", label: "Future of UI design" },
     ],
     service: { href: "/services/ui-ux-design", label: "UI/UX design services" },
+    learn: { href: "/learn/ui-ux-design", label: "Free UI/UX Design Foundations path" },
   },
   "saas-dashboard-design-ideas": {
     related: [
@@ -146,6 +151,7 @@ export const blogInternalLinks: Record<string, BlogLinkSet> = {
       { href: "/blog/ui-ux/accessibility-in-ux-design", label: "Accessibility in UX design" },
     ],
     service: { href: "/services/ui-ux-design", label: "SaaS UI/UX design" },
+    learn: { href: "/learn/ui-ux-design", label: "Free UI/UX Design Foundations path" },
   },
   "accessibility-in-ux-design": {
     related: [
@@ -155,6 +161,7 @@ export const blogInternalLinks: Record<string, BlogLinkSet> = {
       { href: "/blog/ui-ux/future-of-ui-design", label: "Future of UI design" },
     ],
     service: { href: "/services/ui-ux-design", label: "Inclusive UI/UX design" },
+    learn: { href: "/learn/ui-ux-design", label: "Free UI/UX Design Foundations path" },
   },
 
   // —— AI tools cluster ——
@@ -166,6 +173,7 @@ export const blogInternalLinks: Record<string, BlogLinkSet> = {
       { href: "/blog/affiliate-marketing/affiliate-marketing-for-beginners", label: "Affiliate marketing guide" },
     ],
     service: { href: "/blog", label: "More guides on our blog" },
+    learn: { href: "/learn/react-foundations", label: "Free React Foundations path" },
   },
 
   "how-to-use-chatgpt": {
@@ -192,6 +200,7 @@ export const blogInternalLinks: Record<string, BlogLinkSet> = {
       href: "/blog",
       label: "Explore more AI guides",
     },
+    learn: { href: "/learn/react-foundations", label: "Free React Foundations path" },
   },
   
   "best-ai-tools-for-designers": {
@@ -202,6 +211,7 @@ export const blogInternalLinks: Record<string, BlogLinkSet> = {
       { href: "/blog/ui-ux/saas-dashboard-design-ideas", label: "SaaS dashboard design" },
     ],
     service: { href: "/services/ui-ux-design", label: "UI/UX design services" },
+    learn: { href: "/learn/ui-ux-design", label: "Free UI/UX Design Foundations path" },
   },
   "create-and-sell-digital-products-using-chatgpt": {
   related: [

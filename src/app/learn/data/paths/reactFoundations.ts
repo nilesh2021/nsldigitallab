@@ -1,8 +1,8 @@
 import { Code2 } from "lucide-react";
+import { INSTAGRAM_URL, LINKEDIN_COMPANY_URL } from "../../../../data/social";
 import { LearningPath } from "../../types";
 
-export const LINKEDIN_COMPANY_URL =
-  "https://www.linkedin.com/company/nsldigitallab/";
+export { LINKEDIN_COMPANY_URL };
 
 export const reactFoundationsPath: LearningPath = {
   slug: "react-foundations",
@@ -26,6 +26,7 @@ export const reactFoundationsPath: LearningPath = {
     "Add extra pages, tidy your code, and put a project online",
   ],
   linkedInUrl: LINKEDIN_COMPANY_URL,
+  instagramUrl: INSTAGRAM_URL,
   download: {
     label: "Free React Roadmap / Checklist",
     href: "/downloads/react-roadmap-checklist.html",

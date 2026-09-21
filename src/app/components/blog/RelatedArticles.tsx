@@ -9,6 +9,7 @@ type RelatedLink = {
 type RelatedArticlesProps = {
   links?: {
     related?: RelatedLink[];
+    learn?: RelatedLink;
   };
 
   title?: string;
@@ -49,6 +50,18 @@ export default function RelatedArticles({
           </Link>
 
         ))}
+
+        {links.learn ? (
+          <Link
+            to={links.learn.href}
+            className="group flex items-center justify-between rounded-2xl border border-cyan-500/30 bg-cyan-500/10 p-4 hover:border-cyan-400/50 hover:bg-cyan-500/15 transition"
+          >
+            <span className="text-cyan-100 group-hover:text-white transition">
+              {links.learn.label}
+            </span>
+            <ArrowRight className="h-4 w-4 text-cyan-300" />
+          </Link>
+        ) : null}
 
       </div>
 

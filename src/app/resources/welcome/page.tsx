@@ -4,7 +4,6 @@ import {
   ArrowUpRight,
   BookOpen,
   CheckCircle2,
-  GraduationCap,
   Inbox,
   Instagram,
   Linkedin,
@@ -34,7 +33,7 @@ const nextSteps = [
   {
     n: "03",
     title: "Follow a learning path",
-    description: "UI/UX, SEO, or digital marketing — pick one and keep going.",
+    description: "UI/UX or React — pick one and keep going.",
     href: "#paths",
   },
 ];
@@ -47,16 +46,10 @@ const learningPaths = [
     icon: Sparkles,
   },
   {
-    to: "/learn/seo",
-    title: "SEO",
-    description: "Technical SEO, keywords, and Search Console.",
+    to: "/learn/react-foundations",
+    title: "React Foundations",
+    description: "JSX, components, and a first deployed app.",
     icon: BookOpen,
-  },
-  {
-    to: "/learn/digital-marketing",
-    title: "Digital Marketing",
-    description: "Content, social, ads, and conversion tracking.",
-    icon: GraduationCap,
   },
 ];
 

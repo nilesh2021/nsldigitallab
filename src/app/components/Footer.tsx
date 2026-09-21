@@ -1,5 +1,7 @@
 import { useEffect } from "react";
-import { ArrowUpRight, Linkedin, Mail } from "lucide-react";
+import { ArrowUpRight, Instagram, Linkedin, Mail } from "lucide-react";
+
+import { INSTAGRAM_URL, LINKEDIN_COMPANY_URL } from "../../data/social";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import logo from "../../assets/images/Nsl-digital-lab.png";
@@ -21,8 +23,8 @@ const serviceLinks: FooterLink[] = [
 const learnLinks: FooterLink[] = [
   { label: "Learning Hub", to: "/learn" },
   { label: "UI/UX Design Foundations", to: "/learn/ui-ux-design" },
-  { label: "Case Studies", to: "/case-studies" },
   { label: "React Foundations", to: "/learn/react-foundations" },
+  { label: "Case Studies", to: "/case-studies" },
   { label: "Free Resources", to: "/resources" },
 ];
 
@@ -186,15 +188,26 @@ export default function Footer() {
               and digital marketing.
             </p>
 
-            <a
-              href="https://www.linkedin.com/company/nsldigitallab/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="NSL Digital Lab on LinkedIn"
-              className="mt-4 inline-flex h-8 w-8 cursor-pointer items-center justify-center rounded-lg border border-white/10 bg-white/[0.04] text-slate-300 transition-all duration-200 hover:border-cyan-400/30 hover:bg-cyan-500/15 hover:text-white"
-            >
-              <Linkedin className="h-3.5 w-3.5" />
-            </a>
+            <div className="mt-4 flex items-center gap-2">
+              <a
+                href={LINKEDIN_COMPANY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="NSL Digital Lab on LinkedIn"
+                className="inline-flex h-8 w-8 cursor-pointer items-center justify-center rounded-lg border border-white/10 bg-white/[0.04] text-slate-300 transition-all duration-200 hover:border-cyan-400/30 hover:bg-cyan-500/15 hover:text-white"
+              >
+                <Linkedin className="h-3.5 w-3.5" />
+              </a>
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="NSL Digital Lab on Instagram"
+                className="inline-flex h-8 w-8 cursor-pointer items-center justify-center rounded-lg border border-white/10 bg-white/[0.04] text-slate-300 transition-all duration-200 hover:border-cyan-400/30 hover:bg-cyan-500/15 hover:text-white"
+              >
+                <Instagram className="h-3.5 w-3.5" />
+              </a>
+            </div>
           </div>
 
           {columns.map((column) => (

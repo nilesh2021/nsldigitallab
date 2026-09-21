@@ -11,6 +11,7 @@ import Hero from "./app/components/Hero";
 import Services from "./app/components/Services";
 import About from "./app/components/About";
 import FeaturedWork from "./app/components/FeaturedWork";
+import LearnTeaser from "./app/components/LearnTeaser";
 import ContactSection from "./app/components/ContactSection";
 import Footer from "./app/components/Footer";
 import { PAGE_SEO } from "./seo/pages";
@@ -85,6 +86,8 @@ export default function App() {
           <About />
 
           <FeaturedWork />
+
+          <LearnTeaser />
 
           <ContactSection />
         </main>

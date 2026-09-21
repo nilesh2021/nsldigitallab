@@ -140,6 +140,7 @@ export interface LearningPath {
   prerequisites: string[];
   outcomes: string[];
   linkedInUrl: string;
+  instagramUrl: string;
   download: LearningPathDownload;
   seo: LearningPathSeo;
   icon: LucideIcon;

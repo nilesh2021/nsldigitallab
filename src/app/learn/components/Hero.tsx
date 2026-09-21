@@ -1,5 +1,7 @@
-import { ArrowRight, BookOpen } from "lucide-react";
+import { ArrowRight, BookOpen, Instagram, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
+
+import { INSTAGRAM_URL, LINKEDIN_COMPANY_URL } from "../../../data/social";
 
 const stats = [
   { value: "60+", label: "Lessons" },
@@ -53,6 +55,24 @@ export default function Hero() {
               >
                 Explore articles
               </Link>
+              <a
+                href={LINKEDIN_COMPANY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg border border-white/10 px-3 py-2.5 text-sm font-semibold text-white transition hover:border-white/20 hover:bg-white/[0.06]"
+                aria-label="Follow NSL Digital Lab on LinkedIn"
+              >
+                <Linkedin className="h-4 w-4" />
+              </a>
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg border border-white/10 px-3 py-2.5 text-sm font-semibold text-white transition hover:border-white/20 hover:bg-white/[0.06]"
+                aria-label="Follow NSL Digital Lab on Instagram"
+              >
+                <Instagram className="h-4 w-4" />
+              </a>
             </div>
           </div>
 

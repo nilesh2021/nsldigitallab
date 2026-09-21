@@ -104,8 +104,8 @@ function getPriority(route) {
   if (route === "/blog") return 0.90;
   if (route.startsWith("/blog/")) return 0.85;
 
-  if (route === "/careers") return 0.90;
-  if (route.startsWith("/careers/")) return 0.85;
+  if (route === "/learn") return 0.85;
+  if (route.startsWith("/learn/")) return 0.75;
 
   if (
     route.includes("privacy") ||
@@ -126,8 +126,8 @@ function getChangeFreq(route) {
   if (route === "/blog") return "daily";
   if (route.startsWith("/blog/")) return "monthly";
 
-  if (route === "/careers") return "daily";
-  if (route.startsWith("/careers/")) return "weekly";
+  if (route === "/learn") return "weekly";
+  if (route.startsWith("/learn/")) return "weekly";
 
   if (route.startsWith("/services")) return "monthly";
 

@@ -1,8 +1,8 @@
 import { Palette } from "lucide-react";
+import { INSTAGRAM_URL, LINKEDIN_COMPANY_URL } from "../../../../data/social";
 import { LearningPath } from "../../types";
 
-export const LINKEDIN_COMPANY_URL =
-  "https://www.linkedin.com/company/nsldigitallab/";
+export { LINKEDIN_COMPANY_URL };
 
 export const uiUxDesignPath: LearningPath = {
   slug: "ui-ux-design",
@@ -27,6 +27,7 @@ export const uiUxDesignPath: LearningPath = {
     "Test with people, check accessibility, and write a case study",
   ],
   linkedInUrl: LINKEDIN_COMPANY_URL,
+  instagramUrl: INSTAGRAM_URL,
   download: {
     label: "Free Figma website wireframe kit",
     href: "/downloads/figma-website-wireframe-kit.html",

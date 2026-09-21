@@ -14,6 +14,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import SEO from "../../../../seo/SEO";
 import MainLayout from "../../../layouts/MainLayout";
 import NewsletterSection from "../../../components/common/NewsletterSection";
+import SocialFollowRow from "../SocialFollowRow";
 import Breadcrumbs from "../../../components/Breadcrumbs";
 import PageComments from "../PageComments";
 import {
@@ -400,6 +401,12 @@ export default function ModuleLessonView({ module }: Props) {
                 </p>
               ) : null}
             </article>
+          </div>
+        </section>
+
+        <section className="border-t border-slate-100 bg-white py-8">
+          <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+            <SocialFollowRow />
           </div>
         </section>
 

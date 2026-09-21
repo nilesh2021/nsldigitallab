@@ -1,7 +1,7 @@
 import { Linkedin } from "lucide-react";
 import { useLocation } from "react-router-dom";
 
-const LINKEDIN_URL = "https://www.linkedin.com/company/nsldigitallab/";
+import { LINKEDIN_COMPANY_URL } from "../../data/social";
 
 const HIDDEN_PATHS = new Set([
   "/career-crud",
@@ -20,7 +20,7 @@ export default function LinkedInFollowCta() {
 
   return (
     <a
-      href={LINKEDIN_URL}
+      href={LINKEDIN_COMPANY_URL}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Follow NSL Digital Lab on LinkedIn"
