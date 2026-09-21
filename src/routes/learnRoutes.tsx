@@ -4,6 +4,8 @@ import LearnPage from "../app/learn/page";
 import LearnUiUxPage from "../app/learn/ui-ux-design/page";
 import LearnDigitalMarketingPage from "../app/learn/digital-marketing/page";
 import LearnSeoPage from "../app/learn/seo/page";
+import LearnReactFoundationsPage from "../app/learn/react-foundations/page";
+import ReactFoundationsModule01Page from "../app/learn/react-foundations/react-and-modern-frontend/page";
 
 const learnRoutes = (
   <>
@@ -25,6 +27,16 @@ const learnRoutes = (
     <Route
       path="/learn/seo"
       element={<LearnSeoPage />}
+    />
+
+    <Route
+      path="/learn/react-foundations"
+      element={<LearnReactFoundationsPage />}
+    />
+
+    <Route
+      path="/learn/react-foundations/react-and-modern-frontend"
+      element={<ReactFoundationsModule01Page />}
     />
   </>
 );

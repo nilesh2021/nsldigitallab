@@ -20,21 +20,20 @@ export default function Courses() {
             </h2>
           </div>
           <p className="max-w-xl text-base leading-7 text-slate-600 sm:text-lg">
-            Three focused paths. Start as a beginner and move toward portfolio
-            work, interviews, and freelance-ready skills.
+            Focused paths for design, growth, and frontend. Start as a beginner
+            and move toward portfolio work, interviews, and freelance-ready
+            skills.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 md:grid-cols-3 lg:grid-cols-4">
           {courses.map((course) => {
             const Icon = course.icon;
+            const cardClassName =
+              "group flex flex-col rounded-3xl border border-slate-200 bg-[#f8fafc] p-7 transition hover:-translate-y-1 hover:border-cyan-200 hover:bg-white hover:shadow-lg hover:shadow-slate-200/70";
 
-            return (
-              <Link
-                key={course.title}
-                to={course.link}
-                className="group flex flex-col rounded-3xl border border-slate-200 bg-[#f8fafc] p-7 transition hover:-translate-y-1 hover:border-cyan-200 hover:bg-white hover:shadow-lg hover:shadow-slate-200/70"
-              >
+            const body = (
+              <>
                 <div
                   className={`flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${course.color} text-white shadow-lg`}
                 >
@@ -55,11 +54,35 @@ export default function Courses() {
                   <span className="text-slate-500">{course.level}</span>
                 </div>
 
-                <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#0f172a]">
-                  Start learning
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </span>
-              </Link>
+                {course.link ? (
+                  <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#0f172a]">
+                    Start learning
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </span>
+                ) : (
+                  <span className="mt-6 inline-flex items-center text-sm font-semibold text-slate-400">
+                    Coming soon
+                  </span>
+                )}
+              </>
+            );
+
+            if (course.link) {
+              return (
+                <Link
+                  key={course.title}
+                  to={course.link}
+                  className={cardClassName}
+                >
+                  {body}
+                </Link>
+              );
+            }
+
+            return (
+              <div key={course.title} className={cardClassName}>
+                {body}
+              </div>
             );
           })}
         </div>

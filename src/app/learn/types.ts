@@ -6,7 +6,7 @@ export interface Course {
   lessons: string;
   level: string;
   color: string;
-  link: string;
+  link?: string;
   icon: LucideIcon;
 }
 
@@ -28,4 +28,95 @@ export interface RoadmapStep {
 export interface FAQItem {
   question: string;
   answer: string;
+}
+
+export interface LearningModule {
+  n: string;
+  slug: string;
+  title: string;
+  description: string;
+  topics: string[];
+  miniProject: string;
+  /** Present when this module has a published lesson page. */
+  contentHref?: string;
+}
+
+export type LessonBlock =
+  | { type: "p"; text: string }
+  | { type: "ul"; items: string[] }
+  | { type: "term"; term: string; meaning: string }
+  | { type: "code"; title?: string; code: string }
+  | { type: "tip"; text: string }
+  | { type: "exercise"; title?: string; steps: string[] }
+  | {
+      type: "check";
+      question: string;
+      options: { id: string; label: string; correct: boolean }[];
+      explain: string;
+    };
+
+export interface ModuleLesson {
+  slug: string;
+  title: string;
+  minutes: string;
+  summary: string;
+  blocks: LessonBlock[];
+}
+
+export interface ModuleMiniProject {
+  title: string;
+  goal: string;
+  steps: string[];
+  starterCode: string;
+  doneWhen: string[];
+}
+
+export interface ModuleIntro {
+  headline: string;
+  body: string[];
+  youWillLearn: string[];
+}
+
+export interface PublishedModule {
+  pathSlug: string;
+  pathTitle: string;
+  moduleSlug: string;
+  moduleNumber: string;
+  title: string;
+  estimatedTime: string;
+  intro: ModuleIntro;
+  lessons: ModuleLesson[];
+  miniProject: ModuleMiniProject;
+  seo: LearningPathSeo;
+  syllabusHref: string;
+}
+
+export interface LearningPathDownload {
+  label: string;
+  href: string;
+}
+
+export interface LearningPathSeo {
+  title: string;
+  description: string;
+  keywords: string;
+  canonical: string;
+}
+
+export interface LearningPath {
+  slug: string;
+  title: string;
+  eyebrow: string;
+  tagline: string;
+  description: string;
+  level: string;
+  estimatedTime: string;
+  moduleLabel: string;
+  prerequisites: string[];
+  outcomes: string[];
+  linkedInUrl: string;
+  download: LearningPathDownload;
+  seo: LearningPathSeo;
+  icon: LucideIcon;
+  modules: LearningModule[];
 }

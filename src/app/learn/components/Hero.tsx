@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const stats = [
   { value: "60+", label: "Lessons" },
-  { value: "3", label: "Learning paths" },
+  { value: "4", label: "Learning paths" },
   { value: "100%", label: "Free to start" },
   { value: "Weekly", label: "New content" },
 ];
@@ -29,7 +29,7 @@ export default function Hero() {
               <Sparkles className="h-3.5 w-3.5 text-cyan-400" />
               <span className="text-cyan-300">Free learning platform</span>
               <span className="h-1 w-1 rounded-full bg-slate-500" />
-              <span>UI/UX · SEO · Marketing</span>
+              <span>UI/UX · SEO · Marketing · React</span>
             </div>
 
             <h1 className="mt-8 text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl">
@@ -40,7 +40,7 @@ export default function Hero() {
             </h1>
 
             <p className="mt-6 max-w-xl text-base leading-7 text-slate-400 sm:text-lg sm:leading-8">
-              Practical UI/UX, SEO, and digital marketing tutorials with
+              Practical UI/UX, SEO, digital marketing, and React tutorials with
               projects, interview prep, and case studies — built for students
               and career switchers.
             </p>

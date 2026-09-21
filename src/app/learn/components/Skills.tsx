@@ -22,6 +22,17 @@ const skillGroups = [
     ],
   },
   {
+    label: "Frontend",
+    skills: [
+      "JavaScript",
+      "React",
+      "JSX",
+      "Components",
+      "Hooks",
+      "State",
+    ],
+  },
+  {
     label: "Career",
     skills: [
       "Content Writing",
@@ -49,7 +60,7 @@ export default function Skills() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 lg:grid-cols-2 xl:grid-cols-4">
           {skillGroups.map((group) => (
             <div
               key={group.label}

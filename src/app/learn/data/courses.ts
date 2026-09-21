@@ -1,9 +1,7 @@
-import { Palette, Search, TrendingUp } from "lucide-react";
+import { Code2, Palette, Search, TrendingUp } from "lucide-react";
 import { Course } from "../types";
 
 export const courses: Course[] = [
-
-
     {
         title: "UI/UX Design",
         description:
@@ -11,7 +9,6 @@ export const courses: Course[] = [
         icon: Palette,
         lessons: "20+ Lessons",
         level: "Beginner Friendly",
-        link: "/learn/ui-ux-design",
         color: "from-cyan-500 to-sky-500",
     },
     {
@@ -21,7 +18,6 @@ export const courses: Course[] = [
         icon: TrendingUp,
         lessons: "25+ Lessons",
         level: "Beginner Friendly",
-        link: "/learn/digital-marketing",
         color: "from-indigo-500 to-blue-600",
     },
     {
@@ -31,10 +27,18 @@ export const courses: Course[] = [
         icon: Search,
         lessons: "18+ Lessons",
         level: "Beginner Friendly",
-        link: "/learn/seo",
         color: "from-emerald-500 to-green-600",
     },
-
+    {
+        title: "React Foundations",
+        description:
+            "Learn JSX, components, props, state, events, lists, and core hooks so you can build real UI.",
+        icon: Code2,
+        lessons: "10 Modules",
+        level: "Beginner → Intermediate",
+        link: "/learn/react-foundations",
+        color: "from-sky-500 to-violet-600",
+    },
 ];
 
-export default courses
+export default courses;
