@@ -77,6 +77,17 @@ export interface ModuleIntro {
   youWillLearn: string[];
 }
 
+export interface ModuleNeighbor {
+  href: string;
+  label: string;
+}
+
+export interface ModuleSummary {
+  headline: string;
+  body: string[];
+  recap: string[];
+}
+
 export interface PublishedModule {
   pathSlug: string;
   pathTitle: string;
@@ -87,6 +98,10 @@ export interface PublishedModule {
   intro: ModuleIntro;
   lessons: ModuleLesson[];
   miniProject: ModuleMiniProject;
+  summary?: ModuleSummary;
+  knowledgeCheck?: Extract<LessonBlock, { type: "check" }>;
+  prevModule?: ModuleNeighbor;
+  nextModule?: ModuleNeighbor;
   seo: LearningPathSeo;
   syllabusHref: string;
 }

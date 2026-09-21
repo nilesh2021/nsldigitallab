@@ -61,6 +61,7 @@ export const reactFoundationsPath: LearningPath = {
     {
       n: "02",
       slug: "jsx-and-components",
+      contentHref: "/learn/react-foundations/jsx-and-components",
       title: "JSX & Components",
       description:
         "JSX lets you write HTML-like code inside JavaScript. You will learn how to turn that into small functions (components) and reuse them.",
@@ -77,6 +78,7 @@ export const reactFoundationsPath: LearningPath = {
     {
       n: "03",
       slug: "props-and-component-composition",
+      contentHref: "/learn/react-foundations/props-and-component-composition",
       title: "Props",
       description:
         "Props are how a parent component sends information to a child component. You will reuse the same card with different names, images, and prices.",
@@ -93,6 +95,7 @@ export const reactFoundationsPath: LearningPath = {
     {
       n: "04",
       slug: "state-and-events",
+      contentHref: "/learn/react-foundations/state-and-events",
       title: "State & Events",
       description:
         "State is data that can change after the page loads, such as a number on a counter. You will use useState (a built-in React helper) and buttons so the screen updates when the user clicks.",
@@ -109,6 +112,8 @@ export const reactFoundationsPath: LearningPath = {
     {
       n: "05",
       slug: "conditional-rendering-and-lists",
+      contentHref:
+        "/learn/react-foundations/conditional-rendering-and-lists",
       title: "Lists & Conditional Rendering",
       description:
         "You will show a list of items and hide or show parts of the page based on simple if/else rules. map() is a JavaScript method that turns an array into a list of components.",
@@ -125,6 +130,7 @@ export const reactFoundationsPath: LearningPath = {
     {
       n: "06",
       slug: "forms-and-user-input",
+      contentHref: "/learn/react-foundations/forms-and-user-input",
       title: "Forms & User Input",
       description:
         "You will connect form fields to React so the app always knows what the user typed. Controlled fields means the input value is stored in state and shown back in the box.",
@@ -141,6 +147,7 @@ export const reactFoundationsPath: LearningPath = {
     {
       n: "07",
       slug: "useeffect-and-api-data",
+      contentHref: "/learn/react-foundations/useeffect-and-api-data",
       title: "useEffect & API Data",
       description:
         "An API is a way for your app to ask another website for data (like a list of users). useEffect is a React helper that can run extra work after the screen appears — for example, loading that data.",
@@ -157,6 +164,7 @@ export const reactFoundationsPath: LearningPath = {
     {
       n: "08",
       slug: "routing",
+      contentHref: "/learn/react-foundations/routing",
       title: "React Router",
       description:
         "Real websites have more than one page. React Router is a library that changes the screen when the URL changes, without reloading the whole site.",
@@ -173,6 +181,8 @@ export const reactFoundationsPath: LearningPath = {
     {
       n: "09",
       slug: "reusable-architecture-and-custom-hooks",
+      contentHref:
+        "/learn/react-foundations/reusable-architecture-and-custom-hooks",
       title: "Reusable Components & Custom Hooks",
       description:
         "You will keep your project tidy by reusing the same buttons, cards, and layouts. A custom hook is a small function you write (its name starts with “use”) to share simple repeated logic, such as a counter.",
@@ -189,6 +199,8 @@ export const reactFoundationsPath: LearningPath = {
     {
       n: "10",
       slug: "final-react-project-and-deployment",
+      contentHref:
+        "/learn/react-foundations/final-react-project-and-deployment",
       title: "Final Project & Deployment",
       description:
         "You will combine everything into one complete React app. Then you will save it on GitHub, create a production build (a finished copy of the site), and put it online so anyone can open the link.",

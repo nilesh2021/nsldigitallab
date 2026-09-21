@@ -39,127 +39,109 @@ export default function LearningPathView({ path }: Props) {
       />
 
       <MainLayout>
-        <section className="relative overflow-hidden bg-[#060b14] pb-16 pt-28 sm:pb-20 sm:pt-32 lg:pt-36">
+        <section className="relative overflow-hidden bg-[#060b14] pb-10 pt-24 sm:pb-12 sm:pt-28">
           <div
-            className="pointer-events-none absolute inset-0 opacity-[0.35]"
+            className="pointer-events-none absolute inset-0 opacity-[0.28]"
             style={{
               backgroundImage:
-                "radial-gradient(circle at 1px 1px, rgba(148,163,184,0.12) 1px, transparent 0)",
-              backgroundSize: "32px 32px",
+                "radial-gradient(circle at 1px 1px, rgba(148,163,184,0.14) 1px, transparent 0)",
+              backgroundSize: "28px 28px",
             }}
           />
-          <div className="pointer-events-none absolute left-1/2 top-0 h-[520px] w-[min(100%,720px)] -translate-x-1/2 rounded-full bg-violet-500/[0.08] blur-[120px]" />
+          <div className="pointer-events-none absolute -left-24 top-10 h-64 w-64 rounded-full bg-cyan-500/[0.12] blur-[90px]" />
+          <div className="pointer-events-none absolute right-0 top-0 h-72 w-72 rounded-full bg-violet-600/[0.1] blur-[100px]" />
 
-          <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="relative z-10 mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
             <Link
               to="/learn"
-              className="text-sm font-medium text-slate-400 transition hover:text-white"
+              className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-400 transition hover:text-white"
             >
-              ← All learning paths
+              ← All paths
             </Link>
 
-            <div className="mt-8 grid items-start gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
-              <div className="max-w-2xl">
-                <div className="inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.03] px-4 py-2 text-sm font-medium text-slate-300">
-                  <Icon className="h-3.5 w-3.5 text-cyan-400" />
+            <div className="mt-5 grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_20.5rem] lg:gap-8">
+              <div>
+                <div className="inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.04] px-3 py-1 text-[11px] font-medium text-slate-300">
+                  <Icon className="h-3 w-3 text-cyan-400" />
                   <span className="text-cyan-300">{path.eyebrow}</span>
                   <span className="h-1 w-1 rounded-full bg-slate-500" />
                   <span>{path.level}</span>
                 </div>
 
-                <h1 className="mt-8 text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl">
+                <h1 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-[2.45rem] sm:leading-[1.12]">
                   {path.title}
-                  <span className="mt-2 block bg-gradient-to-r from-cyan-300 via-sky-400 to-violet-400 bg-clip-text text-transparent">
+                  <span className="mt-1 block bg-gradient-to-r from-cyan-300 via-sky-400 to-violet-400 bg-clip-text text-transparent">
                     {path.tagline}
                   </span>
                 </h1>
 
-                <p className="mt-6 max-w-xl text-base leading-7 text-slate-400 sm:text-lg sm:leading-8">
+                <p className="mt-3 max-w-xl text-sm leading-6 text-slate-400 sm:text-[15px]">
                   {path.description}
                 </p>
 
-                <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                <div className="mt-5 flex flex-wrap gap-2.5">
                   {startIsRoute ? (
                     <Link
                       to={startHref}
-                      className="inline-flex items-center justify-center gap-2.5 rounded-xl bg-white px-7 py-3.5 text-sm font-semibold text-[#060b14] transition hover:-translate-y-0.5 hover:bg-slate-100"
+                      className="inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2.5 text-sm font-semibold text-[#060b14] transition hover:bg-slate-100"
                     >
-                      <BookOpen className="h-4 w-4" />
+                      <BookOpen className="h-3.5 w-3.5" />
                       Start Module 01
-                      <ArrowRight className="h-4 w-4" />
+                      <ArrowRight className="h-3.5 w-3.5" />
                     </Link>
                   ) : (
                     <a
                       href={startHref}
-                      className="inline-flex items-center justify-center gap-2.5 rounded-xl bg-white px-7 py-3.5 text-sm font-semibold text-[#060b14] transition hover:-translate-y-0.5 hover:bg-slate-100"
+                      className="inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2.5 text-sm font-semibold text-[#060b14] transition hover:bg-slate-100"
                     >
-                      <BookOpen className="h-4 w-4" />
+                      <BookOpen className="h-3.5 w-3.5" />
                       Start Module 01
-                      <ArrowRight className="h-4 w-4" />
+                      <ArrowRight className="h-3.5 w-3.5" />
                     </a>
                   )}
                   <a
                     href="#curriculum"
-                    className="inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] px-7 py-3.5 text-sm font-semibold text-white transition hover:border-white/20 hover:bg-white/[0.08]"
+                    className="inline-flex items-center rounded-lg border border-white/10 bg-white/[0.04] px-4 py-2.5 text-sm font-semibold text-white transition hover:border-white/20 hover:bg-white/[0.08]"
                   >
                     View syllabus
                   </a>
                 </div>
+
+                <div className="mt-6 grid grid-cols-3 gap-2">
+                  <MetaChip icon={GraduationCap} label="Level" value={path.level} />
+                  <MetaChip icon={Layers} label="Modules" value={path.moduleLabel} />
+                  <MetaChip icon={Clock} label="Time" value={path.estimatedTime} />
+                </div>
               </div>
 
-              <div className="rounded-3xl border border-white/[0.08] bg-white/[0.03] p-7 backdrop-blur-sm">
-                <p className="text-sm font-semibold uppercase tracking-[0.14em] text-cyan-300">
+              <aside className="rounded-2xl border border-white/[0.08] bg-white/[0.035] p-5 backdrop-blur-sm">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-cyan-300">
                   You will be able to
                 </p>
-                <ul className="mt-5 space-y-4">
+                <ul className="mt-3 space-y-2.5">
                   {path.outcomes.map((item) => (
                     <li
                       key={item}
-                      className="flex gap-3 text-sm leading-6 text-slate-300"
+                      className="flex gap-2 text-[13px] leading-5 text-slate-300"
                     >
-                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-cyan-400" />
+                      <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-cyan-400" />
                       {item}
                     </li>
                   ))}
                 </ul>
-                <p className="mt-6 text-sm text-slate-500">
-                  {path.moduleLabel} · {path.estimatedTime}
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="border-t border-slate-100 bg-white py-10 sm:py-12">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-              <MetaCard
-                icon={GraduationCap}
-                label="Level"
-                value={path.level}
-              />
-              <MetaCard
-                icon={Layers}
-                label="Modules"
-                value={path.moduleLabel}
-              />
-              <MetaCard
-                icon={Clock}
-                label="Estimated time"
-                value={path.estimatedTime}
-              />
-              <div className="rounded-2xl border border-slate-200 bg-[#f8fafc] px-5 py-4">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-cyan-700">
-                  Prerequisites
-                </p>
-                <ul className="mt-2 space-y-1">
-                  {path.prerequisites.map((item) => (
-                    <li key={item} className="text-sm leading-5 text-slate-600">
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                <div className="mt-4 border-t border-white/[0.06] pt-3">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-500">
+                    Prerequisites
+                  </p>
+                  <ul className="mt-2 space-y-1">
+                    {path.prerequisites.map((item) => (
+                      <li key={item} className="text-[12px] leading-5 text-slate-400">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </aside>
             </div>
           </div>
         </section>
@@ -168,7 +150,7 @@ export default function LearningPathView({ path }: Props) {
           id="curriculum"
           className="scroll-mt-24 border-t border-slate-100 bg-gradient-to-b from-[#f3f8fc] via-white to-violet-50/40 py-14 sm:py-20"
         >
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
               <div>
                 <span className="inline-flex items-center rounded-full border border-cyan-200/80 bg-cyan-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.15em] text-cyan-700">
@@ -188,46 +170,46 @@ export default function LearningPathView({ path }: Props) {
           </div>
         </section>
 
-        <section className="border-t border-slate-100 bg-[#f8fafc] py-16 sm:py-20">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="grid gap-6 lg:grid-cols-2">
-              <div className="rounded-3xl border border-slate-200 bg-white p-8 sm:p-10">
-                <h2 className="text-2xl font-bold tracking-tight text-[#0f172a] sm:text-3xl">
-                  Follow NSL Digital Lab on LinkedIn
-                </h2>
-                <p className="mt-3 text-base leading-7 text-slate-600">
-                  New modules, project ideas, and career notes go out on
-                  LinkedIn first.
-                </p>
-                <a
-                  href={path.linkedInUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-[#0A66C2] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#0c75dc]"
-                >
+        <section className="border-t border-slate-100 bg-white py-8">
+          <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+            <div className="grid gap-3 sm:grid-cols-2">
+              <a
+                href={path.linkedInUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-between gap-3 rounded-xl border border-slate-200 bg-[#f8fafc] px-4 py-3.5 transition hover:border-[#0A66C2]/30 hover:bg-[#0A66C2]/[0.04]"
+              >
+                <span>
+                  <span className="block text-sm font-semibold text-[#0f172a]">
+                    Follow on LinkedIn
+                  </span>
+                  <span className="mt-0.5 block text-xs text-slate-500">
+                    Modules, project ideas, and career notes
+                  </span>
+                </span>
+                <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#0A66C2] text-white">
                   <Linkedin className="h-4 w-4" />
-                  Follow NSL Digital Lab on LinkedIn
-                </a>
-              </div>
+                </span>
+              </a>
 
-              <div className="rounded-3xl border border-slate-200 bg-white p-8 sm:p-10">
-                <h2 className="text-2xl font-bold tracking-tight text-[#0f172a] sm:text-3xl">
-                  Free React Roadmap / Checklist
-                </h2>
-                <p className="mt-3 text-base leading-7 text-slate-600">
-                  Download the printable checklist that mirrors this path. Tick
-                  topics as you complete each mini project.
-                </p>
-                <a
-                  href={path.download.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-[#0f172a] px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
-                >
+              <a
+                href={path.download.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-between gap-3 rounded-xl border border-slate-200 bg-[#f8fafc] px-4 py-3.5 transition hover:border-slate-400 hover:bg-slate-50"
+              >
+                <span>
+                  <span className="block text-sm font-semibold text-[#0f172a]">
+                    {path.download.label}
+                  </span>
+                  <span className="mt-0.5 block text-xs text-slate-500">
+                    Printable checklist that mirrors this path
+                  </span>
+                </span>
+                <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#0f172a] text-white">
                   <Download className="h-4 w-4" />
-                  {path.download.label}
-                </a>
-              </div>
+                </span>
+              </a>
             </div>
           </div>
         </section>
@@ -357,7 +339,7 @@ function ModuleAccordion({ modules }: { modules: LearningModule[] }) {
                 isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
               }`}
             >
-              <div className="overflow-hidden">
+              <div className="min-h-0 overflow-hidden">
                 <div className="grid grid-cols-1 gap-5 border-t border-white/70 px-4 pb-5 pt-1 sm:grid-cols-[1fr_17rem] sm:px-5 sm:pb-6 sm:pl-[4.5rem]">
                   <div>
                     <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-400">
@@ -379,9 +361,7 @@ function ModuleAccordion({ modules }: { modules: LearningModule[] }) {
                       ))}
                     </ol>
                   </div>
-                  <div
-                    className={`rounded-2xl border p-4 ${accent.project}`}
-                  >
+                  <div className={`rounded-2xl border p-4 ${accent.project}`}>
                     <p
                       className={`text-[11px] font-semibold uppercase tracking-[0.14em] ${accent.projectLabel}`}
                     >
@@ -410,7 +390,7 @@ function ModuleAccordion({ modules }: { modules: LearningModule[] }) {
   );
 }
 
-function MetaCard({
+function MetaChip({
   icon: Icon,
   label,
   value,
@@ -420,16 +400,12 @@ function MetaCard({
   value: string;
 }) {
   return (
-    <div className="flex items-center gap-3 rounded-2xl border border-cyan-100 bg-gradient-to-br from-cyan-50/80 to-white px-5 py-5">
-      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500 to-sky-600 text-white shadow-sm shadow-cyan-500/20">
-        <Icon className="h-4 w-4" />
-      </div>
-      <div>
-        <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-cyan-700">
-          {label}
-        </p>
-        <p className="mt-0.5 text-sm font-semibold text-[#0f172a]">{value}</p>
-      </div>
+    <div className="rounded-xl border border-white/[0.08] bg-white/[0.035] px-3 py-2.5">
+      <p className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-500">
+        <Icon className="h-3 w-3 text-cyan-400" />
+        {label}
+      </p>
+      <p className="mt-1 truncate text-xs font-semibold text-white">{value}</p>
     </div>
   );
 }

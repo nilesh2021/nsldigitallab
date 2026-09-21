@@ -25,7 +25,9 @@ import {
 type Step =
   | { kind: "intro" }
   | { kind: "lesson"; index: number }
-  | { kind: "project" };
+  | { kind: "project" }
+  | { kind: "summary" }
+  | { kind: "check" };
 
 type Props = {
   module: PublishedModule;
@@ -34,6 +36,8 @@ type Props = {
 function stepKey(step: Step) {
   if (step.kind === "intro") return "intro";
   if (step.kind === "project") return "project";
+  if (step.kind === "summary") return "summary";
+  if (step.kind === "check") return "check";
   return `lesson-${step.index}`;
 }
 
@@ -43,8 +47,11 @@ export default function ModuleLessonView({ module }: Props) {
       kind: "lesson",
       index,
     }));
-    return [{ kind: "intro" }, ...lessonSteps, { kind: "project" }];
-  }, [module.lessons]);
+    const extra: Step[] = [];
+    if (module.summary) extra.push({ kind: "summary" });
+    if (module.knowledgeCheck) extra.push({ kind: "check" });
+    return [{ kind: "intro" }, ...lessonSteps, { kind: "project" }, ...extra];
+  }, [module.lessons, module.summary, module.knowledgeCheck]);
 
   const [stepIndex, setStepIndex] = useState(0);
   const step = steps[stepIndex];
@@ -58,7 +65,11 @@ export default function ModuleLessonView({ module }: Props) {
       ? "Introduction"
       : step.kind === "project"
         ? module.miniProject.title
-        : module.lessons[step.index].title;
+        : step.kind === "summary"
+          ? "Module summary"
+          : step.kind === "check"
+            ? "Quick knowledge check"
+            : module.lessons[step.index].title;
 
   const isFirst = stepIndex === 0;
   const isLast = stepIndex === steps.length - 1;
@@ -118,9 +129,13 @@ export default function ModuleLessonView({ module }: Props) {
                       ? "Introduction"
                       : item.kind === "project"
                         ? "Mini project"
-                        : `${String(item.index + 1).padStart(2, "0")}. ${
-                            module.lessons[item.index].title
-                          }`;
+                        : item.kind === "summary"
+                          ? "Module summary"
+                          : item.kind === "check"
+                            ? "Knowledge check"
+                            : `${String(item.index + 1).padStart(2, "0")}. ${
+                                module.lessons[item.index].title
+                              }`;
                   const active = index === stepIndex;
                   return (
                     <li key={stepKey(item)}>
@@ -147,7 +162,11 @@ export default function ModuleLessonView({ module }: Props) {
                   ? "Start here"
                   : step.kind === "project"
                     ? "Build"
-                    : `Lesson ${step.index + 1} of ${module.lessons.length}`}
+                    : step.kind === "summary"
+                      ? "Wrap up"
+                      : step.kind === "check"
+                        ? "Check"
+                        : `Lesson ${step.index + 1} of ${module.lessons.length}`}
               </p>
               <h2 className="mt-2 text-2xl font-bold tracking-tight text-[#0f172a] sm:text-3xl">
                 {title}
@@ -157,26 +176,44 @@ export default function ModuleLessonView({ module }: Props) {
                 <IntroBody module={module} />
               ) : step.kind === "project" ? (
                 <ProjectBody module={module} />
-              ) : (
+              ) : step.kind === "summary" && module.summary ? (
+                <SummaryBody summary={module.summary} />
+              ) : step.kind === "check" && module.knowledgeCheck ? (
+                <div className="mt-6">
+                  <KnowledgeCheck block={module.knowledgeCheck} />
+                </div>
+              ) : step.kind === "lesson" ? (
                 <LessonBody lesson={module.lessons[step.index]} />
-              )}
+              ) : null}
 
               <div className="mt-10 flex flex-col gap-3 border-t border-slate-100 pt-6 sm:flex-row sm:items-center sm:justify-between">
-                <button
-                  type="button"
-                  disabled={isFirst}
-                  onClick={() => setStepIndex((i) => Math.max(0, i - 1))}
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40"
-                >
-                  <ArrowLeft className="h-4 w-4" />
-                  Previous
-                </button>
+                {isFirst && module.prevModule ? (
+                  <Link
+                    to={module.prevModule.href}
+                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
+                  >
+                    <ArrowLeft className="h-4 w-4" />
+                    {module.prevModule.label}
+                  </Link>
+                ) : (
+                  <button
+                    type="button"
+                    disabled={isFirst}
+                    onClick={() => setStepIndex((i) => Math.max(0, i - 1))}
+                    className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40"
+                  >
+                    <ArrowLeft className="h-4 w-4" />
+                    Previous
+                  </button>
+                )}
                 {isLast ? (
                   <Link
-                    to={module.syllabusHref}
+                    to={module.nextModule?.href ?? module.syllabusHref}
                     className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0f172a] px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
                   >
-                    Back to syllabus
+                    {module.nextModule
+                      ? module.nextModule.label
+                      : "Back to syllabus"}
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                 ) : (
@@ -194,8 +231,23 @@ export default function ModuleLessonView({ module }: Props) {
               </div>
               {isLast ? (
                 <p className="mt-4 text-sm text-slate-500">
-                  Module 02 is not published yet. Return to the syllabus when
-                  you are ready for JSX and components.
+                  {module.nextModule ? (
+                    <>
+                      Ready for the next module, or{" "}
+                      <Link
+                        to={module.syllabusHref}
+                        className="font-medium text-cyan-800 underline-offset-4 hover:underline"
+                      >
+                        return to the syllabus
+                      </Link>
+                      .
+                    </>
+                  ) : (
+                    <>
+                      You finished the last module in this path. Return to the
+                      syllabus whenever you want to review a topic.
+                    </>
+                  )}
                 </p>
               ) : null}
             </article>
@@ -213,6 +265,40 @@ export default function ModuleLessonView({ module }: Props) {
         />
       </MainLayout>
     </>
+  );
+}
+
+function SummaryBody({
+  summary,
+}: {
+  summary: NonNullable<PublishedModule["summary"]>;
+}) {
+  return (
+    <div className="mt-6 space-y-5">
+      <p className="text-lg font-medium text-slate-800">{summary.headline}</p>
+      {summary.body.map((text) => (
+        <p key={text} className="text-base leading-7 text-slate-600">
+          {text}
+        </p>
+      ))}
+      <div className="rounded-2xl border border-cyan-100 bg-cyan-50/70 p-5">
+        <p className="flex items-center gap-2 text-sm font-semibold text-cyan-900">
+          <CheckCircle2 className="h-4 w-4" />
+          You can now
+        </p>
+        <ul className="mt-3 space-y-2">
+          {summary.recap.map((item) => (
+            <li
+              key={item}
+              className="flex gap-2 text-sm leading-6 text-slate-700"
+            >
+              <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-cyan-600" />
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
   );
 }
 

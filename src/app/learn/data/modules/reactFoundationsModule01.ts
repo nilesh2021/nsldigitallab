@@ -16,6 +16,10 @@ export const reactFoundationsModule01: PublishedModule = {
       "what is React, React beginner, React component, Vite React, first React project, React profile card",
     canonical: "/learn/react-foundations/react-and-modern-frontend",
   },
+  nextModule: {
+    href: "/learn/react-foundations/jsx-and-components",
+    label: "Next: Module 02",
+  },
   intro: {
     headline: "Welcome to your first React module",
     body: [
