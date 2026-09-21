@@ -1,54 +1,47 @@
-import { ArrowRight, BookOpen, Sparkles } from "lucide-react";
+import { ArrowRight, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const stats = [
   { value: "60+", label: "Lessons" },
-  { value: "4", label: "Learning paths" },
+  { value: "4", label: "Paths" },
   { value: "100%", label: "Free to start" },
-  { value: "Weekly", label: "New content" },
+  { value: "Weekly", label: "Updates" },
 ];
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#060b14] pb-16 pt-28 sm:pb-20 sm:pt-32 lg:pt-36">
+    <section className="relative overflow-hidden bg-[#060b14] pb-10 pt-24 sm:pb-12 sm:pt-28">
       <div
-        className="pointer-events-none absolute inset-0 opacity-[0.35]"
+        className="pointer-events-none absolute inset-0 opacity-[0.28]"
         style={{
           backgroundImage:
-            "radial-gradient(circle at 1px 1px, rgba(148,163,184,0.12) 1px, transparent 0)",
-          backgroundSize: "32px 32px",
+            "radial-gradient(circle at 1px 1px, rgba(148,163,184,0.14) 1px, transparent 0)",
+          backgroundSize: "28px 28px",
         }}
       />
-      <div className="pointer-events-none absolute left-1/2 top-0 h-[520px] w-[min(100%,720px)] -translate-x-1/2 rounded-full bg-cyan-500/[0.07] blur-[120px]" />
-      <div className="pointer-events-none absolute bottom-0 right-0 h-[400px] w-[400px] rounded-full bg-violet-600/[0.06] blur-[100px]" />
+      <div className="pointer-events-none absolute -left-24 top-0 h-64 w-64 rounded-full bg-cyan-500/[0.08] blur-[90px]" />
+      <div className="pointer-events-none absolute -right-16 bottom-0 h-56 w-56 rounded-full bg-violet-600/[0.08] blur-[80px]" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+        <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.03] px-4 py-2 text-sm font-medium text-slate-300 backdrop-blur-sm">
-              <Sparkles className="h-3.5 w-3.5 text-cyan-400" />
-              <span className="text-cyan-300">Free learning platform</span>
-              <span className="h-1 w-1 rounded-full bg-slate-500" />
-              <span>UI/UX · SEO · Marketing · React</span>
-            </div>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-cyan-300/90">
+              Free learning · UI/UX · SEO · Marketing · React
+            </p>
 
-            <h1 className="mt-8 text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Learn digital skills
-              <span className="mt-2 block bg-gradient-to-r from-cyan-300 via-sky-400 to-violet-400 bg-clip-text text-transparent">
-                that get you hired
-              </span>
+            <h1 className="mt-3 text-3xl font-bold leading-[1.12] tracking-tight text-white sm:text-4xl lg:text-[2.75rem]">
+              Digital skills that get you hired
             </h1>
 
-            <p className="mt-6 max-w-xl text-base leading-7 text-slate-400 sm:text-lg sm:leading-8">
-              Practical UI/UX, SEO, digital marketing, and React tutorials with
-              projects, interview prep, and case studies — built for students
+            <p className="mt-3 max-w-lg text-sm leading-6 text-slate-400 sm:text-[15px] sm:leading-7">
+              Practical tutorials, projects, and interview prep for students
               and career switchers.
             </p>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
+            <div className="mt-6 flex flex-wrap items-center gap-3">
               <a
                 href="#courses"
-                className="inline-flex items-center justify-center gap-2.5 rounded-xl bg-white px-7 py-3.5 text-sm font-semibold text-[#060b14] shadow-lg shadow-black/20 transition-all duration-200 hover:-translate-y-0.5 hover:bg-slate-100 sm:text-base"
+                className="inline-flex items-center gap-2 rounded-lg bg-white px-5 py-2.5 text-sm font-semibold text-[#060b14] transition hover:bg-slate-100"
               >
                 <BookOpen className="h-4 w-4" />
                 Start a path
@@ -56,26 +49,28 @@ export default function Hero() {
               </a>
               <Link
                 to="/blog"
-                className="inline-flex items-center justify-center gap-2.5 rounded-xl border border-white/10 bg-white/[0.04] px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/[0.08] sm:text-base"
+                className="inline-flex items-center gap-2 rounded-lg border border-white/10 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-white/20 hover:bg-white/[0.06]"
               >
                 Explore articles
               </Link>
             </div>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
+          <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-white/[0.08] bg-white/[0.04] sm:grid-cols-4 lg:min-w-[420px]">
             {stats.map((item) => (
               <div
                 key={item.label}
-                className="rounded-2xl border border-white/[0.06] bg-white/[0.03] p-5 backdrop-blur-sm"
+                className="bg-[#0a1220]/80 px-4 py-3.5 text-center"
               >
-                <p className="text-2xl font-bold tracking-tight text-white">
+                <dt className="text-[11px] font-medium uppercase tracking-wider text-slate-500">
+                  {item.label}
+                </dt>
+                <dd className="mt-1 text-lg font-bold tracking-tight text-white">
                   {item.value}
-                </p>
-                <p className="mt-1 text-sm text-slate-500">{item.label}</p>
+                </dd>
               </div>
             ))}
-          </div>
+          </dl>
         </div>
       </div>
     </section>

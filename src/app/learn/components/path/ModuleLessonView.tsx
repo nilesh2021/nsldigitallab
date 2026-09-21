@@ -9,7 +9,7 @@ import {
   ListChecks,
   Pencil,
 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 import SEO from "../../../../seo/SEO";
 import MainLayout from "../../../layouts/MainLayout";
@@ -21,6 +21,11 @@ import {
   ModuleLesson,
   PublishedModule,
 } from "../../types";
+import { getCourseCatalog } from "../../data/catalogs";
+import { lessonId } from "../../progress/storage";
+import { useLearningProgress } from "../../progress/useLearningProgress";
+import LessonProgress from "../progress/LessonProgress";
+import ModuleProgress from "../progress/ModuleProgress";
 
 type Step =
   | { kind: "intro" }
@@ -42,6 +47,14 @@ function stepKey(step: Step) {
 }
 
 export default function ModuleLessonView({ module }: Props) {
+  const catalog = getCourseCatalog(module.pathSlug);
+  const progress = useLearningProgress(catalog);
+  const [searchParams] = useSearchParams();
+  const moduleIndex =
+    catalog?.modules.findIndex((item) => item.slug === module.moduleSlug) ??
+    Math.max(0, Number.parseInt(module.moduleNumber, 10) - 1);
+  const moduleStats = progress.moduleStats(module.moduleSlug);
+
   const steps = useMemo<Step[]>(() => {
     const lessonSteps: Step[] = module.lessons.map((_, index) => ({
       kind: "lesson",
@@ -53,8 +66,57 @@ export default function ModuleLessonView({ module }: Props) {
     return [{ kind: "intro" }, ...lessonSteps, { kind: "project" }, ...extra];
   }, [module.lessons, module.summary, module.knowledgeCheck]);
 
-  const [stepIndex, setStepIndex] = useState(0);
+  const initialLessonSlug = searchParams.get("lesson");
+  const initialStep = useMemo(() => {
+    if (!initialLessonSlug) return 0;
+    const lessonIndex = module.lessons.findIndex(
+      (lesson) => lesson.slug === initialLessonSlug,
+    );
+    if (lessonIndex < 0) return 0;
+    const match = steps.findIndex(
+      (item) => item.kind === "lesson" && item.index === lessonIndex,
+    );
+    return match >= 0 ? match : 0;
+  }, [initialLessonSlug, module.lessons, steps]);
+
+  const [stepIndex, setStepIndex] = useState(initialStep);
   const step = steps[stepIndex];
+  const currentLesson =
+    step.kind === "lesson" ? module.lessons[step.index] : null;
+  const currentLessonId = currentLesson
+    ? lessonId(module.moduleSlug, currentLesson.slug)
+    : null;
+  const lessonComplete = currentLessonId
+    ? progress.isLessonComplete(currentLessonId)
+    : false;
+
+  const lessonStepIndexes = useMemo(
+    () =>
+      steps
+        .map((item, index) => (item.kind === "lesson" ? index : -1))
+        .filter((index) => index >= 0),
+    [steps],
+  );
+  const lessonCursor =
+    step.kind === "lesson" ? lessonStepIndexes.indexOf(stepIndex) : -1;
+  const prevLessonStep =
+    lessonCursor > 0 ? lessonStepIndexes[lessonCursor - 1] : null;
+  const nextLessonStep =
+    lessonCursor >= 0 && lessonCursor < lessonStepIndexes.length - 1
+      ? lessonStepIndexes[lessonCursor + 1]
+      : null;
+  const prevModuleLessons =
+    catalog?.lessons.filter(
+      (lesson) =>
+        lesson.moduleSlug === catalog.modules[moduleIndex - 1]?.slug,
+    ) ?? [];
+  const prevModuleLastLesson =
+    prevModuleLessons[prevModuleLessons.length - 1] ?? null;
+  const nextModuleFirstLesson =
+    catalog?.lessons.find(
+      (lesson) =>
+        lesson.moduleSlug === catalog.modules[moduleIndex + 1]?.slug,
+    ) ?? null;
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -110,19 +172,26 @@ export default function ModuleLessonView({ module }: Props) {
               {module.estimatedTime} · {module.lessons.length} lessons + mini
               project
             </p>
+            <ModuleProgress
+              moduleNumber={moduleIndex + 1}
+              moduleCount={catalog?.moduleCount ?? 10}
+              completedLessons={moduleStats.completed}
+              totalLessons={moduleStats.total || module.lessons.length}
+              percent={moduleStats.percent}
+            />
           </div>
         </section>
 
-        <section className="border-t border-slate-100 bg-[#f8fafc] py-10 sm:py-14">
-          <div className="mx-auto grid max-w-7xl gap-8 px-6 lg:grid-cols-[16.5rem_1fr] lg:px-8">
+        <section className="border-t border-slate-100 bg-[#f8fafc] py-8 sm:py-12">
+          <div className="mx-auto grid max-w-7xl gap-6 px-6 lg:grid-cols-[13.5rem_1fr] lg:gap-8 lg:px-8">
             <nav
               aria-label="Lessons"
-              className="h-fit rounded-2xl border border-slate-200 bg-white p-4 lg:sticky lg:top-24"
+              className="h-fit rounded-xl border border-slate-200 bg-white p-2 lg:sticky lg:top-24"
             >
-              <p className="px-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-400">
+              <p className="px-2 pb-1 pt-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-400">
                 In this module
               </p>
-              <ol className="mt-3 space-y-1">
+              <ol className="space-y-0.5">
                 {steps.map((item, index) => {
                   const label =
                     item.kind === "intro"
@@ -137,18 +206,33 @@ export default function ModuleLessonView({ module }: Props) {
                                 module.lessons[item.index].title
                               }`;
                   const active = index === stepIndex;
+                  const itemLessonId =
+                    item.kind === "lesson"
+                      ? lessonId(
+                          module.moduleSlug,
+                          module.lessons[item.index].slug,
+                        )
+                      : null;
+                  const itemComplete = itemLessonId
+                    ? progress.isLessonComplete(itemLessonId)
+                    : false;
                   return (
                     <li key={stepKey(item)}>
                       <button
                         type="button"
                         onClick={() => setStepIndex(index)}
-                        className={`w-full rounded-xl px-3 py-2.5 text-left text-sm leading-5 transition ${
+                        className={`flex w-full items-start gap-1.5 rounded-lg px-2 py-1.5 text-left text-[13px] leading-4 transition ${
                           active
                             ? "bg-cyan-50 font-semibold text-cyan-900"
-                            : "text-slate-600 hover:bg-slate-50"
+                            : itemComplete
+                              ? "text-slate-500 hover:bg-slate-50"
+                              : "text-slate-600 hover:bg-slate-50"
                         }`}
                       >
-                        {label}
+                        {itemComplete ? (
+                          <CheckCircle2 className="mt-px h-3 w-3 shrink-0 text-emerald-600" />
+                        ) : null}
+                        <span>{label}</span>
                       </button>
                     </li>
                   );
@@ -171,6 +255,16 @@ export default function ModuleLessonView({ module }: Props) {
               <h2 className="mt-2 text-2xl font-bold tracking-tight text-[#0f172a] sm:text-3xl">
                 {title}
               </h2>
+              {currentLesson && currentLessonId ? (
+                <LessonProgress
+                  current={step.kind === "lesson" ? step.index + 1 : 0}
+                  total={module.lessons.length}
+                  complete={lessonComplete}
+                  onMarkComplete={() =>
+                    progress.markLessonComplete(currentLessonId)
+                  }
+                />
+              ) : null}
 
               {step.kind === "intro" ? (
                 <IntroBody module={module} />
@@ -187,7 +281,35 @@ export default function ModuleLessonView({ module }: Props) {
               ) : null}
 
               <div className="mt-10 flex flex-col gap-3 border-t border-slate-100 pt-6 sm:flex-row sm:items-center sm:justify-between">
-                {isFirst && module.prevModule ? (
+                {step.kind === "lesson" ? (
+                  prevLessonStep != null ? (
+                    <button
+                      type="button"
+                      onClick={() => setStepIndex(prevLessonStep)}
+                      className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
+                    >
+                      <ArrowLeft className="h-4 w-4" />
+                      Previous Lesson
+                    </button>
+                  ) : prevModuleLastLesson ? (
+                    <Link
+                      to={prevModuleLastLesson.href}
+                      className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
+                    >
+                      <ArrowLeft className="h-4 w-4" />
+                      Previous Lesson
+                    </Link>
+                  ) : (
+                    <button
+                      type="button"
+                      disabled
+                      className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-700 disabled:cursor-not-allowed disabled:opacity-40"
+                    >
+                      <ArrowLeft className="h-4 w-4" />
+                      Previous Lesson
+                    </button>
+                  )
+                ) : isFirst && module.prevModule ? (
                   <Link
                     to={module.prevModule.href}
                     className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
@@ -206,7 +328,34 @@ export default function ModuleLessonView({ module }: Props) {
                     Previous
                   </button>
                 )}
-                {isLast ? (
+                {step.kind === "lesson" ? (
+                  nextLessonStep != null ? (
+                    <button
+                      type="button"
+                      onClick={() => setStepIndex(nextLessonStep)}
+                      className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0f172a] px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+                    >
+                      Next Lesson
+                      <ArrowRight className="h-4 w-4" />
+                    </button>
+                  ) : nextModuleFirstLesson ? (
+                    <Link
+                      to={nextModuleFirstLesson.href}
+                      className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0f172a] px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+                    >
+                      Next Lesson
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  ) : (
+                    <Link
+                      to={module.syllabusHref}
+                      className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0f172a] px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+                    >
+                      Back to syllabus
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  )
+                ) : isLast ? (
                   <Link
                     to={module.nextModule?.href ?? module.syllabusHref}
                     className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0f172a] px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
@@ -330,6 +479,26 @@ function IntroBody({ module }: { module: PublishedModule }) {
           ))}
         </ul>
       </div>
+      {module.pathSlug === "ui-ux-design" ? (
+        <Link
+          to="/case-studies/online-wine-shopping"
+          className="block rounded-2xl border border-[#eadfd3] bg-[#fbf8f4] p-5 transition hover:border-[#722F37]/40"
+        >
+          <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#722F37]">
+            See it in practice
+          </p>
+          <p className="mt-1 text-sm font-semibold text-[#1a1214]">
+            Online Wine Shopping case study
+          </p>
+          <p className="mt-1 text-sm leading-6 text-slate-600">
+            A full Discovery → Define → Ideate → Design → Testing story. Open
+            it beside this module — it is not part of the lessons.
+          </p>
+          <p className="mt-3 text-sm font-semibold text-[#722F37]">
+            Explore the Wine Shopping Case Study →
+          </p>
+        </Link>
+      ) : null}
       <p className="text-sm text-slate-500">
         Use Next to open Lesson 1. You can also pick any lesson from the list
         on the left.
@@ -377,7 +546,12 @@ function ProjectBody({ module }: { module: PublishedModule }) {
           ))}
         </ol>
       </div>
-      <CodePanel title="Starter you can paste into App.jsx" code={project.starterCode} />
+      <CodePanel
+        title={
+          project.starterLabel ?? "Starter you can paste into App.jsx"
+        }
+        code={project.starterCode}
+      />
       <div>
         <p className="text-sm font-semibold text-[#0f172a]">You are done when</p>
         <ul className="mt-2 space-y-2">
@@ -434,6 +608,25 @@ function Block({ block }: { block: LessonBlock }) {
           <p className="mt-1 text-sm leading-6 text-amber-950/80">{block.text}</p>
         </div>
       </div>
+    );
+  }
+  if (block.type === "related") {
+    return (
+      <Link
+        to={block.href}
+        className="block rounded-2xl border border-[#eadfd3] bg-[#fbf8f4] p-5 transition hover:border-[#722F37]/40"
+      >
+        <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#722F37]">
+          {block.kicker ?? "See it in practice"}
+        </p>
+        <p className="mt-1 text-sm font-semibold text-[#1a1214]">
+          {block.title}
+        </p>
+        <p className="mt-1 text-sm leading-6 text-slate-600">{block.text}</p>
+        <p className="mt-3 text-sm font-semibold text-[#722F37]">
+          {block.ctaLabel ?? "Open this section in the case study →"}
+        </p>
+      </Link>
     );
   }
   if (block.type === "exercise") {

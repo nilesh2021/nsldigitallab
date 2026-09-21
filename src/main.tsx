@@ -18,6 +18,7 @@ import ContactThankYouPage from "./app/contact/thank-you/page";
 import ThankYouPage from "./app/thank-you/page";
 
 import learnRoutes from "./routes/learnRoutes";
+import caseStudyRoutes from "./routes/caseStudyRoutes";
 import resourceRoutes from "./routes/resourceRoutes";
 import serviceRoutes from "./routes/serviceRoutes";
 import careerRoutes from "./routes/careerRoutes";
@@ -36,6 +37,7 @@ createRoot(document.getElementById("root")!).render(
         <Routes>
           {resourceRoutes}
           {learnRoutes}
+          {caseStudyRoutes}
           {serviceRoutes}
           {careerRoutes}
           {internshipRoutes}

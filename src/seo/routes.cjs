@@ -19,6 +19,9 @@ module.exports = {
 
     "/claude-ai",
 
+    "/case-studies",
+    "/case-studies/online-wine-shopping",
+
     "/seo-internship-pune",
     "/seo-internship-mumbai",
     "/remote-seo-internship",

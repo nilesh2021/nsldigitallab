@@ -49,6 +49,14 @@ export type LessonBlock =
   | { type: "tip"; text: string }
   | { type: "exercise"; title?: string; steps: string[] }
   | {
+      type: "related";
+      href: string;
+      kicker?: string;
+      title: string;
+      text: string;
+      ctaLabel?: string;
+    }
+  | {
       type: "check";
       question: string;
       options: { id: string; label: string; correct: boolean }[];
@@ -68,6 +76,8 @@ export interface ModuleMiniProject {
   goal: string;
   steps: string[];
   starterCode: string;
+  /** Label above the starter template. Defaults to the React paste hint. */
+  starterLabel?: string;
   doneWhen: string[];
 }
 

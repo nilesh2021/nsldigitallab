@@ -3,12 +3,13 @@ import { Course } from "../types";
 
 export const courses: Course[] = [
     {
-        title: "UI/UX Design",
+        title: "UI/UX Design Foundations",
         description:
-            "Master UX research, wireframing, prototyping, Figma, design systems and portfolio creation.",
+            "Learn the Discovery → Define → Ideate → Design → Testing process, Figma, heuristics, and a portfolio case study.",
         icon: Palette,
-        lessons: "20+ Lessons",
+        lessons: "10 Modules",
         level: "Beginner Friendly",
+        link: "/learn/ui-ux-design",
         color: "from-cyan-500 to-sky-500",
     },
     {

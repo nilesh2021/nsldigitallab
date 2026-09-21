@@ -17,6 +17,9 @@ import MainLayout from "../../../layouts/MainLayout";
 import NewsletterSection from "../../../components/common/NewsletterSection";
 import { LearningModule, LearningPath } from "../../types";
 import PageComments from "../PageComments";
+import { getCourseCatalog } from "../../data/catalogs";
+import { useLearningProgress } from "../../progress/useLearningProgress";
+import CourseProgress from "../progress/CourseProgress";
 
 type Props = {
   path: LearningPath;
@@ -28,6 +31,8 @@ export default function LearningPathView({ path }: Props) {
   const firstModuleId = `module-${firstModule?.slug ?? "start"}`;
   const startHref = firstModule?.contentHref ?? `#${firstModuleId}`;
   const startIsRoute = Boolean(firstModule?.contentHref);
+  const catalog = getCourseCatalog(path.slug);
+  const progress = useLearningProgress(catalog);
 
   return (
     <>
@@ -80,7 +85,18 @@ export default function LearningPathView({ path }: Props) {
                 </p>
 
                 <div className="mt-5 flex flex-wrap gap-2.5">
-                  {startIsRoute ? (
+                  {startIsRoute &&
+                  progress.hydrated &&
+                  progress.stats.completedLessons > 0 &&
+                  progress.stats.nextLesson ? (
+                    <Link
+                      to={progress.stats.nextLesson.href}
+                      className="inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2.5 text-sm font-semibold text-[#060b14] transition hover:bg-slate-100"
+                    >
+                      Continue Learning
+                      <ArrowRight className="h-3.5 w-3.5" />
+                    </Link>
+                  ) : startIsRoute ? (
                     <Link
                       to={startHref}
                       className="inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2.5 text-sm font-semibold text-[#060b14] transition hover:bg-slate-100"
@@ -112,6 +128,19 @@ export default function LearningPathView({ path }: Props) {
                   <MetaChip icon={Layers} label="Modules" value={path.moduleLabel} />
                   <MetaChip icon={Clock} label="Time" value={path.estimatedTime} />
                 </div>
+
+                {catalog ? (
+                  <CourseProgress
+                    percent={progress.stats.percent}
+                    completedLessons={progress.stats.completedLessons}
+                    totalLessons={progress.stats.totalLessons}
+                    completedModules={progress.stats.completedModules}
+                    totalModules={progress.stats.totalModules}
+                    nextLesson={progress.stats.nextLesson}
+                    isCourseComplete={progress.stats.isCourseComplete}
+                    hydrated={progress.hydrated}
+                  />
+                ) : null}
               </div>
 
               <aside className="rounded-2xl border border-white/[0.08] bg-white/[0.035] p-5 backdrop-blur-sm">
@@ -167,6 +196,27 @@ export default function LearningPathView({ path }: Props) {
             </div>
 
             <ModuleAccordion modules={path.modules} />
+
+            {path.slug === "ui-ux-design" ? (
+              <div className="mt-12 overflow-hidden rounded-3xl border border-slate-200 bg-[#0f172a] p-6 sm:p-8">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-cyan-300">
+                  Practice what you learned
+                </p>
+                <h3 className="mt-2 text-2xl font-bold tracking-tight text-white">
+                  See the full process on a real project
+                </h3>
+                <p className="mt-2 max-w-xl text-sm leading-6 text-slate-400">
+                  Walk through research, strategy, IA, UI, and testing on a
+                  separate portfolio case study — not inside these modules.
+                </p>
+                <Link
+                  to="/case-studies/online-wine-shopping"
+                  className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-cyan-300 hover:text-white"
+                >
+                  Explore the Wine Shopping Case Study →
+                </Link>
+              </div>
+            ) : null}
           </div>
         </section>
 
