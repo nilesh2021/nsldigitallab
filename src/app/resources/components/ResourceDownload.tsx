@@ -53,6 +53,13 @@ export default function ResourceDownload({
         }),
       });
 
+      // Google Ads conversion: Website Template Bundle Signup
+      if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
+        (window as any).gtag("event", "conversion", {
+          send_to: "AW-11521753483/BdRPCLqNWYEdEIuDpPYq",
+        });
+      }
+
       setIsUnlocked(true);
     } catch (error) {
       console.error("Resource download form error:", error);
