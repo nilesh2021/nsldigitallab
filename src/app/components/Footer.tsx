@@ -70,7 +70,7 @@ function FooterNavLink({
   onSectionClick: (id: string, path: string) => void;
 }) {
   const className =
-    "cursor-pointer text-base leading-5 text-slate-400 transition-colors duration-200 hover:text-white md:text-[13px]";
+    "inline-block cursor-pointer py-0.5 text-base leading-6 text-slate-400 transition-colors duration-200 hover:text-white md:text-[13px]";
 
   if (link.hash) {
     return (
@@ -166,7 +166,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-x-4 gap-y-6 py-8 sm:grid-cols-4 lg:grid-cols-6 lg:gap-8">
+        <div className="grid grid-cols-2 gap-x-8 gap-y-8 py-10 pr-8 sm:grid-cols-4 sm:pr-0 lg:grid-cols-6 lg:gap-x-10">
           <div className="col-span-2 sm:col-span-4 lg:col-span-2">
             <Link to="/" className="group inline-flex cursor-pointer items-center gap-2.5">
               <div className="relative flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-white/10 bg-white/[0.04]">
@@ -213,10 +213,10 @@ export default function Footer() {
 
           {columns.map((column) => (
             <nav key={column.title} aria-label={column.title}>
-              <h2 className="mb-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+              <h2 className="mb-4 text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500">
                 {column.title}
               </h2>
-              <ul className="space-y-1.5">
+              <ul className="space-y-3">
                 {column.links.map((link) => (
                   <li key={`${column.title}-${link.label}`}>
                     <FooterNavLink link={link} onSectionClick={scrollToSection} />
@@ -227,7 +227,7 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="flex flex-col items-center justify-between gap-3 border-t border-white/[0.08] py-4 lg:flex-row">
+        <div className="flex flex-col items-center justify-between gap-4 border-t border-white/[0.08] py-5 lg:flex-row">
           <p className="text-center text-[13px] text-slate-500 lg:text-left">
             © {new Date().getFullYear()}{" "}
             <span className="font-medium text-slate-300">NSL Digital Lab</span>
@@ -236,7 +236,7 @@ export default function Footer() {
 
           <nav
             aria-label="Legal"
-            className="flex flex-wrap justify-center gap-x-4 gap-y-1 text-base md:text-[13px]"
+            className="flex flex-wrap justify-center gap-x-6 gap-y-2.5 px-8 text-base md:px-0 md:text-[13px]"
           >
             {policyLinks.map((link) => (
               <Link
