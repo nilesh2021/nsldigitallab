@@ -124,6 +124,8 @@ export default function ResourceDetails() {
         <section className="bg-white py-8 sm:py-10">
           <div className="mx-auto grid max-w-7xl gap-8 px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
             <ResourceDownload
+              key={resource.slug}
+              slug={resource.slug}
               resourceTitle={resource.title}
               downloadUrl={resource.downloadUrl}
               type={resource.type}

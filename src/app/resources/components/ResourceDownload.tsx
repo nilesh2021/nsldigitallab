@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Download, Mail, ShieldCheck, LoaderCircle } from "lucide-react";
 
 type ResourceDownloadProps = {
+  slug: string;
   resourceTitle: string;
   downloadUrl: string;
   type?: string;
@@ -10,7 +11,12 @@ type ResourceDownloadProps = {
 const GOOGLE_SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbxRaUoQNewWCzj8MQHEUkQplWd8oAUBxrCfa-7Optv5jtcEO4U5N_zzPZncjx-LWYLB/exec";
 
+const WEBSITE_TEMPLATE_BUNDLE_SLUG = "1000-website-templates-mega-bundle";
+const WEBSITE_TEMPLATE_BUNDLE_CONVERSION =
+  "AW-11521753483/BdRPCLqNWYEdEIuDpPYq";
+
 export default function ResourceDownload({
+  slug,
   resourceTitle,
   downloadUrl,
   type = "file",
@@ -19,6 +25,7 @@ export default function ResourceDownload({
   const [isUnlocked, setIsUnlocked] = useState(false);
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const conversionFiredRef = useRef(false);
   const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
   const ctaLabel = type.toLowerCase().includes("pdf")
     ? "Download PDF"
@@ -53,10 +60,15 @@ export default function ResourceDownload({
         }),
       });
 
-      // Google Ads conversion: Website Template Bundle Signup
-      if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
-        (window as any).gtag("event", "conversion", {
-          send_to: "AW-11521753483/BdRPCLqNWYEdEIuDpPYq",
+      if (
+        slug === WEBSITE_TEMPLATE_BUNDLE_SLUG &&
+        !conversionFiredRef.current &&
+        typeof window !== "undefined" &&
+        typeof window.gtag === "function"
+      ) {
+        conversionFiredRef.current = true;
+        window.gtag("event", "conversion", {
+          send_to: WEBSITE_TEMPLATE_BUNDLE_CONVERSION,
         });
       }
 
