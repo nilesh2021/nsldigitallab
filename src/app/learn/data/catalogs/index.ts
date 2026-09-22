@@ -18,6 +18,16 @@ import { uiUxDesignModule07 } from "../modules/uiUxDesignModule07";
 import { uiUxDesignModule08 } from "../modules/uiUxDesignModule08";
 import { uiUxDesignModule09 } from "../modules/uiUxDesignModule09";
 import { uiUxDesignModule10 } from "../modules/uiUxDesignModule10";
+import { digitalMarketingFoundationsModule01 } from "../modules/digitalMarketingFoundationsModule01";
+import { digitalMarketingFoundationsModule02 } from "../modules/digitalMarketingFoundationsModule02";
+import { digitalMarketingFoundationsModule03 } from "../modules/digitalMarketingFoundationsModule03";
+import { digitalMarketingFoundationsModule04 } from "../modules/digitalMarketingFoundationsModule04";
+import { digitalMarketingFoundationsModule05 } from "../modules/digitalMarketingFoundationsModule05";
+import { digitalMarketingFoundationsModule06 } from "../modules/digitalMarketingFoundationsModule06";
+import { digitalMarketingFoundationsModule07 } from "../modules/digitalMarketingFoundationsModule07";
+import { digitalMarketingFoundationsModule08 } from "../modules/digitalMarketingFoundationsModule08";
+import { digitalMarketingFoundationsModule09 } from "../modules/digitalMarketingFoundationsModule09";
+import { digitalMarketingFoundationsModule10 } from "../modules/digitalMarketingFoundationsModule10";
 import { buildCourseCatalog } from "../../progress/catalog";
 import { CourseCatalog } from "../../progress/types";
 
@@ -47,9 +57,24 @@ export const uiUxDesignCatalog = buildCourseCatalog([
   uiUxDesignModule10,
 ]);
 
+export const digitalMarketingFoundationsCatalog = buildCourseCatalog([
+  digitalMarketingFoundationsModule01,
+  digitalMarketingFoundationsModule02,
+  digitalMarketingFoundationsModule03,
+  digitalMarketingFoundationsModule04,
+  digitalMarketingFoundationsModule05,
+  digitalMarketingFoundationsModule06,
+  digitalMarketingFoundationsModule07,
+  digitalMarketingFoundationsModule08,
+  digitalMarketingFoundationsModule09,
+  digitalMarketingFoundationsModule10,
+]);
+
 export const courseCatalogs: Record<string, CourseCatalog> = {
   [reactFoundationsCatalog.pathSlug]: reactFoundationsCatalog,
   [uiUxDesignCatalog.pathSlug]: uiUxDesignCatalog,
+  [digitalMarketingFoundationsCatalog.pathSlug]:
+    digitalMarketingFoundationsCatalog,
 };
 
 export function getCourseCatalog(pathSlug: string) {

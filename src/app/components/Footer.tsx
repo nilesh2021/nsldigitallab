@@ -23,6 +23,7 @@ const serviceLinks: FooterLink[] = [
 const learnLinks: FooterLink[] = [
   { label: "Learning Hub", to: "/learn" },
   { label: "UI/UX Design Foundations", to: "/learn/ui-ux-design" },
+  { label: "Digital Marketing Foundations", to: "/learn/digital-marketing-foundations" },
   { label: "React Foundations", to: "/learn/react-foundations" },
   { label: "Case Studies", to: "/case-studies" },
   { label: "Free Resources", to: "/resources" },

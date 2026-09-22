@@ -13,6 +13,17 @@ import UiUxDesignModule08Page from "../app/learn/ui-ux-design/ui-ux-principles-a
 import UiUxDesignModule09Page from "../app/learn/ui-ux-design/prototyping-testing-accessibility/page";
 import UiUxDesignModule10Page from "../app/learn/ui-ux-design/complete-ui-ux-case-study/page";
 import LearnDigitalMarketingPage from "../app/learn/digital-marketing/page";
+import LearnDigitalMarketingFoundationsPage from "../app/learn/digital-marketing-foundations/page";
+import DigitalMarketingFoundationsModule01Page from "../app/learn/digital-marketing-foundations/digital-marketing-fundamentals/page";
+import DigitalMarketingFoundationsModule02Page from "../app/learn/digital-marketing-foundations/audience-and-market-research/page";
+import DigitalMarketingFoundationsModule03Page from "../app/learn/digital-marketing-foundations/digital-marketing-strategy/page";
+import DigitalMarketingFoundationsModule04Page from "../app/learn/digital-marketing-foundations/content-marketing-and-social-media/page";
+import DigitalMarketingFoundationsModule05Page from "../app/learn/digital-marketing-foundations/seo-foundations/page";
+import DigitalMarketingFoundationsModule06Page from "../app/learn/digital-marketing-foundations/paid-advertising-and-google-ads/page";
+import DigitalMarketingFoundationsModule07Page from "../app/learn/digital-marketing-foundations/social-media-advertising/page";
+import DigitalMarketingFoundationsModule08Page from "../app/learn/digital-marketing-foundations/email-marketing-and-conversion/page";
+import DigitalMarketingFoundationsModule09Page from "../app/learn/digital-marketing-foundations/analytics-and-marketing-performance/page";
+import DigitalMarketingFoundationsModule10Page from "../app/learn/digital-marketing-foundations/complete-digital-marketing-campaign/page";
 import LearnSeoPage from "../app/learn/seo/page";
 import LearnReactFoundationsPage from "../app/learn/react-foundations/page";
 import ReactFoundationsModule01Page from "../app/learn/react-foundations/react-and-modern-frontend/page";
@@ -81,6 +92,51 @@ const learnRoutes = (
     <Route
       path="/learn/digital-marketing"
       element={<LearnDigitalMarketingPage />}
+    />
+
+    <Route
+      path="/learn/digital-marketing-foundations"
+      element={<LearnDigitalMarketingFoundationsPage />}
+    />
+    <Route
+      path="/learn/digital-marketing-foundations/digital-marketing-fundamentals"
+      element={<DigitalMarketingFoundationsModule01Page />}
+    />
+    <Route
+      path="/learn/digital-marketing-foundations/audience-and-market-research"
+      element={<DigitalMarketingFoundationsModule02Page />}
+    />
+    <Route
+      path="/learn/digital-marketing-foundations/digital-marketing-strategy"
+      element={<DigitalMarketingFoundationsModule03Page />}
+    />
+    <Route
+      path="/learn/digital-marketing-foundations/content-marketing-and-social-media"
+      element={<DigitalMarketingFoundationsModule04Page />}
+    />
+    <Route
+      path="/learn/digital-marketing-foundations/seo-foundations"
+      element={<DigitalMarketingFoundationsModule05Page />}
+    />
+    <Route
+      path="/learn/digital-marketing-foundations/paid-advertising-and-google-ads"
+      element={<DigitalMarketingFoundationsModule06Page />}
+    />
+    <Route
+      path="/learn/digital-marketing-foundations/social-media-advertising"
+      element={<DigitalMarketingFoundationsModule07Page />}
+    />
+    <Route
+      path="/learn/digital-marketing-foundations/email-marketing-and-conversion"
+      element={<DigitalMarketingFoundationsModule08Page />}
+    />
+    <Route
+      path="/learn/digital-marketing-foundations/analytics-and-marketing-performance"
+      element={<DigitalMarketingFoundationsModule09Page />}
+    />
+    <Route
+      path="/learn/digital-marketing-foundations/complete-digital-marketing-campaign"
+      element={<DigitalMarketingFoundationsModule10Page />}
     />
 
     <Route

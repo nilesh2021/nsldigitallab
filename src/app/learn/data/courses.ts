@@ -13,12 +13,13 @@ export const courses: Course[] = [
         color: "from-cyan-500 to-sky-500",
     },
     {
-        title: "Digital Marketing",
+        title: "Digital Marketing Foundations",
         description:
-            "Learn SEO, Google Ads, Meta Ads, Email Marketing, Affiliate Marketing and Analytics.",
+            "Start from zero: what digital marketing is, then research, strategy, content, SEO, ads, email, analytics, and a full campaign plan.",
         icon: TrendingUp,
-        lessons: "25+ Lessons",
+        lessons: "10 Modules",
         level: "Beginner Friendly",
+        link: "/learn/digital-marketing-foundations",
         color: "from-indigo-500 to-blue-600",
     },
     {

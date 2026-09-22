@@ -146,7 +146,7 @@ export default function ModuleLessonView({ module }: Props) {
         canonical={module.seo.canonical}
       />
       <MainLayout>
-        <section className="relative overflow-hidden bg-[#060b14] pb-12 pt-28 sm:pb-14 sm:pt-32">
+        <section className="relative overflow-hidden bg-[#060b14] pb-4 pt-24 sm:pb-5 sm:pt-28">
           <div
             className="pointer-events-none absolute inset-0 opacity-[0.35]"
             style={{
@@ -155,31 +155,36 @@ export default function ModuleLessonView({ module }: Props) {
               backgroundSize: "32px 32px",
             }}
           />
-          <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
-            <Breadcrumbs
-              items={[
-                { label: "Learn", href: "/learn" },
-                { label: module.pathTitle, href: module.syllabusHref },
-                { label: `Module ${module.moduleNumber}` },
-              ]}
-            />
-            <p className="mt-2 text-sm font-medium text-cyan-300">
-              {module.pathTitle} · Module {module.moduleNumber}
-            </p>
-            <h1 className="mt-3 max-w-3xl text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              {module.title}
-            </h1>
-            <p className="mt-3 text-sm text-slate-400">
-              {module.estimatedTime} · {module.lessons.length} lessons + mini
-              project
-            </p>
-            <ModuleProgress
-              moduleNumber={moduleIndex + 1}
-              moduleCount={catalog?.moduleCount ?? 10}
-              completedLessons={moduleStats.completed}
-              totalLessons={moduleStats.total || module.lessons.length}
-              percent={moduleStats.percent}
-            />
+          <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 p-3">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-8">
+              <div className="w-full max-w-sm shrink-0">
+                <h1 className="text-xl font-bold tracking-tight text-white sm:text-2xl">
+                  {module.title}
+                </h1>
+                <ModuleProgress
+                  className="mt-2 w-full"
+                  moduleNumber={moduleIndex + 1}
+                  moduleCount={catalog?.moduleCount ?? 10}
+                  completedLessons={moduleStats.completed}
+                  totalLessons={moduleStats.total || module.lessons.length}
+                  percent={moduleStats.percent}
+                />
+              </div>
+              <div className="min-w-0 sm:text-right">
+                <Breadcrumbs
+                  className="mb-0 sm:[&_ol]:justify-end"
+                  items={[
+                    { label: "Learn", href: "/learn" },
+                    { label: module.pathTitle, href: module.syllabusHref },
+                    { label: `Module ${module.moduleNumber}` },
+                  ]}
+                />
+                <p className="mt-1 text-xs text-slate-400">
+                  {module.estimatedTime} · {module.lessons.length} lessons + mini
+                  project
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -577,15 +582,39 @@ function ProjectBody({ module }: { module: PublishedModule }) {
   );
 }
 
+function RichText({ text }: { text: string }) {
+  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  return (
+    <>
+      {parts.map((part, index) => {
+        if (part.startsWith("**") && part.endsWith("**")) {
+          return (
+            <strong key={index} className="font-semibold text-slate-800">
+              {part.slice(2, -2)}
+            </strong>
+          );
+        }
+        return <span key={index}>{part}</span>;
+      })}
+    </>
+  );
+}
+
 function Block({ block }: { block: LessonBlock }) {
   if (block.type === "p") {
-    return <p className="text-base leading-7 text-slate-600">{block.text}</p>;
+    return (
+      <p className="text-base leading-7 text-slate-600">
+        <RichText text={block.text} />
+      </p>
+    );
   }
   if (block.type === "ul") {
     return (
       <ul className="list-disc space-y-2 pl-5 text-base leading-7 text-slate-600">
         {block.items.map((item) => (
-          <li key={item}>{item}</li>
+          <li key={item}>
+            <RichText text={item} />
+          </li>
         ))}
       </ul>
     );
@@ -599,7 +628,9 @@ function Block({ block }: { block: LessonBlock }) {
         <p className="mt-1 text-base font-semibold text-[#0f172a]">
           {block.term}
         </p>
-        <p className="mt-1 text-sm leading-6 text-slate-600">{block.meaning}</p>
+        <p className="mt-1 text-sm leading-6 text-slate-600">
+          <RichText text={block.meaning} />
+        </p>
       </div>
     );
   }
@@ -612,7 +643,9 @@ function Block({ block }: { block: LessonBlock }) {
         <Lightbulb className="mt-0.5 h-4 w-4 shrink-0 text-amber-600" />
         <div>
           <p className="text-sm font-semibold text-amber-950">Beginner tip</p>
-          <p className="mt-1 text-sm leading-6 text-amber-950/80">{block.text}</p>
+          <p className="mt-1 text-sm leading-6 text-amber-950/80">
+            <RichText text={block.text} />
+          </p>
         </div>
       </div>
     );
@@ -650,7 +683,7 @@ function Block({ block }: { block: LessonBlock }) {
               className="flex gap-3 text-sm leading-6 text-slate-600"
             >
               <span className="font-mono text-xs text-cyan-700">{index + 1}.</span>
-              {step}
+              <RichText text={step} />
             </li>
           ))}
         </ol>

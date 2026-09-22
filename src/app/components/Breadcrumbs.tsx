@@ -8,15 +8,17 @@ type BreadcrumbItem = {
 
 type BreadcrumbsProps = {
   items: BreadcrumbItem[];
+  className?: string;
 };
 
 export default function Breadcrumbs({
   items,
+  className = "mb-6",
 }: BreadcrumbsProps) {
   return (
     <nav
       aria-label="Breadcrumb"
-      className="mb-6"
+      className={className}
     >
       <ol className="flex flex-wrap items-center gap-2 text-sm">
 

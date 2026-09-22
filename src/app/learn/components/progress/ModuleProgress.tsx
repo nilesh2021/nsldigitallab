@@ -6,6 +6,7 @@ type Props = {
   completedLessons: number;
   totalLessons: number;
   percent: number;
+  className?: string;
 };
 
 export default function ModuleProgress({
@@ -14,19 +15,20 @@ export default function ModuleProgress({
   completedLessons,
   totalLessons,
   percent,
+  className = "mt-3 max-w-md",
 }: Props) {
   return (
-    <div className="mt-5 max-w-md">
+    <div className={className}>
       <div className="flex items-baseline justify-between gap-3">
-        <p className="text-sm font-medium text-slate-200">
+        <p className="text-xs font-medium text-slate-200">
           Module {moduleNumber} of {moduleCount}
         </p>
-        <p className="text-xs text-slate-400">
+        <p className="text-[11px] text-slate-400">
           {completedLessons} of {totalLessons} lessons complete
         </p>
       </div>
       <ProgressBar
-        className="mt-2"
+        className="mt-1.5"
         value={percent}
         label={`Module progress ${percent} percent`}
         trackClassName="bg-white/10"
