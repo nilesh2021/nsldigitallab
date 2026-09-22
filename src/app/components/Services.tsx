@@ -81,7 +81,7 @@ export default function Services() {
               as one system
             </span>
           </h2>
-          <p className="mt-3 text-sm leading-6 text-slate-400 sm:text-base">
+          <p className="mt-3 text-base leading-6 text-slate-400 sm:text-lg">
             UI/UX, websites, SEO, and marketing — so people find you, trust the
             experience, and take action.
           </p>
@@ -104,7 +104,7 @@ export default function Services() {
               <h3 className="mt-4 text-lg font-semibold tracking-tight text-white">
                 {service.title}
               </h3>
-              <p className="mt-2 text-sm leading-6 text-slate-400">
+              <p className="mt-2 text-base leading-6 text-slate-400 md:text-sm">
                 {service.description}
               </p>
             </article>

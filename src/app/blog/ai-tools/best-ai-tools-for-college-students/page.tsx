@@ -185,7 +185,7 @@ export default function BestAIToolsStudentsPage() {
     <main className="bg-black text-white min-h-screen">
       {/* HERO SECTION */}
       <section className="relative overflow-hidden border-b border-white/10 bg-gradient-to-b from-blue-950 via-slate-950 to-black py-24">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.2),transparent_40%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.2),transparent_40%)]" />
 
         <div className="container mx-auto px-6 relative z-10 py-24">
           <div className="grid lg:grid-cols-2 gap-16 items-center">

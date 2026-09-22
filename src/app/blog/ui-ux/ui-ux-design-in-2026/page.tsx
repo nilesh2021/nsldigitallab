@@ -60,16 +60,16 @@ export default function UiUxFuture2026Page() {
                 {/* HERO */}
                 <section className="relative overflow-hidden bg-[#edf3fb] pt-40 pb-24">
                     {/* Background */}
-                    <div className="absolute inset-0 opacity-70">
+                    <div className="pointer-events-none absolute inset-0 opacity-70">
                         <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-cyan-300/20 rounded-full blur-3xl" />
 
                         <div className="absolute top-10 right-0 w-[500px] h-[500px] bg-blue-300/20 rounded-full blur-3xl" />
                     </div>
 
                     {/* Grid */}
-                    <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.5)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.5)_1px,transparent_1px)] bg-[size:60px_60px] opacity-40" />
+                    <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.5)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.5)_1px,transparent_1px)] bg-[size:60px_60px] opacity-40" />
 
-                    <div className="relative max-w-7xl mx-auto px-6 lg:px-10">
+                    <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
                         {/* Badge */}
                         <div className="max-w-4xl">
                             <div className="inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-white/80 backdrop-blur-md px-5 py-2 shadow-md">

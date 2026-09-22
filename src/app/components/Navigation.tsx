@@ -213,7 +213,7 @@ export default function Navigation({
             </div>
 
             <div className="min-w-0">
-              <p className="truncate text-[13px] font-semibold leading-none tracking-tight text-white sm:text-base">
+              <p className="truncate text-base font-semibold leading-none tracking-tight text-white">
                 NSL
                 <span className="ml-1 font-light text-slate-300 sm:ml-1.5">Digital Lab</span>
               </p>
@@ -287,28 +287,21 @@ export default function Navigation({
         </div>
       </nav>
 
-      <div
-        id="mobile-nav"
-        aria-hidden={!isMobileMenuOpen}
-        inert={!isMobileMenuOpen}
-        className={`relative z-[55] md:hidden ${isMobileMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}
-      >
-        <button
-          type="button"
-          aria-label="Close menu overlay"
-          onClick={() => setIsMobileMenuOpen(false)}
-          className={`fixed inset-0 z-40 bg-[#060b14]/70 backdrop-blur-sm transition-opacity duration-300 ${
-            isMobileMenuOpen ? 'opacity-100' : 'opacity-0'
-          }`}
-        />
-
+      {isMobileMenuOpen ? (
         <div
-          className={`
-            relative z-50 mx-3 mt-1.5 overflow-hidden rounded-xl border border-white/[0.08] bg-[#0c1424]/95 shadow-2xl backdrop-blur-xl
-            transition-all duration-300
-            ${isMobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-2 opacity-0'}
-          `}
+          id="mobile-nav"
+          className="relative z-[55] pointer-events-auto md:hidden"
         >
+          <button
+            type="button"
+            aria-label="Close menu overlay"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="fixed inset-0 z-40 bg-[#060b14]/70 backdrop-blur-sm"
+          />
+
+          <div
+            className="relative z-50 mx-3 mt-1.5 overflow-hidden rounded-xl border border-white/[0.08] bg-[#0c1424]/95 shadow-2xl backdrop-blur-xl"
+          >
           <div className="flex flex-col p-1.5">
             {navItems.map((item) => {
               const active = isItemActive(item);
@@ -323,10 +316,10 @@ export default function Navigation({
                     active ? 'bg-white/[0.06]' : 'hover:bg-white/[0.04]'
                   }`}
                 >
-                  <span className={`text-[14px] font-medium ${active ? 'text-white' : 'text-slate-200'}`}>
+                  <span className={`text-base font-medium ${active ? 'text-white' : 'text-slate-200'}`}>
                     {item.label}
                   </span>
-                  <span className="text-[11px] text-slate-500">{item.hint}</span>
+                  <span className="text-sm text-slate-500">{item.hint}</span>
                 </button>
               );
             })}
@@ -336,21 +329,22 @@ export default function Navigation({
             <button
               type="button"
               onClick={() => goToPage('/careers')}
-              className="cursor-pointer rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2 text-[12px] font-medium text-slate-200"
+              className="cursor-pointer rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2 text-base font-medium text-slate-200"
             >
               Careers
             </button>
             <button
               type="button"
               onClick={() => scrollToSection('contact')}
-              className="inline-flex cursor-pointer items-center justify-center gap-1 rounded-lg bg-white px-3 py-2 text-[12px] font-semibold text-[#060b14]"
+              className="inline-flex cursor-pointer items-center justify-center gap-1 rounded-lg bg-white px-3 py-2 text-base font-semibold text-[#060b14]"
             >
               Let&apos;s talk
               <ArrowUpRight className="h-3.5 w-3.5" />
             </button>
           </div>
         </div>
-      </div>
+        </div>
+      ) : null}
     </header>
   );
 }

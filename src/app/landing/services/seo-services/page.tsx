@@ -209,7 +209,7 @@ export default function SeoServicesPage() {
           <div className="absolute top-20 right-0 w-[700px] h-[700px] bg-blue-600/20 rounded-full blur-3xl" />
 
           {/* Grid Pattern */}
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:60px_60px]" />
+          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:60px_60px]" />
 
           <div className="relative max-w-7xl mx-auto px-6 lg:px-10">
 

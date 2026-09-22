@@ -121,7 +121,7 @@ export default function AffiliateMarketingForBeginnersPage() {
 
       <main className="bg-black text-white min-h-screen">
         <section className="relative overflow-hidden border-b border-white/10 bg-gradient-to-b from-slate-950 via-slate-900 to-black py-24">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(236,72,153,0.2),transparent_40%)]" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(236,72,153,0.2),transparent_40%)]" />
           <div className="container mx-auto px-6 py-24 relative z-10">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>

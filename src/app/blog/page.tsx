@@ -84,7 +84,7 @@ export default function BlogPage() {
 
       <main className="min-h-screen bg-[#f5f7fb]">
         <section className="relative overflow-hidden bg-[#071028] py-14 sm:py-16">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(34,211,238,0.2),transparent_34%),radial-gradient(circle_at_bottom_left,rgba(59,130,246,0.14),transparent_30%)]" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(34,211,238,0.2),transparent_34%),radial-gradient(circle_at_bottom_left,rgba(59,130,246,0.14),transparent_30%)]" />
 
           <div className="container relative z-10 mx-auto px-6 py-24">
             <div className="grid items-center gap-8 lg:grid-cols-[1.15fr_0.85fr]">

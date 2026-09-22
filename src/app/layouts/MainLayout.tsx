@@ -14,7 +14,7 @@ export default function MainLayout({
     <>
       <Navigation />
 
-      <main className="min-h-screen">
+      <main className="min-h-screen text-base">
 
         {children}
 

@@ -70,7 +70,7 @@ function FooterNavLink({
   onSectionClick: (id: string, path: string) => void;
 }) {
   const className =
-    "cursor-pointer text-[13px] leading-5 text-slate-400 transition-colors duration-200 hover:text-white";
+    "cursor-pointer text-base leading-5 text-slate-400 transition-colors duration-200 hover:text-white md:text-[13px]";
 
   if (link.hash) {
     return (
@@ -142,7 +142,7 @@ export default function Footer() {
             <p className="text-base font-semibold tracking-tight text-white sm:text-lg">
               Ready to grow your digital presence?
             </p>
-            <p className="mt-0.5 text-[13px] text-slate-400">
+            <p className="mt-0.5 text-base text-slate-400 md:text-[13px]">
               Tell us about your project — we usually reply within 24 hours.
             </p>
           </div>
@@ -151,14 +151,14 @@ export default function Footer() {
             <button
               type="button"
               onClick={() => scrollToSection("contact", "/")}
-              className="inline-flex shrink-0 cursor-pointer items-center justify-center gap-1.5 whitespace-nowrap rounded-full bg-white px-4 py-2 text-[13px] font-semibold text-[#060b14] transition-all duration-200 hover:-translate-y-px hover:bg-slate-100"
+              className="inline-flex shrink-0 cursor-pointer items-center justify-center gap-1.5 whitespace-nowrap rounded-full bg-white px-4 py-2 text-base font-semibold text-[#060b14] transition-all duration-200 hover:-translate-y-px hover:bg-slate-100 md:text-[13px]"
             >
               Let&apos;s talk
               <ArrowUpRight className="h-3.5 w-3.5" />
             </button>
             <a
               href="mailto:hello@nsldigitallab.com"
-              className="inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-[13px] font-medium text-slate-200 transition-colors hover:bg-white/[0.08] hover:text-white"
+              className="inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-base font-medium text-slate-200 transition-colors hover:bg-white/[0.08] hover:text-white md:text-[13px]"
             >
               <Mail className="h-3.5 w-3.5 text-cyan-400" />
               hello@nsldigitallab.com
@@ -236,7 +236,7 @@ export default function Footer() {
 
           <nav
             aria-label="Legal"
-            className="flex flex-wrap justify-center gap-x-4 gap-y-1 text-[13px]"
+            className="flex flex-wrap justify-center gap-x-4 gap-y-1 text-base md:text-[13px]"
           >
             {policyLinks.map((link) => (
               <Link

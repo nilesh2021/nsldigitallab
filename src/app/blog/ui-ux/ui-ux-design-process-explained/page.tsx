@@ -152,9 +152,9 @@ export default function UiUxDesignProcessExplainedPage() {
         <section className="relative overflow-hidden border-b border-white/10 bg-gradient-to-b from-slate-950 via-slate-900 to-black py-14 md:py-16">
 
           {/* BACKGROUND EFFECTS */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(56,189,248,0.18),transparent_35%)]" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(56,189,248,0.18),transparent_35%)]" />
 
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.14),transparent_35%)]" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.14),transparent_35%)]" />
 
           <div className="container relative z-10 mx-auto px-6">
 
@@ -369,7 +369,7 @@ export default function UiUxDesignProcessExplainedPage() {
                           className="group relative overflow-hidden rounded-[36px] border border-white/10 bg-white/5 p-8 transition duration-500 hover:border-cyan-400/20 hover:bg-white/[0.07]"
                         >
 
-                          <div className="absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_right,rgba(56,189,248,0.12),transparent_35%)]" />
+                          <div className="pointer-events-none absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_right,rgba(56,189,248,0.12),transparent_35%)]" />
 
                           <div className="relative z-10">
 

@@ -183,7 +183,7 @@ export default function SocialMediaMarketingPage() {
         {/* HERO SECTION */}
       <section className="relative overflow-hidden bg-[#020817] pt-40 pb-28 text-white">
           {/* Background */}
-         <div className="absolute inset-0">
+         <div className="pointer-events-none absolute inset-0">
             <div className="absolute left-[-180px] top-[-100px] h-[700px] w-[700px] rounded-full bg-cyan-500/20 blur-[140px]" />
 
              <div className="absolute left-[120px] top-[120px] h-[420px] w-[420px] rounded-full bg-violet-600/20 blur-[120px]" />
@@ -193,11 +193,11 @@ export default function SocialMediaMarketingPage() {
           </div>
 
           {/* Grid */}
-         <div className="absolute inset-0 opacity-[0.05]
+         <div className="pointer-events-none absolute inset-0 opacity-[0.05]
 bg-[linear-gradient(rgba(255,255,255,.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.08)_1px,transparent_1px)]
 bg-[size:70px_70px]" />
 
-          <div className="relative max-w-7xl mx-auto px-6 lg:px-10">
+          <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
             <div className="max-w-3xl">
               {/* Badge */}
               <div className="inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-white/80 backdrop-blur-md px-5 py-2 shadow-md">

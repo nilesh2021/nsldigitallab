@@ -78,7 +78,7 @@ export default function WebsiteOptimizationTipsPage() {
 
       <main className="bg-black text-white min-h-screen">
         <section className="relative overflow-hidden border-b border-white/10 bg-gradient-to-b from-slate-950 via-slate-900 to-black py-24">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(56,189,248,0.14),transparent_35%)]" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(56,189,248,0.14),transparent_35%)]" />
           <div className="container mx-auto px-6 relative z-10">
             <div className="grid gap-12 lg:grid-cols-[1fr_380px] items-center">
               <div>

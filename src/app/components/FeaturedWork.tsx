@@ -135,7 +135,7 @@ export default function FeaturedWork() {
               <h3 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
                 {current.title}
               </h3>
-              <p className="mt-3 max-w-lg text-sm leading-6 text-slate-300 sm:text-base">
+              <p className="mt-3 max-w-lg text-base leading-6 text-slate-300 sm:text-lg">
                 {current.description}
               </p>
               <div className="mt-5 flex flex-wrap gap-2">

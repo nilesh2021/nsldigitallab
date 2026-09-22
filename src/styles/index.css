@@ -7,18 +7,24 @@
 @theme {
   --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
   --font-heading: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --text-base: 1rem;
+  --text-base--line-height: 1.5;
 }
 
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
   padding: 0;
   font-family: var(--font-sans);
-  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+  @apply text-base;
   background: #ffffff;
   color: #111827;
 }

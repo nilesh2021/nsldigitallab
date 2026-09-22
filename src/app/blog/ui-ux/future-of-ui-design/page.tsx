@@ -75,7 +75,7 @@ export default function FutureOfUiDesignPage() {
                         <div className="absolute top-10 right-0 w-[500px] h-[500px] bg-fuchsia-300/20 rounded-full blur-3xl" />
                     </div>
 
-                    <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.5)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.5)_1px,transparent_1px)] bg-[size:60px_60px] opacity-40" />
+                    <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.5)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.5)_1px,transparent_1px)] bg-[size:60px_60px] opacity-40" />
 
                     <div className="relative max-w-7xl mx-auto px-6 lg:px-10">
                         <div className="max-w-4xl">
