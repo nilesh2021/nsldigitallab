@@ -169,7 +169,7 @@ export default function ContactCTA() {
                     Hours
                   </p>
                   <p className="mt-1 text-sm leading-relaxed text-white sm:text-base">
-                    Mon – Sat · 10:00 AM – 7:00 PM (IST)
+                    Mon – FRI · 10:00 AM – 7:00 PM (IST)
                   </p>
                 </div>
               </div>
