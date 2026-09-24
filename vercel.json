@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/resources/figma-ui-kit",
+      "destination": "/resources/figma-website-wireframe-kit",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",
