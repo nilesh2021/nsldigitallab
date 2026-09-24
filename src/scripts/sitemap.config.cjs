@@ -34,5 +34,7 @@ module.exports = {
   ignoredRoutes: [
     "/404",
     "/500",
+    "/resources/figma-ui-kit",
+    "/resources/resume-template",
   ],
 };

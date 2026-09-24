@@ -1,10 +1,9 @@
-//test deployment
-
 import { Helmet } from "react-helmet-async";
 
 import MainLayout from "../layouts/MainLayout";
 
 import Hero from "./components/Hero";
+import FeaturedResources from "./components/FeaturedResources";
 import ResourceGrid from "./components/ResourceGrid";
 import WhyChooseUs from "./components/WhyChooseUs";
 import FAQ from "./components/FAQ";
@@ -36,9 +35,9 @@ export default function ResourcesPage() {
       </Helmet>
 
       <MainLayout>
-
-
         <Hero />
+
+        <FeaturedResources />
 
         <ResourceGrid />
 
@@ -53,10 +52,7 @@ export default function ResourcesPage() {
         />
 
         <FAQ />
-
       </MainLayout>
-
-
     </>
   );
 }

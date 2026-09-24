@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UI/UX Portfolio Checklist | NSL Digital Lab</title>
+    <link rel="stylesheet" href="./checklist.css" />
+    <style>
+      .audience {
+        margin: 12px 0 0;
+        font-size: 13px;
+        color: var(--muted);
+      }
+      .progress {
+        margin-top: 14px;
+        font-size: 14px;
+        color: var(--muted);
+      }
+      .progress strong {
+        color: var(--ink);
+      }
+      .progress-bar {
+        margin-top: 6px;
+        height: 6px;
+        border-radius: 999px;
+        background: var(--line);
+        overflow: hidden;
+      }
+      .progress-bar span {
+        display: block;
+        height: 100%;
+        width: 0;
+        background: var(--accent);
+        transition: width 0.2s ease;
+      }
+      button.secondary {
+        background: #fff;
+        border: 1px solid var(--line);
+        color: var(--muted);
+      }
+      .apply {
+        border: 1px solid #a5f3fc;
+        border-left: 4px solid var(--accent);
+        background: #ecfeff;
+        border-radius: 14px;
+        padding: 18px 18px 10px;
+      }
+      .apply h2 {
+        margin-bottom: 4px;
+      }
+      .apply p {
+        margin: 0 0 12px;
+        font-size: 14px;
+        color: var(--muted);
+      }
+      .apply li {
+        background: #fff;
+      }
+      li {
+        cursor: pointer;
+      }
+      .review-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0 8px;
+      }
+      .review-grid li {
+        align-items: center;
+      }
+      .review-grid input[type="checkbox"] {
+        margin-top: 0;
+      }
+      li:has(input:checked) strong {
+        color: var(--muted);
+        text-decoration: line-through;
+      }
+      @media (max-width: 560px) {
+        .review-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media print {
+        .progress,
+        .progress-bar {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <header>
+        <div class="brand">NSL Digital Lab</div>
+        <h1>UI/UX Portfolio Checklist</h1>
+        <p class="lede">
+          Review your portfolio section by section before you apply for
+          internships, freelance projects, or UI/UX jobs. Tick each item only
+          when it is actually done.
+        </p>
+        <p class="audience">
+          For UI/UX students, freshers, junior designers, designers changing
+          careers, and experienced designers updating their portfolio.
+        </p>
+        <div class="actions">
+          <button type="button" onclick="window.print()">Print or save as PDF</button>
+          <button type="button" class="secondary" id="reset">Reset checklist</button>
+        </div>
+        <div class="progress" aria-live="polite">
+          <strong id="done">0</strong> of <span id="total">0</span> checked
+          <div class="progress-bar"><span id="bar"></span></div>
+        </div>
+      </header>
+
+      <section class="section apply">
+        <h2>Before You Apply</h2>
+        <p>The most important final checks. If any of these fail, fix them first.</p>
+        <ul>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Every project link and prototype link works</strong>
+              <span>Open each one in a private browser window, logged out.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Resume, LinkedIn, and portfolio tell the same story</strong>
+              <span>Same title, dates, roles, and projects across all three.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Your best 2–4 projects match the role you are applying for</strong>
+              <span>Lead with the project most relevant to this specific job.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Each case study shows your process, not just final screens</strong>
+              <span>Problem, your role, research, decisions, iterations, and outcome.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Contact details are current and easy to find</strong>
+              <span>Email and LinkedIn visible from every page.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>The portfolio works well on a phone</strong>
+              <span>Recruiters often open links on mobile first.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>No spelling or grammar errors</strong>
+              <span>Run a spell checker, then ask someone else to read it.</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>1. Portfolio Basics</h2>
+        <ul>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Add a clear professional title</strong>
+              <span>e.g. "UI/UX Designer" or "Product Designer", matching the roles you apply for.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Write a short introduction</strong>
+              <span>One or two lines on who you are and what kind of design you do.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Show your location and contact information</strong>
+              <span>City, country, and whether you are open to remote or relocation.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Link your LinkedIn profile</strong>
+              <span>Use your custom LinkedIn URL, not the default one with numbers.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Show a professional email address</strong>
+              <span>Preferably your name, and make it clickable.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Use a clean portfolio URL</strong>
+              <span>Your own domain or a short, readable link you can share anywhere.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Add a resume/CV link</strong>
+              <span>A clearly labelled link or button, visible without searching.</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>2. About Me</h2>
+        <ul>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Write a clear introduction</strong>
+              <span>Human and specific. Avoid generic lines like "I am passionate about design".</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Summarise relevant experience</strong>
+              <span>Jobs, internships, freelance work, or strong academic projects.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Mention your design interests</strong>
+              <span>e.g. SaaS, mobile apps, accessibility, design systems, fintech.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>List your core skills</strong>
+              <span>Research, wireframing, UI design, prototyping, usability testing.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>List the tools you use</strong>
+              <span>Only tools you can confidently use in an interview task, e.g. Figma.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>State your professional goals</strong>
+              <span>The kind of role, team, or product you want to work on next.</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>3. Project Selection</h2>
+        <ul>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Show 2–4 strong projects</strong>
+              <span>Fewer, deeper case studies beat many shallow ones.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Include different project types where appropriate</strong>
+              <span>e.g. a mobile app, a web product, and a redesign.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Choose projects relevant to the target role</strong>
+              <span>Reorder or swap projects for each type of job you apply for.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Clearly identify your personal contribution</strong>
+              <span>For team projects, say exactly what you did and what others did.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Remove unnecessary weak projects</strong>
+              <span>Your portfolio is judged by its weakest project too.</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>4. Case Study Structure</h2>
+        <ul>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Project overview</strong>
+              <span>Product, platform, timeline, team, and your role in 3–4 lines.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Problem statement</strong>
+              <span>What was wrong, for whom, and why it mattered.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Goals</strong>
+              <span>User goals and business goals you designed for.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>My role</strong>
+              <span>Your responsibilities and the decisions you owned.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Research</strong>
+              <span>Methods used (interviews, surveys, competitor analysis) and key findings.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>User needs</strong>
+              <span>The main needs and pain points the research revealed.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Personas, where relevant</strong>
+              <span>Only if based on research. Skip decorative personas.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>User journey</strong>
+              <span>The end-to-end experience, including pain points and opportunities.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>User flow</strong>
+              <span>The key steps users take to complete the main task.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Wireframes</strong>
+              <span>Early structure and layout options, with notes on what changed.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>UI design</strong>
+              <span>Final high-fidelity screens for the most important parts of the flow.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Prototype</strong>
+              <span>A working link or short video of the main interaction.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Testing</strong>
+              <span>How you tested, with how many users, and what you learned.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Iterations</strong>
+              <span>Before-and-after examples showing what changed after feedback.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Final solution</strong>
+              <span>How the final design solves the original problem.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Results</strong>
+              <span>Metrics, feedback, or outcomes. Be honest if the project is conceptual.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Learnings</strong>
+              <span>What you would do differently next time.</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>5. Visual Presentation</h2>
+        <ul>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Use a strong project cover</strong>
+              <span>A clear image of the product plus the project name and one-line summary.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Create a clear hierarchy</strong>
+              <span>Headings, subheadings, and body text are easy to tell apart.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Keep typography consistent</strong>
+              <span>One or two typefaces, with the same sizes used for the same roles.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Keep spacing consistent</strong>
+              <span>Use a spacing scale so sections and images line up across pages.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Use high-quality UI screenshots</strong>
+              <span>Sharp, uncropped, and showing real content rather than lorem ipsum.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Use appropriate mockups</strong>
+              <span>Device mockups should support the screens, not distract from them.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Check image resolution</strong>
+              <span>Crisp on retina screens, but compressed so pages still load fast.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Make layouts easy to scan</strong>
+              <span>Short paragraphs, captions on images, and key points highlighted.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Avoid excessive decoration</strong>
+              <span>Remove effects, patterns, or animations that compete with your work.</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>6. UX Process</h2>
+        <ul>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Explain your design decisions</strong>
+              <span>For each key screen, say why it looks and works the way it does.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Show research evidence</strong>
+              <span>Quotes, data, survey results, or observations, not just claims.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Explain important iterations</strong>
+              <span>What you tried, what failed, and what you changed.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Connect decisions to user problems</strong>
+              <span>Every major design choice links back to a need or pain point.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Avoid showing only final screens</strong>
+              <span>Hiring managers want to see how you think, not just the result.</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>7. UI Design</h2>
+        <ul>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Typography</strong>
+              <span>A clear type scale with readable sizes and line heights.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Color system</strong>
+              <span>Defined primary, neutral, and semantic colors used consistently.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Spacing</strong>
+              <span>A consistent spacing scale (e.g. 4 or 8 point) across screens.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Grid and layout</strong>
+              <span>Screens follow a clear column grid with aligned elements.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Components</strong>
+              <span>Reusable buttons, inputs, and cards, including their states.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Responsive design</strong>
+              <span>Show how key screens adapt to mobile, tablet, and desktop.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Accessibility considerations</strong>
+              <span>Color contrast, touch target sizes, focus states, and readable text.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Design consistency</strong>
+              <span>The same patterns behave the same way throughout the product.</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>8. Project Outcomes</h2>
+        <ul>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Share results where available</strong>
+              <span>e.g. task completion, conversion, time on task, or support tickets.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Include user feedback</strong>
+              <span>Short quotes from testing sessions or real users.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Show business impact where available</strong>
+              <span>Revenue, retention, or efficiency gains, if you can share them.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Explain what changed because of the design</strong>
+              <span>For users, the team, or the product roadmap.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Share lessons learned</strong>
+              <span>Honest reflection shows maturity and growth.</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>9. Portfolio UX</h2>
+        <ul>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Navigation is easy</strong>
+              <span>Work, About, Resume, and Contact reachable in one click.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Project hierarchy is clear</strong>
+              <span>Your strongest and most relevant project appears first.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Mobile responsive</strong>
+              <span>Text, images, and navigation work on small screens.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Fast loading</strong>
+              <span>Compress large images and videos. Test on a slow connection.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>All links work</strong>
+              <span>Navigation, social, resume, and external links.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Prototype links work</strong>
+              <span>Figma links are set to "anyone with the link can view".</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Contacting you is easy</strong>
+              <span>A visible email, contact button, or form on every page.</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>10. Job Application Readiness</h2>
+        <ul>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Resume matches your portfolio</strong>
+              <span>The same projects, roles, and skills appear in both.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>LinkedIn matches your resume</strong>
+              <span>Job titles, dates, and headline are consistent.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Portfolio matches the target role</strong>
+              <span>Projects and wording reflect what the job description asks for.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Contact details are current</strong>
+              <span>Email, phone, location, and links are up to date everywhere.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>No spelling or grammar errors</strong>
+              <span>Check the portfolio, resume, and LinkedIn.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>All project links work</strong>
+              <span>Test again right before you send each application.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Resume is downloadable</strong>
+              <span>A PDF with a clear filename, e.g. Firstname-Lastname-UIUX-Resume.pdf.</span>
+            </div>
+          </li>
+          <li>
+            <input type="checkbox" />
+            <div>
+              <strong>Portfolio is ready to share</strong>
+              <span>No placeholder text, unfinished pages, or "coming soon" projects.</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>11. Final Review</h2>
+        <ul class="review-grid">
+          <li><input type="checkbox" /><div><strong>Content</strong></div></li>
+          <li><input type="checkbox" /><div><strong>UX process</strong></div></li>
+          <li><input type="checkbox" /><div><strong>UI quality</strong></div></li>
+          <li><input type="checkbox" /><div><strong>Visual consistency</strong></div></li>
+          <li><input type="checkbox" /><div><strong>Accessibility</strong></div></li>
+          <li><input type="checkbox" /><div><strong>Mobile responsiveness</strong></div></li>
+          <li><input type="checkbox" /><div><strong>Performance</strong></div></li>
+          <li><input type="checkbox" /><div><strong>Links</strong></div></li>
+          <li><input type="checkbox" /><div><strong>Contact information</strong></div></li>
+          <li><input type="checkbox" /><div><strong>Grammar</strong></div></li>
+          <li><input type="checkbox" /><div><strong>Resume</strong></div></li>
+          <li><input type="checkbox" /><div><strong>LinkedIn</strong></div></li>
+        </ul>
+      </section>
+
+      <footer>
+        Free resource from NSL Digital Lab · nsldigitallab.com/resources/ui-ux-portfolio-checklist
+      </footer>
+    </main>
+
+    <script>
+      (function () {
+        var key = "nsl-portfolio-checklist";
+        var boxes = Array.prototype.slice.call(document.querySelectorAll('input[type="checkbox"]'));
+        var saved = [];
+        try { saved = JSON.parse(localStorage.getItem(key)) || []; } catch (e) {}
+        boxes.forEach(function (box, i) { box.checked = saved[i] === 1; });
+        function update() {
+          var done = boxes.filter(function (b) { return b.checked; }).length;
+          document.getElementById("done").textContent = done;
+          document.getElementById("total").textContent = boxes.length;
+          document.getElementById("bar").style.width = (done / boxes.length) * 100 + "%";
+          try { localStorage.setItem(key, JSON.stringify(boxes.map(function (b) { return b.checked ? 1 : 0; }))); } catch (e) {}
+        }
+        boxes.forEach(function (box) {
+          var row = box.closest("li");
+          var label = row.querySelector("strong");
+          if (label) box.setAttribute("aria-label", label.textContent);
+          row.addEventListener("click", function (event) {
+            if (event.target === box) return;
+            box.checked = !box.checked;
+            update();
+          });
+          box.addEventListener("change", update);
+        });
+        document.getElementById("reset").addEventListener("click", function () {
+          boxes.forEach(function (box) { box.checked = false; });
+          update();
+        });
+        update();
+      })();
+    </script>
+  </body>
+</html>

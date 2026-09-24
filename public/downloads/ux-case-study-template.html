@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UX Case Study Template | NSL Digital Lab</title>
+    <link rel="stylesheet" href="./checklist.css" />
+    <style>
+      .fields {
+        display: grid;
+        gap: 10px;
+      }
+      .field label {
+        display: block;
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 4px;
+      }
+      .input {
+        min-height: 40px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 9px 12px;
+        background: #fff;
+        font-size: 14px;
+        white-space: pre-wrap;
+        outline: none;
+      }
+      .input.tall {
+        min-height: 88px;
+      }
+      .input:focus,
+      td[contenteditable]:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.12);
+      }
+      .input:empty::before,
+      td[contenteditable]:empty::before {
+        content: attr(data-placeholder);
+        color: #94a3b8;
+      }
+      td[contenteditable] {
+        min-width: 80px;
+        height: 44px;
+        outline: none;
+      }
+      .guide {
+        margin-top: 12px;
+        border-left: 3px solid var(--accent);
+        background: var(--paper);
+        border-radius: 0 10px 10px 0;
+        padding: 10px 14px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+      .guide p {
+        margin: 4px 0;
+      }
+      .guide strong {
+        color: var(--ink);
+      }
+      .two {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: 1fr 1fr;
+      }
+      @media (max-width: 640px) {
+        .two {
+          grid-template-columns: 1fr;
+        }
+      }
+      .status {
+        align-self: center;
+        font-size: 13px;
+        color: var(--muted);
+      }
+      body.hide-guidance .guide {
+        display: none;
+      }
+      @media print {
+        .actions,
+        .guide {
+          display: none;
+        }
+        .input:empty::before,
+        td[contenteditable]:empty::before {
+          content: "";
+        }
+        .section {
+          break-inside: avoid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <header>
+        <div class="brand">NSL Digital Lab · UI/UX template</div>
+        <h1>UX Case Study Template</h1>
+        <p class="lede">
+          Structure a portfolio case study from problem discovery to results.
+          Click any field to type. Your answers are saved in this browser. Each
+          section has short guidance on what to write, what evidence to add, and
+          what to avoid. Beginners can keep answers short; experienced designers
+          can go deeper on decisions and impact.
+        </p>
+        <div class="actions">
+          <button type="button" onclick="window.print()">Print or save as PDF</button>
+          <button type="button" id="toggle-guidance">Hide guidance</button>
+          <button type="button" id="clear-all">Clear answers</button>
+          <span class="status" id="save-status"></span>
+        </div>
+      </header>
+
+      <section class="section">
+        <h2>1. Project Overview</h2>
+        <div class="fields two">
+          <div class="field"><label>Project name</label><div class="input" contenteditable="true" data-placeholder="e.g. Clinic appointment booking app"></div></div>
+          <div class="field"><label>Project type</label><div class="input" contenteditable="true" data-placeholder="Client, internship, personal, course project, redesign"></div></div>
+          <div class="field"><label>Duration</label><div class="input" contenteditable="true" data-placeholder="e.g. 6 weeks, Jan–Feb 2026"></div></div>
+          <div class="field"><label>My role</label><div class="input" contenteditable="true" data-placeholder="e.g. UX researcher and UI designer"></div></div>
+          <div class="field"><label>Team</label><div class="input" contenteditable="true" data-placeholder="e.g. 1 PM, 2 developers, 1 designer (me)"></div></div>
+          <div class="field"><label>Tools used</label><div class="input" contenteditable="true" data-placeholder="e.g. Figma, FigJam, Maze, Google Forms"></div></div>
+        </div>
+        <div class="guide">
+          <p><strong>Write:</strong> the facts a recruiter needs in ten seconds: what, how long, who, and your part.</p>
+          <p><strong>Include:</strong> a hero image or final screen mockup next to this summary.</p>
+          <p><strong>Avoid:</strong> listing every tool you know. Name only the tools used on this project.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>2. Problem Statement</h2>
+        <div class="fields">
+          <div class="field"><label>What problem are you solving?</label><div class="input tall" contenteditable="true" data-placeholder="e.g. Patients abandon online booking because available slots are hard to find."></div></div>
+          <div class="field"><label>Who experiences the problem?</label><div class="input" contenteditable="true" data-placeholder="e.g. First-time patients booking on mobile"></div></div>
+          <div class="field"><label>Why is the problem important?</label><div class="input" contenteditable="true" data-placeholder="e.g. Missed bookings mean lost revenue and more phone calls for staff"></div></div>
+        </div>
+        <div class="guide">
+          <p><strong>Write:</strong> one or two sentences that name the user, the problem, and the cost of leaving it unsolved.</p>
+          <p><strong>Include:</strong> a support ticket quote, analytics screenshot, or screenshot of the old experience.</p>
+          <p><strong>Avoid:</strong> describing the solution here. Keep the problem separate from your design.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>3. Project Goals</h2>
+        <div class="fields">
+          <div class="field"><label>Primary goal</label><div class="input" contenteditable="true" data-placeholder="e.g. Let patients book an appointment in under 2 minutes"></div></div>
+          <div class="field"><label>Secondary goals</label><div class="input tall" contenteditable="true" data-placeholder="e.g. Reduce booking calls; make rescheduling self-serve"></div></div>
+          <div class="field"><label>Success criteria</label><div class="input" contenteditable="true" data-placeholder="e.g. 80% task success in testing; fewer booking-related calls"></div></div>
+        </div>
+        <div class="guide">
+          <p><strong>Write:</strong> one primary goal and a few secondary ones, with a way to tell whether you met them.</p>
+          <p><strong>Include:</strong> business and user goals side by side if both matter.</p>
+          <p><strong>Avoid:</strong> vague goals like “improve the experience” without a measure.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>4. User Research</h2>
+        <div class="fields">
+          <div class="field"><label>Research method</label><div class="input" contenteditable="true" data-placeholder="e.g. 6 user interviews, survey (42 responses), competitor review"></div></div>
+          <div class="field"><label>Target users</label><div class="input" contenteditable="true" data-placeholder="e.g. Adults 25–45 who book appointments on their phone"></div></div>
+          <div class="field"><label>Key research questions</label><div class="input tall" contenteditable="true" data-placeholder="e.g. How do users choose a time? What makes them give up?"></div></div>
+          <div class="field"><label>Important findings</label><div class="input tall" contenteditable="true" data-placeholder="e.g. 4 of 6 users could not tell which slots were available"></div></div>
+        </div>
+        <div class="guide">
+          <p><strong>Write:</strong> why you chose each method and the three to five findings that shaped the design.</p>
+          <p><strong>Include:</strong> affinity map photos, survey charts, or short user quotes.</p>
+          <p><strong>Avoid:</strong> pasting raw notes or claiming research you did not run.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>5. User Persona</h2>
+        <div class="fields two">
+          <div class="field"><label>User profile</label><div class="input tall" contenteditable="true" data-placeholder="Name, age range, occupation, context"></div></div>
+          <div class="field"><label>Goals</label><div class="input tall" contenteditable="true" data-placeholder="What they want to achieve"></div></div>
+          <div class="field"><label>Needs</label><div class="input tall" contenteditable="true" data-placeholder="What they need from the product"></div></div>
+          <div class="field"><label>Pain points</label><div class="input tall" contenteditable="true" data-placeholder="What frustrates or blocks them"></div></div>
+          <div class="field"><label>Behaviors</label><div class="input tall" contenteditable="true" data-placeholder="How they act today, devices, habits"></div></div>
+        </div>
+        <div class="guide">
+          <p><strong>Write:</strong> a persona based on your research, not on guesses.</p>
+          <p><strong>Include:</strong> one clean persona card. Link pain points back to your findings.</p>
+          <p><strong>Avoid:</strong> hobbies, stock photos, and details that do not affect design decisions.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>6. User Journey</h2>
+        <table>
+          <thead>
+            <tr><th>Row</th><th>Stage 1</th><th>Stage 2</th><th>Stage 3</th><th>Stage 4</th></tr>
+          </thead>
+          <tbody>
+            <tr><th>Journey stages</th><td contenteditable="true" data-placeholder="e.g. Discover"></td><td contenteditable="true" data-placeholder="e.g. Choose"></td><td contenteditable="true" data-placeholder="e.g. Book"></td><td contenteditable="true" data-placeholder="e.g. Visit"></td></tr>
+            <tr><th>User actions</th><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+            <tr><th>Pain points</th><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+            <tr><th>Opportunities</th><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+          </tbody>
+        </table>
+        <div class="guide">
+          <p><strong>Write:</strong> the steps your persona takes today and where they struggle.</p>
+          <p><strong>Include:</strong> a journey map graphic with the biggest pain point highlighted.</p>
+          <p><strong>Avoid:</strong> too many stages. Four to six is usually enough to tell the story.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>7. Information Architecture</h2>
+        <div class="fields">
+          <div class="field"><label>Main sections</label><div class="input" contenteditable="true" data-placeholder="e.g. Home, Find a doctor, My appointments, Profile"></div></div>
+          <div class="field"><label>Navigation structure</label><div class="input tall" contenteditable="true" data-placeholder="e.g. Bottom tab bar with 4 items; booking opens as a step-by-step flow"></div></div>
+          <div class="field"><label>Content hierarchy</label><div class="input tall" contenteditable="true" data-placeholder="What users see first, second, and third on key screens"></div></div>
+        </div>
+        <div class="guide">
+          <p><strong>Write:</strong> how content is grouped and why, especially if card sorting or research informed it.</p>
+          <p><strong>Include:</strong> a sitemap or IA diagram.</p>
+          <p><strong>Avoid:</strong> an unreadable diagram. Zoom in on the parts that matter.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>8. User Flow</h2>
+        <div class="fields two">
+          <div class="field"><label>Starting point</label><div class="input" contenteditable="true" data-placeholder="e.g. User opens the app from a reminder"></div></div>
+          <div class="field"><label>Final outcome</label><div class="input" contenteditable="true" data-placeholder="e.g. Appointment confirmed and added to calendar"></div></div>
+          <div class="field"><label>Key actions</label><div class="input tall" contenteditable="true" data-placeholder="e.g. Choose service → pick doctor → pick slot → confirm"></div></div>
+          <div class="field"><label>Decision points</label><div class="input tall" contenteditable="true" data-placeholder="e.g. No slot today? Show next available or join waitlist"></div></div>
+        </div>
+        <div class="guide">
+          <p><strong>Write:</strong> the main task path, including errors and alternative paths.</p>
+          <p><strong>Include:</strong> a flow diagram for the most important task.</p>
+          <p><strong>Avoid:</strong> documenting every possible path. Focus on the flow your design improves.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>9. Ideation</h2>
+        <div class="fields">
+          <div class="field"><label>Design ideas</label><div class="input tall" contenteditable="true" data-placeholder="e.g. Calendar view, list of next slots, smart suggestions"></div></div>
+          <div class="field"><label>Possible solutions</label><div class="input tall" contenteditable="true" data-placeholder="Which ideas you explored further and why"></div></div>
+          <div class="field"><label>Alternatives considered</label><div class="input tall" contenteditable="true" data-placeholder="What you rejected and the reason"></div></div>
+        </div>
+        <div class="guide">
+          <p><strong>Write:</strong> how you moved from findings to ideas and how you chose between them.</p>
+          <p><strong>Include:</strong> sketches, Crazy 8s, or a prioritization matrix.</p>
+          <p><strong>Avoid:</strong> showing only the winning idea. Rejected options show your judgment.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>10. Wireframing</h2>
+        <div class="fields">
+          <div class="field"><label>Low-fidelity concepts</label><div class="input tall" contenteditable="true" data-placeholder="Which screens you wireframed first"></div></div>
+          <div class="field"><label>Important layout decisions</label><div class="input tall" contenteditable="true" data-placeholder="e.g. Put next available slot above the calendar"></div></div>
+          <div class="field"><label>Iterations</label><div class="input tall" contenteditable="true" data-placeholder="What changed between wireframe versions"></div></div>
+        </div>
+        <div class="guide">
+          <p><strong>Write:</strong> the key layout decisions and the reason behind each.</p>
+          <p><strong>Include:</strong> two or three annotated wireframes, ideally version 1 next to the later version.</p>
+          <p><strong>Avoid:</strong> dumping every frame. Show the ones that explain a decision.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>11. UI Design</h2>
+        <div class="fields two">
+          <div class="field"><label>Visual direction</label><div class="input tall" contenteditable="true" data-placeholder="e.g. Calm, trustworthy, clinical but friendly"></div></div>
+          <div class="field"><label>Typography</label><div class="input tall" contenteditable="true" data-placeholder="Typefaces, sizes, and why"></div></div>
+          <div class="field"><label>Colors</label><div class="input tall" contenteditable="true" data-placeholder="Palette, contrast checks, meaning of each color"></div></div>
+          <div class="field"><label>Components</label><div class="input tall" contenteditable="true" data-placeholder="e.g. Buttons, slot chips, cards, form fields, states"></div></div>
+          <div class="field"><label>Design system</label><div class="input tall" contenteditable="true" data-placeholder="Existing system used, or tokens and components you created"></div></div>
+        </div>
+        <div class="guide">
+          <p><strong>Write:</strong> how visual choices support the users and the brand.</p>
+          <p><strong>Include:</strong> a style guide board, component sheet, and accessibility contrast notes.</p>
+          <p><strong>Avoid:</strong> listing hex codes without explaining the choices.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>12. Prototype</h2>
+        <div class="fields">
+          <div class="field"><label>Prototype objective</label><div class="input" contenteditable="true" data-placeholder="e.g. Test whether users can book without help"></div></div>
+          <div class="field"><label>Main interactions</label><div class="input tall" contenteditable="true" data-placeholder="e.g. Slot selection, confirmation, reschedule"></div></div>
+          <div class="field"><label>Important user flows</label><div class="input tall" contenteditable="true" data-placeholder="Which flows are clickable in the prototype"></div></div>
+        </div>
+        <div class="guide">
+          <p><strong>Write:</strong> what the prototype was built to test.</p>
+          <p><strong>Include:</strong> a Figma prototype link, a short screen recording, or GIFs of key interactions.</p>
+          <p><strong>Avoid:</strong> broken or private links. Check access before publishing.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>13. Usability Testing</h2>
+        <div class="fields">
+          <div class="field"><label>Testing method</label><div class="input" contenteditable="true" data-placeholder="e.g. Moderated remote tests on Zoom, think-aloud"></div></div>
+          <div class="field"><label>Participants</label><div class="input" contenteditable="true" data-placeholder="e.g. 5 participants matching the persona"></div></div>
+          <div class="field"><label>Tasks</label><div class="input tall" contenteditable="true" data-placeholder="e.g. Book a check-up for next week; reschedule it"></div></div>
+          <div class="field"><label>Findings</label><div class="input tall" contenteditable="true" data-placeholder="e.g. 3 of 5 missed the reschedule option"></div></div>
+        </div>
+        <div class="guide">
+          <p><strong>Write:</strong> who tested, what they tried to do, and what happened.</p>
+          <p><strong>Include:</strong> task success rates, time on task, quotes, or a findings table.</p>
+          <p><strong>Avoid:</strong> saying “users loved it” without evidence.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>14. Iterations</h2>
+        <table>
+          <thead>
+            <tr><th>Problem discovered</th><th>Design change</th><th>Reason for change</th></tr>
+          </thead>
+          <tbody>
+            <tr><td contenteditable="true" data-placeholder="e.g. Users missed reschedule"></td><td contenteditable="true" data-placeholder="e.g. Moved it to the appointment card"></td><td contenteditable="true" data-placeholder="e.g. 3 of 5 testers looked there first"></td></tr>
+            <tr><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+            <tr><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+          </tbody>
+        </table>
+        <div class="guide">
+          <p><strong>Write:</strong> each change as problem, change, and reason.</p>
+          <p><strong>Include:</strong> before-and-after screens for the most important changes.</p>
+          <p><strong>Avoid:</strong> cosmetic changes with no link to a finding.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>15. Final Solution</h2>
+        <div class="fields">
+          <div class="field"><label>Final screens</label><div class="input tall" contenteditable="true" data-placeholder="List the screens you will show"></div></div>
+          <div class="field"><label>Key features</label><div class="input tall" contenteditable="true" data-placeholder="e.g. Next available slot, one-tap reschedule, reminders"></div></div>
+          <div class="field"><label>How the solution addresses the original problem</label><div class="input tall" contenteditable="true" data-placeholder="Connect each feature back to the problem statement"></div></div>
+        </div>
+        <div class="guide">
+          <p><strong>Write:</strong> how each key feature solves a problem you named earlier.</p>
+          <p><strong>Include:</strong> high-fidelity mockups in device frames and short captions.</p>
+          <p><strong>Avoid:</strong> a long wall of screens with no explanation.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>16. Results / Impact</h2>
+        <div class="fields two">
+          <div class="field"><label>Measurable results</label><div class="input tall" contenteditable="true" data-placeholder="e.g. Task success rose from 40% to 90% in testing"></div></div>
+          <div class="field"><label>User feedback</label><div class="input tall" contenteditable="true" data-placeholder="Short quotes from testers or users"></div></div>
+          <div class="field"><label>Business impact</label><div class="input tall" contenteditable="true" data-placeholder="e.g. Fewer booking calls after launch"></div></div>
+          <div class="field"><label>Improvements</label><div class="input tall" contenteditable="true" data-placeholder="What is still planned or could be better"></div></div>
+        </div>
+        <div class="guide">
+          <p><strong>Write:</strong> real results where you have them. For concept projects, report test results and expected impact.</p>
+          <p><strong>Include:</strong> before-and-after metrics, charts, or testimonials.</p>
+          <p><strong>Avoid:</strong> invented numbers or sharing confidential data without permission.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>17. Learnings</h2>
+        <div class="fields two">
+          <div class="field"><label>What worked</label><div class="input tall" contenteditable="true"></div></div>
+          <div class="field"><label>What did not work</label><div class="input tall" contenteditable="true"></div></div>
+          <div class="field"><label>What I learned</label><div class="input tall" contenteditable="true"></div></div>
+          <div class="field"><label>What I would improve next time</label><div class="input tall" contenteditable="true"></div></div>
+        </div>
+        <div class="guide">
+          <p><strong>Write:</strong> honest reflections that show how you think and grow.</p>
+          <p><strong>Include:</strong> a specific example for each learning.</p>
+          <p><strong>Avoid:</strong> generic lines like “I learned teamwork is important.”</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>18. Portfolio Presentation Checklist</h2>
+        <ul>
+          <li><input type="checkbox" /><div><strong>Clear problem statement</strong><span>The reader knows the user, the problem, and why it matters.</span></div></li>
+          <li><input type="checkbox" /><div><strong>Research included</strong><span>Methods and key findings are shown with evidence.</span></div></li>
+          <li><input type="checkbox" /><div><strong>User needs explained</strong><span>Persona or needs link directly to design decisions.</span></div></li>
+          <li><input type="checkbox" /><div><strong>Design decisions explained</strong><span>Each major choice has a reason.</span></div></li>
+          <li><input type="checkbox" /><div><strong>Before/after where relevant</strong><span>Redesigns and iterations show what changed.</span></div></li>
+          <li><input type="checkbox" /><div><strong>Final UI shown</strong><span>High-fidelity screens with captions.</span></div></li>
+          <li><input type="checkbox" /><div><strong>Prototype included</strong><span>Working link or recording of key flows.</span></div></li>
+          <li><input type="checkbox" /><div><strong>Results included</strong><span>Metrics, test results, or feedback.</span></div></li>
+          <li><input type="checkbox" /><div><strong>Personal contribution clearly explained</strong><span>Team work is credited and your role is specific.</span></div></li>
+        </ul>
+      </section>
+
+      <footer>
+        NSL Digital Lab · UX Case Study Template. Use it for student, personal,
+        and client projects.
+      </footer>
+    </main>
+
+    <script>
+      (function () {
+        var KEY = "nsl-ux-case-study-template";
+        var fields = document.querySelectorAll("[contenteditable], input[type='checkbox']");
+        var status = document.getElementById("save-status");
+        var saved = {};
+
+        document.querySelectorAll(".field").forEach(function (field) {
+          var label = field.querySelector("label");
+          var input = field.querySelector(".input");
+          if (!label || !input) return;
+          input.setAttribute("role", "textbox");
+          input.setAttribute("aria-multiline", "true");
+          input.setAttribute("aria-label", label.textContent);
+        });
+
+        try {
+          saved = JSON.parse(localStorage.getItem(KEY) || "{}");
+        } catch (e) {
+          saved = {};
+        }
+
+        fields.forEach(function (el, i) {
+          if (el.type === "checkbox") {
+            el.checked = saved[i] === true;
+          } else if (typeof saved[i] === "string") {
+            el.innerText = saved[i];
+          }
+        });
+
+        function save() {
+          var data = {};
+          fields.forEach(function (el, i) {
+            data[i] = el.type === "checkbox" ? el.checked : el.innerText.trim();
+          });
+          try {
+            localStorage.setItem(KEY, JSON.stringify(data));
+            status.textContent = "Saved in this browser";
+          } catch (e) {
+            status.textContent = "";
+          }
+        }
+
+        fields.forEach(function (el) {
+          el.addEventListener("input", save);
+          el.addEventListener("change", save);
+          el.addEventListener("blur", function () {
+            if (el.type !== "checkbox" && el.innerText.trim() === "") el.innerHTML = "";
+          });
+        });
+
+        document.getElementById("toggle-guidance").addEventListener("click", function () {
+          var hidden = document.body.classList.toggle("hide-guidance");
+          this.textContent = hidden ? "Show guidance" : "Hide guidance";
+        });
+
+        document.getElementById("clear-all").addEventListener("click", function () {
+          if (!confirm("Clear all answers in this template?")) return;
+          fields.forEach(function (el) {
+            if (el.type === "checkbox") el.checked = false;
+            else el.innerHTML = "";
+          });
+          localStorage.removeItem(KEY);
+          status.textContent = "";
+        });
+      })();
+    </script>
+  </body>
+</html>

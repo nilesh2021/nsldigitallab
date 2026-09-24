@@ -35,7 +35,7 @@ const resourceLinks: FooterLink[] = [
   { label: "SEO Checklist", to: "/resources/seo-checklist" },
   { label: "Marketing Checklist", to: "/resources/digital-marketing-checklist" },
   { label: "Website Launch Checklist", to: "/resources/website-launch-checklist" },
-  { label: "Figma UI Kit", to: "/resources/figma-ui-kit" },
+  { label: "Figma Wireframe Kit", to: "/resources/figma-website-wireframe-kit" },
   { label: "ChatGPT Prompt Pack", to: "/resources/chatgpt-prompt-pack" },
   { label: "Blog", to: "/blog" },
 ];

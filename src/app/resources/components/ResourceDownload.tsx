@@ -7,7 +7,6 @@ import {
   Linkedin,
   LoaderCircle,
   Mail,
-  ShieldCheck,
 } from "lucide-react";
 
 import {
@@ -34,7 +33,9 @@ const WEBSITE_TEMPLATE_BUNDLE_CONVERSION =
   "AW-11521753483/BdRPCLqNWYEdEIuDpPYq";
 
 const downloadButtonClass =
-  "inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-400 px-5 py-2.5 text-sm font-semibold text-[#0f172a] transition hover:bg-cyan-300";
+  "inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_-12px_rgba(15,23,42,0.6)] transition hover:bg-slate-800";
+
+const perks = ["Instant access", "No spam, unsubscribe anytime", "Free forever"];
 
 export default function ResourceDownload({
   slug,
@@ -109,21 +110,28 @@ export default function ResourceDownload({
   }
 
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+    <div className="rounded-3xl bg-white p-6 shadow-[0_20px_60px_-30px_rgba(15,23,42,0.25)] ring-1 ring-slate-200/70">
+      <div className="flex items-center justify-between gap-3">
+        <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-cyan-700">
+          <Mail className="h-3.5 w-3.5" />
+          Free download
+        </span>
+        <span className="rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-semibold text-slate-700">
+          {type}
+        </span>
+      </div>
+      <h2 className="mt-3 text-xl font-bold leading-snug tracking-tight text-slate-900">
+        {resourceTitle}
+      </h2>
+
       {!isUnlocked ? (
         <>
-          <div className="flex items-center gap-2">
-            <Mail className="h-4 w-4 text-cyan-600" />
-            <h2 className="text-base font-semibold text-[#0f172a]">
-              Unlock this resource
-            </h2>
-          </div>
-          <p className="mt-1.5 text-sm leading-6 text-slate-600">
-            Enter your email to get the {resourceTitle}. No spam.
+          <p className="mt-2 text-sm leading-6 text-slate-600">
+            Enter your email to unlock the download instantly.
           </p>
 
-          <form onSubmit={handleSubmit} className="mt-4">
-            <div className="flex flex-col gap-2 sm:flex-row">
+          <form onSubmit={handleSubmit} className="mt-5">
+            <div className="flex flex-col gap-3">
               <label htmlFor="resource-email" className="sr-only">
                 Email address
               </label>
@@ -135,12 +143,12 @@ export default function ResourceDownload({
                 placeholder="you@example.com"
                 disabled={isSubmitting}
                 required
-                className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm text-slate-900 outline-none placeholder:text-slate-400 focus:border-cyan-500 focus:bg-white focus:ring-4 focus:ring-cyan-100 disabled:opacity-70"
+                className="w-full rounded-full border border-slate-200 bg-slate-50 px-5 py-3 text-sm text-slate-900 outline-none placeholder:text-slate-400 focus:border-cyan-500 focus:bg-white focus:ring-4 focus:ring-cyan-100 disabled:opacity-70"
               />
               <button
                 type="submit"
                 disabled={isSubmitting || !isEmailValid}
-                className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-cyan-400 px-5 py-2.5 text-sm font-semibold text-[#0f172a] transition hover:bg-cyan-300 disabled:cursor-not-allowed disabled:opacity-60"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {isSubmitting ? (
                   <>
@@ -160,27 +168,34 @@ export default function ResourceDownload({
             )}
           </form>
 
-          <p className="mt-3 flex items-center gap-2 text-[11px] text-slate-400">
-            <ShieldCheck className="h-3.5 w-3.5 text-cyan-600" />
-            Privacy protected · unsubscribe anytime
-          </p>
+          <ul className="mt-5 space-y-2 border-t border-slate-100 pt-5">
+            {perks.map((perk) => (
+              <li key={perk} className="flex items-center gap-2 text-sm text-slate-600">
+                <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-500" />
+                {perk}
+              </li>
+            ))}
+          </ul>
         </>
       ) : (
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <p className="text-sm font-semibold text-emerald-600">
-              Your resource is unlocked
-            </p>
-            <p className="mt-1 text-sm text-slate-600">
-              Download is ready. Keep the file for later reference.
-            </p>
+        <div className="mt-5">
+          <div className="flex items-start gap-3 rounded-2xl bg-emerald-50 p-4">
+            <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-600" />
+            <div>
+              <p className="text-sm font-semibold text-emerald-800">
+                Your resource is unlocked
+              </p>
+              <p className="mt-0.5 text-sm text-emerald-700/80">
+                Download is ready. Keep the file for later reference.
+              </p>
+            </div>
           </div>
           <a
             href={downloadUrl}
             target="_blank"
             rel="noreferrer"
             onClick={handleDownloadClick}
-            className={downloadButtonClass}
+            className={`${downloadButtonClass} mt-4 w-full`}
           >
             <Download className="h-4 w-4" />
             {ctaLabel}

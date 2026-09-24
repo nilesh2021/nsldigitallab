@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UX Research Starter Kit | NSL Digital Lab</title>
+    <link rel="stylesheet" href="./checklist.css" />
+    <style>
+      .fields {
+        display: grid;
+        gap: 10px;
+      }
+      .field label {
+        display: block;
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 4px;
+      }
+      .input {
+        min-height: 40px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 9px 12px;
+        background: #fff;
+        font-size: 14px;
+        white-space: pre-wrap;
+        outline: none;
+      }
+      .input.tall {
+        min-height: 88px;
+      }
+      .input:focus,
+      td[contenteditable]:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.12);
+      }
+      .input:empty::before,
+      td[contenteditable]:empty::before {
+        content: attr(data-placeholder);
+        color: #94a3b8;
+      }
+      td[contenteditable] {
+        min-width: 80px;
+        height: 44px;
+        outline: none;
+      }
+      .guide {
+        margin-top: 12px;
+        border-left: 3px solid var(--accent);
+        background: var(--paper);
+        border-radius: 0 10px 10px 0;
+        padding: 10px 14px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+      .guide p {
+        margin: 4px 0;
+      }
+      .guide strong {
+        color: var(--ink);
+      }
+      .two {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: 1fr 1fr;
+      }
+      @media (max-width: 640px) {
+        .two {
+          grid-template-columns: 1fr;
+        }
+      }
+      .status {
+        align-self: center;
+        font-size: 13px;
+        color: var(--muted);
+      }
+      .intro-copy {
+        color: var(--muted);
+        font-size: 14px;
+        margin: 0 0 12px;
+      }
+      h3 {
+        font-size: 15px;
+        margin: 20px 0 8px;
+      }
+      .script {
+        border: 1px dashed #94a3b8;
+        border-radius: 10px;
+        background: #fff;
+        padding: 12px 14px;
+        font-size: 14px;
+        color: var(--ink);
+      }
+      .script p {
+        margin: 0 0 6px;
+      }
+      .script p:last-child {
+        margin-bottom: 0;
+      }
+      .q {
+        font-weight: 700;
+        color: var(--accent);
+        min-width: 30px;
+      }
+      li .answer {
+        margin-top: 8px;
+        min-height: 36px;
+      }
+      li > div {
+        flex: 1;
+      }
+      .steps li {
+        flex-direction: column;
+        gap: 2px;
+      }
+      .toc {
+        columns: 2;
+        column-gap: 24px;
+        font-size: 14px;
+        margin: 16px 0 0;
+        padding-left: 18px;
+        color: var(--muted);
+      }
+      .toc li {
+        display: list-item;
+        border: 0;
+        background: none;
+        padding: 0;
+        margin: 0 0 4px;
+      }
+      .toc a {
+        color: var(--ink);
+        text-decoration: none;
+      }
+      .toc a:hover {
+        color: var(--accent);
+      }
+      @media (max-width: 640px) {
+        .toc {
+          columns: 1;
+        }
+      }
+      body.hide-guidance .guide {
+        display: none;
+      }
+      @media print {
+        .actions,
+        .guide,
+        .toc {
+          display: none;
+        }
+        .input:empty::before,
+        td[contenteditable]:empty::before {
+          content: "";
+        }
+        .section {
+          break-inside: avoid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <header>
+        <div class="brand">NSL Digital Lab · UI/UX kit</div>
+        <h1>UX Research Starter Kit</h1>
+        <p class="lede">
+          Ten ready-to-use UX research templates for planning a study, running
+          user interviews, taking notes, finding patterns, and sharing what you
+          learned. Click any field to type. Your answers are saved in this
+          browser, and you can print or save the whole kit as a PDF when you
+          are done.
+        </p>
+        <div class="actions">
+          <button type="button" onclick="window.print()">Print or save as PDF</button>
+          <button type="button" id="toggle-guidance">Hide guidance</button>
+          <button type="button" id="clear-all">Clear answers</button>
+          <span class="status" id="save-status"></span>
+        </div>
+        <ol class="toc">
+          <li><a href="#plan">UX Research Planning Template</a></li>
+          <li><a href="#interview-guide">User Interview Guide</a></li>
+          <li><a href="#interview-notes">User Interview Notes Template</a></li>
+          <li><a href="#observation">User Observation Template</a></li>
+          <li><a href="#findings">UX Research Findings Template</a></li>
+          <li><a href="#affinity">Affinity Mapping Guide</a></li>
+          <li><a href="#persona">User Persona Starter Template</a></li>
+          <li><a href="#summary">UX Research Summary Template</a></li>
+          <li><a href="#checklist">UX Research Checklist</a></li>
+          <li><a href="#tips">UX Research Tips for Beginners</a></li>
+        </ol>
+      </header>
+
+      <section class="section" id="plan">
+        <h2>1. UX Research Planning Template</h2>
+        <p class="intro-copy">Fill this in before you talk to a single user. A one-page plan keeps the study focused and makes it easy to get buy-in from your team.</p>
+        <div class="fields two">
+          <div class="field"><label>Project name</label><div class="input" contenteditable="true" data-placeholder="e.g. Food delivery app checkout"></div></div>
+          <div class="field"><label>Timeline</label><div class="input" contenteditable="true" data-placeholder="e.g. Recruit week 1, interviews week 2, synthesis week 3"></div></div>
+        </div>
+        <div class="fields" style="margin-top: 10px">
+          <div class="field"><label>Research objective</label><div class="input" contenteditable="true" data-placeholder="e.g. Understand why users abandon their cart at the payment step"></div></div>
+          <div class="field"><label>Problem being investigated</label><div class="input tall" contenteditable="true" data-placeholder="e.g. 38% of carts are abandoned on the payment screen, and support gets frequent complaints about failed payments"></div></div>
+          <div class="field"><label>Target users</label><div class="input" contenteditable="true" data-placeholder="e.g. People aged 20–40 who order food online at least twice a month"></div></div>
+          <div class="field"><label>Research questions</label><div class="input tall" contenteditable="true" data-placeholder="e.g. How do users choose a payment method? What makes them hesitate? What do they do when a payment fails?"></div></div>
+        </div>
+        <div class="fields two" style="margin-top: 10px">
+          <div class="field"><label>Research method</label><div class="input" contenteditable="true" data-placeholder="e.g. 1:1 user interviews + usability test of checkout"></div></div>
+          <div class="field"><label>Number of participants</label><div class="input" contenteditable="true" data-placeholder="e.g. 5–8 participants"></div></div>
+        </div>
+        <div class="fields" style="margin-top: 10px">
+          <div class="field"><label>Expected outcomes</label><div class="input tall" contenteditable="true" data-placeholder="e.g. A list of the top 3 checkout pain points and design opportunities for the next sprint"></div></div>
+        </div>
+        <div class="guide">
+          <p><strong>Tip:</strong> write three to five research questions. These are what <em>you</em> want to learn, not the questions you will ask users.</p>
+          <p><strong>Choosing a method:</strong> interviews explain why people behave a certain way; usability tests show where they struggle; surveys tell you how common something is.</p>
+          <p><strong>Participants:</strong> five to eight interviews per user group usually reveal the main patterns.</p>
+        </div>
+      </section>
+
+      <section class="section" id="interview-guide">
+        <h2>2. User Interview Guide</h2>
+        <p class="intro-copy">Use these user interview questions as a script. Adapt the wording to your product, skip what does not apply, and always follow up with “Why?” or “Can you tell me more?”.</p>
+
+        <h3>Introduction (read aloud)</h3>
+        <div class="script">
+          <p>“Thanks for joining. I’m [name] and I’m working on [product/project]. Today I’d like to learn about how you [activity]. There are no right or wrong answers. We’re testing ideas, not you.”</p>
+          <p>“This will take about [30–45] minutes. Is it okay if I record the session for my notes? The recording will only be used by our team.”</p>
+          <p>“Please be honest. Negative feedback is just as helpful as positive feedback. Any questions before we start?”</p>
+        </div>
+
+        <h3>Warm-up questions</h3>
+        <ul>
+          <li><span class="q">Q1</span><div><strong>Tell me a little about yourself and what a typical weekday looks like for you.</strong><div class="input answer" contenteditable="true" data-placeholder="Notes"></div></div></li>
+          <li><span class="q">Q2</span><div><strong>What devices do you use most during the day, and for what?</strong><div class="input answer" contenteditable="true" data-placeholder="Notes"></div></div></li>
+        </ul>
+
+        <h3>Background questions</h3>
+        <ul>
+          <li><span class="q">Q3</span><div><strong>How long have you been [doing the activity, e.g. ordering food online]?</strong><div class="input answer" contenteditable="true" data-placeholder="Notes"></div></div></li>
+          <li><span class="q">Q4</span><div><strong>How did you first start doing it, and what made you start?</strong><div class="input answer" contenteditable="true" data-placeholder="Notes"></div></div></li>
+        </ul>
+
+        <h3>Current behavior questions</h3>
+        <ul>
+          <li><span class="q">Q5</span><div><strong>Walk me through the last time you [did the activity]. What happened, step by step?</strong><div class="input answer" contenteditable="true" data-placeholder="Notes"></div></div></li>
+          <li><span class="q">Q6</span><div><strong>Which apps, tools, or websites do you use for this today?</strong><div class="input answer" contenteditable="true" data-placeholder="Notes"></div></div></li>
+          <li><span class="q">Q7</span><div><strong>How often do you do this, and at what time of day?</strong><div class="input answer" contenteditable="true" data-placeholder="Notes"></div></div></li>
+        </ul>
+
+        <h3>Problem / pain-point questions</h3>
+        <ul>
+          <li><span class="q">Q8</span><div><strong>What is the most frustrating part of [the activity]?</strong><div class="input answer" contenteditable="true" data-placeholder="Notes"></div></div></li>
+          <li><span class="q">Q9</span><div><strong>Tell me about a time when something went wrong. What did you do next?</strong><div class="input answer" contenteditable="true" data-placeholder="Notes"></div></div></li>
+          <li><span class="q">Q10</span><div><strong>Have you found any workarounds for those problems?</strong><div class="input answer" contenteditable="true" data-placeholder="Notes"></div></div></li>
+          <li><span class="q">Q11</span><div><strong>Is there anything that makes you give up or put it off?</strong><div class="input answer" contenteditable="true" data-placeholder="Notes"></div></div></li>
+        </ul>
+
+        <h3>Needs and goals questions</h3>
+        <ul>
+          <li><span class="q">Q12</span><div><strong>What are you trying to achieve when you [do the activity]?</strong><div class="input answer" contenteditable="true" data-placeholder="Notes"></div></div></li>
+          <li><span class="q">Q13</span><div><strong>What does a good result look like for you?</strong><div class="input answer" contenteditable="true" data-placeholder="Notes"></div></div></li>
+          <li><span class="q">Q14</span><div><strong>What matters most to you when choosing a [product/service]?</strong><div class="input answer" contenteditable="true" data-placeholder="Notes"></div></div></li>
+        </ul>
+
+        <h3>Product / service experience questions</h3>
+        <ul>
+          <li><span class="q">Q15</span><div><strong>What do you like most about the tool you use now?</strong><div class="input answer" contenteditable="true" data-placeholder="Notes"></div></div></li>
+          <li><span class="q">Q16</span><div><strong>What would you change about it if you could?</strong><div class="input answer" contenteditable="true" data-placeholder="Notes"></div></div></li>
+          <li><span class="q">Q17</span><div><strong>Have you ever switched to a different product for this? What made you switch?</strong><div class="input answer" contenteditable="true" data-placeholder="Notes"></div></div></li>
+          <li><span class="q">Q18</span><div><strong>How do you decide whether a [product/service] can be trusted?</strong><div class="input answer" contenteditable="true" data-placeholder="Notes"></div></div></li>
+        </ul>
+
+        <h3>Closing questions</h3>
+        <ul>
+          <li><span class="q">Q19</span><div><strong>Is there anything about [the activity] that we didn’t talk about but you think is important?</strong><div class="input answer" contenteditable="true" data-placeholder="Notes"></div></div></li>
+          <li><span class="q">Q20</span><div><strong>Do you know anyone else who might be happy to talk to us about this?</strong><div class="input answer" contenteditable="true" data-placeholder="Notes"></div></div></li>
+        </ul>
+        <div class="guide">
+          <p><strong>Follow-up prompts:</strong> “Why is that?”, “Can you show me?”, “What happened next?”, “How did that make you feel?”</p>
+          <p><strong>Avoid:</strong> asking “Would you use a feature that…?”. People are poor at predicting their future behavior. Ask about what they did in the past instead.</p>
+        </div>
+      </section>
+
+      <section class="section" id="interview-notes">
+        <h2>3. User Interview Notes Template</h2>
+        <p class="intro-copy">Use one copy per participant. Fill it in during the session or straight after, while details are fresh.</p>
+        <div class="fields two">
+          <div class="field"><label>Participant</label><div class="input" contenteditable="true" data-placeholder="e.g. P3 – Riya, 27, orders food 3x a week"></div></div>
+          <div class="field"><label>Date</label><div class="input" contenteditable="true" data-placeholder="e.g. 12 March 2026"></div></div>
+          <div class="field"><label>Session</label><div class="input" contenteditable="true" data-placeholder="e.g. Remote interview, 40 min, Google Meet"></div></div>
+          <div class="field"><label>Interviewer / note-taker</label><div class="input" contenteditable="true" data-placeholder="e.g. Aman (interviewer), Neha (notes)"></div></div>
+        </div>
+        <div class="fields" style="margin-top: 10px">
+          <div class="field"><label>Key observations</label><div class="input tall" contenteditable="true" data-placeholder="What you saw or heard that stood out"></div></div>
+          <div class="field"><label>Important quotes</label><div class="input tall" contenteditable="true" data-placeholder="Write them word for word, e.g. “I never know if the payment actually went through.”"></div></div>
+        </div>
+        <div class="fields two" style="margin-top: 10px">
+          <div class="field"><label>Pain points</label><div class="input tall" contenteditable="true"></div></div>
+          <div class="field"><label>Needs</label><div class="input tall" contenteditable="true"></div></div>
+          <div class="field"><label>Goals</label><div class="input tall" contenteditable="true"></div></div>
+          <div class="field"><label>Behaviors</label><div class="input tall" contenteditable="true"></div></div>
+        </div>
+        <div class="fields" style="margin-top: 10px">
+          <div class="field"><label>Surprises</label><div class="input tall" contenteditable="true" data-placeholder="Anything that challenged your assumptions"></div></div>
+        </div>
+        <div class="guide">
+          <p><strong>Tip:</strong> capture exact quotes in quotation marks and your own interpretations separately. You will need the real words later as evidence.</p>
+        </div>
+      </section>
+
+      <section class="section" id="observation">
+        <h2>4. User Observation Template</h2>
+        <p class="intro-copy">Use this during usability tests or contextual observation. Add one column per task you ask the participant to complete.</p>
+        <table>
+          <thead>
+            <tr><th>Observation</th><th>Task 1</th><th>Task 2</th><th>Task 3</th></tr>
+          </thead>
+          <tbody>
+            <tr><th>Task description</th><td contenteditable="true" data-placeholder="e.g. Order a pizza and pay by UPI"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+            <tr><th>What the user did</th><td contenteditable="true" data-placeholder="e.g. Scrolled past the UPI option twice"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+            <tr><th>What the user said</th><td contenteditable="true" data-placeholder="e.g. “Where is UPI? I thought it was here.”"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+            <tr><th>What the user struggled with</th><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+            <tr><th>What the user expected</th><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+            <tr><th>Questions raised</th><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+            <tr><th>Opportunities identified</th><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+          </tbody>
+        </table>
+        <div class="guide">
+          <p><strong>Tip:</strong> note what users <em>do</em> as well as what they <em>say</em>. The two often differ, and behavior is the stronger signal.</p>
+        </div>
+      </section>
+
+      <section class="section" id="findings">
+        <h2>5. UX Research Findings Template</h2>
+        <p class="intro-copy">Turn raw notes into findings. Each column is one finding, and it should read top to bottom as a chain from evidence to opportunity.</p>
+        <table>
+          <thead>
+            <tr><th>Field</th><th>Finding 1</th><th>Finding 2</th><th>Finding 3</th></tr>
+          </thead>
+          <tbody>
+            <tr><th>Observation</th><td contenteditable="true" data-placeholder="e.g. Users re-check their order history after paying"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+            <tr><th>Evidence</th><td contenteditable="true" data-placeholder="e.g. 5 of 7 participants; quote from P2"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+            <tr><th>User need</th><td contenteditable="true" data-placeholder="e.g. Confidence that the payment succeeded"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+            <tr><th>Pain point</th><td contenteditable="true" data-placeholder="e.g. Confirmation screen disappears too fast"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+            <tr><th>Pattern</th><td contenteditable="true" data-placeholder="e.g. Anxiety after payment, across all age groups"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+            <tr><th>Insight</th><td contenteditable="true" data-placeholder="e.g. Users do not trust payment success without clear, lasting proof"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+            <tr><th>Opportunity</th><td contenteditable="true" data-placeholder="e.g. How might we make payment success unmistakable?"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+          </tbody>
+        </table>
+        <div class="guide">
+          <p><strong>Observation vs. insight:</strong> an observation is what happened. An insight explains <em>why</em> it happened and why it matters for design.</p>
+          <p><strong>Opportunity:</strong> phrase it as “How might we…?” so it stays open to more than one solution.</p>
+        </div>
+      </section>
+
+      <section class="section" id="affinity">
+        <h2>6. Affinity Mapping Guide</h2>
+        <p class="intro-copy">Affinity mapping helps you find patterns across many interviews. Use sticky notes on a wall, or a whiteboard tool such as FigJam or Miro.</p>
+        <ul class="steps">
+          <li><strong>1. Collect observations</strong><span>Write one observation, quote, or pain point per sticky note. Add the participant ID (e.g. P4) so every note can be traced back.</span></li>
+          <li><strong>2. Group similar observations</strong><span>Move notes that feel related next to each other. Do this silently at first and do not name the groups yet.</span></li>
+          <li><strong>3. Identify patterns</strong><span>Look for groups that contain notes from several participants. One person’s comment is an anecdote; the same issue from four people is a pattern.</span></li>
+          <li><strong>4. Name groups</strong><span>Give each group a short label that describes the user’s experience, e.g. “Unsure if payment worked” rather than “Payment”.</span></li>
+          <li><strong>5. Convert patterns into UX insights</strong><span>For each strong group, write one sentence explaining why it happens and what it means for the design. Move these into the findings template above.</span></li>
+        </ul>
+        <h3>Affinity groups</h3>
+        <table>
+          <thead>
+            <tr><th>Group name</th><th>Observations (with participant IDs)</th><th>Pattern</th><th>UX insight</th></tr>
+          </thead>
+          <tbody>
+            <tr><td contenteditable="true" data-placeholder="e.g. Unsure if payment worked"></td><td contenteditable="true" data-placeholder="P1, P2, P4, P6"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+            <tr><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+            <tr><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+            <tr><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="persona">
+        <h2>7. User Persona Starter Template</h2>
+        <p class="intro-copy">Build personas from research findings, not guesses. Every point below should link back to something you heard or saw.</p>
+        <div class="fields two">
+          <div class="field"><label>Name</label><div class="input" contenteditable="true" data-placeholder="e.g. Busy Professional Priya"></div></div>
+          <div class="field"><label>Background</label><div class="input" contenteditable="true" data-placeholder="e.g. 29, marketing executive in Pune, orders dinner 4x a week"></div></div>
+          <div class="field"><label>Goals</label><div class="input tall" contenteditable="true" data-placeholder="What they want to achieve"></div></div>
+          <div class="field"><label>Needs</label><div class="input tall" contenteditable="true" data-placeholder="What they need from the product"></div></div>
+          <div class="field"><label>Pain points</label><div class="input tall" contenteditable="true" data-placeholder="What gets in their way"></div></div>
+          <div class="field"><label>Behaviors</label><div class="input tall" contenteditable="true" data-placeholder="Habits, devices, how often, when"></div></div>
+          <div class="field"><label>Motivations</label><div class="input tall" contenteditable="true" data-placeholder="Why they do it at all"></div></div>
+          <div class="field"><label>Frustrations</label><div class="input tall" contenteditable="true" data-placeholder="What annoys them emotionally"></div></div>
+        </div>
+        <div class="guide">
+          <p><strong>Avoid:</strong> hobbies, favorite brands, and other details that will never affect a design decision.</p>
+        </div>
+      </section>
+
+      <section class="section" id="summary">
+        <h2>8. UX Research Summary Template</h2>
+        <p class="intro-copy">Share this one-page summary with your team and stakeholders when the research is done.</p>
+        <div class="fields">
+          <div class="field"><label>Research objective</label><div class="input" contenteditable="true"></div></div>
+        </div>
+        <div class="fields two" style="margin-top: 10px">
+          <div class="field"><label>Participants</label><div class="input" contenteditable="true" data-placeholder="e.g. 7 users, ages 22–38, 4 frequent / 3 occasional"></div></div>
+          <div class="field"><label>Methods used</label><div class="input" contenteditable="true" data-placeholder="e.g. 7 interviews, 5 usability tests"></div></div>
+        </div>
+        <div class="fields" style="margin-top: 10px">
+          <div class="field"><label>Key findings</label><div class="input tall" contenteditable="true" data-placeholder="Top 3–5 findings, each with a line of evidence"></div></div>
+          <div class="field"><label>Main pain points</label><div class="input tall" contenteditable="true"></div></div>
+          <div class="field"><label>User needs</label><div class="input tall" contenteditable="true"></div></div>
+          <div class="field"><label>Important insights</label><div class="input tall" contenteditable="true"></div></div>
+          <div class="field"><label>Design opportunities</label><div class="input tall" contenteditable="true" data-placeholder="How might we…?"></div></div>
+          <div class="field"><label>Recommended next steps</label><div class="input tall" contenteditable="true" data-placeholder="e.g. Prototype a new confirmation screen and test with 5 users next sprint"></div></div>
+        </div>
+        <div class="guide">
+          <p><strong>Tip:</strong> lead with the findings. Stakeholders rarely read the method first, so put it at the bottom if you are presenting.</p>
+        </div>
+      </section>
+
+      <section class="section" id="checklist">
+        <h2>9. UX Research Checklist</h2>
+        <ul>
+          <li><input type="checkbox" /><div><strong>Research objective defined</strong><span>You can explain in one sentence what you want to learn.</span></div></li>
+          <li><input type="checkbox" /><div><strong>Target users identified</strong><span>You know exactly who qualifies as a participant.</span></div></li>
+          <li><input type="checkbox" /><div><strong>Research questions prepared</strong><span>Three to five questions guide the study.</span></div></li>
+          <li><input type="checkbox" /><div><strong>Research method selected</strong><span>The method fits the questions (interviews, usability tests, surveys).</span></div></li>
+          <li><input type="checkbox" /><div><strong>Participants identified</strong><span>Sessions are scheduled and consent is arranged.</span></div></li>
+          <li><input type="checkbox" /><div><strong>Interviews conducted</strong><span>All sessions are complete and recordings or notes are saved.</span></div></li>
+          <li><input type="checkbox" /><div><strong>Notes organized</strong><span>Notes are cleaned up and labeled by participant.</span></div></li>
+          <li><input type="checkbox" /><div><strong>Patterns identified</strong><span>Affinity map shows groups supported by several participants.</span></div></li>
+          <li><input type="checkbox" /><div><strong>Insights documented</strong><span>Each insight has evidence behind it.</span></div></li>
+          <li><input type="checkbox" /><div><strong>Opportunities identified</strong><span>Insights are turned into “How might we…?” statements.</span></div></li>
+          <li><input type="checkbox" /><div><strong>Findings shared with stakeholders</strong><span>The research summary has been presented or sent to the team.</span></div></li>
+        </ul>
+      </section>
+
+      <section class="section" id="tips">
+        <h2>10. UX Research Tips for Beginners</h2>
+        <div class="grid">
+          <div class="card"><h3>Avoid leading questions</h3><p>Ask “How do you feel about the checkout?” instead of “Don’t you think the checkout is confusing?”.</p></div>
+          <div class="card"><h3>Ask open-ended questions</h3><p>Start with how, what, or tell me about. Questions that can be answered with yes or no end the conversation.</p></div>
+          <div class="card"><h3>Listen more than you speak</h3><p>Aim for the participant talking about 80% of the time. Get comfortable with silence, because people often fill it with the most useful detail.</p></div>
+          <div class="card"><h3>Ask users about real behavior</h3><p>“Tell me about the last time you…” gives better data than “What would you do if…”.</p></div>
+          <div class="card"><h3>Separate observations from assumptions</h3><p>Write down what happened, then add your interpretation in a separate line or color.</p></div>
+          <div class="card"><h3>Look for patterns, not isolated comments</h3><p>One loud opinion is not a finding. Look for the same issue across several participants.</p></div>
+          <div class="card"><h3>Support important findings with evidence</h3><p>Back each key finding with quotes, participant counts, or recordings so the team can trust it.</p></div>
+          <div class="card"><h3>Understand the problem before designing</h3><p>Resist sketching solutions during research. Collect what you learn first, then design.</p></div>
+        </div>
+      </section>
+
+      <section class="section" id="included">
+        <h2>UX Research Resources Included</h2>
+        <p class="intro-copy">
+          This starter kit gives you everything needed to run a small study
+          from start to finish: a UX research plan template to set your goals,
+          a user interview template with 20 ready-to-use user interview
+          questions, a UX research notes template for each session, and an
+          observation sheet for usability tests. When you move into synthesis,
+          use the affinity mapping guide, the UX research findings template,
+          and the user persona template. The one-page summary and the UX
+          research checklist help you share results and make sure nothing
+          is missed.
+        </p>
+      </section>
+
+      <footer>
+        NSL Digital Lab · UX Research Starter Kit. Free to use for student,
+        personal, and client projects.
+      </footer>
+    </main>
+
+    <script>
+      (function () {
+        var KEY = "nsl-ux-research-starter-kit";
+        var fields = document.querySelectorAll("[contenteditable], input[type='checkbox']");
+        var status = document.getElementById("save-status");
+        var saved = {};
+
+        document.querySelectorAll(".field").forEach(function (field) {
+          var label = field.querySelector("label");
+          var input = field.querySelector(".input");
+          if (!label || !input) return;
+          input.setAttribute("role", "textbox");
+          input.setAttribute("aria-multiline", "true");
+          input.setAttribute("aria-label", label.textContent);
+        });
+
+        try {
+          saved = JSON.parse(localStorage.getItem(KEY) || "{}");
+        } catch (e) {
+          saved = {};
+        }
+
+        fields.forEach(function (el, i) {
+          if (el.type === "checkbox") {
+            el.checked = saved[i] === true;
+          } else if (typeof saved[i] === "string") {
+            el.innerText = saved[i];
+          }
+        });
+
+        function save() {
+          var data = {};
+          fields.forEach(function (el, i) {
+            data[i] = el.type === "checkbox" ? el.checked : el.innerText.trim();
+          });
+          try {
+            localStorage.setItem(KEY, JSON.stringify(data));
+            status.textContent = "Saved in this browser";
+          } catch (e) {
+            status.textContent = "";
+          }
+        }
+
+        fields.forEach(function (el) {
+          el.addEventListener("input", save);
+          el.addEventListener("change", save);
+          el.addEventListener("blur", function () {
+            if (el.type !== "checkbox" && el.innerText.trim() === "") el.innerHTML = "";
+          });
+        });
+
+        document.getElementById("toggle-guidance").addEventListener("click", function () {
+          var hidden = document.body.classList.toggle("hide-guidance");
+          this.textContent = hidden ? "Show guidance" : "Hide guidance";
+        });
+
+        document.getElementById("clear-all").addEventListener("click", function () {
+          if (!confirm("Clear all answers in this starter kit?")) return;
+          fields.forEach(function (el) {
+            if (el.type === "checkbox") el.checked = false;
+            else el.innerHTML = "";
+          });
+          localStorage.removeItem(KEY);
+          status.textContent = "";
+        });
+      })();
+    </script>
+  </body>
+</html>

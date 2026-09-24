@@ -187,7 +187,7 @@ export default function ResourcesWelcomePage() {
               </Link>
             </div>
 
-            <div className="mt-8 divide-y divide-slate-200 overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white">
+            <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {featuredResources.map((resource) => (
                 <ResourceCard key={resource.id} resource={resource} />
               ))}

@@ -5,7 +5,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
     <loc>https://nsldigitallab.com/</loc>
-   <lastmod>2026-09-22T12:46:02.528Z</lastmod>
+   <lastmod>2026-09-24T06:53:17.425Z</lastmod>
     <changefreq>daily</changefreq>
    <priority>1.0</priority>
   </url>
@@ -19,14 +19,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
     <loc>https://nsldigitallab.com/best-ai-tools-for-marketers</loc>
-   <lastmod>2026-09-22T12:46:02.529Z</lastmod>
+   <lastmod>2026-09-24T06:53:17.427Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/best-chatgpt-tools-for-marketers</loc>
-   <lastmod>2026-09-22T12:46:02.529Z</lastmod>
+   <lastmod>2026-09-24T06:53:17.428Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
@@ -306,7 +306,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
     <loc>https://nsldigitallab.com/claude-ai</loc>
-   <lastmod>2026-09-22T12:46:02.535Z</lastmod>
+   <lastmod>2026-09-24T06:53:17.440Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
@@ -593,14 +593,21 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
     <loc>https://nsldigitallab.com/remote-seo-internship</loc>
-   <lastmod>2026-09-22T12:46:02.542Z</lastmod>
+   <lastmod>2026-09-24T06:53:17.452Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/resources</loc>
-   <lastmod>2026-09-18T21:42:21.685Z</lastmod>
+   <lastmod>2026-09-24T04:58:47.121Z</lastmod>
+    <changefreq>weekly</changefreq>
+   <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://nsldigitallab.com/resources/color-contrast-guide-ui-designers</loc>
+   <lastmod>2026-09-24T06:53:17.452Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
@@ -613,15 +620,15 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   </url>
 
   <url>
-    <loc>https://nsldigitallab.com/resources/figma-ui-kit</loc>
-   <lastmod>2026-09-10T17:06:19.902Z</lastmod>
+    <loc>https://nsldigitallab.com/resources/figma-shortcuts-cheat-sheet</loc>
+   <lastmod>2026-09-24T06:53:17.452Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://nsldigitallab.com/resources/resume-template</loc>
-   <lastmod>2026-09-10T17:06:19.902Z</lastmod>
+    <loc>https://nsldigitallab.com/resources/figma-website-wireframe-kit</loc>
+   <lastmod>2026-09-24T06:53:17.452Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
@@ -641,6 +648,34 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   </url>
 
   <url>
+    <loc>https://nsldigitallab.com/resources/typography-cheat-sheet-ui-designers</loc>
+   <lastmod>2026-09-24T06:53:17.452Z</lastmod>
+    <changefreq>weekly</changefreq>
+   <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://nsldigitallab.com/resources/ui-design-checklist</loc>
+   <lastmod>2026-09-24T06:53:17.452Z</lastmod>
+    <changefreq>weekly</changefreq>
+   <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://nsldigitallab.com/resources/ui-ux-design-process-cheat-sheet</loc>
+   <lastmod>2026-09-24T06:53:17.452Z</lastmod>
+    <changefreq>weekly</changefreq>
+   <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://nsldigitallab.com/resources/ui-ux-designer-resume-template</loc>
+   <lastmod>2026-09-24T06:53:17.453Z</lastmod>
+    <changefreq>weekly</changefreq>
+   <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://nsldigitallab.com/resources/ui-ux-interview-questions</loc>
    <lastmod>2026-09-10T17:06:19.902Z</lastmod>
     <changefreq>weekly</changefreq>
@@ -648,22 +683,50 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   </url>
 
   <url>
+    <loc>https://nsldigitallab.com/resources/ui-ux-portfolio-checklist</loc>
+   <lastmod>2026-09-24T06:53:17.453Z</lastmod>
+    <changefreq>weekly</changefreq>
+   <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://nsldigitallab.com/resources/ux-case-study-template</loc>
+   <lastmod>2026-09-24T06:53:17.453Z</lastmod>
+    <changefreq>weekly</changefreq>
+   <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://nsldigitallab.com/resources/ux-research-starter-kit</loc>
+   <lastmod>2026-09-24T06:53:17.453Z</lastmod>
+    <changefreq>weekly</changefreq>
+   <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://nsldigitallab.com/resources/website-usability-checklist</loc>
+   <lastmod>2026-09-24T06:53:17.453Z</lastmod>
+    <changefreq>weekly</changefreq>
+   <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://nsldigitallab.com/resources/welcome</loc>
-   <lastmod>2026-09-21T16:15:22.146Z</lastmod>
+   <lastmod>2026-09-24T04:59:22.514Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/seo-internship-mumbai</loc>
-   <lastmod>2026-09-22T12:46:02.544Z</lastmod>
+   <lastmod>2026-09-24T06:53:17.453Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/seo-internship-pune</loc>
-   <lastmod>2026-09-22T12:46:02.544Z</lastmod>
+   <lastmod>2026-09-24T06:53:17.453Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
@@ -677,28 +740,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
     <loc>https://nsldigitallab.com/services/seo-services</loc>
-   <lastmod>2026-09-22T12:46:02.544Z</lastmod>
+   <lastmod>2026-09-24T06:53:17.453Z</lastmod>
     <changefreq>monthly</changefreq>
    <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/services/social-media-marketing</loc>
-   <lastmod>2026-09-22T12:46:02.544Z</lastmod>
+   <lastmod>2026-09-24T06:53:17.453Z</lastmod>
     <changefreq>monthly</changefreq>
    <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/services/ui-ux-design</loc>
-   <lastmod>2026-09-22T12:46:02.544Z</lastmod>
+   <lastmod>2026-09-24T06:53:17.453Z</lastmod>
     <changefreq>monthly</changefreq>
    <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/services/web-design</loc>
-   <lastmod>2026-09-22T12:46:02.544Z</lastmod>
+   <lastmod>2026-09-24T06:53:17.454Z</lastmod>
     <changefreq>monthly</changefreq>
    <priority>0.9</priority>
   </url>

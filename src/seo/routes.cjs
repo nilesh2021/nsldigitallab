@@ -28,5 +28,18 @@ module.exports = {
 
     "/best-ai-tools-for-marketers",
     "/best-chatgpt-tools-for-marketers",
+
+    "/resources/ui-ux-interview-questions",
+    "/resources/figma-website-wireframe-kit",
+    "/resources/ui-ux-designer-resume-template",
+    "/resources/ux-case-study-template",
+    "/resources/ui-ux-portfolio-checklist",
+    "/resources/figma-shortcuts-cheat-sheet",
+    "/resources/ui-design-checklist",
+    "/resources/ux-research-starter-kit",
+    "/resources/website-usability-checklist",
+    "/resources/typography-cheat-sheet-ui-designers",
+    "/resources/color-contrast-guide-ui-designers",
+    "/resources/ui-ux-design-process-cheat-sheet",
   ],
 };

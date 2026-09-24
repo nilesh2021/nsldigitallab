@@ -9,17 +9,17 @@ const features = [
   {
     icon: BookOpen,
     title: "Practical learning",
-    description: "Templates and guides built for real projects.",
+    description: "Templates and guides built for real projects, not theory.",
   },
   {
     icon: Download,
     title: "Free downloads",
-    description: "Checklists, interviews and files at no cost.",
+    description: "Checklists, interview prep and files at no cost.",
   },
   {
     icon: RefreshCw,
     title: "Regular updates",
-    description: "New SEO, UI/UX and marketing material weekly.",
+    description: "New SEO, UI/UX and marketing material added often.",
   },
   {
     icon: BadgeCheck,
@@ -30,37 +30,41 @@ const features = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="border-y border-slate-100 bg-slate-50 py-10 sm:py-12">
+    <section className="bg-white py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-          <h2 className="text-2xl font-bold tracking-tight text-[#0f172a] sm:text-3xl">
-            Why these resources
-          </h2>
-          <p className="max-w-md text-sm leading-6 text-slate-600">
-            Practical files for students, job seekers and working professionals.
+        <div className="grid gap-4 lg:grid-cols-[1fr_1fr] lg:items-end">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-cyan-700">
+              Why these resources
+            </p>
+            <h2 className="mt-3 max-w-lg text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+              Made for people who learn by doing.
+            </h2>
+          </div>
+          <p className="max-w-md text-base leading-7 text-slate-600 lg:justify-self-end">
+            Practical files for students, job seekers and working
+            professionals who want results, not fluff.
           </p>
         </div>
 
-        <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {features.map((item) => {
+        <div className="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+          {features.map((item, index) => {
             const Icon = item.icon;
 
             return (
-              <div
-                key={item.title}
-                className="flex gap-3 rounded-2xl border border-slate-200 bg-white p-4"
-              >
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-cyan-50">
-                  <Icon className="h-4 w-4 text-cyan-700" />
+              <div key={item.title} className="border-t border-slate-200 pt-6">
+                <div className="flex items-center justify-between">
+                  <span className="text-4xl font-bold tracking-tight text-slate-300">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <Icon className="h-5 w-5 text-cyan-600" />
                 </div>
-                <div>
-                  <h3 className="text-sm font-semibold text-[#0f172a]">
-                    {item.title}
-                  </h3>
-                  <p className="mt-1 text-xs leading-5 text-slate-500">
-                    {item.description}
-                  </p>
-                </div>
+                <h3 className="mt-6 text-lg font-semibold text-slate-900">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-slate-600">
+                  {item.description}
+                </p>
               </div>
             );
           })}
