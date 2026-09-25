@@ -40,8 +40,8 @@ export default function CareerForm({ jobTitle }: Props) {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
 
-    if (!form.name.trim() || !form.email.trim() || !form.phone.trim()) {
-      setError("Please fill in your name, email, and phone number.");
+    if (!form.name.trim() || !form.email.trim()) {
+      setError("Please fill in your name and email.");
       return;
     }
 
@@ -146,7 +146,8 @@ export default function CareerForm({ jobTitle }: Props) {
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="space-y-2">
             <label htmlFor="phone" className="text-sm font-medium text-slate-200">
-              Phone number <span className="text-cyan-400">*</span>
+              Phone number{" "}
+              <span className="font-normal text-slate-500">(optional)</span>
             </label>
             <div className="relative">
               <Phone className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500" />
@@ -156,7 +157,6 @@ export default function CareerForm({ jobTitle }: Props) {
                 onChange={(e) => update("phone", e.target.value)}
                 type="tel"
                 name="phone"
-                required
                 autoComplete="tel"
                 placeholder="+91 98765 43210"
                 className={fieldClass}

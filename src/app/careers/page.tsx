@@ -38,7 +38,7 @@ const jobs = [
     category: "Operations",
     href: "/careers/data-entry-remote-job",
     description:
-      "Keep spreadsheets, CRM records, and project files accurate so delivery stays on schedule.",
+      "NSL Digital Lab is looking for a Data Entry Operator to support our digital operations.",
   },
 ];
 

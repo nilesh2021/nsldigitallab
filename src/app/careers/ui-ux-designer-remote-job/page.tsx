@@ -447,7 +447,8 @@ A career in UI/UX Design offers opportunities in product design, web design, mob
 
                     <div>
                       <label htmlFor="applicant-phone" className="block text-sm font-medium text-slate-700">
-                        Phone Number
+                        Phone Number{" "}
+                        <span className="font-normal text-slate-500">(optional)</span>
                       </label>
                       <input
                         id="applicant-phone"
@@ -456,7 +457,6 @@ A career in UI/UX Design offers opportunities in product design, web design, mob
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
                         className="mt-2 w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 text-slate-900 outline-none transition focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
-                        required
                       />
                     </div>
 

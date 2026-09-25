@@ -367,11 +367,10 @@ const handleSubmit = async (e: React.FormEvent) => {
 
                             <input
                                 type="tel"
-                                placeholder="Phone Number"
+                                placeholder="Phone Number (optional)"
                                 value={phone}
                                 onChange={(e) => setPhone(e.target.value)}
                                 className="w-full rounded-xl border border-slate-300 p-4"
-                                required
                             />
 
                             <input
