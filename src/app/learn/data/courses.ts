@@ -1,4 +1,10 @@
-import { Code2, Palette, Search, TrendingUp } from "lucide-react";
+import {
+    Code2,
+    MessageCircle,
+    Palette,
+    Search,
+    TrendingUp,
+} from "lucide-react";
 import { Course } from "../types";
 
 export const courses: Course[] = [
@@ -40,6 +46,15 @@ export const courses: Course[] = [
         level: "Beginner → Intermediate",
         link: "/learn/react-foundations",
         color: "from-sky-500 to-violet-600",
+    },
+    {
+        title: "Spoken English Communication",
+        description:
+            "Build confidence, pronunciation, everyday conversation, interview communication, and professional speaking skills.",
+        icon: MessageCircle,
+        lessons: "6 Modules",
+        level: "Beginner Friendly",
+        color: "from-amber-500 to-orange-500",
     },
 ];
 
