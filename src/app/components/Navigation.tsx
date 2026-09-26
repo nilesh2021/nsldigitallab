@@ -189,7 +189,7 @@ export default function Navigation({
         }}
       />
 
-      <nav className="relative z-[60] mx-auto max-w-7xl px-3 pt-2 sm:px-6 sm:pt-3 lg:px-8">
+      <nav className="relative z-[60] mx-auto max-w-7xl  pt-2 sm:px-6 sm:pt-3 ">
         <div
           className={`
             flex items-center justify-between gap-2 rounded-xl border px-2 py-1
@@ -204,7 +204,7 @@ export default function Navigation({
           <button
             type="button"
             onClick={scrollToTop}
-            className="group flex min-w-0 cursor-pointer items-center gap-2 rounded-lg px-0.5 py-0 text-left sm:gap-3 sm:rounded-xl sm:px-1 sm:py-0.5"
+            className="group flex min-w-0 cursor-pointer items-center gap-2 rounded-lg  py-0 text-left sm:gap-3 sm:rounded-xl sm:px-1 sm:py-0.5"
             aria-label="NSL Digital Lab home"
           >
             <div className="relative flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-white/10 bg-white/[0.04] sm:h-10 sm:w-10 sm:rounded-xl">
@@ -233,7 +233,7 @@ export default function Navigation({
                   type="button"
                   onClick={() => handleNavItem(item)}
                   aria-current={active ? 'page' : undefined}
-                  className={`relative cursor-pointer rounded-full px-2.5 py-1.5 text-[12px] font-medium transition-colors duration-200 lg:px-3.5 lg:text-[13px] ${
+                  className={`relative cursor-pointer rounded-full px-2.5 py-1.5 text-[16px] font-medium transition-colors duration-200 lg:px-3.5 lg:text-[16px] ${
                     active
                       ? 'bg-white/[0.08] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]'
                       : 'text-slate-300 hover:text-white'
@@ -253,7 +253,7 @@ export default function Navigation({
               type="button"
               onClick={() => goToPage('/careers')}
               aria-current={isCareersActive ? 'page' : undefined}
-              className={`hidden cursor-pointer items-center rounded-full px-3 py-2 text-[13px] font-medium transition-colors duration-200 lg:inline-flex ${
+              className={`hidden cursor-pointer items-center rounded-full px-3 py-2 text-[16px] font-medium transition-colors duration-200 lg:inline-flex ${
                 isCareersActive ? 'text-white' : 'text-slate-400 hover:text-white'
               }`}
             >
@@ -263,7 +263,7 @@ export default function Navigation({
             <button
               type="button"
               onClick={() => scrollToSection('contact')}
-              className="hidden cursor-pointer items-center gap-1.5 rounded-full bg-white px-4 py-2 text-[13px] font-semibold text-[#060b14] shadow-[0_0_0_1px_rgba(255,255,255,0.08)] transition-all duration-200 hover:-translate-y-px hover:bg-slate-100 md:inline-flex"
+              className="hidden cursor-pointer items-center gap-1.5 rounded-full bg-white px-4 py-2 text-[16px] font-semibold text-[#060b14] shadow-[0_0_0_1px_rgba(255,255,255,0.08)] transition-all duration-200 hover:-translate-y-px hover:bg-slate-100 md:inline-flex"
             >
               Let&apos;s talk
               <ArrowUpRight className="h-3.5 w-3.5" />
