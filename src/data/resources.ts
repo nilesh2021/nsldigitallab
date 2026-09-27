@@ -78,8 +78,8 @@ export const resources = [
 
     relatedLinks: [
       { slug: "ui-ux-portfolio-checklist", label: "Review your work with the UI/UX portfolio checklist" },
+      { slug: "ui-ux-internship-starter-kit", label: "Prep applications with the UI/UX internship starter kit" },
       { slug: "ui-ux-designer-resume-template", label: "Update your CV with the UI/UX designer resume template" },
-      { slug: "ui-ux-design-process-cheat-sheet", label: "Revise the UI/UX design process step by step" },
     ],
 
     tags: ["UI UX", "Interview", "Design", "PDF"],
@@ -432,8 +432,8 @@ export const resources = [
 
     relatedLinks: [
       { slug: "figma-website-wireframe-kit", label: "Put your shortcuts to work with the Figma website wireframe kit" },
+      { slug: "figma-auto-layout-cheat-sheet", label: "Practise Auto Layout with the Figma Auto Layout cheat sheet" },
       { slug: "ui-design-checklist", label: "Review your Figma screens with the UI design checklist" },
-      { slug: "typography-cheat-sheet-ui-designers", label: "Set up text styles with the typography cheat sheet for UI designers" },
     ],
 
     tags: ["Figma", "Shortcuts", "Cheat Sheet", "UI UX", "PDF"],
@@ -757,5 +757,215 @@ export const resources = [
       "UI UX Process Cheat Sheet",
       "PDF",
     ],
+  },
+  {
+    id: 18,
+    title: "SEO Interview Questions for Freshers",
+    slug: "seo-interview-questions",
+    category: "SEO",
+    categorySlug: "seo",
+    icon: "📈",
+    type: "PDF",
+    featured: true,
+    downloads: 0,
+    image:
+      "https://images.unsplash.com/photo-1432888498266-38ffec3bdb36?w=1200&q=80",
+    description:
+      "Short SEO interview answers for internships and junior roles: keywords, intent, Search Console, on-page, technical, and local SEO.",
+    buttonText: "Download Free",
+    downloadUrl: "/downloads/seo-interview-questions.html",
+    seoTitle: "SEO Interview Questions for Freshers (Free PDF) | NSL Digital Lab",
+    seoDescription:
+      "Download free SEO interview questions and answers for freshers covering keywords, on-page SEO, Search Console, technical SEO, and internships.",
+    primaryKeyword: "SEO interview questions",
+    secondaryKeywords: [
+      "SEO interview questions for freshers",
+      "SEO internship interview questions",
+      "on-page SEO interview questions",
+      "Google Search Console interview questions",
+    ],
+    overview:
+      "This SEO interview questions pack gives short, spoken-ready answers for internships and junior SEO roles. It covers basics, Search Console, technical SEO, local SEO, and how to talk about keyword research without jargon.",
+    relatedLinks: [
+      { slug: "seo-checklist", label: "Revise the technical SEO checklist" },
+      { slug: "digital-marketing-interview-questions", label: "Practise digital marketing interview questions" },
+      { slug: "digital-marketing-checklist", label: "Plan campaigns with the digital marketing checklist" },
+    ],
+    tags: ["SEO", "Interview", "Freshers", "PDF"],
+  },
+  {
+    id: 19,
+    title: "Digital Marketing Interview Questions for Freshers",
+    slug: "digital-marketing-interview-questions",
+    category: "Digital Marketing",
+    categorySlug: "digital-marketing",
+    icon: "🚀",
+    type: "PDF",
+    featured: true,
+    downloads: 0,
+    image:
+      "https://images.unsplash.com/photo-1557838923-2985c318be48?w=1200&q=80",
+    description:
+      "Internship-ready answers on funnels, CTR, CPC, CPA, ROAS, Google Ads vs Meta Ads, and how to describe a 30-day campaign.",
+    buttonText: "Download Free",
+    downloadUrl: "/downloads/digital-marketing-interview-questions.html",
+    seoTitle:
+      "Digital Marketing Interview Questions for Freshers | NSL Digital Lab",
+    seoDescription:
+      "Free digital marketing interview questions and answers for internships: funnel, metrics, ads, GA4, and campaign planning.",
+    primaryKeyword: "digital marketing interview questions",
+    secondaryKeywords: [
+      "digital marketing interview questions for freshers",
+      "digital marketing internship interview",
+      "CTR CPC CPA interview questions",
+      "Google Ads vs Meta Ads",
+    ],
+    overview:
+      "Use this pack before a digital marketing internship interview. It explains channels, core metrics, and how to describe a simple 30-day campaign in spoken English.",
+    relatedLinks: [
+      { slug: "digital-marketing-checklist", label: "Use the digital marketing planning checklist" },
+      { slug: "seo-interview-questions", label: "Practise SEO interview questions" },
+      { slug: "chatgpt-prompt-pack", label: "Draft campaign copy with the ChatGPT prompt pack" },
+    ],
+    tags: ["Digital Marketing", "Interview", "Freshers", "PDF"],
+  },
+  {
+    id: 20,
+    title: "React Interview Questions for Freshers",
+    slug: "react-interview-questions",
+    category: "React",
+    categorySlug: "react",
+    icon: "⚛️",
+    type: "PDF",
+    featured: true,
+    downloads: 0,
+    image:
+      "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=1200&q=80",
+    description:
+      "Plain-language React interview answers: JSX, components, props vs state, useState, useEffect, lists, and how to talk about a project.",
+    buttonText: "Download Free",
+    downloadUrl: "/downloads/react-interview-questions.html",
+    seoTitle: "React Interview Questions for Freshers (Free PDF) | NSL Digital Lab",
+    seoDescription:
+      "Download free React interview questions for freshers covering JSX, components, hooks, lists, React Router, and project walkthroughs.",
+    primaryKeyword: "React interview questions",
+    secondaryKeywords: [
+      "React interview questions for freshers",
+      "useState useEffect interview questions",
+      "props vs state",
+      "React hooks interview",
+    ],
+    overview:
+      "This React interview sheet is written for people who have finished a beginner path. Each answer is short enough to say out loud, then back up with a project example.",
+    relatedLinks: [
+      { slug: "ui-ux-interview-questions", label: "Pair this with UI/UX interview questions" },
+      { slug: "figma-auto-layout-cheat-sheet", label: "Learn Figma Auto Layout for design-to-code talks" },
+      { slug: "ui-ux-internship-starter-kit", label: "Build a junior portfolio with the internship kit" },
+    ],
+    tags: ["React", "Interview", "Frontend", "Freshers", "PDF"],
+  },
+  {
+    id: 21,
+    title: "Spoken English Practice Sheet",
+    slug: "spoken-english-practice-sheet",
+    category: "Spoken English",
+    categorySlug: "spoken-english",
+    icon: "🎤",
+    type: "Cheat Sheet",
+    downloads: 0,
+    image:
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&q=80",
+    description:
+      "A daily speaking habit, tell-me-about-yourself script, pronunciation word list, and meeting update template for freshers.",
+    buttonText: "Download Free",
+    downloadUrl: "/downloads/spoken-english-practice-sheet.html",
+    seoTitle: "Spoken English Practice Sheet for Interviews | NSL Digital Lab",
+    seoDescription:
+      "Free spoken English practice sheet for freshers: daily habit, self-introduction script, pronunciation words, and meeting English.",
+    primaryKeyword: "spoken English for interview",
+    secondaryKeywords: [
+      "tell me about yourself",
+      "spoken English practice",
+      "self introduction for freshers",
+      "interview English",
+    ],
+    overview:
+      "Print this sheet and use it with the Spoken English Communication path. Tick items only after you have recorded them. It covers the 10-minute habit, a three-part introduction, pronunciation words, and a stand-up update.",
+    relatedLinks: [
+      { slug: "ui-ux-interview-questions", label: "Practise UI/UX interview questions next" },
+      { slug: "seo-interview-questions", label: "Practise SEO interview questions" },
+      { slug: "digital-marketing-interview-questions", label: "Practise digital marketing interview questions" },
+    ],
+    tags: ["Spoken English", "Interview", "Freshers", "Cheat Sheet"],
+  },
+  {
+    id: 22,
+    title: "UI/UX Internship Starter Kit",
+    slug: "ui-ux-internship-starter-kit",
+    category: "UI/UX",
+    categorySlug: "ui-ux",
+    icon: "🎒",
+    type: "Checklist",
+    featured: true,
+    downloads: 0,
+    image:
+      "https://images.unsplash.com/photo-1581291518857-4d27b72d502c?w=1200&q=80",
+    description:
+      "A 30-day prep plan, portfolio must-haves, interview prompts, and application checklist for UI/UX internships.",
+    buttonText: "Download Free",
+    downloadUrl: "/downloads/ui-ux-internship-starter-kit.html",
+    seoTitle: "UI/UX Internship Starter Kit for Freshers | NSL Digital Lab",
+    seoDescription:
+      "Free UI/UX internship kit: 30-day plan, portfolio checklist, Auto Layout interview prompt, and application steps for freshers.",
+    primaryKeyword: "UI UX internship for freshers",
+    secondaryKeywords: [
+      "how to get a UI UX internship",
+      "UI UX portfolio for internships",
+      "UI UX internship interview questions",
+      "UI UX internship remote",
+    ],
+    overview:
+      "This starter kit is for students who want a UI/UX internship. It includes a four-week plan, what a junior portfolio must show, spoken interview prompts, and an application checklist.",
+    relatedLinks: [
+      { slug: "ui-ux-interview-questions", label: "Drill UI/UX interview questions" },
+      { slug: "ui-ux-portfolio-checklist", label: "Review your portfolio with the checklist" },
+      { slug: "ui-ux-designer-resume-template", label: "Update your resume template" },
+    ],
+    tags: ["UI UX", "Internship", "Freshers", "Portfolio", "Checklist"],
+  },
+  {
+    id: 23,
+    title: "Figma Auto Layout Cheat Sheet",
+    slug: "figma-auto-layout-cheat-sheet",
+    category: "UI/UX",
+    categorySlug: "ui-ux",
+    icon: "🧩",
+    type: "Cheat Sheet",
+    featured: true,
+    downloads: 0,
+    image:
+      "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=1200&q=80",
+    description:
+      "Direction, gap, padding, hug vs fill, shortcuts, and a product-card exercise — plus a spoken interview answer.",
+    buttonText: "Download Free",
+    downloadUrl: "/downloads/figma-auto-layout-cheat-sheet.html",
+    seoTitle: "Figma Auto Layout Cheat Sheet for Beginners | NSL Digital Lab",
+    seoDescription:
+      "Free Figma Auto Layout cheat sheet: hug vs fill, padding, gap, shortcuts, a card exercise, and how to explain Auto Layout in interviews.",
+    primaryKeyword: "Figma Auto Layout",
+    secondaryKeywords: [
+      "Figma Auto Layout tutorial",
+      "Figma hug vs fill",
+      "Figma Auto Layout shortcuts",
+      "Auto Layout interview question",
+    ],
+    overview:
+      "Auto Layout is the Figma skill that shows up in junior job posts and craft interviews. This cheat sheet explains the controls, a first card exercise, shortcuts, and a short spoken answer you can use in interviews.",
+    relatedLinks: [
+      { slug: "figma-shortcuts-cheat-sheet", label: "Learn more Figma shortcuts" },
+      { slug: "figma-website-wireframe-kit", label: "Practise with the Figma wireframe kit" },
+      { slug: "ui-design-checklist", label: "Review finished screens with the UI checklist" },
+    ],
+    tags: ["Figma", "Auto Layout", "Cheat Sheet", "UI UX", "Interview"],
   },
 ];

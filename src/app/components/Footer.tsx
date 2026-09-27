@@ -25,6 +25,7 @@ const learnLinks: FooterLink[] = [
   { label: "UI/UX Design Foundations", to: "/learn/ui-ux-design" },
   { label: "Digital Marketing Foundations", to: "/learn/digital-marketing-foundations" },
   { label: "React Foundations", to: "/learn/react-foundations" },
+  { label: "Spoken English Communication", to: "/learn/spoken-english-communication" },
   { label: "Case Studies", to: "/case-studies" },
   { label: "Free Resources", to: "/resources" },
 ];
@@ -32,6 +33,8 @@ const learnLinks: FooterLink[] = [
 const resourceLinks: FooterLink[] = [
   { label: "All Resources", to: "/resources" },
   { label: "UI/UX Interview Questions", to: "/resources/ui-ux-interview-questions" },
+  { label: "SEO Interview Questions", to: "/resources/seo-interview-questions" },
+  { label: "Figma Auto Layout", to: "/resources/figma-auto-layout-cheat-sheet" },
   { label: "SEO Checklist", to: "/resources/seo-checklist" },
   { label: "Marketing Checklist", to: "/resources/digital-marketing-checklist" },
   { label: "Website Launch Checklist", to: "/resources/website-launch-checklist" },

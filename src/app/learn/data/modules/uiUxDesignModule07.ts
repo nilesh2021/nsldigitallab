@@ -222,12 +222,21 @@ export const uiUxDesignModule07: PublishedModule = {
           text: "Without Auto Layout, adding a second line of text overlaps the price. With Auto Layout, the card grows. That is closer to how a developer will build it.",
         },
         {
+          type: "related",
+          href: "/resources/figma-auto-layout-cheat-sheet",
+          kicker: "Free download",
+          title: "Figma Auto Layout cheat sheet",
+          text: "Printable hug vs fill, padding, gap, shortcuts, and a card exercise — plus a spoken interview answer.",
+          ctaLabel: "Download the cheat sheet",
+        },
+        {
           type: "ul",
           items: [
             "Direction: vertical for a card’s contents, horizontal for a button with an icon.",
-            "Gap: space between items.",
+            "Gap: space between items. Prefer gap over empty spacer frames.",
             "Padding: inner space from the edge.",
-            "Hug vs fill: shrink to content or stretch to the parent.",
+            "Hug vs fill: shrink to content (buttons) or stretch to the parent (titles in a full-width card).",
+            "Nested Auto Layout: a card (vertical) can contain a button (horizontal).",
           ],
         },
         {
@@ -239,7 +248,8 @@ export const uiUxDesignModule07: PublishedModule = {
           title: "Try it yourself",
           steps: [
             "Put an image, title, and button in a frame.",
-            "Add Auto Layout (vertical), set gap and padding, then lengthen the title and watch the card grow.",
+            "Add Auto Layout (Shift + A, vertical), set gap 12 and padding 16, then lengthen the title and watch the card grow.",
+            "Set the title to fill container and the button to hug.",
           ],
         },
         {

@@ -105,10 +105,10 @@ export const blogInternalLinks: Record<string, BlogLinkSet> = {
   // —— UI/UX cluster (pillar: ui-ux-design-in-2026) ——
   "ui-ux-design-in-2026": {
     related: [
+      { href: "/blog/ui-ux/how-to-become-a-ui-ux-designer", label: "How to become a UI/UX designer" },
       { href: "/blog/ui-ux/future-of-ui-design", label: "Future of UI design" },
       { href: "/blog/ui-ux/ui-ux-design-process-explained", label: "UI/UX design process" },
       { href: "/blog/ui-ux/accessibility-in-ux-design", label: "Accessibility in UX design" },
-      { href: "/blog/ui-ux/saas-dashboard-design-ideas", label: "SaaS dashboard design ideas" },
     ],
     service: { href: "/services/ui-ux-design", label: "UI/UX design services" },
     learn: { href: "/learn/ui-ux-design", label: "Free UI/UX Design Foundations path" },
@@ -161,6 +161,16 @@ export const blogInternalLinks: Record<string, BlogLinkSet> = {
       { href: "/blog/ui-ux/future-of-ui-design", label: "Future of UI design" },
     ],
     service: { href: "/services/ui-ux-design", label: "Inclusive UI/UX design" },
+    learn: { href: "/learn/ui-ux-design", label: "Free UI/UX Design Foundations path" },
+  },
+  "how-to-become-a-ui-ux-designer": {
+    related: [
+      { href: "/blog/ui-ux/ui-ux-design-process-explained", label: "UI/UX design process" },
+      { href: "/blog/ui-ux/ui-ux-design-principles", label: "UI/UX design principles" },
+      { href: "/blog/ui-ux/ui-ux-design-in-2026", label: "UI/UX design in 2026" },
+      { href: "/blog/ai-tools/best-ai-tools-for-designers", label: "AI tools for designers" },
+    ],
+    service: { href: "/ui-ux-internship", label: "UI/UX internship" },
     learn: { href: "/learn/ui-ux-design", label: "Free UI/UX Design Foundations path" },
   },
 

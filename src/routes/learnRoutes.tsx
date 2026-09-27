@@ -25,6 +25,13 @@ import DigitalMarketingFoundationsModule08Page from "../app/learn/digital-market
 import DigitalMarketingFoundationsModule09Page from "../app/learn/digital-marketing-foundations/analytics-and-marketing-performance/page";
 import DigitalMarketingFoundationsModule10Page from "../app/learn/digital-marketing-foundations/complete-digital-marketing-campaign/page";
 import LearnSeoPage from "../app/learn/seo/page";
+import LearnSpokenEnglishPage from "../app/learn/spoken-english-communication/page";
+import SpokenEnglishModule01Page from "../app/learn/spoken-english-communication/speak-with-confidence/page";
+import SpokenEnglishModule02Page from "../app/learn/spoken-english-communication/pronunciation-practice/page";
+import SpokenEnglishModule03Page from "../app/learn/spoken-english-communication/daily-conversation-skills/page";
+import SpokenEnglishModule04Page from "../app/learn/spoken-english-communication/interview-communication/page";
+import SpokenEnglishModule05Page from "../app/learn/spoken-english-communication/grammar-for-speaking/page";
+import SpokenEnglishModule06Page from "../app/learn/spoken-english-communication/professional-english/page";
 import LearnReactFoundationsPage from "../app/learn/react-foundations/page";
 import ReactFoundationsModule01Page from "../app/learn/react-foundations/react-and-modern-frontend/page";
 import ReactFoundationsModule02Page from "../app/learn/react-foundations/jsx-and-components/page";
@@ -142,6 +149,35 @@ const learnRoutes = (
     <Route
       path="/learn/seo"
       element={<LearnSeoPage />}
+    />
+
+    <Route
+      path="/learn/spoken-english-communication"
+      element={<LearnSpokenEnglishPage />}
+    />
+    <Route
+      path="/learn/spoken-english-communication/speak-with-confidence"
+      element={<SpokenEnglishModule01Page />}
+    />
+    <Route
+      path="/learn/spoken-english-communication/pronunciation-practice"
+      element={<SpokenEnglishModule02Page />}
+    />
+    <Route
+      path="/learn/spoken-english-communication/daily-conversation-skills"
+      element={<SpokenEnglishModule03Page />}
+    />
+    <Route
+      path="/learn/spoken-english-communication/interview-communication"
+      element={<SpokenEnglishModule04Page />}
+    />
+    <Route
+      path="/learn/spoken-english-communication/grammar-for-speaking"
+      element={<SpokenEnglishModule05Page />}
+    />
+    <Route
+      path="/learn/spoken-english-communication/professional-english"
+      element={<SpokenEnglishModule06Page />}
     />
 
     <Route

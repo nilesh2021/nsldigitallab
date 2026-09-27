@@ -998,6 +998,46 @@ export const blogs = [
   accent: "from-green-500 to-emerald-600",
 
   bgGlow: "bg-green-500/20",
+},
+{
+  id: 21,
+
+  title: "How to Become a UI/UX Designer",
+
+  slug: "how-to-become-a-ui-ux-designer",
+
+  category: "ui-ux",
+
+  categoryLabel: "UI/UX",
+
+  excerpt:
+    "A practical India-first roadmap for students and freshers: Figma, case studies, internships, and interview prep — no design degree required.",
+
+  image:
+    "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?q=80&w=1200&auto=format&fit=crop",
+
+  readTime: "9 min read",
+
+  date: "September 2026",
+
+  featured: true,
+
+  seoTitle:
+    "How to Become a UI/UX Designer in India | Roadmap for Freshers",
+
+  seoDescription:
+    "Learn how to become a UI/UX designer without a design degree: skills, Figma Auto Layout, portfolio case studies, internships, and interview practice.",
+
+  keywords: [
+    "how to become a UI UX designer",
+    "UI UX designer roadmap",
+    "UI UX internship",
+    "UI UX portfolio for freshers",
+  ],
+
+  accent: "from-cyan-500 to-violet-600",
+
+  bgGlow: "bg-cyan-500/20",
 }
 ];
 

@@ -8,8 +8,14 @@ import UiUxDesignPrinciplesPage from "../../app/blog/ui-ux/ui-ux-design-principl
 import SaasDashboardDesignIdeasPage from "../../app/blog/ui-ux/saas-dashboard-design-ideas/page";
 import SaasDashboardDesignGuidePage from "../../app/blog/ui-ux/saas-dashboard-design-guide/page";
 
+import HowToBecomeUiUxDesignerPage from "../../app/blog/ui-ux/how-to-become-a-ui-ux-designer/page";
+
 const uiuxRoutes = (
   <>
+    <Route
+      path="/blog/ui-ux/how-to-become-a-ui-ux-designer"
+      element={<HowToBecomeUiUxDesignerPage />}
+    />
     <Route
       path="/blog/ui-ux/ui-ux-design-in-2026"
       element={<UiUxFuture2026Page />}

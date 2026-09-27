@@ -40,6 +40,16 @@ const jobs = [
     description:
       "NSL Digital Lab is looking for a Data Entry Operator to support our digital operations.",
   },
+  {
+    title: "UI/UX Intern",
+    type: "Internship",
+    location: "Remote",
+    experience: "Fresher welcome",
+    category: "Design",
+    href: "/ui-ux-internship",
+    description:
+      "Remote UI/UX internship for students and career switchers. Practise Figma, Auto Layout, research, and a portfolio case study.",
+  },
 ];
 
 const filters = ["All"] as const;

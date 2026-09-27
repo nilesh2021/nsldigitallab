@@ -28,6 +28,12 @@ import { digitalMarketingFoundationsModule07 } from "../modules/digitalMarketing
 import { digitalMarketingFoundationsModule08 } from "../modules/digitalMarketingFoundationsModule08";
 import { digitalMarketingFoundationsModule09 } from "../modules/digitalMarketingFoundationsModule09";
 import { digitalMarketingFoundationsModule10 } from "../modules/digitalMarketingFoundationsModule10";
+import { spokenEnglishModule01 } from "../modules/spokenEnglishModule01";
+import { spokenEnglishModule02 } from "../modules/spokenEnglishModule02";
+import { spokenEnglishModule03 } from "../modules/spokenEnglishModule03";
+import { spokenEnglishModule04 } from "../modules/spokenEnglishModule04";
+import { spokenEnglishModule05 } from "../modules/spokenEnglishModule05";
+import { spokenEnglishModule06 } from "../modules/spokenEnglishModule06";
 import { buildCourseCatalog } from "../../progress/catalog";
 import { CourseCatalog } from "../../progress/types";
 
@@ -70,11 +76,22 @@ export const digitalMarketingFoundationsCatalog = buildCourseCatalog([
   digitalMarketingFoundationsModule10,
 ]);
 
+export const spokenEnglishCommunicationCatalog = buildCourseCatalog([
+  spokenEnglishModule01,
+  spokenEnglishModule02,
+  spokenEnglishModule03,
+  spokenEnglishModule04,
+  spokenEnglishModule05,
+  spokenEnglishModule06,
+]);
+
 export const courseCatalogs: Record<string, CourseCatalog> = {
   [reactFoundationsCatalog.pathSlug]: reactFoundationsCatalog,
   [uiUxDesignCatalog.pathSlug]: uiUxDesignCatalog,
   [digitalMarketingFoundationsCatalog.pathSlug]:
     digitalMarketingFoundationsCatalog,
+  [spokenEnglishCommunicationCatalog.pathSlug]:
+    spokenEnglishCommunicationCatalog,
 };
 
 export function getCourseCatalog(pathSlug: string) {

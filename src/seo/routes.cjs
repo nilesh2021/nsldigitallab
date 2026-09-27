@@ -41,5 +41,12 @@ module.exports = {
     "/resources/typography-cheat-sheet-ui-designers",
     "/resources/color-contrast-guide-ui-designers",
     "/resources/ui-ux-design-process-cheat-sheet",
+    "/resources/seo-interview-questions",
+    "/resources/digital-marketing-interview-questions",
+    "/resources/react-interview-questions",
+    "/resources/spoken-english-practice-sheet",
+    "/resources/ui-ux-internship-starter-kit",
+    "/resources/figma-auto-layout-cheat-sheet",
+    "/ui-ux-internship",
   ],
 };

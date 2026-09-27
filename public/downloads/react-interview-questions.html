@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Interview Questions for Freshers | NSL Digital Lab</title>
+    <link rel="stylesheet" href="./checklist.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header>
+        <div class="brand">NSL Digital Lab</div>
+        <h1>React Interview Questions for Freshers</h1>
+        <p class="lede">
+          Plain-language answers for junior frontend interviews. Explain the
+          idea, then give a tiny example from a project you built.
+        </p>
+        <div class="actions">
+          <button type="button" onclick="window.print()">Print or save as PDF</button>
+        </div>
+      </header>
+
+      <section class="section">
+        <h2>Core React</h2>
+        <div class="card">
+          <h3>What is React?</h3>
+          <p>A JavaScript library for building user interfaces from small reusable pieces called components. When data changes, React updates the matching parts of the screen.</p>
+        </div>
+        <div class="card">
+          <h3>What is JSX?</h3>
+          <p>A syntax that looks like HTML inside JavaScript. It describes what the UI should look like. You use className instead of class.</p>
+        </div>
+        <div class="card">
+          <h3>What is a component?</h3>
+          <p>A function that returns UI. You write it once and reuse it, for example a Button or ProductCard.</p>
+        </div>
+        <div class="card">
+          <h3>Props vs state?</h3>
+          <p>Props are data passed in from a parent. State is data the component owns and can change, usually with useState. Props down, events up.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Hooks and data</h2>
+        <div class="card">
+          <h3>What does useState do?</h3>
+          <p>It stores a value that can change, and asking React to re-render when you update it — for example a form field or a like count.</p>
+        </div>
+        <div class="card">
+          <h3>What does useEffect do?</h3>
+          <p>It runs extra work after render: fetch data, subscribe, or sync with something outside React. The dependency array controls when it runs.</p>
+        </div>
+        <div class="card">
+          <h3>How do you render a list?</h3>
+          <p>Map over an array and return elements. Give each item a stable key (usually an id), not the array index if the list can change order.</p>
+        </div>
+        <div class="card">
+          <h3>What is React Router used for?</h3>
+          <p>Showing different pages in a single-page app, such as /learn and /resources, without a full browser reload.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Practical</h2>
+        <div class="card">
+          <h3>How would you fetch API data?</h3>
+          <p>useEffect with a fetch (or similar), store the result in state, and handle loading and error UI. Cancel or ignore stale responses if the component unmounts.</p>
+        </div>
+        <div class="card">
+          <h3>Controlled input?</h3>
+          <p>The input value comes from state, and onChange updates that state. React is the source of truth for the field.</p>
+        </div>
+        <div class="card">
+          <h3>Walk me through a project</h3>
+          <p>Name the problem, the components you split, where state lived, and one bug you fixed. Interviewers want thinking, not a feature dump.</p>
+        </div>
+      </section>
+
+      <footer>
+        Free resource from NSL Digital Lab · nsldigitallab.com/resources/react-interview-questions
+      </footer>
+    </main>
+  </body>
+</html>

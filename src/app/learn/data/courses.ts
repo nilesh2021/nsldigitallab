@@ -54,6 +54,7 @@ export const courses: Course[] = [
         icon: MessageCircle,
         lessons: "6 Modules",
         level: "Beginner Friendly",
+        link: "/learn/spoken-english-communication",
         color: "from-amber-500 to-orange-500",
     },
 ];

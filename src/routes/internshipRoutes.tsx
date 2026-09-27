@@ -3,9 +3,14 @@ import { Route } from "react-router-dom";
 import SeoInternshipPune from "../app/Internship/SeoInternshipPune";
 import SeoInternshipMumbai from "../app/Internship/SeoInternshipMumbai";
 import RemoteSeoInternship from "../app/Internship/RemoteSeoInternship";
+import UiUxInternship from "../app/Internship/UiUxInternship";
 
 const internshipRoutes = (
   <>
+    <Route
+      path="/ui-ux-internship"
+      element={<UiUxInternship />}
+    />
     <Route
       path="/seo-internship-pune"
       element={<SeoInternshipPune />}
