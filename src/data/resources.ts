@@ -741,6 +741,7 @@ export const resources = [
       "This cheat sheet breaks the UI UX design process into clear steps: understanding the problem, researching users, defining personas and user flows, wireframing, UI design, prototyping, usability testing, iteration, and developer handoff. Keep it as a quick reference for the complete UX design workflow.",
 
     relatedLinks: [
+      { slug: "free-ui-ux-design-ebook", label: "Read the five-stage process in the free UI/UX design ebook" },
       { slug: "ux-research-starter-kit", label: "Start the research phase with the UX research starter kit" },
       { slug: "figma-website-wireframe-kit", label: "Move into wireframing with the Figma website wireframe kit" },
       { slug: "ux-case-study-template", label: "Document your process with the UX case study template" },
@@ -967,5 +968,49 @@ export const resources = [
       { slug: "ui-design-checklist", label: "Review finished screens with the UI checklist" },
     ],
     tags: ["Figma", "Auto Layout", "Cheat Sheet", "UI UX", "Interview"],
+  },
+  {
+    id: 24,
+    title: "Free UI/UX Design Ebook",
+    slug: "free-ui-ux-design-ebook",
+    category: "UI/UX",
+    categorySlug: "ui-ux",
+    icon: "📘",
+    type: "Ebook",
+    featured: true,
+    downloads: 0,
+    image:
+      "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&q=80",
+    description:
+      "The five-stage process I follow — Discovery, Define, Ideate, Design, and Testing — plus the full UI/UX workflow from problem and research through handoff.",
+    buttonText: "Download Free",
+    downloadUrl: "/downloads/free-ui-ux-design-ebook.html",
+    seoTitle: "Free UI/UX Design Ebook | Discovery to Testing | NSL Digital Lab",
+    seoDescription:
+      "Download a free UI/UX design ebook: Discovery, Define, Ideate, Design, and Testing, plus the full workflow from research and wireframes to usability testing and handoff.",
+    primaryKeyword: "free UI UX design ebook",
+    secondaryKeywords: [
+      "UI UX design process",
+      "Discovery Define Ideate Design Testing",
+      "UX design process ebook",
+      "which process do you follow UI UX",
+    ],
+    overview:
+      "This ebook answers “Which process do you follow?” with five stages: Discovery, Define, Ideate, Design, and Testing. It also includes the full UI/UX workflow: understand the problem, research, personas and journeys, information architecture, user flows, wireframes, UI design, prototyping, usability testing, iteration, handoff, and measuring results.",
+    relatedLinks: [
+      { slug: "ui-ux-design-process-cheat-sheet", label: "Keep the UI/UX design process cheat sheet nearby" },
+      { slug: "figma-website-wireframe-kit", label: "Start the Design stage with the Figma wireframe kit" },
+      { slug: "ux-case-study-template", label: "Write the process up in the UX case study template" },
+    ],
+    tags: [
+      "UI UX",
+      "Design Process",
+      "Discovery",
+      "Define",
+      "Ideate",
+      "Design",
+      "Testing",
+      "Ebook",
+    ],
   },
 ];

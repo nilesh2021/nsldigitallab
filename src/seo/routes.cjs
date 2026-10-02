@@ -47,6 +47,7 @@ module.exports = {
     "/resources/spoken-english-practice-sheet",
     "/resources/ui-ux-internship-starter-kit",
     "/resources/figma-auto-layout-cheat-sheet",
+    "/resources/free-ui-ux-design-ebook",
     "/ui-ux-internship",
   ],
 };
