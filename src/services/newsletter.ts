@@ -5,7 +5,8 @@ export async function subscribeNewsletter(
   email: string,
   interest: string,
   source: string,
-  type: "newsletter" | "resource_download" = "newsletter"
+  type: "newsletter" | "resource_download" = "newsletter",
+  extra?: { firstName?: string },
 ) {
   try {
     await fetch(SCRIPT_URL, {
@@ -16,6 +17,7 @@ export async function subscribeNewsletter(
         email,
         interest,
         source,
+        firstName: extra?.firstName?.trim() || undefined,
         createdAt: new Date().toISOString(),
       }),
     });

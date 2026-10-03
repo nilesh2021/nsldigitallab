@@ -32,6 +32,10 @@ const learnLinks: FooterLink[] = [
 
 const resourceLinks: FooterLink[] = [
   { label: "All Resources", to: "/resources" },
+  { label: "Career Resources", to: "/resources/career" },
+  { label: "Free ATS Resume Checklist", to: "/resources/career/free-ats-resume-checklist" },
+  { label: "Best Resume Builders", to: "/resources/career/best-resume-builders" },
+  { label: "Job Search Tools", to: "/resources/career/best-job-search-tools" },
   { label: "Free Website Templates", to: "/free-website-templates" },
   { label: "UI/UX Interview Questions", to: "/resources/ui-ux-interview-questions" },
   { label: "SEO Interview Questions", to: "/resources/seo-interview-questions" },

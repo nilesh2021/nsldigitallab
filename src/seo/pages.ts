@@ -149,6 +149,16 @@ blog: {
 
   type: "website",
 },
+  careerResources: {
+    title: "Career Resources | Resume Tools, Checklists & Guides | NSL Digital Lab",
+    description:
+      "Compare resume builders, writing services, and interview prep tools. Use free ATS, resume writing, and interview checklists from NSL Digital Lab.",
+    keywords:
+      "resume builder, ATS resume, cover letter tools, interview preparation, career resources, resume writing services",
+    canonical: "/resources/career",
+    type: "website",
+  },
+
   whatIsSeo: {
   title: "What is SEO? Beginner's Guide 2026 | NSL Digital Lab",
 
