@@ -146,6 +146,20 @@ export const bestCareerCourses: CareerArticleContent = {
           for free modules, then use Coursera or Udemy when you need a paid
           specialization. See also{" "}
           <InlineArticleLink
+            to={careerArticlePath("best-online-courses-for-job-seekers")}
+            variant="light"
+          >
+            best online courses for job seekers
+          </InlineArticleLink>
+          ,{" "}
+          <InlineArticleLink
+            to={careerArticlePath("best-english-speaking-courses")}
+            variant="light"
+          >
+            best English speaking courses
+          </InlineArticleLink>
+          , and{" "}
+          <InlineArticleLink
             to={careerArticlePath("best-job-search-tools")}
             variant="light"
           >

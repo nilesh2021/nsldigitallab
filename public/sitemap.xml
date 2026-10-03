@@ -5,7 +5,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
     <loc>https://nsldigitallab.com/</loc>
-   <lastmod>2026-10-03T09:47:41.634Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.358Z</lastmod>
     <changefreq>daily</changefreq>
    <priority>1.0</priority>
   </url>
@@ -19,14 +19,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
     <loc>https://nsldigitallab.com/best-ai-tools-for-marketers</loc>
-   <lastmod>2026-10-03T09:47:41.635Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.360Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/best-chatgpt-tools-for-marketers</loc>
-   <lastmod>2026-10-03T09:47:41.635Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.360Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
@@ -313,7 +313,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
     <loc>https://nsldigitallab.com/claude-ai</loc>
-   <lastmod>2026-10-03T09:47:41.641Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.373Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
@@ -341,7 +341,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
     <loc>https://nsldigitallab.com/free-website-templates</loc>
-   <lastmod>2026-10-03T09:47:41.641Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.373Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
@@ -656,7 +656,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
     <loc>https://nsldigitallab.com/remote-seo-internship</loc>
-   <lastmod>2026-10-03T09:47:41.645Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.388Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
@@ -670,91 +670,161 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
     <loc>https://nsldigitallab.com/resources/career</loc>
-   <lastmod>2026-10-03T09:47:04.822Z</lastmod>
+   <lastmod>2026-10-03T14:53:23.783Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/resources/career/best-ai-resume-builders</loc>
-   <lastmod>2026-10-03T09:47:41.645Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.389Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/resources/career/best-ats-resume-tools</loc>
-   <lastmod>2026-10-03T09:47:41.646Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.389Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/resources/career/best-career-courses</loc>
-   <lastmod>2026-10-03T09:47:41.646Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.389Z</lastmod>
+    <changefreq>weekly</changefreq>
+   <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://nsldigitallab.com/resources/career/best-career-development-platforms</loc>
+   <lastmod>2026-10-03T14:54:00.389Z</lastmod>
+    <changefreq>weekly</changefreq>
+   <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://nsldigitallab.com/resources/career/best-cover-letter-tools</loc>
+   <lastmod>2026-10-03T14:54:00.389Z</lastmod>
+    <changefreq>weekly</changefreq>
+   <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://nsldigitallab.com/resources/career/best-english-speaking-courses</loc>
+   <lastmod>2026-10-03T14:54:00.389Z</lastmod>
+    <changefreq>weekly</changefreq>
+   <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://nsldigitallab.com/resources/career/best-interview-preparation-tools</loc>
+   <lastmod>2026-10-03T14:54:00.389Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/resources/career/best-job-search-tools</loc>
-   <lastmod>2026-10-03T09:47:41.646Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.389Z</lastmod>
+    <changefreq>weekly</changefreq>
+   <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://nsldigitallab.com/resources/career/best-online-courses-for-job-seekers</loc>
+   <lastmod>2026-10-03T14:54:00.389Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/resources/career/best-resume-builders</loc>
-   <lastmod>2026-10-03T09:47:41.646Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.390Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/resources/career/best-resume-writing-services</loc>
-   <lastmod>2026-10-03T09:47:41.646Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.390Z</lastmod>
+    <changefreq>weekly</changefreq>
+   <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://nsldigitallab.com/resources/career/best-tools-for-freelancers</loc>
+   <lastmod>2026-10-03T14:54:00.390Z</lastmod>
+    <changefreq>weekly</changefreq>
+   <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://nsldigitallab.com/resources/career/best-writing-tools-for-job-seekers</loc>
+   <lastmod>2026-10-03T14:54:00.390Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/resources/career/free-ats-resume-checklist</loc>
-   <lastmod>2026-10-03T09:47:41.646Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.390Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/resources/career/resume-io-review</loc>
-   <lastmod>2026-10-03T09:47:41.646Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.391Z</lastmod>
+    <changefreq>weekly</changefreq>
+   <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://nsldigitallab.com/resources/career/resume-io-vs-zety</loc>
+   <lastmod>2026-10-03T14:54:00.391Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/resources/career/rezi-review</loc>
-   <lastmod>2026-10-03T09:47:41.646Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.391Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/resources/career/rezi-vs-resume-io</loc>
-   <lastmod>2026-10-03T09:47:41.646Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.391Z</lastmod>
+    <changefreq>weekly</changefreq>
+   <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://nsldigitallab.com/resources/career/rezi-vs-zety</loc>
+   <lastmod>2026-10-03T14:54:00.391Z</lastmod>
+    <changefreq>weekly</changefreq>
+   <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://nsldigitallab.com/resources/career/topresume-review</loc>
+   <lastmod>2026-10-03T14:54:00.391Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/resources/career/zety-review</loc>
-   <lastmod>2026-10-03T09:47:41.646Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.391Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/resources/color-contrast-guide-ui-designers</loc>
-   <lastmod>2026-10-03T09:47:41.646Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.391Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
@@ -768,42 +838,42 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
     <loc>https://nsldigitallab.com/resources/digital-marketing-interview-questions</loc>
-   <lastmod>2026-10-03T09:47:41.646Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.392Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/resources/figma-auto-layout-cheat-sheet</loc>
-   <lastmod>2026-10-03T09:47:41.646Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.392Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/resources/figma-shortcuts-cheat-sheet</loc>
-   <lastmod>2026-10-03T09:47:41.646Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.392Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/resources/figma-website-wireframe-kit</loc>
-   <lastmod>2026-10-03T09:47:41.646Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.392Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/resources/free-ui-ux-design-ebook</loc>
-   <lastmod>2026-10-03T09:47:41.646Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.393Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/resources/react-interview-questions</loc>
-   <lastmod>2026-10-03T09:47:41.646Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.393Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
@@ -817,14 +887,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
     <loc>https://nsldigitallab.com/resources/seo-interview-questions</loc>
-   <lastmod>2026-10-03T09:47:41.646Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.394Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/resources/spoken-english-practice-sheet</loc>
-   <lastmod>2026-10-03T09:47:41.646Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.394Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
@@ -838,35 +908,35 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
     <loc>https://nsldigitallab.com/resources/typography-cheat-sheet-ui-designers</loc>
-   <lastmod>2026-10-03T09:47:41.646Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.395Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/resources/ui-design-checklist</loc>
-   <lastmod>2026-10-03T09:47:41.646Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.395Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/resources/ui-ux-design-process-cheat-sheet</loc>
-   <lastmod>2026-10-03T09:47:41.647Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.395Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/resources/ui-ux-designer-resume-template</loc>
-   <lastmod>2026-10-03T09:47:41.647Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.396Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/resources/ui-ux-internship-starter-kit</loc>
-   <lastmod>2026-10-03T09:47:41.647Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.397Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
@@ -880,28 +950,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
     <loc>https://nsldigitallab.com/resources/ui-ux-portfolio-checklist</loc>
-   <lastmod>2026-10-03T09:47:41.647Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.397Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/resources/ux-case-study-template</loc>
-   <lastmod>2026-10-03T09:47:41.647Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.397Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/resources/ux-research-starter-kit</loc>
-   <lastmod>2026-10-03T09:47:41.647Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.397Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/resources/website-usability-checklist</loc>
-   <lastmod>2026-10-03T09:47:41.647Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.397Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
@@ -915,14 +985,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
     <loc>https://nsldigitallab.com/seo-internship-mumbai</loc>
-   <lastmod>2026-10-03T09:47:41.647Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.397Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/seo-internship-pune</loc>
-   <lastmod>2026-10-03T09:47:41.647Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.398Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>
@@ -936,28 +1006,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
     <loc>https://nsldigitallab.com/services/seo-services</loc>
-   <lastmod>2026-10-03T09:47:41.647Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.398Z</lastmod>
     <changefreq>monthly</changefreq>
    <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/services/social-media-marketing</loc>
-   <lastmod>2026-10-03T09:47:41.647Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.398Z</lastmod>
     <changefreq>monthly</changefreq>
    <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/services/ui-ux-design</loc>
-   <lastmod>2026-10-03T09:47:41.648Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.398Z</lastmod>
     <changefreq>monthly</changefreq>
    <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://nsldigitallab.com/services/web-design</loc>
-   <lastmod>2026-10-03T09:47:41.648Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.398Z</lastmod>
     <changefreq>monthly</changefreq>
    <priority>0.9</priority>
   </url>
@@ -978,7 +1048,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
     <loc>https://nsldigitallab.com/ui-ux-internship</loc>
-   <lastmod>2026-10-03T09:47:41.648Z</lastmod>
+   <lastmod>2026-10-03T14:54:00.398Z</lastmod>
     <changefreq>weekly</changefreq>
    <priority>0.7</priority>
   </url>

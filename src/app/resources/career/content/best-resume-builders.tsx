@@ -161,13 +161,34 @@ export const bestResumeBuilders: CareerArticleContent = {
         <>
           <p>
             Start with your bottleneck: layout, wording, or tailoring to one job.
-            Try the free tier of one tool, export a draft, and read it aloud. If
-            you still compare two options, read{" "}
+            Try the free tier of one tool, export a draft, and read it aloud. Compare
+            head-to-head in{" "}
             <InlineArticleLink
               to={careerArticlePath("rezi-vs-resume-io")}
               variant="light"
             >
               Rezi vs Resume.io
+            </InlineArticleLink>
+            ,{" "}
+            <InlineArticleLink
+              to={careerArticlePath("rezi-vs-zety")}
+              variant="light"
+            >
+              Rezi vs Zety
+            </InlineArticleLink>
+            , and{" "}
+            <InlineArticleLink
+              to={careerArticlePath("resume-io-vs-zety")}
+              variant="light"
+            >
+              Resume.io vs Zety
+            </InlineArticleLink>
+            . For a writer-led option, see our{" "}
+            <InlineArticleLink
+              to={careerArticlePath("topresume-review")}
+              variant="light"
+            >
+              TopResume review
             </InlineArticleLink>
             . {/* TODO: verify pricing/features on official sites before updating plan details. */}
           </p>

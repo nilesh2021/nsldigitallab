@@ -195,15 +195,36 @@ export const bestJobSearchTools: CareerArticleContent = {
             variant="light"
           >
             Zety review
-          </InlineArticleLink>{" "}
-          and{" "}
+          </InlineArticleLink>
+          ,{" "}
           <InlineArticleLink
             to={careerArticlePath("rezi-vs-resume-io")}
             variant="light"
           >
             Rezi vs Resume.io
+          </InlineArticleLink>
+          , and{" "}
+          <InlineArticleLink
+            to={careerArticlePath("best-writing-tools-for-job-seekers")}
+            variant="light"
+          >
+            best writing tools for job seekers
+          </InlineArticleLink>
+          . For interviews and long-term growth, see{" "}
+          <InlineArticleLink
+            to={careerArticlePath("best-interview-preparation-tools")}
+            variant="light"
+          >
+            interview preparation tools
           </InlineArticleLink>{" "}
-          before you commit to one builder.
+          and{" "}
+          <InlineArticleLink
+            to={careerArticlePath("best-career-development-platforms")}
+            variant="light"
+          >
+            career development platforms
+          </InlineArticleLink>
+          .
         </p>
       ),
     },

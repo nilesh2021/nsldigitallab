@@ -11,6 +11,16 @@ export type CareerArticleSlug =
   | "resume-io-review"
   | "zety-review"
   | "rezi-vs-resume-io"
+  | "rezi-vs-zety"
+  | "resume-io-vs-zety"
+  | "topresume-review"
+  | "best-cover-letter-tools"
+  | "best-interview-preparation-tools"
+  | "best-online-courses-for-job-seekers"
+  | "best-english-speaking-courses"
+  | "best-writing-tools-for-job-seekers"
+  | "best-tools-for-freelancers"
+  | "best-career-development-platforms"
   | "best-career-courses"
   | "best-job-search-tools";
 

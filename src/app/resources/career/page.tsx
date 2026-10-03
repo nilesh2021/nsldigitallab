@@ -54,14 +54,14 @@ const categories = [
     title: "Cover Letter Tools",
     description:
       "Templates and writers that turn a job description into a short, specific cover letter.",
-    to: careerArticlePath("best-resume-builders"),
+    to: careerArticlePath("best-cover-letter-tools"),
     icon: MessageSquare,
   },
   {
     title: "Interview Preparation",
     description:
       "Practice questions, stories, and follow-up notes so you walk into interviews prepared.",
-    href: "#free-resources",
+    to: careerArticlePath("best-interview-preparation-tools"),
     icon: Briefcase,
   },
   {
@@ -75,14 +75,14 @@ const categories = [
     title: "English Communication",
     description:
       "Practice for emails, interviews, and meetings when English is part of the hiring process.",
-    to: careerArticlePath("best-job-search-tools"),
+    to: careerArticlePath("best-english-speaking-courses"),
     icon: Languages,
   },
   {
     title: "Freelancing Resources",
     description:
       "Profiles, proposals, and pricing notes for people building client work alongside a job search.",
-    to: careerArticlePath("best-job-search-tools"),
+    to: careerArticlePath("best-tools-for-freelancers"),
     icon: Sparkles,
   },
 ];
@@ -264,7 +264,7 @@ export default function CareerResourcesPage() {
                   </h3>
                   <ul className="mt-4 space-y-2">
                     {section.links.map((link) => (
-                      <li key={link.slug}>
+                      <li key={hubLinkPath(link)}>
                         <Link
                           to={hubLinkPath(link)}
                           className="text-sm font-medium text-cyan-700 hover:text-cyan-800 hover:underline"
