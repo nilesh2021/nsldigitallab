@@ -4,6 +4,11 @@
       "source": "/resources/figma-ui-kit",
       "destination": "/resources/figma-website-wireframe-kit",
       "permanent": true
+    },
+    {
+      "source": "/resources/1000-website-templates-mega-bundle",
+      "destination": "/free-website-templates",
+      "permanent": true
     }
   ],
   "rewrites": [

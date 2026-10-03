@@ -1,6 +1,7 @@
 import { ArrowUpRight, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 
+import { resourcePath } from "../../../data/resources";
 import type { Resource } from "./ResourceCard";
 
 type Props = {
@@ -12,7 +13,7 @@ export default function ResourceRow({ resource }: Props) {
 
   return (
     <Link
-      to={`/resources/${resource.slug}`}
+      to={resourcePath(resource)}
       className="group flex items-center gap-3 px-3 py-2 transition hover:bg-slate-50 sm:gap-4 sm:px-4"
     >
       <img

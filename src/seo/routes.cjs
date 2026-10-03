@@ -18,6 +18,7 @@ module.exports = {
     "/services/social-media-marketing",
 
     "/claude-ai",
+    "/free-website-templates",
 
     "/case-studies",
     "/case-studies/online-wine-shopping",

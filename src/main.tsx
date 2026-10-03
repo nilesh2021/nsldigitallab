@@ -12,6 +12,7 @@ import LinkedInFollowCta from "./app/components/LinkedInFollowCta";
 
 import BlogPage from "./app/blog/page";
 import ClaudeLandingPage from "./app/landing/ai-tools/claudeLandingpage/page";
+import FreeWebsiteTemplatesPage from "./app/landing/website-templates/page";
 import CareerCrudPage from "./app/career-crud/page";
 import CareerThankYouPage from "./app/careers/thank-you/page";
 import ContactThankYouPage from "./app/contact/thank-you/page";
@@ -47,6 +48,10 @@ createRoot(document.getElementById("root")!).render(
           <Route path="/" element={<App />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/claude-ai" element={<ClaudeLandingPage />} />
+          <Route
+            path="/free-website-templates"
+            element={<FreeWebsiteTemplatesPage />}
+          />
           <Route path="/career-crud" element={<CareerCrudPage />} />
 
           <Route

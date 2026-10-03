@@ -45,6 +45,10 @@ export default function ResourceDetails() {
     );
   }
 
+  if (resource.landingPath) {
+    return <Navigate to={resource.landingPath} replace />;
+  }
+
   const siteUrl = "https://nsldigitallab.com";
   const pageUrl = `${siteUrl}/resources/${resource.slug}`;
   const relatedLinks = (resource.relatedLinks || []).filter((link) =>

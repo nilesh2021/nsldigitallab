@@ -1,6 +1,8 @@
 import { ArrowUpRight, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 
+import { resourcePath } from "../../../data/resources";
+
 export type Resource = {
   id: number;
   title: string;
@@ -12,6 +14,7 @@ export type Resource = {
   image: string;
   buttonText: string;
   icon?: string;
+  landingPath?: string;
 };
 
 type Props = {
@@ -24,7 +27,7 @@ export default function ResourceCard({ resource, compact = false }: Props) {
 
   return (
     <Link
-      to={`/resources/${resource.slug}`}
+      to={resourcePath(resource)}
       className="group flex h-full flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-slate-200/70 transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_50px_-24px_rgba(15,23,42,0.3)] hover:ring-slate-300"
     >
       <div

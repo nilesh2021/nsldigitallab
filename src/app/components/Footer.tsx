@@ -32,6 +32,7 @@ const learnLinks: FooterLink[] = [
 
 const resourceLinks: FooterLink[] = [
   { label: "All Resources", to: "/resources" },
+  { label: "Free Website Templates", to: "/free-website-templates" },
   { label: "UI/UX Interview Questions", to: "/resources/ui-ux-interview-questions" },
   { label: "SEO Interview Questions", to: "/resources/seo-interview-questions" },
   { label: "Figma Auto Layout", to: "/resources/figma-auto-layout-cheat-sheet" },

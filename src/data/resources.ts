@@ -8,6 +8,8 @@ export const resources = [
     type: "ZIP Bundle",
     icon: "🚀",
     downloads: 112,
+    featured: true,
+    landingPath: "/free-website-templates",
 
     image:
       "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&q=80",
@@ -25,6 +27,26 @@ export const resources = [
 
     seoDescription:
       "Download 1000 free website templates including Bootstrap 5 HTML and Tailwind CSS templates for business, portfolio, agency, SaaS, eCommerce and landing pages.",
+
+    primaryKeyword: "free website templates",
+
+    secondaryKeywords: [
+      "HTML templates free download",
+      "Bootstrap 5 templates free download",
+      "Tailwind CSS templates",
+      "business website templates",
+      "portfolio templates",
+      "landing page templates",
+      "SaaS templates",
+    ],
+
+    overview:
+      "Download 1,000 HTML website templates in one ZIP, including Bootstrap 5 and Tailwind CSS layouts for business, portfolio, agency, SaaS, eCommerce, and landing pages. Unlock instantly with your email and customize the files in any code editor.",
+
+    relatedLinks: [
+      { slug: "website-launch-checklist", label: "Ship with the website launch checklist" },
+      { slug: "figma-website-wireframe-kit", label: "Plan structure with the Figma website wireframe kit" },
+    ],
 
     tags: [
       "HTML Templates Free Download",
@@ -1014,3 +1036,7 @@ export const resources = [
     ],
   },
 ];
+
+export function resourcePath(resource: { slug: string; landingPath?: string }) {
+  return resource.landingPath || `/resources/${resource.slug}`;
+}

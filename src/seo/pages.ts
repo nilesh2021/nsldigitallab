@@ -53,6 +53,23 @@ export const PAGE_SEO = {
     canonical: "/services",
   },
 
+  freeWebsiteTemplates: {
+    title: "1000 Free Website Templates | HTML, Bootstrap 5 & Tailwind",
+
+    description:
+      "Download 1000 free website templates: HTML, Bootstrap 5, and Tailwind CSS files for business, portfolio, agency, SaaS, eCommerce, and landing pages.",
+
+    keywords:
+      "free website templates, HTML templates free download, Bootstrap 5 templates free download, Tailwind CSS templates, business website templates, portfolio templates, landing page templates, SaaS templates",
+
+    canonical: "/free-website-templates",
+
+    image:
+      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&q=80",
+
+    type: "website",
+  },
+
   uiUxDesign: {
     title: "UI/UX Design Services | NSL Digital Lab",
 
