@@ -27,31 +27,13 @@ const learnLinks: FooterLink[] = [
   { label: "React Foundations", to: "/learn/react-foundations" },
   { label: "Spoken English Communication", to: "/learn/spoken-english-communication" },
   { label: "Case Studies", to: "/case-studies" },
-  { label: "Free Resources", to: "/resources" },
-];
-
-const resourceLinks: FooterLink[] = [
-  { label: "All Resources", to: "/resources" },
-  { label: "Career Resources", to: "/resources/career" },
-  { label: "Free ATS Resume Checklist", to: "/resources/career/free-ats-resume-checklist" },
-  { label: "Best Resume Builders", to: "/resources/career/best-resume-builders" },
-  { label: "Job Search Tools", to: "/resources/career/best-job-search-tools" },
-  { label: "Free Website Templates", to: "/free-website-templates" },
-  { label: "UI/UX Interview Questions", to: "/resources/ui-ux-interview-questions" },
-  { label: "SEO Interview Questions", to: "/resources/seo-interview-questions" },
-  { label: "Figma Auto Layout", to: "/resources/figma-auto-layout-cheat-sheet" },
-  { label: "SEO Checklist", to: "/resources/seo-checklist" },
-  { label: "Marketing Checklist", to: "/resources/digital-marketing-checklist" },
-  { label: "Website Launch Checklist", to: "/resources/website-launch-checklist" },
-  { label: "Figma Wireframe Kit", to: "/resources/figma-website-wireframe-kit" },
-  { label: "ChatGPT Prompt Pack", to: "/resources/chatgpt-prompt-pack" },
-  { label: "Blog", to: "/blog" },
 ];
 
 const companyLinks: FooterLink[] = [
   { label: "About", to: "/", hash: "about" },
   { label: "Portfolio", to: "/", hash: "featured-work" },
   { label: "Careers", to: "/careers" },
+  { label: "Resources", to: "/resources" },
   { label: "Contact", to: "/", hash: "contact" },
   { label: "Newsletter", to: "/resources", hash: "subscribe" },
 ];
@@ -66,7 +48,6 @@ const policyLinks: FooterLink[] = [
 const columns = [
   { title: "Services", links: serviceLinks },
   { title: "Learn", links: learnLinks },
-  { title: "Resources", links: resourceLinks },
   { title: "Company", links: companyLinks },
 ];
 
@@ -78,7 +59,7 @@ function FooterNavLink({
   onSectionClick: (id: string, path: string) => void;
 }) {
   const className =
-    "inline-block cursor-pointer py-0.5 text-base leading-6 text-slate-400 transition-colors duration-200 hover:text-white md:text-[13px]";
+    "inline-block cursor-pointer py-px text-[13px] leading-5 text-slate-400 transition-colors duration-200 hover:text-white";
 
   if (link.hash) {
     return (
@@ -141,32 +122,32 @@ export default function Footer() {
           backgroundSize: "32px 32px",
         }}
       />
-      <div className="pointer-events-none absolute -left-24 top-0 h-72 w-72 rounded-full bg-cyan-500/[0.06] blur-[100px]" />
-      <div className="pointer-events-none absolute -right-16 bottom-0 h-64 w-64 rounded-full bg-violet-600/[0.06] blur-[90px]" />
+      <div className="pointer-events-none absolute -left-16 top-0 h-40 w-40 rounded-full bg-cyan-500/[0.05] blur-[80px]" />
+      <div className="pointer-events-none absolute -right-12 bottom-0 h-36 w-36 rounded-full bg-violet-600/[0.05] blur-[70px]" />
 
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
-        <div className="flex flex-col gap-4 border-b border-white/[0.08] py-6 lg:flex-row lg:items-center lg:justify-between">
+        <div className="flex flex-col gap-2.5 border-b border-white/[0.08] py-3 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <p className="text-base font-semibold tracking-tight text-white sm:text-lg">
+            <p className="text-sm font-semibold tracking-tight text-white">
               Ready to grow your digital presence?
             </p>
-            <p className="mt-0.5 text-base text-slate-400 md:text-[13px]">
+            <p className="text-[13px] leading-5 text-slate-400">
               Tell us about your project — we usually reply within 24 hours.
             </p>
           </div>
 
-          <div className="flex flex-row flex-wrap gap-2">
+          <div className="flex flex-row flex-wrap gap-1.5">
             <button
               type="button"
               onClick={() => scrollToSection("contact", "/")}
-              className="inline-flex shrink-0 cursor-pointer items-center justify-center gap-1.5 whitespace-nowrap rounded-full bg-white px-4 py-2 text-base font-semibold text-[#060b14] transition-all duration-200 hover:-translate-y-px hover:bg-slate-100 md:text-[13px]"
+              className="inline-flex shrink-0 cursor-pointer items-center justify-center gap-1 whitespace-nowrap rounded-full bg-white px-3 py-1.5 text-[13px] font-semibold text-[#060b14] transition-all duration-200 hover:-translate-y-px hover:bg-slate-100"
             >
               Let&apos;s talk
               <ArrowUpRight className="h-3.5 w-3.5" />
             </button>
             <a
               href="mailto:hello@nsldigitallab.com"
-              className="inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-base font-medium text-slate-200 transition-colors hover:bg-white/[0.08] hover:text-white md:text-[13px]"
+              className="inline-flex shrink-0 cursor-pointer items-center justify-center gap-1.5 whitespace-nowrap rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-[13px] font-medium text-slate-200 transition-colors hover:bg-white/[0.08] hover:text-white"
             >
               <Mail className="h-3.5 w-3.5 text-cyan-400" />
               hello@nsldigitallab.com
@@ -174,36 +155,34 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-x-8 gap-y-8 py-10 pr-8 sm:grid-cols-4 sm:pr-0 lg:grid-cols-6 lg:gap-x-10">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-5 py-5 sm:grid-cols-4 lg:grid-cols-5 lg:gap-x-8">
           <div className="col-span-2 sm:col-span-4 lg:col-span-2">
-            <Link to="/" className="group inline-flex cursor-pointer items-center gap-2.5">
-              <div className="relative flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-white/10 bg-white/[0.04]">
-                <img src={logo} alt="" className="h-6 w-6 object-contain" />
+            <Link to="/" className="group inline-flex cursor-pointer items-center gap-2">
+              <div className="relative flex h-7 w-7 shrink-0 items-center justify-center overflow-hidden rounded-md border border-white/10 bg-white/[0.04]">
+                <img src={logo} alt="" className="h-4 w-4 object-contain" />
               </div>
               <div>
-                <p className="text-sm font-semibold leading-none tracking-tight text-white">
+                <p className="text-[13px] font-semibold leading-none tracking-tight text-white">
                   NSL
-                  <span className="ml-1.5 font-light text-slate-300">Digital Lab</span>
+                  <span className="ml-1 font-light text-slate-300">Digital Lab</span>
                 </p>
-                <p className="mt-1 text-[10px] font-medium uppercase tracking-[0.16em] text-slate-500">
+                <p className="mt-0.5 text-[9px] font-medium uppercase tracking-[0.14em] text-slate-500">
                   Design · Development · Growth
                 </p>
               </div>
             </Link>
 
-            <p className="mt-4 max-w-sm text-[13px] leading-6 text-slate-400">
-              We help businesses build modern websites, improve user experience,
-              rank better in search, and grow through design, development, SEO,
-              and digital marketing.
+            <p className="mt-2.5 max-w-xs text-[13px] leading-5 text-slate-400">
+              Websites, UI/UX, SEO, and digital marketing for businesses that want to grow.
             </p>
 
-            <div className="mt-4 flex items-center gap-2">
+            <div className="mt-2.5 flex items-center gap-1.5">
               <a
                 href={LINKEDIN_COMPANY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="NSL Digital Lab on LinkedIn"
-                className="inline-flex h-8 w-8 cursor-pointer items-center justify-center rounded-lg border border-white/10 bg-white/[0.04] text-slate-300 transition-all duration-200 hover:border-cyan-400/30 hover:bg-cyan-500/15 hover:text-white"
+                className="inline-flex h-7 w-7 cursor-pointer items-center justify-center rounded-md border border-white/10 bg-white/[0.04] text-slate-300 transition-all duration-200 hover:border-cyan-400/30 hover:bg-cyan-500/15 hover:text-white"
               >
                 <Linkedin className="h-3.5 w-3.5" />
               </a>
@@ -212,7 +191,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="NSL Digital Lab on Instagram"
-                className="inline-flex h-8 w-8 cursor-pointer items-center justify-center rounded-lg border border-white/10 bg-white/[0.04] text-slate-300 transition-all duration-200 hover:border-cyan-400/30 hover:bg-cyan-500/15 hover:text-white"
+                className="inline-flex h-7 w-7 cursor-pointer items-center justify-center rounded-md border border-white/10 bg-white/[0.04] text-slate-300 transition-all duration-200 hover:border-cyan-400/30 hover:bg-cyan-500/15 hover:text-white"
               >
                 <Instagram className="h-3.5 w-3.5" />
               </a>
@@ -221,10 +200,10 @@ export default function Footer() {
 
           {columns.map((column) => (
             <nav key={column.title} aria-label={column.title}>
-              <h2 className="mb-4 text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+              <h2 className="mb-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">
                 {column.title}
               </h2>
-              <ul className="space-y-3">
+              <ul className="space-y-0.5">
                 {column.links.map((link) => (
                   <li key={`${column.title}-${link.label}`}>
                     <FooterNavLink link={link} onSectionClick={scrollToSection} />
@@ -235,8 +214,8 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="flex flex-col items-center justify-between gap-4 border-t border-white/[0.08] py-5 lg:flex-row">
-          <p className="text-center text-[13px] text-slate-500 lg:text-left">
+        <div className="flex flex-col items-center justify-between gap-2 border-t border-white/[0.08] py-2.5 sm:flex-row">
+          <p className="text-center text-[12px] text-slate-500 sm:text-left">
             © {new Date().getFullYear()}{" "}
             <span className="font-medium text-slate-300">NSL Digital Lab</span>
             . All rights reserved.
@@ -244,7 +223,7 @@ export default function Footer() {
 
           <nav
             aria-label="Legal"
-            className="flex flex-wrap justify-center gap-x-6 gap-y-2.5 px-8 text-base md:px-0 md:text-[13px]"
+            className="flex flex-wrap justify-center gap-x-4 gap-y-1 text-[12px] sm:justify-end"
           >
             {policyLinks.map((link) => (
               <Link
