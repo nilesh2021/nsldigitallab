@@ -78,7 +78,7 @@ const handleSubmit = async (e: React.FormEvent) => {
 
                 <link
                     rel="canonical"
-                    href="https://nsldigitallab.comcareers/content-writer-job"
+                    href="https://nsldigitallab.com/careers/seo-executive-job"
                 />
             </Helmet>
             <Navigation />

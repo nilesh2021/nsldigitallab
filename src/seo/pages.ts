@@ -26,8 +26,7 @@ export const PAGE_SEO = {
   keywords:
     "UI UX Designer jobs, UI Designer jobs, UX Designer jobs, Figma jobs, Remote UI UX jobs, UI UX Designer Pune, Product Designer, UX Research jobs",
 
-  canonical:
-    "https://www.nsldigitallab.com/careers/ui-ux-designer-remote-job",
+  canonical: "/careers/ui-ux-designer-job",
 
   robots: "index,follow",
 
@@ -130,6 +129,40 @@ dataEntryRemoteJob: {
     canonical: "/careers/data-entry-remote-job",
 
     image: "/images/og/data-entry-job.jpg",
+
+    type: "article",
+  },
+
+  dataEntryJobsRemote: {
+    title:
+      "Remote Data Entry Jobs for Digital Products | Work From Home | NSL Digital Lab",
+
+    description:
+      "Apply for remote data entry jobs at NSL Digital Lab. Work from home cataloguing digital products—templates, checklists, and downloadable assets. Freshers welcome.",
+
+    keywords:
+      "remote data entry jobs, data entry jobs work from home, online data entry jobs India, digital product data entry, product listing data entry, catalog data entry remote, part time data entry jobs, work from home typing jobs, Google Sheets data entry, freelance data entry for digital products",
+
+    canonical: "/careers/data-entry-jobs-remote",
+
+    image: "/images/og/data-entry-job.jpg",
+
+    type: "article",
+  },
+
+  digitalMarketingExecutiveJob: {
+    title:
+      "Digital Marketing Executive Jobs Remote | Work From Home | NSL Digital Lab",
+
+    description:
+      "Apply for remote digital marketing executive jobs at NSL Digital Lab. Work from home on SEO, social media, Google Ads, and content for real client campaigns. Freshers welcome.",
+
+    keywords:
+      "digital marketing executive jobs, remote digital marketing jobs, digital marketing jobs work from home, digital marketing executive jobs India, social media marketing jobs, Google Ads jobs, Meta ads jobs, SEO and content marketing jobs, performance marketing jobs, online digital marketing jobs for freshers",
+
+    canonical: "/careers/digital-marketing-executive-job",
+
+    image: "/images/og/careers.jpg",
 
     type: "article",
   },

@@ -73,12 +73,12 @@ export default function RemoteSeoInternship() {
 
                 <meta
                     property="og:url"
-                    content="https://nsldigitallab.comremote-seo-internship"
+                    content="https://nsldigitallab.com/remote-seo-internship"
                 />
 
                 <link
                     rel="canonical"
-                    href="https://nsldigitallab.comremote-seo-internship"
+                    href="https://nsldigitallab.com/remote-seo-internship"
                 />
 
             </Helmet>

@@ -36,5 +36,9 @@ module.exports = {
     "/500",
     "/resources/figma-ui-kit",
     "/resources/resume-template",
+    "/careers/digital-marketing-internship",
+    "/careers/social-media-executive-job",
+    "/careers/wordpress-developer-job",
+    "/careers/ui-ux-designer-remote-job",
   ],
 };

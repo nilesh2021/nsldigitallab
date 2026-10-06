@@ -67,12 +67,12 @@ export default function SeoInternshipMumbai() {
 
                 <meta
                     property="og:url"
-                    content="https://nsldigitallab.comseo-internship-Mumbai"
+                    content="https://nsldigitallab.com/seo-internship-mumbai"
                 />
 
                 <link
                     rel="canonical"
-                    href="https://nsldigitallab.comseo-internship-Mumbai"
+                    href="https://nsldigitallab.com/seo-internship-mumbai"
                 />
 
                 {/* FAQ SCHEMA */}

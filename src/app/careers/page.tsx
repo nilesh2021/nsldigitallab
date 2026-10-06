@@ -38,7 +38,27 @@ const jobs = [
     category: "Operations",
     href: "/careers/data-entry-remote-job",
     description:
-      "NSL Digital Lab is looking for a Data Entry Operator to support our digital operations.",
+      "General operations data entry — records, reports, and business information. Fully remote.",
+  },
+  {
+    title: "Data Entry (Digital Products)",
+    type: "Remote",
+    location: "Remote",
+    experience: "Fresher welcome",
+    category: "Operations",
+    href: "/careers/data-entry-jobs-remote",
+    description:
+      "Work-from-home catalog data entry for digital products: templates, checklists, Figma kits, and downloadable assets.",
+  },
+  {
+    title: "Digital Marketing Executive",
+    type: "Remote",
+    location: "Remote",
+    experience: "0–2 years",
+    category: "Marketing",
+    href: "/careers/digital-marketing-executive-job",
+    description:
+      "Remote digital marketing executive: SEO, social media, Google Ads, Meta ads, and content for live client campaigns.",
   },
   {
     title: "UI/UX Intern",
