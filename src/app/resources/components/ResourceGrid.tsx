@@ -86,18 +86,16 @@ export default function ResourceGrid() {
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="sticky top-16 z-20 -mx-6 border-b border-slate-200 bg-[#fafaf7]/90 px-6 backdrop-blur-md sm:top-20 lg:-mx-8 lg:px-8">
-          <div className="flex flex-col gap-2 pt-2 lg:flex-row lg:items-end lg:gap-4">
-            <div className="min-w-0 lg:flex-1">
-              <CategoryFilter
-                categories={categories}
-                counts={counts}
-                active={activeCategory}
-                onChange={setActiveCategory}
-              />
-            </div>
+          <div className="flex flex-col gap-3 py-3">
+            <CategoryFilter
+              categories={categories}
+              counts={counts}
+              active={activeCategory}
+              onChange={setActiveCategory}
+            />
 
-            <div className="flex items-center gap-2 pb-2">
-              <label className="relative min-w-0 flex-1 lg:w-56 lg:flex-none">
+            <div className="flex items-center gap-2">
+              <label className="relative min-w-0 flex-1">
                 <span className="sr-only">Search resources</span>
                 <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
                 <input
@@ -190,7 +188,7 @@ export default function ResourceGrid() {
             ) : null}
           </div>
         ) : view === "list" ? (
-          <div className="mt-4 divide-y divide-slate-100 overflow-hidden rounded-2xl bg-white ring-1 ring-slate-200/70">
+          <div className="mt-5 flex flex-col gap-2.5">
             {filteredResources.map((resource) => (
               <ResourceRow key={resource.id} resource={resource} />
             ))}
