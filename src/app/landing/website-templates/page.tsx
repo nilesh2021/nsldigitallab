@@ -13,7 +13,6 @@ import {
 } from "lucide-react";
 
 import MainLayout from "../../layouts/MainLayout";
-import ResourceDownload from "../../resources/components/ResourceDownload";
 import ResourceCard from "../../resources/components/ResourceCard";
 import SEO from "../../../seo/SEO";
 import FAQSchema from "../../../seo/schemas/FAQSchema";
@@ -22,6 +21,7 @@ import { SITE } from "../../../seo/schemas/constants";
 import { resources } from "../../../data/resources";
 
 const BUNDLE_SLUG = "1000-website-templates-mega-bundle";
+const PURCHASE_URL = "https://www.afordz.in/products/bootstrap-templates-bundle";
 
 const bundle = resources.find((item) => item.slug === BUNDLE_SLUG);
 
@@ -32,8 +32,8 @@ const relatedSlugs = [
 
 const faqs = [
   {
-    q: "Are these free website templates really free to download?",
-    a: "Yes. Enter your email on this page to unlock the ZIP bundle instantly. There is no paid plan required for this download.",
+    q: "Is this website template bundle free?",
+    a: "This is a premium ZIP. Buy it on the product page. The file is released after payment is confirmed.",
   },
   {
     q: "Do I get HTML, Bootstrap 5, and Tailwind CSS templates?",
@@ -45,7 +45,7 @@ const faqs = [
   },
   {
     q: "How does the download work?",
-    a: "Submit your email, unlock the file on this page, then open the Google Drive folder and save the ZIP. You can return to the folder anytime with the same link.",
+    a: "Open the product page, complete the purchase, and download the ZIP after payment is confirmed.",
   },
   {
     q: "Are the templates mobile responsive?",
@@ -98,19 +98,19 @@ const included = [
   "Tailwind CSS templates for utility-first customization",
   "Business, portfolio, agency, SaaS, eCommerce, and landing pages",
   "Responsive markup you can edit in any code editor",
-  "Instant unlock after you enter your email",
+  "Download after your purchase is confirmed",
 ];
 
 const steps = [
   {
     n: "01",
-    title: "Enter your email",
-    body: "No account is required. Use the download card on this page.",
+    title: "Open the product page",
+    body: "Use the premium button on this page to go to the bundle listing.",
   },
   {
     n: "02",
-    title: "Unlock instantly",
-    body: "The Drive folder opens as soon as the form succeeds.",
+    title: "Complete the purchase",
+    body: "Buy the licence on Afordz. The file is released after payment is confirmed.",
   },
   {
     n: "03",
@@ -128,13 +128,14 @@ export default function FreeWebsiteTemplatesPage() {
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: "1000 Free Website Templates Mega Bundle",
+    name: "1000 Website Templates Mega Bundle",
     applicationCategory: "DeveloperApplication",
     operatingSystem: "Any",
     offers: {
       "@type": "Offer",
-      price: "0",
-      priceCurrency: "USD",
+      price: "1",
+      priceCurrency: "INR",
+      url: PURCHASE_URL,
     },
     description: PAGE_SEO.freeWebsiteTemplates.description,
     url: `${SITE.url}/free-website-templates`,
@@ -170,22 +171,22 @@ export default function FreeWebsiteTemplatesPage() {
               <div className="max-w-2xl">
                 <p className="inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.03] px-4 py-2 text-sm font-medium text-slate-300 backdrop-blur-sm">
                   <Sparkles className="h-3.5 w-3.5 text-cyan-400" />
-                  Free ZIP bundle
+                  Premium ZIP bundle
                 </p>
                 <h1 className="mt-8 text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.4rem]">
-                  1000 Free Website Templates — HTML, Bootstrap 5 & Tailwind CSS
+                  1000 Website Templates — HTML, Bootstrap 5 & Tailwind CSS
                 </h1>
                 <p className="mt-6 max-w-xl text-base leading-7 text-slate-400 sm:text-lg sm:leading-8">
-                  Download 1,000 ready-to-use HTML templates free—Bootstrap 5 and
+                  A premium set of 1,000 ready-to-use HTML templates—Bootstrap 5 and
                   Tailwind CSS files for business websites, portfolios, agencies,
                   SaaS, eCommerce, and landing pages.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-3">
                   <a
-                    href="#download"
+                    href={PURCHASE_URL}
                     className="inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-400 px-7 py-3.5 text-sm font-semibold text-[#061018] transition hover:-translate-y-0.5 hover:bg-cyan-300"
                   >
-                    Download free templates
+                    Get Premium
                     <ArrowRight className="h-4 w-4" />
                   </a>
                   <a
@@ -199,7 +200,7 @@ export default function FreeWebsiteTemplatesPage() {
                   {[
                     { label: "Templates", value: "1,000" },
                     { label: "Frameworks", value: "Bootstrap 5 · Tailwind" },
-                    { label: "Price", value: "Free" },
+                    { label: "Price", value: "Premium" },
                   ].map((stat) => (
                     <div
                       key={stat.label}
@@ -215,14 +216,29 @@ export default function FreeWebsiteTemplatesPage() {
               </div>
 
               <div id="download" className="scroll-mt-28 lg:pt-4">
-                {bundle ? (
-                  <ResourceDownload
-                    slug={bundle.slug}
-                    resourceTitle={bundle.title}
-                    downloadUrl={bundle.downloadUrl}
-                    type={bundle.type}
-                  />
-                ) : null}
+                <div className="rounded-3xl bg-white p-6 shadow-[0_20px_60px_-30px_rgba(15,23,42,0.25)] ring-1 ring-slate-200/70">
+                  <div className="flex items-center justify-between gap-3">
+                    <span className="text-xs font-semibold uppercase tracking-[0.14em] text-amber-700">
+                      Premium bundle
+                    </span>
+                    <span className="rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-semibold text-slate-700">
+                      {bundle?.type ?? "ZIP Bundle"}
+                    </span>
+                  </div>
+                  <h2 className="mt-3 text-xl font-bold leading-snug tracking-tight text-slate-900">
+                    {bundle?.title ?? "1000 Website Templates Mega Bundle"}
+                  </h2>
+                  <p className="mt-2 text-sm leading-6 text-slate-600">
+                    Buy this bundle on Afordz. The ZIP is released after payment is confirmed.
+                  </p>
+                  <a
+                    href={PURCHASE_URL}
+                    className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+                  >
+                    Get Premium
+                    <ArrowRight className="h-4 w-4" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -260,7 +276,7 @@ export default function FreeWebsiteTemplatesPage() {
         <section className="border-t border-slate-100 bg-[#f5f7fb] py-20 sm:py-24">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <h2 className="max-w-2xl text-3xl font-bold tracking-tight text-[#0f172a] sm:text-4xl">
-              Free website templates by use case
+              Website templates by use case
             </h2>
             <p className="mt-4 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
               Browse the ZIP for business website templates, portfolio templates,
@@ -290,7 +306,7 @@ export default function FreeWebsiteTemplatesPage() {
         <section className="border-t border-slate-100 bg-white py-20 sm:py-24">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <h2 className="text-3xl font-bold tracking-tight text-[#0f172a] sm:text-4xl">
-              How the free download works
+              How to get the bundle
             </h2>
             <div className="mt-12 grid gap-5 sm:grid-cols-3">
               {steps.map((step) => (

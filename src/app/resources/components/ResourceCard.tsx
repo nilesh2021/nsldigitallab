@@ -15,6 +15,8 @@ export type Resource = {
   buttonText: string;
   icon?: string;
   landingPath?: string;
+  premium?: boolean;
+  purchaseUrl?: string;
 };
 
 type Props = {
@@ -24,12 +26,11 @@ type Props = {
 
 export default function ResourceCard({ resource, compact = false }: Props) {
   const isNew = resource.downloads === 0;
+  const className =
+    "group flex h-full flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-slate-200/70 transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_50px_-24px_rgba(15,23,42,0.3)] hover:ring-slate-300";
 
-  return (
-    <Link
-      to={resourcePath(resource)}
-      className="group flex h-full flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-slate-200/70 transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_50px_-24px_rgba(15,23,42,0.3)] hover:ring-slate-300"
-    >
+  const card = (
+    <>
       <div
         className={`relative overflow-hidden bg-slate-100 ${
           compact ? "aspect-[16/9]" : "aspect-[16/10]"
@@ -44,6 +45,11 @@ export default function ResourceCard({ resource, compact = false }: Props) {
         <span className="absolute left-3 top-3 rounded-full bg-white/95 px-2.5 py-1 text-[11px] font-semibold text-slate-900 shadow-sm backdrop-blur">
           {resource.type}
         </span>
+        {resource.premium ? (
+          <span className="absolute right-3 top-3 rounded-full bg-amber-400 px-2.5 py-1 text-[11px] font-semibold text-slate-900 shadow-sm">
+            Premium
+          </span>
+        ) : null}
       </div>
 
       <div className={`flex flex-1 flex-col ${compact ? "p-4" : "p-5"}`}>
@@ -99,6 +105,20 @@ export default function ResourceCard({ resource, compact = false }: Props) {
           </span>
         </div>
       </div>
+    </>
+  );
+
+  if (resource.purchaseUrl) {
+    return (
+      <a href={resource.purchaseUrl} className={className}>
+        {card}
+      </a>
+    );
+  }
+
+  return (
+    <Link to={resourcePath(resource)} className={className}>
+      {card}
     </Link>
   );
 }

@@ -53,10 +53,10 @@ export const PAGE_SEO = {
   },
 
   freeWebsiteTemplates: {
-    title: "1000 Free Website Templates | HTML, Bootstrap 5 & Tailwind",
+    title: "1000 Website Templates | HTML, Bootstrap 5 & Tailwind",
 
     description:
-      "Download 1000 free website templates: HTML, Bootstrap 5, and Tailwind CSS files for business, portfolio, agency, SaaS, eCommerce, and landing pages.",
+      "Premium bundle of 1,000 HTML website templates: Bootstrap 5 and Tailwind CSS files for business, portfolio, agency, SaaS, eCommerce, and landing pages.",
 
     keywords:
       "free website templates, HTML templates free download, Bootstrap 5 templates free download, Tailwind CSS templates, business website templates, portfolio templates, landing page templates, SaaS templates",

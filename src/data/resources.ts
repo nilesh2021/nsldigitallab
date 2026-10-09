@@ -9,7 +9,9 @@ export const resources = [
     icon: "🚀",
     downloads: 112,
     featured: true,
+    premium: true,
     landingPath: "/free-website-templates",
+    purchaseUrl: "https://www.afordz.in/products/bootstrap-templates-bundle",
 
     image:
       "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&q=80",
@@ -17,7 +19,7 @@ export const resources = [
     description:
       "Download 1,000 ready-to-use Bootstrap 5 and Tailwind CSS website templates for business, portfolio, agency, SaaS, eCommerce and landing pages.",
 
-    buttonText: "Download Free",
+    buttonText: "Get Premium",
 
     downloadUrl:
       "https://drive.google.com/drive/folders/1tMsm7rE3F4RT2E3QW_LtUNxVwF-bN5-h?usp=drive_link",
