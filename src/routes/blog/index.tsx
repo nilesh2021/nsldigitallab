@@ -3,6 +3,7 @@ import seoRoutes from "./seoRoutes";
 import aiRoutes from "./aiRoutes";
 import digitalMarketingRoutes from "./digitalMarketingRoutes";
 import affiliateRoutes from "./affiliateRoutes";
+import webDevelopmentRoutes from "./webDevelopmentRoutes";
 
 const blogRoutes = (
   <>
@@ -11,6 +12,7 @@ const blogRoutes = (
     {aiRoutes}
     {digitalMarketingRoutes}
     {affiliateRoutes}
+    {webDevelopmentRoutes}
   </>
 );
 

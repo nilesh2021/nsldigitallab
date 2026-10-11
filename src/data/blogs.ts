@@ -1038,6 +1038,46 @@ export const blogs = [
   accent: "from-cyan-500 to-violet-600",
 
   bgGlow: "bg-cyan-500/20",
+},
+{
+  id: 22,
+
+  title: "500 Bootstrap 5 + 500 Tailwind HTML Templates",
+
+  slug: "500-bootstrap-5-500-tailwind-html-templates",
+
+  category: "web-development",
+
+  categoryLabel: "Web Development",
+
+  excerpt:
+    "A ₹99 ZIP of 1,000 standalone HTML pages: 500 Bootstrap 5 files and 500 Tailwind CSS files. Each page is a single HTML file.",
+
+  image:
+    "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1200&auto=format&fit=crop",
+
+  readTime: "8 min read",
+
+  date: "October 2026",
+
+  featured: true,
+
+  seoTitle:
+    "500 Bootstrap 5 + 500 Tailwind HTML Templates | ₹99 ZIP",
+
+  seoDescription:
+    "A ZIP of 1,000 standalone HTML pages: 500 Bootstrap 5 and 500 Tailwind CSS files. See what’s included and how to buy the ₹99 bundle.",
+
+  keywords: [
+    "bootstrap 5 html templates",
+    "tailwind css html templates",
+    "1000 website templates",
+    "bootstrap 5 templates download",
+  ],
+
+  accent: "from-cyan-500 to-blue-600",
+
+  bgGlow: "bg-cyan-500/20",
 }
 ];
 

@@ -204,6 +204,23 @@ blog: {
   canonical: "/blog/seo/what-is-seo",
 
   type: "article",
-}
+},
+
+  bootstrapTailwindTemplates: {
+    title: "500 Bootstrap 5 + 500 Tailwind HTML Templates | ₹99 ZIP",
+
+    description:
+      "A ZIP of 1,000 standalone HTML pages: 500 Bootstrap 5 and 500 Tailwind CSS files. See what’s included and how to buy the ₹99 bundle.",
+
+    keywords:
+      "bootstrap 5 html templates, tailwind css html templates, 1000 website templates, bootstrap 5 templates download, tailwind html templates, bootstrap 5 landing page templates",
+
+    canonical: "/blog/web-development/500-bootstrap-5-500-tailwind-html-templates",
+
+    image:
+      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1200&auto=format&fit=crop",
+
+    type: "article",
+  },
 
 };

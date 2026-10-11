@@ -19,6 +19,7 @@ const categories = [
   "Digital Marketing",
   "AI Tools",
   "Affiliate Marketing",
+  "Web Development",
 ];
 
 export default function BlogPage() {

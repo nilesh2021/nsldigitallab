@@ -248,6 +248,16 @@ export const blogInternalLinks: Record<string, BlogLinkSet> = {
   },
 },
 
+  "500-bootstrap-5-500-tailwind-html-templates": {
+    related: [
+      { href: "/free-website-templates", label: "Website templates bundle overview" },
+      { href: "/blog/seo/website-optimization-tips", label: "Website optimization tips" },
+      { href: "/blog/ui-ux/ui-ux-design-principles", label: "UI/UX design principles" },
+      { href: "/blog/ui-ux/future-of-ui-design", label: "Future of UI design" },
+    ],
+    service: { href: "/services", label: "Web development services" },
+  },
+
 };
 
 export function getBlogLinks(slug: string): BlogLinkSet {

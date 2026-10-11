@@ -133,7 +133,7 @@ export default function FreeWebsiteTemplatesPage() {
     operatingSystem: "Any",
     offers: {
       "@type": "Offer",
-      price: "1",
+      price: "99",
       priceCurrency: "INR",
       url: PURCHASE_URL,
     },
