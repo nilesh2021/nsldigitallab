@@ -11,6 +11,8 @@ import { CAREER_JOBS } from "../data/jobs";
 const JOB = CAREER_JOBS["data-entry-jobs-remote"];
 import RelatedRoles from "../components/RelatedRoles";
 import ClosedJobNotice from "../components/ClosedJobNotice";
+import CareerApplyModal from "../components/CareerApplyModal";
+import CareerApplySuccess from "../components/CareerApplySuccess";
 import { trackJobApplication } from "../../../utils/analytics";
 import FAQSchema from "../../../seo/schemas/FAQSchema";
 import { submitCareerApplication } from "../../../services/career";
@@ -27,9 +29,14 @@ export default function DataEntryJobsRemote() {
   const [submitted, setSubmitted] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
+  const closeApplyModal = () => {
+    setSubmitted(false);
+    setShowModal(false);
+  };
+
   const handleApplyNow = () => {
     setSubmitted(false);
-    JOB.status === "open" && setShowModal(true);
+    if (JOB.status === "open") setShowModal(true);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -288,61 +295,16 @@ export default function DataEntryJobsRemote() {
         </div>
       </main>
 
-      {showModal && (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 p-4">
-          <div
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="apply-heading"
-            aria-describedby="apply-description"
-            className="relative w-full max-w-xl rounded-3xl bg-white shadow-xl ring-1 ring-slate-200"
-          >
-            <button
-              type="button"
-              onClick={() => {
-                setSubmitted(false);
-                setShowModal(false);
-              }}
-              aria-label="Close application form"
-              className="absolute right-4 top-4 inline-flex h-10 w-10 items-center justify-center rounded-full text-slate-600 transition hover:bg-slate-100 hover:text-slate-900"
-            >
-              ×
-            </button>
-
-            <div className="px-6 py-8 sm:px-8">
-              {submitted ? (
-                <div className="py-10 text-center">
-                  <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-green-100">
-                    <span className="text-5xl text-green-600">✓</span>
-                  </div>
-                  <h2 className="mt-6 text-3xl font-bold text-slate-900">
-                    Application Submitted
-                  </h2>
-                  <p className="mt-4 text-slate-600">
-                    Thank you for applying at
-                    <strong> NSL Digital Lab</strong>.
-                  </p>
-                  <p className="text-slate-600">
-                    Our team will review your application and contact you if
-                    there is a match.
-                  </p>
-                </div>
-              ) : (
-                <>
-                  <h2
-                    id="apply-heading"
-                    className="text-2xl font-semibold text-slate-900"
-                  >
-                    Apply for Digital Products Data Entry
-                  </h2>
-                  <p
-                    id="apply-description"
-                    className="mt-3 text-sm leading-6 text-slate-600"
-                  >
-                    Complete the form below. Use this form only for the digital
-                    products catalog role.
-                  </p>
-                  <form onSubmit={handleSubmit} className="mt-4 space-y-5">
+      <CareerApplyModal
+        open={showModal}
+        onClose={closeApplyModal}
+        title="Apply for Digital Products Data Entry"
+        description="Complete the form below. Use this form only for the digital products catalog role."
+      >
+        {submitted ? (
+          <CareerApplySuccess />
+        ) : (
+                  <form onSubmit={handleSubmit} className="space-y-5">
                     <div>
                       <label
                         htmlFor="applicant-name"
@@ -424,12 +386,8 @@ export default function DataEntryJobsRemote() {
                       Submit Application
                     </button>
                   </form>
-                </>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
+        )}
+      </CareerApplyModal>
 
       <section className="bg-slate-50 pb-20">
         <div className="max-w-6xl mx-auto px-6">

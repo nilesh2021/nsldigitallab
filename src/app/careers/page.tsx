@@ -128,6 +128,9 @@ export default function CareersPage() {
       element.getBoundingClientRect().top + window.scrollY - navbarOffset;
 
     window.scrollTo({ top, behavior: "smooth" });
+    window.setTimeout(() => {
+      document.getElementById("name")?.focus({ preventScroll: true });
+    }, 450);
   };
 
   return (

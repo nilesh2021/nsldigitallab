@@ -10,17 +10,30 @@ import { CAREER_JOBS } from "../data/jobs";
 const JOB = CAREER_JOBS["seo-executive-job"];
 import RelatedRoles from "../components/RelatedRoles";
 import ClosedJobNotice from "../components/ClosedJobNotice";
+import CareerApplyModal from "../components/CareerApplyModal";
+import CareerApplySuccess from "../components/CareerApplySuccess";
 import { trackJobApplication } from "../../../utils/analytics";
 import JobPostingSchema from "../../../seo/schemas/JobPostingSchema";
 
 export default function SeoExecutiveJob() {
     const [showModal, setShowModal] = useState(false);
+    const [submitted, setSubmitted] = useState(false);
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
     const [email, setEmail] = useState("");
     const [resume, setResume] = useState("");
 
 const [isSubmitting, setIsSubmitting] = useState(false);
+
+const closeApplyModal = () => {
+  setSubmitted(false);
+  setShowModal(false);
+};
+
+const handleApplyNow = () => {
+  setSubmitted(false);
+  if (JOB.status === "open") setShowModal(true);
+};
 
 const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
@@ -48,13 +61,11 @@ const handleSubmit = async (e: React.FormEvent) => {
     }
 
     trackJobApplication(result, "seo-executive-job", JOB.applicationJobTitle);
-    alert("Application Submitted Successfully!");
-
+    setSubmitted(true);
     setName("");
     setPhone("");
     setEmail("");
     setResume("");
-    setShowModal(false);
 
   } catch (error) {
     console.error(error);
@@ -134,7 +145,7 @@ const handleSubmit = async (e: React.FormEvent) => {
 
         <button
           type="button"
-          onClick={() => JOB.status === "open" && setShowModal(true)}
+          onClick={handleApplyNow}
           className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold hover:scale-105 transition-all duration-300"
         >
           Apply Now
@@ -214,7 +225,7 @@ const handleSubmit = async (e: React.FormEvent) => {
 </ul>
 
                                 <button
-                                    onClick={() => JOB.status === "open" && setShowModal(true)}
+                                    onClick={handleApplyNow}
                                     className="inline-flex items-center px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold hover:scale-105 transition"
                                 >
                                     Apply Now
@@ -312,75 +323,82 @@ const handleSubmit = async (e: React.FormEvent) => {
             </section>
            
 
-            {showModal && (
-                <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 p-4">
-                    <div className="relative w-full max-w-xl rounded-3xl bg-white p-8 shadow-2xl">
-
-                        <button
-                            type="button"
-                            onClick={() => setShowModal(false)}
-                            className="absolute top-5 right-5 text-2xl text-slate-500 hover:text-slate-900"
-                        >
-                            ×
-                        </button>
-
-                        <h2 className="mb-2 text-3xl font-bold">
-                            Apply for SEO Executive Job
-                        </h2>
-
-                        <p className="mb-6 text-slate-600">
-                            Fill out the form below and our team will review your application.
-                        </p>
-
-                        <form onSubmit={handleSubmit} className="space-y-4">
-
+            <CareerApplyModal
+                open={showModal}
+                onClose={closeApplyModal}
+                title="Apply for SEO Executive Job"
+                description="Fill out the form below and our team will review your application."
+            >
+                {submitted ? (
+                    <CareerApplySuccess />
+                ) : (
+                    <form onSubmit={handleSubmit} className="space-y-4">
+                        <div>
+                            <label htmlFor="seo-name" className="block text-sm font-medium text-slate-700">
+                                Full Name
+                            </label>
                             <input
+                                id="seo-name"
                                 type="text"
                                 placeholder="Full Name"
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
-                                className="w-full rounded-xl border border-slate-300 p-4"
+                                className="mt-2 w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3"
                                 required
                             />
-
+                        </div>
+                        <div>
+                            <label htmlFor="seo-phone" className="block text-sm font-medium text-slate-700">
+                                Phone Number <span className="font-normal text-slate-500">(optional)</span>
+                            </label>
                             <input
+                                id="seo-phone"
                                 type="tel"
-                                placeholder="Phone Number (optional)"
+                                placeholder="Phone Number"
                                 value={phone}
                                 onChange={(e) => setPhone(e.target.value)}
-                                className="w-full rounded-xl border border-slate-300 p-4"
+                                className="mt-2 w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3"
                             />
-
+                        </div>
+                        <div>
+                            <label htmlFor="seo-email" className="block text-sm font-medium text-slate-700">
+                                Email Address
+                            </label>
                             <input
+                                id="seo-email"
                                 type="email"
                                 placeholder="Email Address"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
-                                className="w-full rounded-xl border border-slate-300 p-4"
+                                className="mt-2 w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3"
                                 required
                             />
-
+                        </div>
+                        <div>
+                            <label htmlFor="seo-resume" className="block text-sm font-medium text-slate-700">
+                                Resume / LinkedIn / Portfolio URL{" "}
+                                <span className="font-normal text-slate-500">(optional)</span>
+                            </label>
                             <input
-                                type="url"
-                                placeholder="Google Drive Resume Link"
+                                id="seo-resume"
+                                type="text"
+                                placeholder="Drive, LinkedIn, or portfolio URL"
                                 value={resume}
                                 onChange={(e) => setResume(e.target.value)}
-                                className="w-full rounded-xl border border-slate-300 p-4"
-                                                            />
-
-                            <button
-                                type="submit"
-                                disabled={isSubmitting}
-                                aria-busy={isSubmitting}
-                                className="w-full rounded-xl bg-blue-600 py-4 font-semibold text-white hover:bg-blue-700"
-                            >
-                                Submit Application
-                            </button>
-
-                        </form>
-                    </div>
-                </div>
-            )}
+                                className="mt-2 w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3"
+                            />
+                        </div>
+                        <button
+                            type="submit"
+                            disabled={isSubmitting}
+                            aria-busy={isSubmitting}
+                            className="w-full rounded-2xl bg-blue-600 py-3.5 font-semibold text-white hover:bg-blue-700 disabled:opacity-70"
+                        >
+                            Submit Application
+                        </button>
+                    </form>
+                )}
+            </CareerApplyModal>
             <section className="bg-slate-50 pb-20">
                 <div className="max-w-6xl mx-auto px-6">
                     <RelatedRoles slug="seo-executive-job" />
