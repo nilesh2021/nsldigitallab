@@ -1,0 +1,32 @@
+100 ChatGPT Prompts for Job Seekers (2026)
+Section 2 — Cover letters (prompts 26–40)
+
+26. Write a 220-word cover letter for [ROLE] at [COMPANY]. Use this resume and this job description. No generic opening: [PASTE RESUME] [PASTE JD]
+
+27. Rewrite this cover letter so the first sentence names the role, a relevant project, and why this company: [PASTE DRAFT]
+
+28. Draft a short cover letter (150 words) for a fresher with internships but no full-time job. Role: [ROLE]. Evidence: [PASTE]
+
+29. Write a cover letter paragraph that connects my [PROJECT] to this company’s [PRODUCT OR MISSION]: [PASTE NOTES]
+
+30. Turn this job description into a 3-paragraph cover letter outline: hook, proof, close. Then fill it using my resume: [PASTE JD] [PASTE RESUME]
+
+31. Shorten this cover letter to under 200 words and cut repetition of the resume: [PASTE LETTER]
+
+32. Write a cover letter for a career-switch into [NEW FIELD] from [OLD FIELD]. Honest about the gap, specific about transferable proof: [PASTE BACKGROUND]
+
+33. Draft a cover email (not a full letter) under 120 words to attach my resume for [ROLE] at [COMPANY].
+
+34. Rewrite this cover letter in plain English at a Grade 8 reading level without sounding casual: [PASTE LETTER]
+
+35. Suggest 5 specific reasons I could mention for wanting [COMPANY], based on this about-page text. Then pick the strongest and write 2 sentences: [PASTE ABOUT]
+
+36. Write a cover letter closing that asks for a conversation and names my availability in [CITY / TIME ZONE], without “I look forward to hearing from you.”
+
+37. Adapt this cover letter for a second role at the same company. Keep 40% of the proof, change the rest: [PASTE LETTER] [PASTE NEW JD]
+
+38. I was referred by [NAME], [THEIR ROLE]. Write an opening paragraph that names the referral without sounding name-droppy.
+
+39. List 8 cover-letter clichés in this draft and replace each with a concrete line from my resume: [PASTE LETTER] [PASTE RESUME]
+
+40. Write two versions of a cover letter for [ROLE]: one conservative, one warmer. Same facts: [PASTE RESUME] [PASTE JD]

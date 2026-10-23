@@ -18,48 +18,21 @@ import Footer from "../components/Footer";
 import CareerForm from "../components/CareerForm";
 import { PAGE_SEO } from "../../seo/pages";
 import SEO from "../../seo/SEO";
+import { CAREER_JOBS, JOB_URL } from "./data/jobs";
+
+const LISTING_ORDER = [
+  "ui-ux-designer-job",
+  "data-entry-remote-job",
+  "data-entry-jobs-remote",
+  "digital-marketing-executive-job",
+  "seo-executive-job",
+  "content-writer-job",
+];
 
 const jobs = [
-  {
-    title: "UI/UX Designer",
-    type: "Full Time",
-    location: "Remote",
-    experience: "1–3 years",
-    category: "Design",
-    href: "/careers/ui-ux-designer-job",
-    description:
-      "Design websites and product interfaces in Figma, from research and wireframes to polished, usable systems.",
-  },
-  {
-    title: "Data Entry Operator",
-    type: "Remote",
-    location: "Remote",
-    experience: "Fresher welcome",
-    category: "Operations",
-    href: "/careers/data-entry-remote-job",
-    description:
-      "General operations data entry — records, reports, and business information. Fully remote.",
-  },
-  {
-    title: "Data Entry (Digital Products)",
-    type: "Remote",
-    location: "Remote",
-    experience: "Fresher welcome",
-    category: "Operations",
-    href: "/careers/data-entry-jobs-remote",
-    description:
-      "Work-from-home catalog data entry for digital products: templates, checklists, Figma kits, and downloadable assets.",
-  },
-  {
-    title: "Digital Marketing Executive",
-    type: "Remote",
-    location: "Remote",
-    experience: "0–2 years",
-    category: "Marketing",
-    href: "/careers/digital-marketing-executive-job",
-    description:
-      "Remote digital marketing executive: SEO, social media, Google Ads, Meta ads, and content for live client campaigns.",
-  },
+  ...LISTING_ORDER.map((slug) => CAREER_JOBS[slug])
+    .filter((job) => job.status === "open")
+    .map((job) => ({ ...job.listing, href: JOB_URL(job.slug) })),
   {
     title: "UI/UX Intern",
     type: "Internship",
@@ -71,7 +44,6 @@ const jobs = [
       "Remote UI/UX internship for students and career switchers. Practise Figma, Auto Layout, research, and a portfolio case study.",
   },
 ];
-
 const filters = ["All"] as const;
 
 const reasons = [
@@ -359,6 +331,7 @@ export default function CareersPage() {
                     <div className="flex shrink-0 flex-col gap-3 sm:flex-row lg:flex-col">
                       <Link
                         to={job.href}
+                        aria-label={`${job.title} job details`}
                         className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-800 transition hover:border-slate-300 hover:bg-slate-50"
                       >
                         Role details

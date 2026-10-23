@@ -130,7 +130,7 @@ dataEntryRemoteJob: {
 
     image: "/images/og/data-entry-job.jpg",
 
-    type: "article",
+    type: "website",
   },
 
   dataEntryJobsRemote: {
@@ -147,7 +147,7 @@ dataEntryRemoteJob: {
 
     image: "/images/og/data-entry-job.jpg",
 
-    type: "article",
+    type: "website",
   },
 
   digitalMarketingExecutiveJob: {
@@ -164,7 +164,41 @@ dataEntryRemoteJob: {
 
     image: "/images/og/careers.jpg",
 
-    type: "article",
+    type: "website",
+  },
+
+  contentWriterJob: {
+    title:
+      "Content Writer Job 2026 | Work From Home Content Writing Jobs | NSL Digital Lab",
+
+    description:
+      "Apply for remote content writing jobs at NSL Digital Lab. Work from home content writing opportunities for freshers and experienced candidates with flexible schedules.",
+
+    keywords:
+      "content writing jobs, remote content writing jobs, work from home content writing jobs, online content writing jobs, content writer jobs, part time content writing jobs, content writing jobs for freshers",
+
+    canonical: "/careers/content-writer-job",
+
+    image: "/images/og/careers.jpg",
+
+    type: "website",
+  },
+
+  seoExecutiveJob: {
+    title:
+      "SEO Executive Job 2026 | Work From Home SEO Executive Jobs | NSL Digital Lab",
+
+    description:
+      "Apply for remote SEO Executive jobs at NSL Digital Lab. Work from home on keyword research, on-page optimisation and organic growth. Freshers and experienced candidates welcome.",
+
+    keywords:
+      "SEO Executive jobs, remote SEO Executive jobs, work from home SEO jobs, online SEO jobs, part time SEO Executive jobs, SEO jobs for freshers",
+
+    canonical: "/careers/seo-executive-job",
+
+    image: "/images/og/careers.jpg",
+
+    type: "website",
   },
 blog: {
   title:
@@ -223,4 +257,57 @@ blog: {
     type: "article",
   },
 
-};
+  tongueTwistersPdf: {
+    title: "500 Tongue Twisters for English Pronunciation | Free PDF",
+
+    description:
+      "Download 500 tongue twisters for better English pronunciation. Free 8-page PDF for diction, speaking clarity, and interview confidence.",
+
+    keywords:
+      "tongue twisters for pronunciation, English pronunciation practice, tongue twisters PDF, speaking clarity exercises, diction practice English, spoken English practice",
+
+    canonical: "/resources/500-tongue-twisters-english-pronunciation",
+
+    image:
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&q=80",
+
+    type: "website",
+  },
+
+  atsResumeTemplateFreshers: {
+    title: "Free ATS Resume Template for Freshers (2026) | Word & PDF",
+    description:
+      "Download a free ATS resume template for freshers in Word and PDF. ATS-friendly layout and formatting tips for 2026 applications.",
+    keywords:
+      "ATS resume template freshers, free resume template Word PDF, ATS friendly resume 2026, fresher resume format, campus placement resume",
+    canonical: "/resources/free-ats-resume-template-freshers-2026",
+    image:
+      "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=1200&q=80",
+    type: "website",
+  },
+
+  jobApplicationTracker: {
+    title: "Free Job Application Tracker | Excel & Google Sheets",
+    description:
+      "Free job application tracker spreadsheet for Excel and Google Sheets. Track status, contacts, follow-ups, and application sources.",
+    keywords:
+      "job application tracker Excel, job search spreadsheet, application status tracker, Google Sheets job tracker, job hunt organizer",
+    canonical: "/resources/free-job-application-tracker",
+    image:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80",
+    type: "website",
+  },
+
+  chatgptPromptsJobSeekers: {
+    title: "100 Free ChatGPT Prompts for Job Seekers (2026)",
+    description:
+      "Download 100 free ChatGPT prompts for job seekers: resumes, interviews, networking, and follow-ups. Unlock the ZIP with your email.",
+    keywords:
+      "ChatGPT prompts job seekers, AI resume prompts, interview prompts ChatGPT, job search AI prompts, cover letter ChatGPT",
+    canonical: "/resources/free-chatgpt-prompts-job-seekers-2026",
+    image:
+      "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80",
+    type: "website",
+  },
+
+} as const;

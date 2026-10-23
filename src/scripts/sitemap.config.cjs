@@ -40,5 +40,6 @@ module.exports = {
     "/careers/social-media-executive-job",
     "/careers/wordpress-developer-job",
     "/careers/ui-ux-designer-remote-job",
+    "/careers/thank-you",
   ],
 };

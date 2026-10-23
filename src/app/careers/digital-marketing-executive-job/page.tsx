@@ -6,36 +6,16 @@ import { PAGE_SEO } from "../../../seo/pages";
 import Navigation from "../../components/Navigation";
 import Footer from "../../components/Footer";
 import JobPostingSchema from "../../../seo/schemas/JobPostingSchema";
+import { CAREER_JOBS } from "../data/jobs";
+
+const JOB = CAREER_JOBS["digital-marketing-executive-job"];
+import RelatedRoles from "../components/RelatedRoles";
+import ClosedJobNotice from "../components/ClosedJobNotice";
+import { trackJobApplication } from "../../../utils/analytics";
 import FAQSchema from "../../../seo/schemas/FAQSchema";
 import { submitCareerApplication } from "../../../services/career";
 
-const faqs = [
-  {
-    question: "Is this a work from home digital marketing job?",
-    answer:
-      "Yes. This is a fully remote digital marketing executive role. You can work from home anywhere in India with a laptop and a stable internet connection.",
-  },
-  {
-    question: "Can freshers apply for these remote digital marketing jobs?",
-    answer:
-      "Yes. Freshers, graduates, and career switchers are welcome if you can write clearly, follow a campaign checklist, and are willing to learn Google Analytics, Search Console, and ads dashboards.",
-  },
-  {
-    question: "How is this different from the SEO Executive job?",
-    answer:
-      "The SEO Executive listing is search-only. This Digital Marketing Executive role covers SEO plus social media, Google Ads, Meta ads, and content for client campaigns. If you only want organic search, apply on the SEO Executive page.",
-  },
-  {
-    question: "Which tools will I use?",
-    answer:
-      "Google Analytics (GA4), Google Search Console, Google Ads, Meta Ads Manager, Google Business Profile, Canva or similar, and spreadsheets for weekly reporting. We walk you through our templates before you start.",
-  },
-  {
-    question: "Is this part-time or full-time?",
-    answer:
-      "This opening is part-time (about 2–4 hours a day) with flexible hours. Full-time hours may be offered later based on campaign load and your results.",
-  },
-];
+const faqs = JOB.faqItems ?? [];
 
 export default function DigitalMarketingExecutiveJob() {
   const [showModal, setShowModal] = useState(false);
@@ -49,7 +29,7 @@ export default function DigitalMarketingExecutiveJob() {
 
   const handleApplyNow = () => {
     setSubmitted(false);
-    setShowModal(true);
+    JOB.status === "open" && setShowModal(true);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -68,7 +48,8 @@ export default function DigitalMarketingExecutiveJob() {
         phone,
         resume,
         message: "",
-        jobTitle: "Digital Marketing Executive – Remote",
+        jobSlug: "digital-marketing-executive-job",
+        jobTitle: JOB.applicationJobTitle,
       });
 
       if (!result.success) {
@@ -77,6 +58,7 @@ export default function DigitalMarketingExecutiveJob() {
       }
 
       setSubmitted(true);
+      trackJobApplication(result, "digital-marketing-executive-job", JOB.applicationJobTitle);
       setName("");
       setPhone("");
       setEmail("");
@@ -93,14 +75,8 @@ export default function DigitalMarketingExecutiveJob() {
     <>
       <SEO {...PAGE_SEO.digitalMarketingExecutiveJob} />
 
-      <JobPostingSchema
-        title="Digital Marketing Executive – Remote"
-        description="Remote digital marketing executive jobs at NSL Digital Lab. Work from home on SEO, social media, Google Ads, Meta ads, and content for real client campaigns."
-        datePosted="2026-10-06"
-        employmentType="PART_TIME"
-        location="Remote"
-        salary="5000-10000"
-      />
+      <JobPostingSchema job={JOB} />
+      <ClosedJobNotice job={JOB} />
 
       <FAQSchema faqs={faqs} />
 
@@ -143,22 +119,22 @@ export default function DigitalMarketingExecutiveJob() {
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
               <div>
                 <p className="text-slate-500 text-sm">Location</p>
-                <h3 className="font-bold text-xl">Remote</h3>
+                <h3 className="font-bold text-xl">{JOB.infoBar.location}</h3>
               </div>
 
               <div>
                 <p className="text-slate-500 text-sm">Job Type</p>
-                <h3 className="font-bold text-xl">Part-Time</h3>
+                <h3 className="font-bold text-xl">{JOB.infoBar.jobType}</h3>
               </div>
 
               <div>
                 <p className="text-slate-500 text-sm">Experience</p>
-                <h3 className="font-bold text-xl">0–2 Years</h3>
+                <h3 className="font-bold text-xl">{JOB.infoBar.experience}</h3>
               </div>
 
               <div>
                 <p className="text-slate-500 text-sm">Salary</p>
-                <h3 className="font-bold text-xl">₹5K – ₹10K</h3>
+                <h3 className="font-bold text-xl">{JOB.infoBar.salary}</h3>
               </div>
 
               <button
@@ -452,6 +428,12 @@ export default function DigitalMarketingExecutiveJob() {
           </div>
         </div>
       )}
+
+      <section className="bg-slate-50 pb-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <RelatedRoles slug="digital-marketing-executive-job" />
+        </div>
+      </section>
 
       <Footer />
     </>

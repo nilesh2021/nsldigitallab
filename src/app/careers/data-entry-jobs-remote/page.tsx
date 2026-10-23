@@ -6,36 +6,16 @@ import { PAGE_SEO } from "../../../seo/pages";
 import Navigation from "../../components/Navigation";
 import Footer from "../../components/Footer";
 import JobPostingSchema from "../../../seo/schemas/JobPostingSchema";
+import { CAREER_JOBS } from "../data/jobs";
+
+const JOB = CAREER_JOBS["data-entry-jobs-remote"];
+import RelatedRoles from "../components/RelatedRoles";
+import ClosedJobNotice from "../components/ClosedJobNotice";
+import { trackJobApplication } from "../../../utils/analytics";
 import FAQSchema from "../../../seo/schemas/FAQSchema";
 import { submitCareerApplication } from "../../../services/career";
 
-const faqs = [
-  {
-    question: "Is this a work from home data entry job?",
-    answer:
-      "Yes. This is a fully remote data entry role. You can work from home anywhere in India with a laptop and a stable internet connection.",
-  },
-  {
-    question: "Can freshers apply for these remote data entry jobs?",
-    answer:
-      "Yes. Freshers, students, and career starters are welcome if you are accurate, comfortable with Google Sheets or Excel, and can follow a simple catalog checklist.",
-  },
-  {
-    question: "What are digital products in this job?",
-    answer:
-      "Digital products here means NSL Digital Lab assets such as website template bundles, SEO and marketing checklists, Figma wireframe kits, ChatGPT prompt packs, and learning-path listings. You will enter and check catalog data for those products—not physical inventory.",
-  },
-  {
-    question: "Which tools will I use?",
-    answer:
-      "Most work is in Google Sheets or Microsoft Excel, plus shared folders for file names and download links. We give a short walkthrough of our catalog format before you start.",
-  },
-  {
-    question: "Is this part-time or full-time?",
-    answer:
-      "This opening is part-time (about 2–4 hours a day) with flexible hours. Full-time hours may be offered later based on catalog volume and your accuracy.",
-  },
-];
+const faqs = JOB.faqItems ?? [];
 
 export default function DataEntryJobsRemote() {
   const [showModal, setShowModal] = useState(false);
@@ -49,7 +29,7 @@ export default function DataEntryJobsRemote() {
 
   const handleApplyNow = () => {
     setSubmitted(false);
-    setShowModal(true);
+    JOB.status === "open" && setShowModal(true);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -68,7 +48,8 @@ export default function DataEntryJobsRemote() {
         phone,
         resume,
         message: "",
-        jobTitle: "Data Entry Jobs Remote – Digital Products",
+        jobSlug: "data-entry-jobs-remote",
+        jobTitle: JOB.applicationJobTitle,
       });
 
       if (!result.success) {
@@ -77,6 +58,7 @@ export default function DataEntryJobsRemote() {
       }
 
       setSubmitted(true);
+      trackJobApplication(result, "data-entry-jobs-remote", JOB.applicationJobTitle);
       setName("");
       setPhone("");
       setEmail("");
@@ -93,14 +75,8 @@ export default function DataEntryJobsRemote() {
     <>
       <SEO {...PAGE_SEO.dataEntryJobsRemote} />
 
-      <JobPostingSchema
-        title="Remote Data Entry Executive – Digital Products"
-        description="Remote data entry jobs for NSL Digital Lab digital products. Work from home cataloguing website templates, checklists, Figma kits, prompt packs, and learning assets in Google Sheets or Excel."
-        datePosted="2026-10-06"
-        employmentType="PART_TIME"
-        location="Remote"
-        salary="5000-10000"
-      />
+      <JobPostingSchema job={JOB} />
+      <ClosedJobNotice job={JOB} />
 
       <FAQSchema faqs={faqs} />
 
@@ -143,22 +119,22 @@ export default function DataEntryJobsRemote() {
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
               <div>
                 <p className="text-slate-500 text-sm">Location</p>
-                <h3 className="font-bold text-xl">Remote</h3>
+                <h3 className="font-bold text-xl">{JOB.infoBar.location}</h3>
               </div>
 
               <div>
                 <p className="text-slate-500 text-sm">Job Type</p>
-                <h3 className="font-bold text-xl">Part-Time</h3>
+                <h3 className="font-bold text-xl">{JOB.infoBar.jobType}</h3>
               </div>
 
               <div>
                 <p className="text-slate-500 text-sm">Experience</p>
-                <h3 className="font-bold text-xl">0–2 Years</h3>
+                <h3 className="font-bold text-xl">{JOB.infoBar.experience}</h3>
               </div>
 
               <div>
                 <p className="text-slate-500 text-sm">Salary</p>
-                <h3 className="font-bold text-xl">₹5K – ₹10K</h3>
+                <h3 className="font-bold text-xl">{JOB.infoBar.salary}</h3>
               </div>
 
               <button
@@ -454,6 +430,12 @@ export default function DataEntryJobsRemote() {
           </div>
         </div>
       )}
+
+      <section className="bg-slate-50 pb-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <RelatedRoles slug="data-entry-jobs-remote" />
+        </div>
+      </section>
 
       <Footer />
     </>

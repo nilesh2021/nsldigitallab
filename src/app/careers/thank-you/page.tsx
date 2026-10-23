@@ -1,5 +1,6 @@
 import { CheckCircle2, Linkedin, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const LINKEDIN_URL = "https://www.linkedin.com/company/nsldigitallab/";
 const INSTAGRAM_URL = "https://www.instagram.com/nsldigitallab";
@@ -7,6 +8,10 @@ const INSTAGRAM_URL = "https://www.instagram.com/nsldigitallab";
 export default function CareerThankYouPage() {
   return (
     <main className="flex min-h-screen items-center justify-center bg-[#050816] px-6 py-16">
+      <Helmet>
+        <title>Application Submitted | NSL Digital Lab Careers</title>
+        <meta name="robots" content="noindex, follow" />
+      </Helmet>
       <div className="w-full max-w-md rounded-3xl border border-white/10 bg-white/5 p-8 text-center backdrop-blur-xl">
         <CheckCircle2 className="mx-auto h-14 w-14 text-green-400" />
 

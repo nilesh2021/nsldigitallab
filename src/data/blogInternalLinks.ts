@@ -15,6 +15,31 @@ export type BlogLinkSet = {
 };
 
 export const blogInternalLinks: Record<string, BlogLinkSet> = {
+  // —— Career cluster (remote data entry) ——
+  "how-to-get-remote-data-entry-jobs-in-india": {
+    related: [
+      { href: "/blog/career/data-entry-skills-for-beginners", label: "Data entry skills for beginners" },
+      { href: "/blog/career/how-to-check-if-remote-data-entry-job-is-legit", label: "Check if a data entry job is legit" },
+      { href: "/careers/data-entry-jobs-remote", label: "Remote data entry role (digital products)" },
+    ],
+    service: { href: "/careers", label: "Careers at NSL Digital Lab" },
+  },
+  "data-entry-skills-for-beginners": {
+    related: [
+      { href: "/blog/career/how-to-get-remote-data-entry-jobs-in-india", label: "Get remote data entry jobs in India" },
+      { href: "/blog/career/how-to-check-if-remote-data-entry-job-is-legit", label: "Check if a data entry job is legit" },
+      { href: "/careers/data-entry-remote-job", label: "Remote data entry role" },
+    ],
+    service: { href: "/careers", label: "Careers at NSL Digital Lab" },
+  },
+  "how-to-check-if-remote-data-entry-job-is-legit": {
+    related: [
+      { href: "/blog/career/how-to-get-remote-data-entry-jobs-in-india", label: "Get remote data entry jobs in India" },
+      { href: "/blog/career/data-entry-skills-for-beginners", label: "Data entry skills for beginners" },
+    ],
+    service: { href: "/careers", label: "Careers at NSL Digital Lab" },
+  },
+
   // —— SEO cluster (pillar: what-is-seo) ——
   "what-is-seo": {
     related: [

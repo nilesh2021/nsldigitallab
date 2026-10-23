@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Download, Star } from "lucide-react";
 
-import { resources } from "../../../data/resources";
+import { resourcePath, resources } from "../../../data/resources";
 
 const spotlight = [...resources].sort((a, b) => b.downloads - a.downloads)[0];
 
@@ -14,7 +14,7 @@ export default function FeaturedResources() {
     <section className="bg-[#fafaf7] pb-4">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <Link
-          to={`/resources/${spotlight.slug}`}
+          to={resourcePath(spotlight)}
           className="group flex items-center gap-3 rounded-2xl bg-white px-3 py-2.5 ring-1 ring-slate-200/70 transition hover:shadow-[0_12px_30px_-18px_rgba(15,23,42,0.35)] hover:ring-slate-300 sm:gap-4"
         >
           <img

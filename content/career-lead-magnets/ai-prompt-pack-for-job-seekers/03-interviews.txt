@@ -1,0 +1,52 @@
+100 ChatGPT Prompts for Job Seekers (2026)
+Section 3 — Interviews (prompts 41–65)
+
+41. List 10 behavioural interview questions for a fresher [ROLE] and give a STAR outline for each using this background: [PASTE BACKGROUND]
+
+42. Help me answer “Tell me about yourself” in 60–75 seconds for [ROLE]. Structure: present, past, future. Facts: [PASTE]
+
+43. Build a STAR story from this messy note. Label Situation, Task, Action, Result, and a 45-second spoken version: [PASTE NOTE]
+
+44. Give me 8 “Tell me about a time you…” questions likely for [COMPANY] [ROLE], based on this JD: [PASTE JD]
+
+45. I need to explain a low GPA / career gap / failed subject honestly in 2 sentences, then redirect to proof: [PASTE SITUATION]
+
+46. Generate 12 technical or role-knowledge questions for [ROLE] at fresher level, with a short model answer and what a weak answer sounds like.
+
+47. Prep me for “Why this company?” using this careers page and news. 3 talking points plus a 40-second answer: [PASTE TEXT]
+
+48. Prep me for “Why this role?” using this JD and my resume. Avoid “I want to learn and grow” as the main point: [PASTE JD] [PASTE RESUME]
+
+49. Turn this group-project conflict into a behavioural answer that shows maturity, not blame: [PASTE STORY]
+
+50. Write a 30-second answer to “What is your weakness?” that is real, not “I work too hard,” and includes what I changed.
+
+51. Mock interview: ask me one question at a time for a [ROLE] screen. After each of my replies, score clarity, proof, and length, then ask the next.
+
+52. Suggest 7 questions I should ask the interviewer at the end of a campus placement interview for [ROLE]. No questions about salary in round 1.
+
+53. Suggest 7 questions for a hiring manager interview that show I researched [COMPANY] and the team’s work: [PASTE NOTES]
+
+54. Help me explain this project in 90 seconds to a non-technical interviewer, then in 90 seconds to a technical interviewer: [PASTE PROJECT]
+
+55. I froze on “Do you have any questions?” Write a backup list of 5 smart questions plus a one-line why each matters.
+
+56. Prepare a 2-minute walkthrough of my resume for a phone screen. Bullet the beats so I can speak, not read: [PASTE RESUME]
+
+57. Draft a thank-you note after a first interview with [NAME] for [ROLE]. Reference one specific thing we discussed: [PASTE NOTES]
+
+58. Give me likely case or scenario questions for [ROLE] and a simple framework I can say out loud before I answer.
+
+59. Rewrite this rambling interview answer to 50 seconds, keep the result, cut the backstory: [PASTE ANSWER]
+
+60. Help me talk about a team project without using “we” for work I personally did. Here is what happened: [PASTE]
+
+61. Prepare answers for “Where do you see yourself in 5 years?” that fit a [ROLE] fresher and still sound ambitious, not job-hoppy.
+
+62. List culture-fit questions I might get at [COMPANY TYPE: startup / MNC / agency] and a grounded answer style for each.
+
+63. I have an interview in [LANGUAGE]. Draft my “Tell me about yourself” in that language and a simple English version I can fall back to: [PASTE FACTS]
+
+64. Create a one-page interview cheat sheet: 5 stories mapped to common competencies (ownership, learning, conflict, deadline, customer). Stories: [PASTE]
+
+65. After this mock answer, tell me what a sceptical interviewer would challenge next, and how to handle it in one sentence: [PASTE ANSWER]

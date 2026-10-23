@@ -1,9 +1,31 @@
+/** Routes rendered to static HTML at build time (see src/scripts/prerender.mjs). */
+const PRERENDER_ROUTES = [
+  "/careers",
+  "/careers/data-entry-remote-job",
+  "/careers/data-entry-jobs-remote",
+  "/careers/digital-marketing-executive-job",
+  "/careers/content-writer-job",
+  "/careers/seo-executive-job",
+  "/careers/ui-ux-designer-job",
+  "/blog/career/how-to-get-remote-data-entry-jobs-in-india",
+  "/blog/career/data-entry-skills-for-beginners",
+  "/blog/career/how-to-check-if-remote-data-entry-job-is-legit",
+];
+
 module.exports = {
+  PRERENDER_ROUTES,
+
   STATIC_ROUTES: [
     "/",
 
     "/blog",
     "/careers",
+    "/careers/data-entry-remote-job",
+    "/careers/data-entry-jobs-remote",
+    "/careers/digital-marketing-executive-job",
+    "/careers/content-writer-job",
+    "/careers/seo-executive-job",
+    "/careers/ui-ux-designer-job",
     "/services",
 
     "/privacy-policy",

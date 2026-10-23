@@ -1078,6 +1078,70 @@ export const blogs = [
   accent: "from-cyan-500 to-blue-600",
 
   bgGlow: "bg-cyan-500/20",
+},
+{
+  id: 23,
+  title: "How to Get Remote Data Entry Jobs in India",
+  slug: "how-to-get-remote-data-entry-jobs-in-india",
+  category: "career",
+  categoryLabel: "Careers",
+  excerpt:
+    "Skills to build, where genuine openings are posted, and how to write a data entry application with a simple proof-of-work sample.",
+  image:
+    "https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=1200&auto=format&fit=crop",
+  readTime: "7 min read",
+  date: "October 2026",
+  featured: false,
+  seoTitle: "How to Get Remote Data Entry Jobs in India (Beginner Guide)",
+  seoDescription:
+    "A practical guide to finding remote data entry jobs in India: skills to build, where to look, how to apply, and how to prepare a simple proof-of-work sample.",
+  keywords: [
+    "remote data entry jobs India",
+    "work from home data entry jobs",
+    "online data entry jobs for freshers",
+  ],
+  accent: "from-cyan-500 to-blue-600",
+  bgGlow: "bg-cyan-500/20",
+},
+{
+  id: 24,
+  title: "Data Entry Skills for Beginners",
+  slug: "data-entry-skills-for-beginners",
+  category: "career",
+  categoryLabel: "Careers",
+  excerpt:
+    "Accuracy habits, spreadsheet functions, formatting rules, file handling, and communication, with short exercises you can practise at home.",
+  image:
+    "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
+  readTime: "7 min read",
+  date: "October 2026",
+  featured: false,
+  seoTitle: "Data Entry Skills for Beginners: What to Learn and How to Practise",
+  seoDescription:
+    "The core data entry skills beginners need: accuracy habits, spreadsheet functions, formatting rules, file handling, and communication, with practice exercises.",
+  keywords: ["data entry skills", "data entry skills for beginners", "Excel skills for data entry"],
+  accent: "from-emerald-500 to-green-600",
+  bgGlow: "bg-emerald-500/20",
+},
+{
+  id: 25,
+  title: "How to Check Whether a Remote Data Entry Job Is Legitimate",
+  slug: "how-to-check-if-remote-data-entry-job-is-legit",
+  category: "career",
+  categoryLabel: "Careers",
+  excerpt:
+    "A repeatable way to verify a remote data entry offer: employer checks, red flags, payment warning signs, and questions to ask before you accept.",
+  image:
+    "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1200&auto=format&fit=crop",
+  readTime: "7 min read",
+  date: "October 2026",
+  featured: false,
+  seoTitle: "How to Check Whether a Remote Data Entry Job Is Legitimate",
+  seoDescription:
+    "A step-by-step way to verify a remote data entry job before you apply or accept: employer checks, red flags, payment warning signs, and questions to ask.",
+  keywords: ["data entry job scam", "is data entry job legit", "fake work from home jobs"],
+  accent: "from-violet-500 to-purple-600",
+  bgGlow: "bg-violet-500/20",
 }
 ];
 

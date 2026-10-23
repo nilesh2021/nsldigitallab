@@ -444,6 +444,13 @@ export default function SeoInterviewQuestionsPage() {
                     View careers
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
+                  <a
+                    href="/careers/seo-executive-job"
+                    className="mt-3 flex items-center text-emerald-400 hover:text-emerald-300 text-sm font-medium transition"
+                  >
+                    Remote SEO Executive job
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
                 </div>
               </div>
             </aside>

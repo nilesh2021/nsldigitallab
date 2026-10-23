@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node src/scripts/generate-sitemap.cjs && node src/scripts/generate-robots.cjs",
+    "build": "vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node src/scripts/prerender.mjs && node src/scripts/verify-prerender.mjs && node src/scripts/generate-sitemap.cjs && node src/scripts/generate-robots.cjs",
     "preview": "vite preview",
+    "test": "node --test tests/careerApplication.test.mjs",
     "sitemap": "node src/scripts/generate-sitemap.cjs",
     "robots": "node src/scripts/generate-robots.cjs"
   },

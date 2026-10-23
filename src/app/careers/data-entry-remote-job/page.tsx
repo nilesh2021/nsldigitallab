@@ -5,6 +5,12 @@ import Navigation from "../../components/Navigation";
 import Footer from "../../components/Footer";
 import { useState } from "react";
 import JobPostingSchema from "../../../seo/schemas/JobPostingSchema";
+import { CAREER_JOBS } from "../data/jobs";
+
+const JOB = CAREER_JOBS["data-entry-remote-job"];
+import RelatedRoles from "../components/RelatedRoles";
+import ClosedJobNotice from "../components/ClosedJobNotice";
+import { trackJobApplication } from "../../../utils/analytics";
 
 import { submitCareerApplication } from "../../../services/career";
 export default function DataEntryRemoteJob() {
@@ -18,7 +24,7 @@ export default function DataEntryRemoteJob() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const handleApplyNow = () => {
     setSubmitted(false);   // Reset success state
-    setShowModal(true);
+    JOB.status === "open" && setShowModal(true);
   };
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -37,7 +43,8 @@ export default function DataEntryRemoteJob() {
         phone,
         resume,
         message: "",
-        jobTitle: "Data Entry Remote Job",
+        jobSlug: "data-entry-remote-job",
+        jobTitle: JOB.applicationJobTitle,
       });
 
       if (!result.success) {
@@ -46,6 +53,7 @@ export default function DataEntryRemoteJob() {
       }
 
       setSubmitted(true);
+      trackJobApplication(result, "data-entry-remote-job", JOB.applicationJobTitle);
 
       setName("");
       setPhone("");
@@ -68,14 +76,8 @@ export default function DataEntryRemoteJob() {
     <>
       <SEO {...PAGE_SEO.dataEntryRemoteJob} />
 
-      <JobPostingSchema
-        title="Remote Data Entry Executive"
-        description="Remote data entry job..."
-        datePosted="2026-06-17"
-        employmentType="PART_TIME"
-        location="Remote"
-        salary="5000-10000"
-      />
+      <JobPostingSchema job={JOB} />
+      <ClosedJobNotice job={JOB} />
 
       <Navigation />
 
@@ -123,22 +125,22 @@ export default function DataEntryRemoteJob() {
 
               <div>
                 <p className="text-slate-500 text-sm">Location</p>
-                <h3 className="font-bold text-xl">Remote</h3>
+                <h3 className="font-bold text-xl">{JOB.infoBar.location}</h3>
               </div>
 
               <div>
                 <p className="text-slate-500 text-sm">Job Type</p>
-                <h3 className="font-bold text-xl">Part-Time</h3>
+                <h3 className="font-bold text-xl">{JOB.infoBar.jobType}</h3>
               </div>
 
               <div>
                 <p className="text-slate-500 text-sm">Experience</p>
-                <h3 className="font-bold text-xl">0-2 Years</h3>
+                <h3 className="font-bold text-xl">{JOB.infoBar.experience}</h3>
               </div>
 
               <div>
                 <p className="text-slate-500 text-sm">Salary</p>
-                <h3 className="font-bold text-xl">₹5K - ₹10K</h3>
+                <h3 className="font-bold text-xl">{JOB.infoBar.salary}</h3>
               </div>
 
               <button
@@ -516,6 +518,12 @@ export default function DataEntryRemoteJob() {
           </div>
         </div>
       )}
+      <section className="bg-slate-50 pb-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <RelatedRoles slug="data-entry-remote-job" />
+        </div>
+      </section>
+
       <Footer />
     </>
 

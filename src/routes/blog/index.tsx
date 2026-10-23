@@ -4,9 +4,11 @@ import aiRoutes from "./aiRoutes";
 import digitalMarketingRoutes from "./digitalMarketingRoutes";
 import affiliateRoutes from "./affiliateRoutes";
 import webDevelopmentRoutes from "./webDevelopmentRoutes";
+import careerBlogRoutes from "./careerBlogRoutes";
 
 const blogRoutes = (
   <>
+    {careerBlogRoutes}
     {uiuxRoutes}
     {seoRoutes}
     {aiRoutes}

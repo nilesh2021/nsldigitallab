@@ -1,0 +1,52 @@
+100 ChatGPT Prompts for Job Seekers (2026)
+Section 1 — Resume & LinkedIn (prompts 1–25)
+
+1. Rewrite this internship bullet so it starts with a strong verb and includes one metric. Keep it under 22 words: [PASTE BULLET]
+
+2. Turn this project description into three ATS-friendly resume bullets for a fresher applying to [ROLE]: [PASTE PROJECT]
+
+3. Compare my resume summary to this job description. List missing keywords I can honestly add, then rewrite the summary in 3 lines: [PASTE SUMMARY] [PASTE JD]
+
+4. Rewrite my career objective into a professional summary for a fresher targeting [ROLE] in [INDUSTRY]. No fluff, no “hardworking team player.”
+
+5. Convert these coursework topics into a Skills section grouped as Tools, Methods, and Domain: [PASTE LIST]
+
+6. Suggest 8 skills from this job description that belong on a fresher resume, and flag any I should omit if I have not used them: [PASTE JD]
+
+7. Rewrite this volunteer or campus leadership line to show ownership and result: [PASTE LINE]
+
+8. I have little work experience. Suggest resume section order for a [DEGREE] graduate applying to [ROLE], and a one-line purpose for each section.
+
+9. Tighten this education line. Include degree, school, dates, and one relevant highlight: [PASTE EDUCATION]
+
+10. Rewrite these 5 bullets so each follows Verb + Task + Result. Drop weak words like “responsible for”: [PASTE BULLETS]
+
+11. Make this technical project readable to a non-engineer recruiter while keeping the stack names: [PASTE PROJECT]
+
+12. Draft a LinkedIn About section (1,200–1,800 characters) from this resume. First person, no buzzword stuffing: [PASTE RESUME]
+
+13. Write 10 LinkedIn headline options under 220 characters for a [ROLE] fresher in [CITY]. Include one skill or outcome.
+
+14. Suggest how to rename this resume file and the document title for ATS: my name is [NAME], target role is [ROLE].
+
+15. Audit this resume for ATS risks (tables, columns, graphics, unusual headings). List issues and a plain-text heading map: [PASTE RESUME]
+
+16. Translate this academic research abstract into two resume bullets for industry roles: [PASTE ABSTRACT]
+
+17. I used [TOOL]. Write 4 resume bullets that show I applied it on a real task, not just that I “know” it. Context: [PASTE CONTEXT]
+
+18. Reduce this one-page resume by 15% without losing proof of impact. Mark what you cut: [PASTE RESUME]
+
+19. Rewrite my LinkedIn Featured/Experience entries so they match this resume but read more conversational: [PASTE RESUME]
+
+20. Create a “Projects” section with 3 entries. Each needs problem, what I did, and a result. Source notes: [PASTE NOTES]
+
+21. Map keywords from this JD to my resume. Table with columns: JD keyword, where it appears, suggested placement: [PASTE JD] [PASTE RESUME]
+
+22. Write a skills line that mixes hard skills and tools for [ROLE], using only skills from this list: [PASTE SKILLS]
+
+23. Turn this GPA, coursework, and club work into a compact Education + Activities block: [PASTE DETAILS]
+
+24. Suggest 5 certifications worth listing for [ROLE] in 2026, and how to format each on a resume (name, issuer, year).
+
+25. Rewrite this resume summary in three tones: conservative corporate, startup, and campus placement. 3 lines each: [PASTE SUMMARY]

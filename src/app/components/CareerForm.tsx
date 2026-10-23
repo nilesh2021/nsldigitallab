@@ -11,7 +11,9 @@ import {
   ShieldCheck,
   Briefcase,
 } from "lucide-react";
+import { resolveCareerJobSlug } from "../careers/data/jobs";
 import { submitCareerApplication } from "../../services/career";
+import { trackJobApplication } from "../../utils/analytics";
 
 type Props = {
   jobTitle: string;
@@ -49,15 +51,19 @@ export default function CareerForm({ jobTitle }: Props) {
     setError("");
 
     try {
+      const jobSlug = resolveCareerJobSlug(jobTitle);
       const result = await submitCareerApplication({
         ...form,
         jobTitle,
+        jobSlug,
       });
 
       if (!result.success) {
         setError("Something went wrong. Please try again.");
         return;
       }
+
+      trackJobApplication(result, jobSlug, jobTitle);
 
       setForm({
         name: "",

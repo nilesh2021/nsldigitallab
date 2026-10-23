@@ -277,6 +277,13 @@ export const resources = [
       "Facebook Ads",
       "Learning",
     ],
+
+    relatedLinks: [
+      {
+        slug: "free-chatgpt-prompts-job-seekers-2026",
+        label: "100 ChatGPT prompts for job seekers",
+      },
+    ],
   },
   {
     id: 8,
@@ -320,6 +327,10 @@ export const resources = [
       { slug: "ui-ux-portfolio-checklist", label: "Get your portfolio ready with the UI/UX portfolio checklist" },
       { slug: "ux-case-study-template", label: "Write stronger projects with the UX case study template" },
       { slug: "ui-ux-interview-questions", label: "Practise common UI/UX interview questions" },
+      {
+        slug: "free-ats-resume-template-freshers-2026",
+        label: "General ATS resume template for freshers",
+      },
     ],
 
     tags: ["UI UX", "Resume", "Template", "Portfolio", "ATS"],
@@ -917,6 +928,7 @@ export const resources = [
     overview:
       "Print this sheet and use it with the Spoken English Communication path. Tick items only after you have recorded them. It covers the 10-minute habit, a three-part introduction, pronunciation words, and a stand-up update.",
     relatedLinks: [
+      { slug: "500-tongue-twisters-english-pronunciation", label: "Download 500 tongue twisters for pronunciation" },
       { slug: "ui-ux-interview-questions", label: "Practise UI/UX interview questions next" },
       { slug: "seo-interview-questions", label: "Practise SEO interview questions" },
       { slug: "digital-marketing-interview-questions", label: "Practise digital marketing interview questions" },
@@ -1036,6 +1048,180 @@ export const resources = [
       "Testing",
       "Ebook",
     ],
+  },
+  {
+    id: 25,
+    slug: "500-tongue-twisters-english-pronunciation",
+    title: "500 Tongue Twisters for Better English Pronunciation",
+    category: "Spoken English",
+    categorySlug: "spoken-english",
+    type: "PDF",
+    icon: "🗣️",
+    downloads: 0,
+    featured: true,
+    landingPath: "/resources/500-tongue-twisters-english-pronunciation",
+    image:
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&q=80",
+    description:
+      "Free 8-page PDF with 500 tongue twisters to improve pronunciation, diction, speaking clarity, and confidence.",
+    buttonText: "Download Free",
+    downloadUrl: "/downloads/500-tongue-twisters-english-pronunciation.pdf",
+    seoTitle:
+      "500 Tongue Twisters for English Pronunciation (Free PDF) | NSL Digital Lab",
+    seoDescription:
+      "Download 500 tongue twisters for better English pronunciation. Free 8-page PDF for diction, speaking clarity, and interview confidence.",
+    primaryKeyword: "tongue twisters for pronunciation",
+    secondaryKeywords: [
+      "English pronunciation practice",
+      "tongue twisters PDF",
+      "speaking clarity exercises",
+      "diction practice English",
+      "spoken English for interview",
+    ],
+    overview:
+      "An 8-page PDF of tongue twisters for pronunciation and speaking practice. Unlock with your email, download the file, and use a few lines each day before calls, classes, or interviews.",
+    relatedLinks: [
+      { slug: "spoken-english-practice-sheet", label: "Use the spoken English practice sheet" },
+      { slug: "ui-ux-interview-questions", label: "Practise interview questions next" },
+    ],
+    tags: [
+      "Tongue Twisters",
+      "Pronunciation",
+      "Spoken English",
+      "Speaking Practice",
+      "Free PDF",
+    ],
+  },
+  {
+    id: 26,
+    slug: "free-ats-resume-template-freshers-2026",
+    title: "Free ATS Resume Template for Freshers (2026)",
+    category: "Career",
+    categorySlug: "career",
+    type: "ZIP",
+    icon: "📄",
+    downloads: 0,
+    featured: true,
+    landingPath: "/resources/free-ats-resume-template-freshers-2026",
+    image:
+      "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=1200&q=80",
+    description:
+      "ATS-friendly Word and PDF resume template for freshers—clean sections, readable formatting, and tips for campus and off-campus applications.",
+    buttonText: "Get Free Template",
+    downloadUrl: "/downloads/ATS-Resume-Template-Pack.zip",
+    seoTitle:
+      "Free ATS Resume Template for Freshers (2026) Word & PDF | NSL Digital Lab",
+    seoDescription:
+      "Download a free ATS resume template for freshers in Word and PDF. ATS-friendly layout, section guide, and formatting tips for 2026 job applications.",
+    primaryKeyword: "ATS resume template freshers",
+    secondaryKeywords: [
+      "free resume template Word PDF",
+      "ATS friendly resume 2026",
+      "fresher resume format",
+      "campus placement resume template",
+    ],
+    overview:
+      "Unlock a ZIP with an editable ATS resume template for freshers, a PDF version, and short formatting guidance. Pair it with our free ATS resume checklist before you apply.",
+    relatedLinks: [
+      {
+        slug: "free-job-application-tracker",
+        label: "Track applications with the free spreadsheet",
+      },
+      {
+        slug: "free-chatgpt-prompts-job-seekers-2026",
+        label: "Use AI prompts for resume and interview prep",
+      },
+      {
+        slug: "ui-ux-designer-resume-template",
+        label: "UI/UX designer resume template",
+      },
+    ],
+    tags: ["Career", "Resume", "ATS", "Freshers", "Template", "Free"],
+  },
+  {
+    id: 27,
+    slug: "free-job-application-tracker",
+    title: "Free Job Application Tracker (Excel & Google Sheets)",
+    category: "Career",
+    categorySlug: "career",
+    type: "Spreadsheet",
+    icon: "📊",
+    downloads: 0,
+    featured: true,
+    landingPath: "/resources/free-job-application-tracker",
+    image:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80",
+    description:
+      "Free job application tracker spreadsheet for Excel and Google Sheets—status, contacts, follow-ups, and sources in one place.",
+    buttonText: "Get Free Tracker",
+    downloadUrl: "/downloads/Job-Application-Tracker.xlsx",
+    seoTitle:
+      "Free Job Application Tracker Excel & Google Sheets | NSL Digital Lab",
+    seoDescription:
+      "Download a free job application tracker for Excel and Google Sheets. Log companies, roles, status, recruiter contacts, and follow-up dates.",
+    primaryKeyword: "job application tracker Excel",
+    secondaryKeywords: [
+      "job search spreadsheet",
+      "application status tracker",
+      "job hunt organizer",
+      "Google Sheets job tracker",
+    ],
+    overview:
+      "A simple XLSX workbook to track every application from applied to offer. Import into Google Sheets or use in Excel—update status and follow-ups as you hear back.",
+    relatedLinks: [
+      {
+        slug: "free-ats-resume-template-freshers-2026",
+        label: "Download the ATS resume template",
+      },
+      {
+        slug: "free-chatgpt-prompts-job-seekers-2026",
+        label: "ChatGPT prompts for job seekers",
+      },
+    ],
+    tags: ["Career", "Job Search", "Tracker", "Excel", "Spreadsheet", "Free"],
+  },
+  {
+    id: 28,
+    slug: "free-chatgpt-prompts-job-seekers-2026",
+    title: "100 Free ChatGPT Prompts for Job Seekers (2026)",
+    category: "Career",
+    categorySlug: "career",
+    type: "ZIP",
+    icon: "🤖",
+    downloads: 0,
+    featured: true,
+    landingPath: "/resources/free-chatgpt-prompts-job-seekers-2026",
+    image:
+      "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80",
+    description:
+      "100 copy-ready ChatGPT prompts for resumes, cover letters, interviews, networking, and follow-ups—built for job seekers in 2026.",
+    buttonText: "Get Free Prompts",
+    downloadUrl: "/downloads/AI-Prompt-Pack-for-Job-Seekers.zip",
+    seoTitle:
+      "100 Free ChatGPT Prompts for Job Seekers (2026) | NSL Digital Lab",
+    seoDescription:
+      "Download 100 free ChatGPT prompts for job seekers: resume bullets, interview prep, networking messages, and application follow-ups.",
+    primaryKeyword: "ChatGPT prompts job seekers",
+    secondaryKeywords: [
+      "AI resume prompts",
+      "interview prompts ChatGPT",
+      "job search AI prompts",
+      "cover letter ChatGPT prompts",
+    ],
+    overview:
+      "Unlock a ZIP of 100 job-search prompts for ChatGPT. Use them for resume rewrites, mock interviews, recruiter outreach, and tailoring each application.",
+    relatedLinks: [
+      {
+        slug: "free-ats-resume-template-freshers-2026",
+        label: "ATS resume template for freshers",
+      },
+      {
+        slug: "free-job-application-tracker",
+        label: "Job application tracker spreadsheet",
+      },
+      { slug: "chatgpt-prompt-pack", label: "General ChatGPT prompt pack" },
+    ],
+    tags: ["Career", "ChatGPT", "AI", "Interview", "Resume", "Free"],
   },
 ];
 

@@ -1,0 +1,32 @@
+100 ChatGPT Prompts for Job Seekers (2026)
+Section 4 — Networking & outreach (prompts 66–80)
+
+66. Write a LinkedIn connection note under 300 characters to a recruiter hiring for [ROLE] at [COMPANY]. No CV dump.
+
+67. Write a LinkedIn connection note under 300 characters to an alumnus from [SCHOOL] who works as [ROLE] at [COMPANY].
+
+68. Draft a polite LinkedIn message asking for a 15-minute career chat. I am a [DEGREE] student targeting [ROLE]. Keep it under 80 words.
+
+69. Rewrite this cold email to a hiring manager. Subject line + 90-word body + one proof point: [PASTE DRAFT] [PASTE PROOF]
+
+70. Write 5 variants of a referral request to a former intern / classmate who works at [COMPANY]. Tone: grateful, specific, easy to say no.
+
+71. Draft a message to a recruiter after I applied on the career site for [JOB ID / ROLE]. 70 words, attach nothing extra, ask if anything else is useful.
+
+72. Write a comment I can leave on a hiring post for [ROLE] that is not “Interested, please check my resume.” Mention one relevant project.
+
+73. Help me ask a professor / mentor for a LinkedIn recommendation. 80 words, plus 4 bullets they could mention: [PASTE ACHIEVEMENTS]
+
+74. Draft an informational-interview follow-up that thanks them and names one action I will take this week: [PASTE NOTES]
+
+75. Write a short “how we met” reminder for someone I spoke with at [EVENT] about [TOPIC], asking to stay in touch.
+
+76. Turn this job post into a 4-line recruiter InMail: who I am, one match, one proof, one ask: [PASTE JD] [PASTE BIO]
+
+77. Rewrite this networking message so it asks for advice, not a job. Remove desperation: [PASTE MESSAGE]
+
+78. Suggest 8 people types I should contact for a [ROLE] search in [CITY], and a one-line reason to reach each.
+
+79. Write a polite decline for an unpaid “exposure” project while keeping the door open for paid [ROLE] work.
+
+80. Draft a 3-message LinkedIn sequence (connect, value, ask) spread over 10 days for reaching a [ROLE] at [COMPANY]. Each under 70 words.

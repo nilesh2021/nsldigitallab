@@ -25,15 +25,25 @@ export default function CareerChecklistPromo({ className }: Props) {
         Not sure if your resume is ATS-ready?
       </p>
       <p className="mt-2 text-sm leading-6 text-slate-600">
-        Use our free checklist before your next application.
+        Use our free checklist before your next application. Need a layout? Download
+        the ATS resume template for freshers.
       </p>
-      <Link
-        to={CHECKLIST_PAGE_PATH}
-        className="mt-4 inline-flex min-h-[44px] items-center gap-2 text-sm font-semibold text-cyan-800 hover:text-cyan-900"
-      >
-        Get Free ATS Checklist
-        <ArrowRight className="h-4 w-4" aria-hidden="true" />
-      </Link>
+      <div className="mt-4 flex flex-col gap-2">
+        <Link
+          to={CHECKLIST_PAGE_PATH}
+          className="inline-flex min-h-[44px] items-center gap-2 text-sm font-semibold text-cyan-800 hover:text-cyan-900"
+        >
+          Get Free ATS Checklist
+          <ArrowRight className="h-4 w-4" aria-hidden="true" />
+        </Link>
+        <Link
+          to="/resources/free-ats-resume-template-freshers-2026"
+          className="inline-flex min-h-[44px] items-center gap-2 text-sm font-semibold text-cyan-800 hover:text-cyan-900"
+        >
+          Free ATS resume template
+          <ArrowRight className="h-4 w-4" aria-hidden="true" />
+        </Link>
+      </div>
     </aside>
   );
 }

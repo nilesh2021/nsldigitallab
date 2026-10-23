@@ -24,6 +24,10 @@ export const HUB_TOPIC_SECTIONS: { title: string; links: HubLink[] }[] = [
     title: "ATS tools",
     links: [
       { label: "Free ATS resume checklist", path: CHECKLIST_PAGE_PATH },
+      {
+        label: "Free ATS resume template (freshers)",
+        path: "/resources/free-ats-resume-template-freshers-2026",
+      },
       { label: "Best ATS resume tools", slug: "best-ats-resume-tools" },
     ],
   },
@@ -58,6 +62,18 @@ export const HUB_TOPIC_SECTIONS: { title: string; links: HubLink[] }[] = [
   {
     title: "Job seeker tools",
     links: [
+      {
+        label: "Free ATS resume template (freshers)",
+        path: "/resources/free-ats-resume-template-freshers-2026",
+      },
+      {
+        label: "Free job application tracker",
+        path: "/resources/free-job-application-tracker",
+      },
+      {
+        label: "100 ChatGPT prompts for job seekers",
+        path: "/resources/free-chatgpt-prompts-job-seekers-2026",
+      },
       { label: "Best tools for job seekers", slug: "best-job-search-tools" },
       {
         label: "Best writing tools for job seekers",

@@ -27,6 +27,10 @@ const SEO_DESCRIPTION =
   "Use this free ATS resume checklist to review formatting, keywords, work experience, skills and common resume mistakes before applying for jobs.";
 
 const relatedLinks = [
+  {
+    label: "Free ATS resume template for freshers",
+    href: "/resources/free-ats-resume-template-freshers-2026",
+  },
   { label: "Best Resume Builders", href: careerArticlePath("best-resume-builders") },
   { label: "Best ATS Resume Tools", href: careerArticlePath("best-ats-resume-tools") },
   { label: "Rezi Review", href: careerArticlePath("rezi-review") },

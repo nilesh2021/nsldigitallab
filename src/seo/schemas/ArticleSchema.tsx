@@ -16,39 +16,40 @@ export default function ArticleSchema({
   description,
   url,
   image = SITE.image,
-  datePublished = new Date().toISOString(),
-  dateModified = new Date().toISOString(),
+  datePublished,
+  dateModified,
   author = "NSL Digital Lab",
 }: ArticleSchemaProps) {
+  const schema: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline,
+    description,
+    image,
+    author: {
+      "@type": "Organization",
+      name: author,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: SITE.name,
+      logo: {
+        "@type": "ImageObject",
+        url: SITE.logo,
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": url,
+    },
+  };
+
+  if (datePublished) schema.datePublished = datePublished;
+  if (dateModified) schema.dateModified = dateModified;
+
   return (
     <Helmet>
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Article",
-          headline,
-          description,
-          image,
-          author: {
-            "@type": "Organization",
-            name: author,
-          },
-          publisher: {
-            "@type": "Organization",
-            name: SITE.name,
-            logo: {
-              "@type": "ImageObject",
-              url: SITE.logo,
-            },
-          },
-          mainEntityOfPage: {
-            "@type": "WebPage",
-            "@id": url,
-          },
-          datePublished,
-          dateModified,
-        })}
-      </script>
+      <script type="application/ld+json">{JSON.stringify(schema)}</script>
     </Helmet>
   );
 }

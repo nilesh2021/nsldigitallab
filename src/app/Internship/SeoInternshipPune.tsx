@@ -94,7 +94,7 @@ export default function SeoInternshipPune() {
                 "name": "Is this SEO internship remote?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Yes,  NslDigitlaLaboffers remote SEO internship opportunities for candidates across India."
+                  "text": "Yes, NSL Digital Lab offers remote SEO internship opportunities for candidates across India."
                 }
               },
               {
@@ -114,32 +114,6 @@ export default function SeoInternshipPune() {
                 }
               }
             ]
-          })}
-        </script>
-
-        {/* JOB / INTERNSHIP SCHEMA */}
-
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "JobPosting",
-            "title": "SEO Internship in Pune",
-            "description":
-              "Remote SEO Internship opportunity at  NslDigitlaLabfor students and freshers interested in digital marketing and SEO.",
-            "employmentType": "INTERN",
-            "hiringOrganization": {
-              "@type": "Organization",
-              "name": "nsldigitallab",
-              "sameAs": "https://nsldigitallab.co.in",
-            },
-            "jobLocationType": "TELECOMMUTE",
-            "applicantLocationRequirements": {
-              "@type": "Country",
-              "name": "India"
-            },
-            "industry": "Digital Marketing",
-            "datePosted": "2026-05-20",
-            "validThrough": "2026-12-31"
           })}
         </script>
 

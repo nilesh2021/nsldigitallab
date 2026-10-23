@@ -1,8 +1,17 @@
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import SEO from "../../../seo/SEO";
+import { PAGE_SEO } from "../../../seo/pages";
 import Navigation from "../../components/Navigation";
 import Footer from "../../components/Footer";
 import { useState } from "react";
+import { submitCareerApplication } from "../../../services/career";
+import { CAREER_JOBS } from "../data/jobs";
+
+const JOB = CAREER_JOBS["seo-executive-job"];
+import RelatedRoles from "../components/RelatedRoles";
+import ClosedJobNotice from "../components/ClosedJobNotice";
+import { trackJobApplication } from "../../../utils/analytics";
+import JobPostingSchema from "../../../seo/schemas/JobPostingSchema";
 
 export default function SeoExecutiveJob() {
     const [showModal, setShowModal] = useState(false);
@@ -11,25 +20,34 @@ export default function SeoExecutiveJob() {
     const [email, setEmail] = useState("");
     const [resume, setResume] = useState("");
 
+const [isSubmitting, setIsSubmitting] = useState(false);
+
 const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
 
-  try {
-    await fetch(
-      "https://script.google.com/macros/s/AKfycbxRaUoQNewWCzj8MQHEUkQplWd8oAUBxrCfa-7Optv5jtcEO4U5N_zzPZncjx-LWYLB/exec",
-      {
-        method: "POST",
-        mode: "no-cors",
-        body: JSON.stringify({
-          name,
-          phone,
-          email,
-          resume,
-          jobTitle: "SEO Executive Job",
-        }),
-      }
-    );
+  if (isSubmitting) {
+    return;
+  }
 
+  setIsSubmitting(true);
+
+  try {
+    const result = await submitCareerApplication({
+      name,
+      email,
+      phone,
+      resume,
+      message: "",
+      jobTitle: JOB.applicationJobTitle,
+      jobSlug: "seo-executive-job",
+    });
+
+    if (!result.success) {
+      alert("Something went wrong.");
+      return;
+    }
+
+    trackJobApplication(result, "seo-executive-job", JOB.applicationJobTitle);
     alert("Application Submitted Successfully!");
 
     setName("");
@@ -41,46 +59,15 @@ const handleSubmit = async (e: React.FormEvent) => {
   } catch (error) {
     console.error(error);
     alert("Something went wrong.");
+  } finally {
+    setIsSubmitting(false);
   }
-};
-    return (
+};    return (
 
         <>
-            <Helmet>
-                <title>
-                    SEO Executive Job 2026 | Work From Home SEO Executive Jobs | NSL Digital Lab
-                </title>
-
-                <meta
-                    name="description"
-                    content="Apply for Remote SEO Executive Jobs at NSL Digital Lab. Work from home SEO Executive opportunities for freshers and experienced candidates. Flexible schedules, online SEO Executive work, part-time and full-time remote jobs available."
-                />
-
-                <meta
-                    name="keywords"
-                    content="SEO Executive jobs, remote SEO Executive jobs, work from home SEO Executive jobs, online SEO Executive jobs, SEO Executive Jobs, part time SEO Executive jobs, full time SEO Executive jobs, remote jobs India, work from home jobs, typing jobs, online jobs for freshers, SEO Executive executive jobs"
-                />
-
-                <meta
-                    property="og:title"
-                    content="SEO Executive Job | Work From Home Opportunities"
-                />
-
-                <meta
-                    property="og:description"
-                    content="Join NSL Digital Lab as a SEO Executive. Flexible work from home opportunities for freshers and experienced candidates."
-                />
-
-                <meta
-                    property="og:type"
-                    content="website"
-                />
-
-                <link
-                    rel="canonical"
-                    href="https://nsldigitallab.com/careers/seo-executive-job"
-                />
-            </Helmet>
+            <SEO {...PAGE_SEO.seoExecutiveJob} />
+            <JobPostingSchema job={JOB} />
+      <ClosedJobNotice job={JOB} />
             <Navigation />
 
             {/* HERO */}
@@ -127,27 +114,27 @@ const handleSubmit = async (e: React.FormEvent) => {
 
         <div>
           <p className="text-slate-500 text-sm">Location</p>
-          <h3 className="font-bold text-xl">Remote</h3>
+          <h3 className="font-bold text-xl">{JOB.infoBar.location}</h3>
         </div>
 
         <div>
           <p className="text-slate-500 text-sm">Job Type</p>
-          <h3 className="font-bold text-xl">Part-Time</h3>
+          <h3 className="font-bold text-xl">{JOB.infoBar.jobType}</h3>
         </div>
 
         <div>
           <p className="text-slate-500 text-sm">Experience</p>
-          <h3 className="font-bold text-xl">0-2 Years</h3>
+          <h3 className="font-bold text-xl">{JOB.infoBar.experience}</h3>
         </div>
 
         <div>
           <p className="text-slate-500 text-sm">Salary</p>
-          <h3 className="font-bold text-xl">₹5K - ₹10K</h3>
+          <h3 className="font-bold text-xl">{JOB.infoBar.salary}</h3>
         </div>
 
         <button
           type="button"
-          onClick={() => setShowModal(true)}
+          onClick={() => JOB.status === "open" && setShowModal(true)}
           className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold hover:scale-105 transition-all duration-300"
         >
           Apply Now
@@ -227,7 +214,7 @@ const handleSubmit = async (e: React.FormEvent) => {
 </ul>
 
                                 <button
-                                    onClick={() => setShowModal(true)}
+                                    onClick={() => JOB.status === "open" && setShowModal(true)}
                                     className="inline-flex items-center px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold hover:scale-105 transition"
                                 >
                                     Apply Now
@@ -383,6 +370,8 @@ const handleSubmit = async (e: React.FormEvent) => {
 
                             <button
                                 type="submit"
+                                disabled={isSubmitting}
+                                aria-busy={isSubmitting}
                                 className="w-full rounded-xl bg-blue-600 py-4 font-semibold text-white hover:bg-blue-700"
                             >
                                 Submit Application
@@ -392,6 +381,12 @@ const handleSubmit = async (e: React.FormEvent) => {
                     </div>
                 </div>
             )}
+            <section className="bg-slate-50 pb-20">
+                <div className="max-w-6xl mx-auto px-6">
+                    <RelatedRoles slug="seo-executive-job" />
+                </div>
+            </section>
+
             <Footer />
         </>
 

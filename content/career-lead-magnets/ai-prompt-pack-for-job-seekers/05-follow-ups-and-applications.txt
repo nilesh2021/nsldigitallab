@@ -1,0 +1,42 @@
+100 ChatGPT Prompts for Job Seekers (2026)
+Section 5 — Follow-ups & applications (prompts 81–100)
+
+81. Draft a polite follow-up email one week after applying to [ROLE] at [COMPANY] with no response. 80 words.
+
+82. Write a follow-up 4 business days after an interview. Reference [TOPIC WE DISCUSSED] and attach nothing unless they asked.
+
+83. I got a rejection for [ROLE]. Write a short thank-you that asks to be considered for similar roles, without arguing the decision.
+
+84. Help me reply to “What are your salary expectations?” for a fresher [ROLE] in [CITY]. Give a range phrasing and a research prompt I can fill in.
+
+85. Write an email accepting an interview slot on [DATE/TIME], confirming video tool or campus location, and asking who I will meet.
+
+86. I need to reschedule an interview. Write a concise, respectful email offering two new windows in [TIME ZONE].
+
+87. Draft a reply to a take-home assignment email: confirm deadline, ask one clarifying question, and restate the deliverable.
+
+88. Summarise this job description into a 6-line application checklist (must-have skills, keywords, evidence I should attach): [PASTE JD]
+
+89. Compare two job descriptions and tell me which I am a stronger fit for, and which 3 resume tweaks to make for each: [PASTE JD A] [PASTE JD B] [PASTE RESUME]
+
+90. Write an email withdrawing from a process because I accepted another offer. Gracious, short, leave a positive impression.
+
+91. Help me negotiate a joining date. They offered [DATE], I need [LATER DATE] because [REASON]. 90-word email.
+
+92. Draft a message to HR asking about next steps and timeline after a final round, without sounding impatient.
+
+93. Turn my application tracker notes into a weekly review: which roles to follow up, which to drop, which to tailor next: [PASTE ROWS]
+
+94. Write a 5-sentence “why I applied” I can paste into portal text boxes for [ROLE] at [COMPANY], using this JD: [PASTE JD]
+
+95. I was asked for references. Draft a message asking [NAME] if they are willing, plus 3 bullets they might mention: [PASTE]
+
+96. Reply to a recruiter who asked for an updated resume and portfolio link. 60 words, include [LINKS], confirm the role.
+
+97. Write an email after a recruiter screen asking for the hiring manager’s name and the interview format for the next round.
+
+98. Help me explain in writing that I am open to [CITY / REMOTE / HYBRID] and when I can start. One paragraph for an application form.
+
+99. Create a 7-day job-search plan for a fresher: applications, follow-ups, skills practice, and networking. Target role: [ROLE]. Hours available per day: [N]
+
+100. Review this email before I send it. Check tone, length, grammar, and whether the ask is clear. Suggest a subject line: [PASTE EMAIL]
