@@ -1,3 +1,5 @@
+import { careerAttributionEventParams } from "./campaignAttribution.ts";
+
 /** Lightweight gtag wrapper — never throws or blocks navigation. */
 export function trackEvent(
   eventName: string,
@@ -60,6 +62,7 @@ export function trackJobApplication(
     lead_type: "job_application",
     job_slug: jobSlug,
     job_title: jobTitle,
+    ...careerAttributionEventParams(),
   });
   return true;
 }

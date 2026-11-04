@@ -92,7 +92,7 @@ already in the code.
 - Job pages no longer treat `no-cors` completion as success.
 - Event payload includes only `job_slug`, `job_title`, and `lead_type` — never applicant PII.
 
-See also [docs/CAREERS-SCHEMA-STATUS.md](docs/CAREERS-SCHEMA-STATUS.md).
+See also [docs/CAREERS-SCHEMA-STATUS.md](docs/CAREERS-SCHEMA-STATUS.md) and [docs/CAREER-LEAD-MARKETING.md](docs/CAREER-LEAD-MARKETING.md) (UTMs, opt-in, hiring vs ads).
 
 ### Consent
 

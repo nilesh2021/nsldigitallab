@@ -7,9 +7,31 @@
  * After editing: Deploy → Manage deployments → Edit → New version (keep same /exec URL).
  * Web app: Execute as Me, Who has access: Anyone.
  *
- * Career posts from the site use type "career" and include jobSlug + createdAt.
+ * Career posts from the site use type "career" and include jobSlug, UTM fields, marketingOptIn.
  * Return { ok: true, id } for career so GA4 generate_lead can fire (see JOB-MARKETING-SETUP.md).
  */
+
+var CAREER_NOTIFY_EMAIL = "hello@nsldigitallab.com";
+
+function notifyCareerApplication(data, id) {
+  var subject = "Career application: " + (data.jobTitle || "Role");
+  var lines = [
+    "Application id: " + id,
+    "Role: " + (data.jobTitle || "") + " (" + (data.jobSlug || "") + ")",
+    "Name: " + data.name,
+    "Email: " + data.email,
+    "Phone: " + (data.phone || "—"),
+    "Resume / sample: " + (data.resume || "—"),
+    "Notes / rates: " + (data.message || "—"),
+    "Marketing opt-in: " + (data.marketingOptIn ? "yes" : "no"),
+    "UTM: " +
+      [data.utmSource, data.utmMedium, data.utmCampaign].filter(function (x) {
+        return x;
+      }).join(" / "),
+    "Landing page: " + (data.landingPage || "—"),
+  ];
+  MailApp.sendEmail(CAREER_NOTIFY_EMAIL, subject, lines.join("\n"));
+}
 
 function doGet() {
   return ContentService.createTextOutput(
@@ -87,10 +109,15 @@ function doPost(e) {
         data.message,
         data.source,
         data.createdAt || "",
+        data.marketingOptIn ? "yes" : "no",
+        data.utmSource || "",
+        data.utmMedium || "",
+        data.utmCampaign || "",
+        data.landingPage || "",
         new Date(),
       ]);
 
-      // MailApp.sendEmail(...) — add notification here if needed
+      notifyCareerApplication(data, id);
 
       return ContentService.createTextOutput(
         JSON.stringify({ ok: true, id: id }),

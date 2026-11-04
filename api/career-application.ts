@@ -1,7 +1,21 @@
 const DEFAULT_SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbxRaUoQNewWCzj8MQHEUkQplWd8oAUBxrCfa-7Optv5jtcEO4U5N_zzPZncjx-LWYLB/exec";
 
-const MAX = { name: 120, email: 200, phone: 30, resume: 500, jobTitle: 150, jobSlug: 80, message: 2000 };
+const MAX = {
+  name: 120,
+  email: 200,
+  phone: 30,
+  resume: 500,
+  jobTitle: 150,
+  jobSlug: 80,
+  message: 2000,
+  utmSource: 100,
+  utmMedium: 100,
+  utmCampaign: 100,
+  utmTerm: 100,
+  utmContent: 100,
+  landingPage: 500,
+};
 
 export interface CareerApplicationInput {
   name: string;
@@ -12,6 +26,13 @@ export interface CareerApplicationInput {
   jobSlug: string;
   message: string;
   website?: string;
+  marketingOptIn: boolean;
+  utmSource: string;
+  utmMedium: string;
+  utmCampaign: string;
+  utmTerm: string;
+  utmContent: string;
+  landingPage: string;
 }
 
 export type ApplicationResult =
@@ -41,10 +62,19 @@ export function validateApplication(body: unknown): CareerApplicationInput | str
     jobSlug: str("jobSlug"),
     message: str("message"),
     website: typeof b.website === "string" ? b.website : "",
+    marketingOptIn: b.marketingOptIn === true,
+    utmSource: str("utmSource"),
+    utmMedium: str("utmMedium"),
+    utmCampaign: str("utmCampaign"),
+    utmTerm: str("utmTerm"),
+    utmContent: str("utmContent"),
+    landingPage: str("landingPage"),
   };
 
   for (const key of Object.keys(MAX) as (keyof typeof MAX)[]) {
-    if (input[key].length > MAX[key]) return `${key} is too long.`;
+    if (typeof input[key] === "string" && (input[key] as string).length > MAX[key]) {
+      return `${key} is too long.`;
+    }
   }
   if (!input.name) return "Name is required.";
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.email)) return "A valid email is required.";

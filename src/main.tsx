@@ -6,6 +6,9 @@ import { HelmetProvider } from "react-helmet-async";
 import "./styles/index.css";
 
 import AppRoutes from "./AppRoutes";
+import { captureCampaignFromLocation } from "./utils/campaignAttribution";
+
+captureCampaignFromLocation();
 
 const container = document.getElementById("root")!;
 

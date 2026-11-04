@@ -19,6 +19,7 @@ import {
   validateOptionalResumeUrl,
 } from "../utils/applyValidation";
 import CareerApplyFormError from "../components/CareerApplyFormError";
+import CareerMarketingOptIn from "../components/CareerMarketingOptIn";
 
 const JOB = CAREER_JOBS["video-creator-freelancer-job"];
 const faqs = JOB.faqItems ?? [];
@@ -34,6 +35,7 @@ export default function VideoCreatorFreelancerJob() {
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState("");
+  const [marketingOptIn, setMarketingOptIn] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const closeApplyModal = () => {
@@ -78,6 +80,7 @@ export default function VideoCreatorFreelancerJob() {
         message: ratesNote,
         jobSlug: SLUG,
         jobTitle: JOB.applicationJobTitle,
+        marketingOptIn,
       });
 
       if (!result.success) {
@@ -357,6 +360,11 @@ export default function VideoCreatorFreelancerJob() {
                 required
               />
             </div>
+            <CareerMarketingOptIn
+              checked={marketingOptIn}
+              onChange={setMarketingOptIn}
+              id="vc-marketing-opt-in"
+            />
             <CareerApplyFormError message={submitError} />
             <button
               type="submit"

@@ -14,6 +14,7 @@ import {
 import { resolveCareerApplicationFields } from "../careers/data/jobs";
 import { submitCareerApplication } from "../../services/career";
 import { trackJobApplication } from "../../utils/analytics";
+import CareerMarketingOptIn from "../careers/components/CareerMarketingOptIn";
 
 const VIDEO_FREELANCER_SLUG = "video-creator-freelancer-job";
 const URL_PATTERN = /^https?:\/\/\S+$/i;
@@ -36,6 +37,7 @@ export default function CareerForm({ jobTitle }: Props) {
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [marketingOptIn, setMarketingOptIn] = useState(false);
 
   const { jobSlug, jobTitle: applicationJobTitle } = useMemo(
     () => resolveCareerApplicationFields(jobTitle),
@@ -77,6 +79,7 @@ export default function CareerForm({ jobTitle }: Props) {
         message: form.message.trim(),
         jobTitle: applicationJobTitle,
         jobSlug,
+        marketingOptIn,
       });
 
       if (!result.success) {
@@ -248,6 +251,13 @@ export default function CareerForm({ jobTitle }: Props) {
             />
           </div>
         </div>
+
+        <CareerMarketingOptIn
+          variant="dark"
+          checked={marketingOptIn}
+          onChange={setMarketingOptIn}
+          id="careers-listing-marketing-opt-in"
+        />
 
         {error ? (
           <p className="rounded-xl border border-red-500/20 bg-red-500/10 px-4 py-3 text-sm text-red-300">

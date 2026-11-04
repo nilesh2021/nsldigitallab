@@ -1,3 +1,5 @@
+import { getStoredCareerAttribution } from "../utils/campaignAttribution.ts";
+
 const SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbxRaUoQNewWCzj8MQHEUkQplWd8oAUBxrCfa-7Optv5jtcEO4U5N_zzPZncjx-LWYLB/exec";
 
@@ -20,6 +22,27 @@ export interface CareerApplicationData {
   jobTitle: string;
   jobSlug?: string;
   message: string;
+  marketingOptIn?: boolean;
+  utmSource?: string;
+  utmMedium?: string;
+  utmCampaign?: string;
+  utmTerm?: string;
+  utmContent?: string;
+  landingPage?: string;
+}
+
+function withAttribution(data: CareerApplicationData): CareerApplicationData {
+  const att = getStoredCareerAttribution();
+  return {
+    ...data,
+    utmSource: data.utmSource ?? att.utmSource,
+    utmMedium: data.utmMedium ?? att.utmMedium,
+    utmCampaign: data.utmCampaign ?? att.utmCampaign,
+    utmTerm: data.utmTerm ?? att.utmTerm,
+    utmContent: data.utmContent ?? att.utmContent,
+    landingPage: data.landingPage ?? att.landingPage,
+    marketingOptIn: Boolean(data.marketingOptIn),
+  };
 }
 
 const toResult = (
@@ -35,12 +58,13 @@ const toResult = (
 
 /** Vite dev has no /api route; post directly so local forms still work. Never confirmed. */
 async function submitDirectForDev(data: CareerApplicationData): Promise<CareerSubmitResult> {
+  const payload = withAttribution(data);
   await fetch(SCRIPT_URL, {
     method: "POST",
     mode: "no-cors",
     body: JSON.stringify({
       type: "career",
-      ...data,
+      ...payload,
       source: "Career Page",
       createdAt: new Date().toISOString(),
     }),
@@ -52,15 +76,16 @@ export async function submitCareerApplication(
   data: CareerApplicationData,
   fetchImpl: typeof fetch = fetch,
 ): Promise<CareerSubmitResult> {
+  const payload = withAttribution(data);
   try {
     const res = await fetchImpl("/api/career-application", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...data, jobSlug: data.jobSlug ?? "general" }),
+      body: JSON.stringify({ ...payload, jobSlug: payload.jobSlug ?? "general" }),
     });
 
     if (res.status === 404 && import.meta.env?.DEV) {
-      return await submitDirectForDev(data);
+      return await submitDirectForDev(payload);
     }
 
     const body = (await res.json().catch(() => ({}))) as {
