@@ -328,7 +328,7 @@ export const CAREER_JOBS: Record<string, CareerJob> = {
       {
         question: "Do I need to share sample videos when I apply?",
         answer:
-          "Yes. Include links to sample edits (YouTube, Google Drive, Instagram, or a portfolio page). We review style, pacing, and captions before assigning paid work.",
+          "Sample links are optional but recommended. Include YouTube, Google Drive, Instagram, or portfolio URLs in the sample field or in your rates message so we can review pacing and captions before assigning paid work.",
       },
       {
         question: "What should I tell you about my charges?",
@@ -389,4 +389,23 @@ export function resolveCareerJobSlug(jobTitle: string): string {
       job.title === normalized,
   );
   return match?.slug ?? GENERAL_CAREER_APPLICATION.jobSlug;
+}
+
+/** jobTitle for Apps Script + jobSlug for routing/analytics from listing or badge label. */
+export function resolveCareerApplicationFields(displayTitle: string): {
+  jobSlug: string;
+  jobTitle: string;
+} {
+  const jobSlug = resolveCareerJobSlug(displayTitle);
+  if (jobSlug === GENERAL_CAREER_APPLICATION.jobSlug) {
+    return {
+      jobSlug,
+      jobTitle: GENERAL_CAREER_APPLICATION.applicationJobTitle,
+    };
+  }
+  const job = CAREER_JOBS[jobSlug];
+  return {
+    jobSlug,
+    jobTitle: job?.applicationJobTitle ?? displayTitle.trim(),
+  };
 }

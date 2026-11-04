@@ -15,10 +15,16 @@ import ClosedJobNotice from "../components/ClosedJobNotice";
 import CareerApplyModal from "../components/CareerApplyModal";
 import CareerApplySuccess from "../components/CareerApplySuccess";
 import { trackJobApplication } from "../../../utils/analytics";
+import {
+  applicationErrorMessage,
+  validateOptionalResumeUrl,
+} from "../utils/applyValidation";
+import CareerApplyFormError from "../components/CareerApplyFormError";
 
 export default function ContentWriterJob() {
     const [showModal, setShowModal] = useState(false);
     const [submitted, setSubmitted] = useState(false);
+    const [submitError, setSubmitError] = useState("");
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
     const [email, setEmail] = useState("");
@@ -28,11 +34,13 @@ const [isSubmitting, setIsSubmitting] = useState(false);
 
 const closeApplyModal = () => {
   setSubmitted(false);
+  setSubmitError("");
   setShowModal(false);
 };
 
 const handleApplyNow = () => {
   setSubmitted(false);
+  setSubmitError("");
   if (JOB.status === "open") setShowModal(true);
 };
 
@@ -43,6 +51,13 @@ const handleSubmit = async (e: React.FormEvent) => {
     return;
   }
 
+  const resumeErr = validateOptionalResumeUrl(resume);
+  if (resumeErr) {
+    setSubmitError(resumeErr);
+    return;
+  }
+
+  setSubmitError("");
   setIsSubmitting(true);
 
   try {
@@ -50,14 +65,14 @@ const handleSubmit = async (e: React.FormEvent) => {
       name,
       email,
       phone,
-      resume,
+      resume: resume.trim(),
       message: "",
       jobTitle: JOB.applicationJobTitle,
       jobSlug: "content-writer-job",
     });
 
     if (!result.success) {
-      alert("Something went wrong.");
+      setSubmitError(applicationErrorMessage(result));
       return;
     }
 
@@ -70,7 +85,7 @@ const handleSubmit = async (e: React.FormEvent) => {
 
   } catch (error) {
     console.error(error);
-    alert("Something went wrong.");
+    setSubmitError("Network error. Check your connection and try again.");
   } finally {
     setIsSubmitting(false);
   }
@@ -395,6 +410,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                                 className="mt-2 w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3"
                             />
                         </div>
+                        <CareerApplyFormError message={submitError} />
                         <button
                             type="submit"
                             disabled={isSubmitting}

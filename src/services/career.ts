@@ -8,6 +8,8 @@ export interface CareerSubmitResult {
   id?: string;
   /** True when the applicant should see the success state. */
   success: boolean;
+  /** Server validation or rejection message when success is false. */
+  error?: string;
 }
 
 export interface CareerApplicationData {
@@ -20,10 +22,15 @@ export interface CareerApplicationData {
   message: string;
 }
 
-const toResult = (status: CareerSubmitStatus, id?: string): CareerSubmitResult => ({
+const toResult = (
+  status: CareerSubmitStatus,
+  id?: string,
+  error?: string,
+): CareerSubmitResult => ({
   status,
   id,
   success: status === "confirmed" || status === "unconfirmed",
+  error,
 });
 
 /** Vite dev has no /api route; post directly so local forms still work. Never confirmed. */
@@ -56,16 +63,33 @@ export async function submitCareerApplication(
       return await submitDirectForDev(data);
     }
 
-    const body = (await res.json().catch(() => ({}))) as { status?: string; id?: string };
+    const body = (await res.json().catch(() => ({}))) as {
+      status?: string;
+      id?: string;
+      error?: string;
+    };
 
     if (res.status === 200 && body.status === "confirmed" && body.id) {
       return toResult("confirmed", body.id);
     }
     if (res.status === 202) return toResult("unconfirmed");
-    if (res.status === 400) return toResult("rejected");
-    return toResult("failed");
+    if (res.status === 400) {
+      return { status: "rejected", success: false, error: body.error ?? "Please check your answers and try again." };
+    }
+    if (res.status === 502) {
+      return {
+        status: "failed",
+        success: false,
+        error: "We could not reach the application server. Please try again in a few minutes.",
+      };
+    }
+    return { status: "failed", success: false, error: "Something went wrong. Please try again." };
   } catch (error) {
     console.error(error);
-    return toResult("failed");
+    return {
+      status: "failed",
+      success: false,
+      error: "Network error. Check your connection and try again.",
+    };
   }
 }

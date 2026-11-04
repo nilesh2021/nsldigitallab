@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   User,
@@ -11,9 +11,12 @@ import {
   ShieldCheck,
   Briefcase,
 } from "lucide-react";
-import { resolveCareerJobSlug } from "../careers/data/jobs";
+import { resolveCareerApplicationFields } from "../careers/data/jobs";
 import { submitCareerApplication } from "../../services/career";
 import { trackJobApplication } from "../../utils/analytics";
+
+const VIDEO_FREELANCER_SLUG = "video-creator-freelancer-job";
+const URL_PATTERN = /^https?:\/\/\S+$/i;
 
 type Props = {
   jobTitle: string;
@@ -34,6 +37,12 @@ export default function CareerForm({ jobTitle }: Props) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
+  const { jobSlug, jobTitle: applicationJobTitle } = useMemo(
+    () => resolveCareerApplicationFields(jobTitle),
+    [jobTitle],
+  );
+  const isVideoFreelancer = jobSlug === VIDEO_FREELANCER_SLUG;
+
   function update(field: keyof typeof form, value: string) {
     setForm((prev) => ({ ...prev, [field]: value }));
     if (error) setError("");
@@ -47,23 +56,35 @@ export default function CareerForm({ jobTitle }: Props) {
       return;
     }
 
+    const resumeTrimmed = form.resume.trim();
+    if (resumeTrimmed && !URL_PATTERN.test(resumeTrimmed)) {
+      setError("Portfolio / sample link must start with http:// or https://");
+      return;
+    }
+
+    if (isVideoFreelancer && !form.message.trim()) {
+      setError("Please describe your charges per short video or package.");
+      return;
+    }
+
     setLoading(true);
     setError("");
 
     try {
-      const jobSlug = resolveCareerJobSlug(jobTitle);
       const result = await submitCareerApplication({
         ...form,
-        jobTitle,
+        resume: resumeTrimmed,
+        message: form.message.trim(),
+        jobTitle: applicationJobTitle,
         jobSlug,
       });
 
       if (!result.success) {
-        setError("Something went wrong. Please try again.");
+        setError(result.error ?? "Something went wrong. Please try again.");
         return;
       }
 
-      trackJobApplication(result, jobSlug, jobTitle);
+      trackJobApplication(result, jobSlug, applicationJobTitle);
 
       setForm({
         name: "",
@@ -90,10 +111,12 @@ export default function CareerForm({ jobTitle }: Props) {
               Apply now
             </p>
             <h3 className="mt-1 text-xl font-bold tracking-tight text-white">
-              Join the team
+              {isVideoFreelancer ? "Freelance video application" : "Join the team"}
             </h3>
             <p className="mt-1 max-w-md text-sm leading-6 text-slate-400">
-              We review every application within a few business days.
+              {isVideoFreelancer
+                ? "Remote freelancer for short-form agency and YouTube content. Share your rates; sample links optional."
+                : "We review every application within a few business days."}
             </p>
           </div>
 
@@ -172,7 +195,7 @@ export default function CareerForm({ jobTitle }: Props) {
 
           <div className="space-y-2">
             <label htmlFor="resume" className="text-sm font-medium text-slate-200">
-              Resume / portfolio{" "}
+              {isVideoFreelancer ? "Sample video link" : "Resume / portfolio"}{" "}
               <span className="font-normal text-slate-500">(optional)</span>
             </label>
             <div className="relative">
@@ -183,7 +206,11 @@ export default function CareerForm({ jobTitle }: Props) {
                 onChange={(e) => update("resume", e.target.value)}
                 type="text"
                 name="resume"
-                placeholder="Drive, LinkedIn, or portfolio URL"
+                placeholder={
+                  isVideoFreelancer
+                    ? "https://youtube.com/shorts/… (optional)"
+                    : "Drive, LinkedIn, or portfolio URL"
+                }
                 className={fieldClass}
               />
             </div>
@@ -192,8 +219,16 @@ export default function CareerForm({ jobTitle }: Props) {
 
         <div className="space-y-2">
           <label htmlFor="message" className="text-sm font-medium text-slate-200">
-            Why do you want to join nsldigitallab?{" "}
-            <span className="font-normal text-slate-500">(optional)</span>
+            {isVideoFreelancer ? (
+              <>
+                Your charges &amp; scope <span className="text-cyan-400">*</span>
+              </>
+            ) : (
+              <>
+                Why do you want to join nsldigitallab?{" "}
+                <span className="font-normal text-slate-500">(optional)</span>
+              </>
+            )}
           </label>
           <div className="relative">
             <MessageSquare className="pointer-events-none absolute left-3.5 top-3 h-4 w-4 text-slate-500" />
@@ -202,8 +237,13 @@ export default function CareerForm({ jobTitle }: Props) {
               value={form.message}
               onChange={(e) => update("message", e.target.value)}
               name="message"
-              rows={3}
-              placeholder="A short note about your experience and what you'd like to work on..."
+              rows={isVideoFreelancer ? 4 : 3}
+              required={isVideoFreelancer}
+              placeholder={
+                isVideoFreelancer
+                  ? "INR per 30–60s Short, revisions included, turnaround. Paste extra sample links here if needed."
+                  : "A short note about your experience and what you'd like to work on..."
+              }
               className={`${fieldClass} resize-none`}
             />
           </div>

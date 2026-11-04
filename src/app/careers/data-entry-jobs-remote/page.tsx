@@ -16,6 +16,11 @@ import CareerApplySuccess from "../components/CareerApplySuccess";
 import { trackJobApplication } from "../../../utils/analytics";
 import FAQSchema from "../../../seo/schemas/FAQSchema";
 import { submitCareerApplication } from "../../../services/career";
+import {
+  applicationErrorMessage,
+  validateOptionalResumeUrl,
+} from "../utils/applyValidation";
+import CareerApplyFormError from "../components/CareerApplyFormError";
 
 const faqs = JOB.faqItems ?? [];
 
@@ -27,15 +32,18 @@ export default function DataEntryJobsRemote() {
   const [email, setEmail] = useState("");
   const [resume, setResume] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState("");
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const closeApplyModal = () => {
     setSubmitted(false);
+    setSubmitError("");
     setShowModal(false);
   };
 
   const handleApplyNow = () => {
     setSubmitted(false);
+    setSubmitError("");
     if (JOB.status === "open") setShowModal(true);
   };
 
@@ -46,6 +54,13 @@ export default function DataEntryJobsRemote() {
       return;
     }
 
+    const resumeErr = validateOptionalResumeUrl(resume);
+    if (resumeErr) {
+      setSubmitError(resumeErr);
+      return;
+    }
+
+    setSubmitError("");
     setIsSubmitting(true);
 
     try {
@@ -53,14 +68,14 @@ export default function DataEntryJobsRemote() {
         name,
         email,
         phone,
-        resume,
+        resume: resume.trim(),
         message: "",
         jobSlug: "data-entry-jobs-remote",
         jobTitle: JOB.applicationJobTitle,
       });
 
       if (!result.success) {
-        alert("Something went wrong.");
+        setSubmitError(applicationErrorMessage(result));
         return;
       }
 
@@ -72,7 +87,7 @@ export default function DataEntryJobsRemote() {
       setResume("");
     } catch (error) {
       console.error(error);
-      alert("Something went wrong.");
+      setSubmitError("Network error. Check your connection and try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -374,6 +389,7 @@ export default function DataEntryJobsRemote() {
                         className="mt-2 w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 text-slate-900 outline-none transition focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
                       />
                     </div>
+                    <CareerApplyFormError message={submitError} />
                     <button
                       type="submit"
                       disabled={isSubmitting}

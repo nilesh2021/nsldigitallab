@@ -128,9 +128,10 @@ test("unconfirmed submission shows success to the applicant but fires nothing", 
 
 test("rejected submission shows error and fires nothing", async () => {
   const { result, fired } = await submitAndTrack(async () =>
-    jsonResponse(400, { status: "rejected", error: "bad" }),
+    jsonResponse(400, { status: "rejected", error: "Resume must be a URL." }),
   );
   assert.equal(result.success, false);
+  assert.equal(result.error, "Resume must be a URL.");
   assert.equal(fired, false);
   assert.equal(gtagCalls.length, 0);
 });

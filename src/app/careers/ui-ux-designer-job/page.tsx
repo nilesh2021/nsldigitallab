@@ -13,6 +13,11 @@ import ClosedJobNotice from "../components/ClosedJobNotice";
 import { trackJobApplication } from "../../../utils/analytics";
 
 import { submitCareerApplication } from "../../../services/career";
+import {
+  applicationErrorMessage,
+  validateOptionalResumeUrl,
+} from "../utils/applyValidation";
+import CareerApplyFormError from "../components/CareerApplyFormError";
 export default function UiuxDesignerJob() {
   const [showModal, setShowModal] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -21,9 +26,11 @@ export default function UiuxDesignerJob() {
   const [email, setEmail] = useState("");
   const [resume, setResume] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState("");
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const handleApplyNow = () => {
-    setSubmitted(false);   // Reset success state
+    setSubmitted(false);
+    setSubmitError("");
     JOB.status === "open" && setShowModal(true);
   };
   const handleSubmit = async (e: React.FormEvent) => {
@@ -33,6 +40,13 @@ export default function UiuxDesignerJob() {
       return;
     }
 
+    const resumeErr = validateOptionalResumeUrl(resume);
+    if (resumeErr) {
+      setSubmitError(resumeErr);
+      return;
+    }
+
+    setSubmitError("");
     setIsSubmitting(true);
 
     try {
@@ -41,14 +55,14 @@ export default function UiuxDesignerJob() {
         name,
         email,
         phone,
-        resume,
+        resume: resume.trim(),
         message: "",
         jobSlug: "ui-ux-designer-job",
-      jobTitle: JOB.applicationJobTitle,
+        jobTitle: JOB.applicationJobTitle,
       });
 
       if (!result.success) {
-        alert("Something went wrong.");
+        setSubmitError(applicationErrorMessage(result));
         return;
       }
 
@@ -63,7 +77,7 @@ export default function UiuxDesignerJob() {
     } catch (error) {
 
       console.error(error);
-      alert("Something went wrong.");
+      setSubmitError("Network error. Check your connection and try again.");
 
     } finally {
 
@@ -372,6 +386,7 @@ A career in UI/UX Design offers opportunities in product design, web design, mob
               type="button"
               onClick={() => {
                 setSubmitted(false);
+                setSubmitError("");
                 setShowModal(false);
               }}
               aria-label="Close application form"
@@ -485,6 +500,8 @@ A career in UI/UX Design offers opportunities in product design, web design, mob
                         className="mt-2 w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 text-slate-900 outline-none transition focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
                       />
                     </div>
+
+                    <CareerApplyFormError message={submitError} />
 
                     <button
                       type="submit"

@@ -14,6 +14,11 @@ import CareerApplySuccess from "../components/CareerApplySuccess";
 import { trackJobApplication } from "../../../utils/analytics";
 import FAQSchema from "../../../seo/schemas/FAQSchema";
 import { submitCareerApplication } from "../../../services/career";
+import {
+  applicationErrorMessage,
+  validateOptionalResumeUrl,
+} from "../utils/applyValidation";
+import CareerApplyFormError from "../components/CareerApplyFormError";
 
 const JOB = CAREER_JOBS["video-creator-freelancer-job"];
 const faqs = JOB.faqItems ?? [];
@@ -28,15 +33,18 @@ export default function VideoCreatorFreelancerJob() {
   const [resume, setResume] = useState("");
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState("");
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const closeApplyModal = () => {
     setSubmitted(false);
+    setSubmitError("");
     setShowModal(false);
   };
 
   const handleApplyNow = () => {
     setSubmitted(false);
+    setSubmitError("");
     if (JOB.status === "open") setShowModal(true);
   };
 
@@ -47,15 +55,18 @@ export default function VideoCreatorFreelancerJob() {
 
     const sampleUrl = resume.trim();
     const ratesNote = message.trim();
-    if (sampleUrl && !/^https?:\/\/\S+$/i.test(sampleUrl)) {
-      alert("Sample link must start with http:// or https://");
+
+    const sampleErr = validateOptionalResumeUrl(resume);
+    if (sampleErr) {
+      setSubmitError(sampleErr);
       return;
     }
     if (!ratesNote) {
-      alert("Please describe your charges per short video or package.");
+      setSubmitError("Please describe your charges per short video or package.");
       return;
     }
 
+    setSubmitError("");
     setIsSubmitting(true);
 
     try {
@@ -70,7 +81,7 @@ export default function VideoCreatorFreelancerJob() {
       });
 
       if (!result.success) {
-        alert("Something went wrong.");
+        setSubmitError(applicationErrorMessage(result));
         return;
       }
 
@@ -83,7 +94,7 @@ export default function VideoCreatorFreelancerJob() {
       setMessage("");
     } catch (error) {
       console.error(error);
-      alert("Something went wrong.");
+      setSubmitError("Network error. Check your connection and try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -346,6 +357,7 @@ export default function VideoCreatorFreelancerJob() {
                 required
               />
             </div>
+            <CareerApplyFormError message={submitError} />
             <button
               type="submit"
               disabled={isSubmitting}
