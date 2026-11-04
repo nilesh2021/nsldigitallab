@@ -80,7 +80,9 @@ export async function submitCareerApplication(
       return {
         status: "failed",
         success: false,
-        error: "We could not reach the application server. Please try again in a few minutes.",
+        error:
+          body.error ??
+          "We could not reach the application server. Please try again in a few minutes.",
       };
     }
     return { status: "failed", success: false, error: "Something went wrong. Please try again." };

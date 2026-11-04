@@ -5,7 +5,7 @@ Google Apps Script, Vercel, Search Console, GA4, and Google Ads accounts. Nothin
 
 ## 1. Enable confirmed application conversions
 
-All six job forms (and the general form on `/careers`) post to `/api/career-application`
+All job forms (and the general form on `/careers`) post to `/api/career-application`
 (`api/career-application.ts`), which forwards to the existing Apps Script server-side.
 `generate_lead` fires **only** when the script replies with JSON `{ "ok": true, "id": "..." }`.
 Until the script is updated, applications are still delivered and the applicant still sees the
@@ -13,36 +13,36 @@ success message, but **no conversion is sent**.
 
 ### 1a. Update the Apps Script `doPost`
 
-The same script also handles newsletter, contact, and resource posts, so change the
-response for `type === "career"` only. Keep your existing sheet and email logic; return
-`ok: true` only after both have succeeded.
+The live script project and a **copy-paste reference** (newsletter, contact, career with
+`jobSlug`, `{ ok: true, id }` for career) live in **`docs/APPS-SCRIPT-REFERENCE.gs`**.
+
+- Editor: [Apps Script project](https://script.google.com/home/projects/14KZuhdFCvuSU9pLDQ7js1RtxDvKQgMKBpxY59jxFHsNLehfr_DMpZo5P/edit)
+- Web app `/exec` URL must match `api/career-application.ts` (deployment id `AKfycbx…`).
+
+Paste or merge from the reference file, then adjust sheet columns if your **Job Applications**
+tab headers differ (reference adds `id` and `jobSlug` columns at the start/middle).
+
+Career branch minimum change if you only want GA confirmations:
 
 ```javascript
-function doPost(e) {
-  var data = JSON.parse(e.postData.contents);
-
-  if (data.type === "career") {
-    try {
-      var id = Utilities.getUuid();
-
-      // --- existing career handling, unchanged ---
-      // e.g. sheet.appendRow([...existing columns..., id]);
-      // e.g. MailApp.sendEmail(...);
-
-      return ContentService.createTextOutput(JSON.stringify({ ok: true, id: id }))
-        .setMimeType(ContentService.MimeType.JSON);
-    } catch (err) {
-      return ContentService.createTextOutput(JSON.stringify({ ok: false }))
-        .setMimeType(ContentService.MimeType.JSON);
-    }
-  }
-
-  // --- existing handling for other types, unchanged ---
+if (data.type === "career") {
+  var id = Utilities.getUuid();
+  // ... existing appendRow ...
+  return ContentService.createTextOutput(JSON.stringify({ ok: true, id: id }))
+    .setMimeType(ContentService.MimeType.JSON);
 }
 ```
 
+Use `{ ok: false, error: "..." }` (not `{ success: false }`) for failures so the site shows
+the error in the form instead of a false thank-you.
+
 Then **Deploy > Manage deployments > Edit > New version** so the existing `/exec` URL serves
 the new code. If you create a new deployment instead, its URL changes; set it in step 1b.
+
+**Web app access (required for production forms):** When deploying, set **Execute as: Me** and
+**Who has access: Anyone** (not “Only myself” or org-only). The Vercel API calls the script
+without a Google login; restricted deployments return **403**, which shows as **502** in the
+browser (“could not reach the application server”).
 
 Note: `content-writer-job` and `seo-executive-job` previously posted without `type`, `source`,
 `message`, or `createdAt`. They now send the same payload as the other career forms
@@ -61,6 +61,24 @@ already in the code.
    `{"status":"confirmed","id":"..."}`. `202` means the script reply was not a confirmation.
 4. In GA4 **Admin > DebugView**, confirm one `generate_lead` event with `job_slug`, `job_title`,
    and `lead_type` only (no name, email, phone, or resume).
+
+### 1d. Troubleshooting “could not reach the application server” (HTTP 502)
+
+1. In DevTools **Network**, open `career-application` (filter: `career`, not unrelated domains).
+2. **502** with an error mentioning **hello@nsldigitallab.com** → Apps Script returned **403 Access
+   denied**. Redeploy the web app with **Who has access: Anyone** (see above) or fix
+   `APPS_SCRIPT_CAREER_URL` if the deployment URL changed.
+3. **502** without that message → script timeout, 5xx, or network error; check **Vercel → Functions →
+   Logs** for `[career-application]` and **Apps Script → Executions** for failed `doPost` runs.
+4. **404** or HTML response → redeploy the site on Vercel so `api/career-application.ts` is live
+   (`vercel.json` must not rewrite `/api/*` to `index.html` only).
+5. Quick check from any machine (no browser login):
+
+   ```bash
+   curl.exe -s -o NUL -w "%{http_code}" -X POST "YOUR_EXEC_URL" -H "Content-Type: text/plain" -d "{\"type\":\"career\",\"name\":\"Test\",\"email\":\"test@example.com\",\"phone\":\"\",\"resume\":\"\",\"jobTitle\":\"Test\",\"jobSlug\":\"ui-ux-designer-job\",\"message\":\"\",\"source\":\"Career Page\"}"
+   ```
+
+   Expect **200** (or **302** then **200**). **403** means fix deployment access before forms will work.
 
 ## Analytics vs email (separate systems)
 

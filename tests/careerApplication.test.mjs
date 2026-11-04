@@ -67,8 +67,36 @@ test("endpoint reports failure when the script is unreachable or errors", async 
   assert.equal(res.status, 502);
 });
 
-test("endpoint treats ok:false as rejected", () => {
-  assert.equal(api.interpretScriptResponse(200, '{"ok":false}').status, "rejected");
+test("endpoint maps script access denied to a helpful applicant message", async () => {
+  globalThis.fetch = async () => new Response("<html>Access denied</html>", { status: 403 });
+  const res = await api.POST(new Request("http://x/api", { method: "POST", body: JSON.stringify(validBody) }));
+  assert.equal(res.status, 502);
+  const body = await res.json();
+  assert.match(body.error, /hello@nsldigitallab\.com/);
+});
+
+test("endpoint treats ok:false as rejected with 400", async () => {
+  globalThis.fetch = async () => new Response(JSON.stringify({ ok: false }), { status: 200 });
+  const res = await api.POST(new Request("http://x/api", { method: "POST", body: JSON.stringify(validBody) }));
+  assert.equal(res.status, 400);
+  assert.equal((await res.json()).status, "rejected");
+});
+
+test("endpoint treats legacy success:false with script error as rejected", async () => {
+  globalThis.fetch = async () =>
+    new Response(JSON.stringify({ success: false, error: "Unknown request type" }), { status: 200 });
+  const res = await api.POST(new Request("http://x/api", { method: "POST", body: JSON.stringify(validBody) }));
+  assert.equal(res.status, 400);
+  const body = await res.json();
+  assert.equal(body.status, "rejected");
+  assert.equal(body.error, "Unknown request type");
+});
+
+test("endpoint treats legacy success:true as unconfirmed", async () => {
+  globalThis.fetch = async () => new Response(JSON.stringify({ success: true }), { status: 200 });
+  const res = await api.POST(new Request("http://x/api", { method: "POST", body: JSON.stringify(validBody) }));
+  assert.equal(res.status, 202);
+  assert.equal((await res.json()).status, "unconfirmed");
 });
 
 test("honeypot submissions are not forwarded", async () => {

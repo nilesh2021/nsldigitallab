@@ -18,7 +18,14 @@ export type ApplicationResult =
   | { status: "confirmed"; id: string }
   | { status: "unconfirmed" }
   | { status: "rejected"; error: string }
-  | { status: "failed" };
+  | { status: "failed"; error?: string };
+
+const SCRIPT_ACCESS_DENIED =
+  "Applications are temporarily unavailable. Please email hello@nsldigitallab.com with the role name and your resume link.";
+
+function looksLikeScriptAccessDenied(status: number, text: string): boolean {
+  return status === 403 || /Access denied|You need access/i.test(text);
+}
 
 export function validateApplication(body: unknown): CareerApplicationInput | string {
   if (!body || typeof body !== "object") return "Invalid request body.";
@@ -48,13 +55,26 @@ export function validateApplication(body: unknown): CareerApplicationInput | str
 
 /** Only an explicit `{ ok: true, id }` from the Apps Script counts as accepted. */
 export function interpretScriptResponse(status: number, text: string): ApplicationResult {
+  if (looksLikeScriptAccessDenied(status, text)) {
+    return { status: "failed", error: SCRIPT_ACCESS_DENIED };
+  }
   if (status < 200 || status >= 300) return { status: "failed" };
   try {
-    const data = JSON.parse(text) as { ok?: unknown; id?: unknown };
+    const data = JSON.parse(text) as {
+      ok?: unknown;
+      id?: unknown;
+      success?: unknown;
+      error?: unknown;
+    };
     if (data.ok === true && typeof data.id === "string" && data.id) {
       return { status: "confirmed", id: data.id };
     }
-    if (data.ok === false) return { status: "rejected", error: "Application was not accepted." };
+    const scriptError =
+      typeof data.error === "string" && data.error.trim()
+        ? data.error.trim()
+        : "Application was not accepted.";
+    if (data.ok === false) return { status: "rejected", error: scriptError };
+    if (data.success === false) return { status: "rejected", error: scriptError };
   } catch {
     // Non-JSON replies (e.g. the legacy HTML response) cannot confirm acceptance.
   }
@@ -66,6 +86,19 @@ const json = (status: number, body: ApplicationResult) =>
     status,
     headers: { "Content-Type": "application/json", "Cache-Control": "no-store" },
   });
+
+function httpStatusFor(result: ApplicationResult): number {
+  switch (result.status) {
+    case "confirmed":
+      return 200;
+    case "unconfirmed":
+      return 202;
+    case "rejected":
+      return 400;
+    case "failed":
+      return 502;
+  }
+}
 
 export async function POST(request: Request): Promise<Response> {
   let body: unknown;
@@ -96,10 +129,17 @@ export async function POST(request: Request): Promise<Response> {
         createdAt: new Date().toISOString(),
       }),
     });
-    const result = interpretScriptResponse(res.status, await res.text());
-    const code = result.status === "confirmed" ? 200 : result.status === "unconfirmed" ? 202 : 502;
-    return json(code, result);
-  } catch {
-    return json(502, { status: "failed" });
+    const scriptText = await res.text();
+    const result = interpretScriptResponse(res.status, scriptText);
+    if (result.status === "failed" && !result.error) {
+      console.error("[career-application] Apps Script HTTP", res.status, scriptText.slice(0, 240));
+    }
+    return json(httpStatusFor(result), result);
+  } catch (error) {
+    console.error("[career-application] Apps Script fetch failed", error);
+    return json(502, {
+      status: "failed",
+      error: "We could not reach the application server. Please try again in a few minutes.",
+    });
   }
 }
