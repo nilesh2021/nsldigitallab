@@ -184,6 +184,23 @@ dataEntryRemoteJob: {
     type: "website",
   },
 
+  videoCreatorFreelancerJob: {
+    title:
+      "Freelance Video Creator / Editor Jobs | Remote Short-Form & YouTube | NSL Digital Lab",
+
+    description:
+      "Apply for remote freelance video creator and editor work at NSL Digital Lab. Short-form videos for agency and YouTube promotion. Share sample links and your per-video rates when you apply.",
+
+    keywords:
+      "freelance video editor jobs, remote video editor India, YouTube video editor freelancer, short form video editor, Reels editor freelance, video creator work from home, freelance video editing rates",
+
+    canonical: "/careers/video-creator-freelancer-job",
+
+    image: "/images/og/careers.jpg",
+
+    type: "website",
+  },
+
   seoExecutiveJob: {
     title:
       "SEO Executive Job 2026 | Work From Home SEO Executive Jobs | NSL Digital Lab",

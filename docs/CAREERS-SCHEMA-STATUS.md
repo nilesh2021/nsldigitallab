@@ -16,6 +16,7 @@ Do not add placeholder values to make a row “eligible”.
 |------|-------------------|---------------------|-----------------------------------|
 | `data-entry-jobs-remote` | Yes (when open) | Yes (explicit FAQ/page copy) | `validThrough`; salary amount + pay period for optional `baseSalary` |
 | `digital-marketing-executive-job` | Yes (when open) | Yes | `validThrough`; salary amount + pay period |
+| `video-creator-freelancer-job` | Yes (when open) | Yes (freelancer, India remote) | `validThrough`; per-project pay not in schema `baseSalary` |
 | `data-entry-remote-job` | No | No (WFH stated, not India-only) | Confirm fully remote within India; `validThrough`; salary period |
 | `content-writer-job` | No | No | `datePosted`; confirm India-remote; `validThrough`; salary period |
 | `seo-executive-job` | No | No | `datePosted`; confirm India-remote; `validThrough`; salary period |

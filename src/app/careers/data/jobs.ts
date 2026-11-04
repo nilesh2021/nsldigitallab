@@ -289,6 +289,60 @@ export const CAREER_JOBS: Record<string, CareerJob> = {
     ],
     relatedSlugs: ["digital-marketing-executive-job", "content-writer-job"],
   },
+  "video-creator-freelancer-job": {
+    slug: "video-creator-freelancer-job",
+    title: "Freelance Video Creator / Editor — Remote",
+    applicationJobTitle: "Freelance Video Creator / Editor",
+    status: "open",
+    description:
+      "<p>NSL Digital Lab is hiring a freelance video creator and editor for remote work on short-form content that promotes our digital agency and YouTube channel. You will edit vertical and short videos (Reels, YouTube Shorts, and similar cuts), add captions and simple motion where needed, and deliver files ready to publish.</p><p>This is a fully remote freelancer role. You can work from home anywhere in India with your own laptop, editing software, and internet connection.</p><p>When you apply, share sample video links and your charges per short video or package so we can match projects to your rates.</p>",
+    datePosted: "2026-11-04",
+    employmentType: ["CONTRACTOR"],
+    remoteIndiaOnly: true,
+    infoBar: {
+      location: "Remote",
+      jobType: "Freelancer",
+      experience: "Portfolio welcome",
+      salary: "Per video / project",
+    },
+    listing: {
+      title: "Video Creator / Editor (Freelancer)",
+      type: "Remote",
+      location: "Remote",
+      experience: "Portfolio welcome",
+      category: "Creative",
+      description:
+        "Freelance remote video editing for agency and YouTube promotion — short-form Reels and Shorts preferred. Apply with samples and your rates.",
+    },
+    faqItems: [
+      {
+        question: "Is this a remote freelance video editing job?",
+        answer:
+          "Yes. This is a fully remote freelancer role. You can work from home anywhere in India with your own setup. Work is project-based, not a fixed office shift.",
+      },
+      {
+        question: "What kind of videos will I edit?",
+        answer:
+          "Mostly short-form content for NSL Digital Lab’s digital agency promotion and YouTube channel growth — for example YouTube Shorts, Instagram Reels, and similar vertical cuts. Longer YouTube edits may be discussed per project.",
+      },
+      {
+        question: "Do I need to share sample videos when I apply?",
+        answer:
+          "Yes. Include links to sample edits (YouTube, Google Drive, Instagram, or a portfolio page). We review style, pacing, and captions before assigning paid work.",
+      },
+      {
+        question: "What should I tell you about my charges?",
+        answer:
+          "In your application, state your rate per short video or package (INR), typical length (e.g. 15–60 seconds), how many revisions are included, and your usual turnaround time.",
+      },
+      {
+        question: "Which tools can I use?",
+        answer:
+          "Any professional editor you prefer — for example CapCut, Adobe Premiere Pro, DaVinci Resolve, or Final Cut — as long as exports meet our brief (format, captions, and brand notes).",
+      },
+    ],
+    relatedSlugs: ["digital-marketing-executive-job", "content-writer-job"],
+  },
   "ui-ux-designer-job": {
     slug: "ui-ux-designer-job",
     title: "UI/UX Designer",

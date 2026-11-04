@@ -25,6 +25,7 @@ const LISTING_ORDER = [
   "data-entry-remote-job",
   "data-entry-jobs-remote",
   "digital-marketing-executive-job",
+  "video-creator-freelancer-job",
   "seo-executive-job",
   "content-writer-job",
 ];

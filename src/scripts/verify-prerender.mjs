@@ -15,6 +15,7 @@ const EXPECTED_JOB_POSTING = {
   "/careers/data-entry-remote-job": 0,
   "/careers/data-entry-jobs-remote": 1,
   "/careers/digital-marketing-executive-job": 1,
+  "/careers/video-creator-freelancer-job": 1,
   "/careers/content-writer-job": 0,
   "/careers/seo-executive-job": 0,
   "/careers/ui-ux-designer-job": 0,

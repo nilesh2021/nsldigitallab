@@ -8,6 +8,7 @@ import DigitalMarketingExecutiveJob from "../app/careers/digital-marketing-execu
 import ContentWriterJob from "../app/careers/content-writer-job/page";
 import SeoExecutiveJob from "../app/careers/seo-executive-job/page";
 import UiuxDesignerJob from "../app/careers/ui-ux-designer-job/page";
+import VideoCreatorFreelancerJob from "../app/careers/video-creator-freelancer-job/page";
 
 const careerRoutes = (
   <>
@@ -29,6 +30,11 @@ const careerRoutes = (
     <Route
       path="/careers/digital-marketing-executive-job"
       element={<DigitalMarketingExecutiveJob />}
+    />
+
+    <Route
+      path="/careers/video-creator-freelancer-job"
+      element={<VideoCreatorFreelancerJob />}
     />
 
     <Route
